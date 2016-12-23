@@ -6,9 +6,7 @@ tagline:             Do we really need a tagline
 url:                 http://line47.github.io/
 baseurl:             /line47.github.io/
 
-# Assets
-#
-# specify the directory for Jekyll so we can use @imports.
+
+# Set the Sass partials directory, as we're using @imports
 sass:
-  sass_dir:          _sass
-  style:            :compressed
+    sass_dir: _sass
