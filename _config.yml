@@ -1,0 +1,14 @@
+theme: jekyll-theme-cayman
+
+# Setup
+title:               Line 47 Website
+tagline:             Do we really need a tagline
+url:                 http://line47.github.io/
+baseurl:             /line47.github.io/
+
+# Assets
+#
+# specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
