@@ -1,15 +1,11 @@
 html {
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 footer {
     background: #333;
     color: #fff;
-}
-
-a {
-    color: red;
 }
 
 h1,
@@ -31,6 +27,7 @@ ol,
 p,
 ul {
     margin-bottom: 1rem;
+     line-height:1.5rem;
 }
 
 ul {
@@ -58,6 +55,14 @@ li {
     a {
         margin-left: 0;
         padding: 0;
+        color:#fff;
+        text-decoration:none;
+        padding:1rem .5rem;
+        display:inline-block;
+
+        &:hover {
+          background:#333;
+        }
     }
 }
 
