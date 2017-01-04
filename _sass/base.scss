@@ -41,6 +41,7 @@ li {
 
 #top-nav {
     background: #1290a5;
+    text-align: center;
 
     ul {
         margin: 0;
@@ -64,6 +65,13 @@ li {
           background:#333;
         }
     }
+}
+.layout-default {
+
+  .main-content {
+  max-width:1200px;
+  margin:3rem auto;  
+  }
 }
 
 footer {
