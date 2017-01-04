@@ -6,7 +6,9 @@ title: Resume
 # Working with web development, standards and usability for over 12 years.
 
 ## Experience
+
 ### 2006-Present, Creative Director
+
 Kentucky.gov, Frankfort, KY
 Kentucky.gov partners with Kentucky state government to provide web presence and applications since 1998. In collaboration with all levels of state government ranging from the Governor’s Office to various boards and agencies to local city police departments, Kentucky.gov is responsible for assisting in the exploration and improvement of access to public information.
 
@@ -37,6 +39,7 @@ Kentucky.gov, Frankfort, KY
 - Work closely with team of employees and clients to improve our services
 
 ###2002-2004, Web Development
+
 Clear Channel Radio Interactive, Covington, KY
 
 #### Responsibilities
