@@ -1,0 +1,7 @@
+- name: Kentucky.gov
+  url: http://kentucky.gov
+  description:
+  responsibilities: SharePoint Implementation, Creative Direction,
+  Grphic Design, HTML/CSS Templates, Research, Responsive Design
+  smallimage: /images/logo-kygov.png
+  largeimage:
