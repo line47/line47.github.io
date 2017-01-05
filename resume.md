@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: onecolrel
 title: Resume
 ---
 
@@ -9,7 +9,7 @@ title: Resume
 
 ### 2006-Present, Creative Director
 
-Kentucky.gov, Frankfort, KY
+<span class="text-muted">Kentucky.gov, Frankfort, KY</span>
 Kentucky.gov partners with Kentucky state government to provide web presence and applications since 1998. In collaboration with all levels of state government ranging from the Governor’s Office to various boards and agencies to local city police departments, Kentucky.gov is responsible for assisting in the exploration and improvement of access to public information.
 
 Kentucky.gov hosts more than 240 websites and 100 applications. Goals include expanding the base of users who can access public information as well as increasing the amount and availability of public information and online services for the Commonwealth of Kentucky.
@@ -47,38 +47,3 @@ Clear Channel Radio Interactive, Covington, KY
 - Designed ads and created graphics for clients
 - Troubleshoot issues and errors with websites
 - Provided web support
-
-## Education
-
-1997-2001, University of Kentucky
-Bachelor of Science in Telecommunications & Minor in Sociology
-
-## Achievements
-Best of the Web and Digital Government Achievement Awards
-
-- 2015 - Finalist for Kentucky.gov
-- 2010 - 5th Place for Kentucky.gov
-- 2007 - 5th Place for Kentucky.gov
-- 2004 - Finalist for Kentucky.gov
-
-1st state portal to implement a responsive mobile-friendly portal utilizing SharePoint.
-
-## Languages
-- HTML
-- CSS
-- LESS
-- SASS
-- ASPX
-- .Net
-- PHP
-- Javascript
-- jQuery
-- React.js
-
-## Systems & Devices
-- SharePoint
-- Wordpress
-- iPhone/iPad
-- Windows Mobile
-- MOSS 2007
-- MCMS

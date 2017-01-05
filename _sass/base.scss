@@ -1,11 +1,23 @@
+$topnav-bg: #1290a5;
+$footer-bg: #333;
+
+$text-light: #fff;
+$text-muted: #999;
+$text-medium: #666;
+$text-dark: #333;
+
+
+
 html {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
 
 footer {
-    background: #333;
-    color: #fff;
+  background: $footer-bg;
+  color: $text-light;
+  padding: 2rem 0 1rem;
+  text-align: center;
 }
 
 h1,
@@ -14,7 +26,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 h1,
@@ -26,97 +38,98 @@ h6,
 ol,
 p,
 ul {
-    margin-bottom: 1rem;
-     line-height:1.5rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
 }
+
 h1 {
-  font-size:4rem;
+  font-size: 4rem;
   line-height: 4rem;
 }
+
 h2 {
-  font-size:3rem;
+  font-size: 3rem;
   line-height: 3rem;
 }
+
 h3 {
   line-height: 2rem;
 }
+
 h4 {
-  font-size:1.5rem;
+  font-size: 1.5rem;
   line-height: 1.5rem;
 }
+
 h5 {
-  font-size:1rem;
+  font-size: 1rem;
   line-height: 1rem;
 }
+
 h6 {
-  font-size:.75rem;
+  font-size: .75rem;
   line-height: .75rem;
 }
+
 ul {
-    list-style-type: disc;
-    margin-left: 2.5rem;
+  list-style-type: disc;
+  margin-left: 2.5rem;
 }
 
 li {
-    margin-bottom: 0.5rem;
+  margin-bottom: .5rem;
 }
 
-#top-nav {
-    background: #1290a5;
-    text-align: center;
+.top-nav { // change to a class
+  background: $topnav-bg;
+  text-align: center;
 
-    ul {
-        margin: 0;
-    }
+  ul {
+    margin: 0;
+  }
 
-    li {
-        display: inline-block;
-        margin: 0 0.5rem 0;
-        padding: 0;
-    }
+  li {
+    display: inline-block;
+    margin: 0 .5rem;
+    padding: 0;
+  }
 
-    a {
-        margin-left: 0;
-        padding: 0;
-        color:#fff;
-        text-decoration:none;
-        padding:1rem .5rem;
-        display:inline-block;
+  a {
+    color: $text-light;
+    display: inline-block;
+    margin-left: 0;
+    padding: 1rem .5rem;
+    text-decoration: none;
 
-        &:hover {
-          background:#333;
-        }
+    &:hover {
+      background: $footer-bg;
+      }
     }
 }
+
 .layout-default {
-
   .main-content {
-  max-width:1200px;
-  margin:3rem auto;
+    margin: 3rem auto;
+    max-width: 1200px;
   }
 }
 
-footer {
-    text-align: center;
-    padding: 2rem 0 1rem;
-}
+.social-links {
+  list-style-type: none;
+  margin: 0;
 
-.socialLinks {
-    list-style-type: none;
-    margin: 0;
+  li {
+    display: inline-block;
+    margin: 0 .5rem;
+  }
 
-    li {
-        display: inline-block;
-        margin: 0 0.5rem 0;
-    }
-
-    a {
-        color: #777;
-    }
+  a {
+    color: $text-muted;
+  }
 }
 
 .copyright {
-    font-size: 1rem;
-    color: #666;
-    padding: 2rem 0 0;
+  color: $text-medium;
+  font-size: 1rem;
+  padding: 2rem 0 0;
 }

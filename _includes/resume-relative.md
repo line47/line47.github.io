@@ -1,4 +1,4 @@
-<nav class"top-nav">
+<nav id="top-nav">
   <ul>
     <li><a href="/index">Home</a></li>
     <li><a href="/about">About</a></li>
