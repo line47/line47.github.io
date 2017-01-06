@@ -1,7 +1,0 @@
-<nav id="top-nav">
-  <ul>
-    <li><a href="/index">Home</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/work">Work</a></li>
-  </ul>
-</nav>

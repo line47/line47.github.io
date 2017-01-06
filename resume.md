@@ -1,5 +1,5 @@
 ---
-layout: onecolrel
+layout: resume
 title: Resume
 ---
 
