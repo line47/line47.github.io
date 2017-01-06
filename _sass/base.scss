@@ -80,6 +80,21 @@ li {
   margin-bottom: .5rem;
 }
 
+
+.projects {
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .project-item {
+    flex: 0 0 24%;
+    margin: 0 .5% 1%;
+  }
+
+}
+
 .top-nav {
   background: $topnav-bg;
   text-align: center;

@@ -5,9 +5,9 @@ title: Work
 
 <ul class="projects">
 {% for project in site.data.projects %}
-  <li>
+  <li class="projects-item">
     {{ project.name }}
-    {{ project.url }}
+    <a href="{{ project.url }}">
     {{ project.responsibilities }}
     <img src="{{ project.smallImage }}"/>
   </li>
