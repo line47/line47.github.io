@@ -1,6 +1,15 @@
+- name: Cloud.gov
+  url: https://cloud.gov
+  description:
+  responsibilities: SharePoint Implementation, Creative Direction,Graphic Design, HTML/CSS Templates, Research, Responsive Design
+  smallImage: /images/logo-kygov.png
+  largeImage:
+  builtWith: React, SASS, Cloud Foundry, Git, GitHub, Built on top of the US Web Design Standards
+
 - name: Kentucky.gov
   url: http://kentucky.gov
   description:
   responsibilities: SharePoint Implementation, Creative Direction,Graphic Design, HTML/CSS Templates, Research, Responsive Design
-  smallimage: /images/logo-kygov.png
-  largeimage: 
+  smallImage: /images/logo-kygov.png
+  largeImage:
+  builtWith: SharePoint, .Net, LESS, Javascript 
