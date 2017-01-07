@@ -156,14 +156,32 @@ li {
     }
 }
 
-.layout-default {
-  .content-container {
-    margin: 3rem auto;
-    margin-left: 8.3%;
-    margin-right: 8.3%;
-    max-width: 1200px;
-  }
+.content-container {
+  margin: 0 auto;
+  margin-left: 8.3%;
+  margin-right: 8.3%;
+  max-width: 1200px;
 }
+
+.layout-default {
+
+  .main-content {
+    margin: 3rem 0;
+    }
+  }
+
+
+.layout-resume {
+
+  .main-content {
+    margin: 3rem 0;
+    }
+  .relative-content {
+    margin: 3rem 0;
+    }
+
+}
+
 
 .social-links {
   list-style-type: none;
