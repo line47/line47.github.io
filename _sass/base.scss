@@ -1,3 +1,4 @@
+
 $topnav-bg: #1290a5;
 $footer-bg: #333;
 
@@ -6,10 +7,12 @@ $text-muted: #999;
 $text-medium: #666;
 $text-dark: #333;
 
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 
 html {
   font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
   font-weight: 400;
 }
 
@@ -32,6 +35,7 @@ h5,
 h6 {
   font-family: avenir next,avenir,sans-serif;
   font-size: 2rem;
+  font-weight: 700;
 }
 
 h1,
@@ -100,6 +104,7 @@ li {
 
   .project-name {
     font-size: 2rem;
+    font-weight: 700;
     text-decoration: none;
   }
 
