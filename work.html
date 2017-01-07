@@ -3,13 +3,13 @@ layout: default
 title: Work
 ---
 
-{{ page.title }}
+<h1 class="page-title">{{ page.title }}<h1>
 
 <ul class="projects">
 {% for project in site.data.projects %}
   <li class="project-item">
     <img src="{{ project.smallImage }}"/>
-    <a href="{{ project.url }}">{{ project.name }}</a>
+    <a href="{{ project.url }}" class="project-name">{{ project.name }}</a>
     <span class="project-responsibilities"><strong>Responsibilities:</strong> {{ project.responsibilities }}</span>
   </li>
 {% endfor %}
