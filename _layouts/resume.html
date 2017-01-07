@@ -5,11 +5,14 @@
 <body class="layout-resume">
     {% include top-nav.html %}
     <div class="content-container">
+        <div class="main-content">
         {{ content }}
+      </div>
+        <div class="relative-content">
+            {% include resume-relative.html %}
+        </div>
     </div>
-    <div class="relative-content">
-        {% include resume-relative.html %}
-    </div>
+
     {% include footer.html %}
 </body>
 
