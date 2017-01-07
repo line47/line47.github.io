@@ -88,13 +88,16 @@ li {
   margin: 0;
   padding: 0;
 
-  .projects-item {
+  .project-item {
     flex: 0 0 24%;
     margin: 0 .5% 1%;
   }
 
   img {
     max-width: 100%;
+  }
+  .project-responsibilities {
+    display: block;
   }
 
 }
