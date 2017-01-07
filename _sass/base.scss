@@ -13,6 +13,10 @@ html {
   font-weight: 400;
 }
 
+strong {
+  font-weight: bold;
+}
+
 footer {
   background: $footer-bg;
   color: $text-light;
@@ -26,6 +30,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: avenir next,avenir,sans-serif;
   font-size: 2rem;
 }
 
@@ -96,6 +101,7 @@ li {
   img {
     max-width: 100%;
   }
+
   .project-responsibilities {
     display: block;
   }
