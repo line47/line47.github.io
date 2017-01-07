@@ -157,8 +157,10 @@ li {
 }
 
 .layout-default {
-  .main-content {
+  .content-container {
     margin: 3rem auto;
+    margin-left: 8.3%;
+    margin-right: 8.3%;
     max-width: 1200px;
   }
 }
