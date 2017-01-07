@@ -22,6 +22,7 @@ strong {
 
 footer {
   background: $footer-bg;
+  clear: both;
   color: $text-light;
   padding: 2rem 0 1rem;
   text-align: center;
@@ -174,10 +175,14 @@ li {
 .layout-resume {
 
   .main-content {
+    float: left;
     margin: 3rem 0;
+    width: 60%;
     }
   .relative-content {
+    float: right;
     margin: 3rem 0;
+    width: 30%
     }
 
 }
