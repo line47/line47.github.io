@@ -3,6 +3,7 @@ $topnav-bg: #1290a5;
 $footer-bg: #333;
 
 $color-lightgrey: #efefef;
+$color-trueblack: #000;
 
 $text-light: #fff;
 $text-muted: #999;
@@ -15,6 +16,8 @@ $grid-3: 1.5rem;
 $grid-4: 2rem;
 $grid-5: 3rem;
 $grid-6: 4rem;
+
+$line-height-normal: 1.3rem;
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
 
@@ -100,6 +103,8 @@ li {
 }
 
 .page-title {
+  background: $color-trueblack;
+  color: $text-light;
   margin-bottom: $grid-4;
 }
 
@@ -117,15 +122,15 @@ li {
   margin: 0;
   padding: 0;
 
+  .project-item {
+    flex: 0 0 40%;
+    margin: 0 0 $grid-6;
+  }
+
   @media (max-width: 600px) {
     .project-item {
       flex: 0 0 100%;
     }
-  }
-
-  .project-item {
-    flex: 0 0 40%;
-    margin: 0 0 $grid-6;
   }
 
   .project-name {
@@ -145,6 +150,7 @@ li {
 
   .project-responsibilities {
     display: block;
+    line-height: 1.3rem;
   }
 
 }
@@ -186,7 +192,7 @@ li {
 .layout-default {
 
   .main-content {
-    margin: $grid-4 0;
+    margin: $grid-6 0;
     }
   }
 
