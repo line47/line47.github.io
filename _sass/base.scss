@@ -125,6 +125,16 @@ a:visited {
   }
 }
 
+.page-subheader {
+  background: #1E91D6;
+  padding: 2rem 8.3%;
+
+.page-subtitle {
+  color: #fff;
+  margin: 0;
+}
+}
+
 .lead {
   font-family: avenir next,avenir,sans-serif;
   font-size: 2.8rem;
@@ -208,11 +218,8 @@ a:visited {
   max-width: 1200px;
 }
 
-.layout-default {
-
-  .main-content {
-    margin: $grid-6 0;
-    }
+.main-content {
+  margin: $grid-6 0;
   }
 
 .list-inline {
@@ -227,13 +234,12 @@ a:visited {
 
   .main-content {
     float: left;
-    margin: 0 0 $grid-4;
     width: 60%;
     }
 
   .relative-content {
     float: right;
-    margin: 0 0 $grid-4;
+    margin: $grid-6 0;
     width: 30%;
     }
 
