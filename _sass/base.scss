@@ -102,10 +102,14 @@ li {
   margin-bottom: $grid-1;
 }
 
-.page-title {
-  background: $color-trueblack;
-  color: $text-light;
-  margin-bottom: $grid-4;
+.page-header {
+  background: $topnav-bg;
+  padding: 0 8.3%;
+
+  .page-title {
+    color: $text-light;
+    line-height: 2rem;
+  }
 }
 
 .lead {
