@@ -9,7 +9,111 @@
 - name: Kentucky.gov
   url: http://kentucky.gov
   description:
-  responsibilities: SharePoint implementation, Creative direction, Graphic design, HTML/CSS templates, Research, Responsive design
+  responsibilities: SharePoint implementation, Creative direction, Visual design, HTML/CSS templates, Research, Responsive design
   smallImage: /images/logo-kygov.png
   largeImage:
-  builtWith: SharePoint, .Net, LESS, Javascript
+  builtWith: SharePoint 2013, .Net, LESS, Javascript
+
+- name: Kentucky Registry of Election Finance
+  url: http://kref.ky.gov
+  description:
+  responsibilities: SharePoint implementation, Creative direction, Visual design, HTML/CSS templates, Research, Responsive design
+  smallImage: /images/logo-kref.png
+  largeImage:
+  builtWith: SharePoint 2013, .Net, LESS, Javascript
+
+- name: Heartland Payment Systems Developer Portal
+  url: https://developer.heartlandpaymentsystems.com/
+  description:
+  responsibilities: HTML/CSS, Visual Design
+  smallImage: /images/logo-heartland.png
+  largeImage:
+  builtWidth:
+
+- name: Wisconsin Department of Natural Resources
+  url: http://dnr.wi.gov/
+  description:
+  responsibilities: Visual Design
+  smallImage: /images/logo-wisconsin-wildlife.png
+  largeImage:
+  builtWidth:
+
+- name: Kentucky Health Cooperative
+  url: http://www.mykyhc.org/
+  description:
+  responsibilities: SharePoint Implementation, HTML/CSS Templates, Information Architecture, Responsive Design, Research
+  smallImage: /images/logo-mykyhc.png
+  largeImage:
+  builtWidth: SharePoint 2010, LESS, .NET
+
+- name: Hollywood Stock Exchange
+  url: http://www.hsx.com/
+  description:
+  responsibilities: Visual Design
+  smallImage: /images/logo-hsx.png
+  largeImage:
+  builtWidth:
+
+- name: Kentucky Department of Tourism
+  url: http://www.kentuckytourism.com/
+  description:
+  responsibilities: CMS Integration, HTML/CSS Templates, Visual Design, Information Architecture
+  smallImage: /images/logo-tourism.png
+  largeImage:
+  builtWidth:
+
+- name: Continuity Logic
+  url: http://www.continuitylogic.com/
+  description:
+  responsibilities: Information Architecture, User Experience, Wordpress Implementation, HTML/CSS Templates
+  smallImage: /images/logo-continuity-logic.png
+  largeImage:
+  builtWidth:
+
+- name: Cloudbase
+  url: http://www.getcloudbase.com/
+  description:
+  responsibilities: Responsive Design, User Interface Design, Research, User Experience, HTML/CSS
+  smallImage: /images/logo-cloudbase.png
+  largeImage:
+  builtWidth:
+
+- name: Ann & Robert H. Lurie Children's Hospital of Chicago
+  url: https://www.luriechildrens.org/
+  description:
+  responsibilities: User Experience, User Interface Design, Mobile Design, HTML/CSS
+  smallImage: /images/logo-children-hospital-chicago.png
+  largeImage:
+  builtWidth:
+
+- name: National Association of State Chief Administrators (NASCA)
+  url: http://nasca.org/
+  description:
+  responsibilities: SharePoint Implementation, Visual Design, HTML/CSS Templates, Responsive Design, Information Architecture
+  smallImage: /images/logo-nasca.png
+  largeImage:
+  builtWidth:
+
+- name: Urban Ore
+  url: http://urbanore.com/
+  description:
+  responsibilities: Visual Design
+  smallImage: /images/logo-urban-ore.png
+  largeImage:
+  builtWidth:
+
+- name: Andrew Seybold
+  url: http://andrewseybold.com/
+  description:
+  responsibilities: Visual Design
+  smallImage: /images/logo-andrew-seybold.png
+  largeImage:
+  builtWidth:
+
+- name: Kentucky OneStop Business Portal
+  url: http://onestop.ky.gov/
+  description:
+  responsibilities: SharePoint Integration, HTML/CSS Templates, Visual Design
+  smallImage: /images/logo-onestop.png
+  largeImage:
+  builtWidth:
