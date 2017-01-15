@@ -28,6 +28,10 @@ html {
   font-weight: 400;
 }
 
+body {
+  color: $text-dark;
+}
+
 strong {
   font-weight: bold;
 }
@@ -102,6 +106,15 @@ li {
   margin-bottom: $grid-1;
 }
 
+a,
+a:active {
+  color: #1E91D6;
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
 .page-header {
   background: $topnav-bg;
   padding: 0 8.3%;
@@ -161,7 +174,7 @@ li {
 
 .top-nav {
   background: $topnav-bg;
-  text-align: center;
+  text-align: right;
 
   ul {
     margin: 0;
