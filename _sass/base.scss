@@ -215,17 +215,25 @@ a:visited {
     }
   }
 
+.list-inline {
+  list-style: none;
+  margin: 0;
+  li {
+    margin: 0;
+    }
+}
 
 .layout-resume {
 
   .main-content {
     float: left;
+    margin: 0 0 $grid-4;
     width: 60%;
     }
 
   .relative-content {
     float: right;
-    margin: $grid-4 0;
+    margin: 0 0 $grid-4;
     width: 30%;
     }
 
