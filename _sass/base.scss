@@ -143,6 +143,27 @@ a:visited {
   margin-bottom: 4rem;
 }
 
+.home-items {
+  display: flex;
+  justify-content: space-between;
+
+  .home-item {
+    flex: 0 0 30%;
+    font-family: avenir next,avenir,sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.7rem;
+    margin-bottom: 4rem;
+  }
+  @media (max-width: 600px)
+  {
+    .home-item  {
+      flex: 0 0 100%;
+    }
+  }
+
+}
+
 .projects {
   display: flex;
   flex-flow: row wrap;
