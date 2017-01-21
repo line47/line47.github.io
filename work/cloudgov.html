@@ -1,6 +1,13 @@
 ---
-layout: work
 title: Cloud.gov
+layout: work
 permalink: /work/cloudgov
-projectName: cloudgov
+project: cloudgov
 ---
+
+{% assign project = site.data.projects[page.project] %}
+<a rel="author"
+  href="https://twitter.com/{{ author.twitter }}"
+  title="{{ author.name }}">
+    {{ project.name }}
+</a>
