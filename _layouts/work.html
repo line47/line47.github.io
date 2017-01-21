@@ -14,25 +14,7 @@
 
         <div class="content-container">
             <div class="main-content">
-                {{ content }}
-
-                {% for project in site.data.projects %}
-                  <li class="project-item">
-                    <img src="{{ project.smallImage }}"/>
-                    <a href="{{ project.url }}" class="project-name">{{ project.name }}</a>
-                    <span class="project-responsibilities"><strong>Responsibilities:</strong> {{ project.responsibilities }}</span>
-                  </li>
-                {% endfor %}
-
-                {% assign projectName = site.data.projects[page.projectName] %}
-
-                  {{ projectName.name }}
-                  {{ projectName.url }}
-                  {{ projectName.description }}
-                  {{ projectName.responsibilities }}
-                  {{ projectName.smallImage }}
-                  {{ projectName.builtWith }}
-                  {{ projectName.workedFor }}
+                {{ content }}              
             </div>
             <div class="relative-content">
 
