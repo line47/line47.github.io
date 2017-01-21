@@ -10,7 +10,8 @@
   builtWith: React, SASS, Cloud Foundry, Git, GitHub, Built on top of the US Web Design Standards
   workedFor: 18F
 
-- name: Kentucky.gov
+- project: kentuckygov
+  name: Kentucky.gov
   url: http://kentucky.gov
   description:
   responsibilities: SharePoint implementation, Creative direction, Visual design, HTML/CSS templates, Research, Responsive design
@@ -19,7 +20,8 @@
   builtWith: SharePoint 2013, .Net, LESS, Javascript
   workedFor: Kentucky.gov
 
-- name: Kentucky Registry of Election Finance
+- project: kref
+  name: Kentucky Registry of Election Finance
   url: http://kref.ky.gov
   description:
   responsibilities: SharePoint implementation, Creative direction, Visual design, HTML/CSS templates, Research, Responsive design
@@ -28,7 +30,8 @@
   builtWith: SharePoint 2013, .Net, LESS, Javascript
   workedFor: Kentucky.gov
 
-- name: Heartland Payment Systems Developer Portal
+- project: heartland
+  name: Heartland Payment Systems Developer Portal
   url: https://developer.heartlandpaymentsystems.com/
   description:
   responsibilities: HTML/CSS, Visual Design
@@ -37,7 +40,8 @@
   builtWidth:
   workedFor: Indenpendent contractor
 
-- name: Wisconsin Department of Natural Resources
+- project: wisconsin
+  name: Wisconsin Department of Natural Resources
   url: http://dnr.wi.gov/
   description:
   responsibilities: Visual Design
@@ -46,7 +50,8 @@
   builtWidth:
   workedFor: Kentucky.gov
 
-- name: Kentucky Health Cooperative
+- project: khc
+  name: Kentucky Health Cooperative
   url: http://www.mykyhc.org/
   description:
   responsibilities: SharePoint Implementation, HTML/CSS Templates, Information Architecture, Responsive Design, Research
@@ -55,7 +60,8 @@
   builtWidth: SharePoint 2010, LESS, .NET
   workedFor: Kentucky.gov
 
-- name: Hollywood Stock Exchange
+- project: hsx
+  name: Hollywood Stock Exchange
   url: http://www.hsx.com/
   description:
   responsibilities: Visual Design
@@ -64,7 +70,8 @@
   builtWidth:
   workedFor: Indenpendent contractor
 
-- name: Kentucky Department of Tourism
+- project: tourism
+  name: Kentucky Department of Tourism
   url: http://www.kentuckytourism.com/
   description:
   responsibilities: CMS Integration, HTML/CSS Templates, Visual Design, Information Architecture
@@ -73,7 +80,8 @@
   builtWidth:
   workedFor: Kentucky.gov
 
-- name: Continuity Logic
+- project: cl
+  name: Continuity Logic
   url: http://www.continuitylogic.com/
   description:
   responsibilities: Information Architecture, User Experience, Wordpress Implementation, HTML/CSS Templates
@@ -82,7 +90,8 @@
   builtWidth:
   workedFor: Indenpendent contractor
 
-- name: Cloudbase
+- project: cloudbase
+  name: Cloudbase
   url: http://www.getcloudbase.com/
   description:
   responsibilities: Responsive Design, User Interface Design, Research, User Experience, HTML/CSS
@@ -91,7 +100,8 @@
   builtWidth:
   workedFor: Indenpendent contractor
 
-- name: Ann & Robert H. Lurie Children's Hospital of Chicago
+- project: chicagohospital
+  name: Ann & Robert H. Lurie Children's Hospital of Chicago
   url: https://www.luriechildrens.org/
   description:
   responsibilities: User Experience, User Interface Design, Mobile Design, HTML/CSS
@@ -100,7 +110,8 @@
   builtWidth:
   workedFor: Indenpendent contractor
 
-- name: National Association of State Chief Administrators (NASCA)
+- project: nasca
+  name: National Association of State Chief Administrators (NASCA)
   url: http://nasca.org/
   description:
   responsibilities: SharePoint Implementation, Visual Design, HTML/CSS Templates, Responsive Design, Information Architecture
@@ -109,7 +120,8 @@
   builtWidth:
   workedFor: Kentucky.gov
 
-- name: Urban Ore
+- project: urbanore
+  name: Urban Ore
   url: http://urbanore.com/
   description:
   responsibilities: Visual Design
@@ -118,7 +130,8 @@
   builtWidth:
   workedFor: Indenpendent contractor
 
-- name: Andrew Seybold
+- project: andrewseybold
+  name: Andrew Seybold
   url: http://andrewseybold.com/
   description:
   responsibilities: Visual Design
@@ -127,7 +140,8 @@
   builtWidth:
   workedFor: Indenpendent contractor
 
-- name: Kentucky OneStop Business Portal
+- project: onestop
+  name: Kentucky OneStop Business Portal
   url: http://onestop.ky.gov/
   description:
   responsibilities: SharePoint Integration, HTML/CSS Templates, Visual Design

@@ -6,8 +6,5 @@ project: cloudgov
 ---
 
 {% assign project = site.data.projects[page.project] %}
-<a rel="author"
-  href="https://twitter.com/{{ author.twitter }}"
-  title="{{ author.name }}">
-    {{ project.name }}
-</a>
+
+{{ project.name }}
