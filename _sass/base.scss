@@ -55,6 +55,7 @@ h6 {
   font-family: avenir next,avenir,sans-serif;
   font-size: 1rem;
   font-weight: 700;
+  margin-bottom: $grid-2;
 }
 
 
@@ -120,6 +121,7 @@ a:visited {
 
 .page-subheader {
   background: $subheader-bg;
+  margin-top: $grid-1;
   padding: 2rem 8.3%;
 
   .page-subtitle {

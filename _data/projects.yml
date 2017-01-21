@@ -1,10 +1,13 @@
 - name: Cloud.gov
   url: https://cloud.gov
-  description:
+  description: <p>cloud.gov allows federal digital service teams to focus on developing and deploying their custom application code, without needing to manage underlying server infrastructure.</p>
+               <p>The core of cloud.gov is a Platform as a Service (PaaS) built specifically for government work, based on the open source Cloud Foundry project. This means the customer team is responsible for their own product’s code, and the cloud.gov platform takes care of the security and maintenance of everything underneath.</p>
+               <p>cloud.gov runs on top of industry-provided infrastructure (currently Amazon Web Services is the “Infrastructure as a Service” provider). cloud.gov removes the complexity of managing this infrastructure from the customer’s experience.</p>
   responsibilities: User experience, User interface design, Front end development
   smallImage: /images/logo-cloudgov.png
   largeImage:
   builtWith: React, SASS, Cloud Foundry, Git, GitHub, Built on top of the US Web Design Standards
+  workedFor: 18F
 
 - name: Kentucky.gov
   url: http://kentucky.gov
@@ -13,6 +16,7 @@
   smallImage: /images/logo-kygov.png
   largeImage:
   builtWith: SharePoint 2013, .Net, LESS, Javascript
+  workedFor: Kentucky.gov
 
 - name: Kentucky Registry of Election Finance
   url: http://kref.ky.gov
@@ -21,6 +25,7 @@
   smallImage: /images/logo-kref.png
   largeImage:
   builtWith: SharePoint 2013, .Net, LESS, Javascript
+  workedFor: Kentucky.gov
 
 - name: Heartland Payment Systems Developer Portal
   url: https://developer.heartlandpaymentsystems.com/
@@ -29,6 +34,7 @@
   smallImage: /images/logo-heartland.png
   largeImage:
   builtWidth:
+  workedFor: Indenpendent contractor
 
 - name: Wisconsin Department of Natural Resources
   url: http://dnr.wi.gov/
@@ -37,6 +43,7 @@
   smallImage: /images/logo-wisconsin-wildlife.png
   largeImage:
   builtWidth:
+  workedFor: Kentucky.gov
 
 - name: Kentucky Health Cooperative
   url: http://www.mykyhc.org/
@@ -45,6 +52,7 @@
   smallImage: /images/logo-mykyhc.png
   largeImage:
   builtWidth: SharePoint 2010, LESS, .NET
+  workedFor: Kentucky.gov
 
 - name: Hollywood Stock Exchange
   url: http://www.hsx.com/
@@ -53,6 +61,7 @@
   smallImage: /images/logo-hsx.png
   largeImage:
   builtWidth:
+  workedFor: Indenpendent contractor
 
 - name: Kentucky Department of Tourism
   url: http://www.kentuckytourism.com/
@@ -61,6 +70,7 @@
   smallImage: /images/logo-tourism.png
   largeImage:
   builtWidth:
+  workedFor: Kentucky.gov
 
 - name: Continuity Logic
   url: http://www.continuitylogic.com/
@@ -69,6 +79,7 @@
   smallImage: /images/logo-continuity-logic.png
   largeImage:
   builtWidth:
+  workedFor: Indenpendent contractor
 
 - name: Cloudbase
   url: http://www.getcloudbase.com/
@@ -77,6 +88,7 @@
   smallImage: /images/logo-cloudbase.png
   largeImage:
   builtWidth:
+  workedFor: Indenpendent contractor
 
 - name: Ann & Robert H. Lurie Children's Hospital of Chicago
   url: https://www.luriechildrens.org/
@@ -85,6 +97,7 @@
   smallImage: /images/logo-children-hospital-chicago.png
   largeImage:
   builtWidth:
+  workedFor: Indenpendent contractor
 
 - name: National Association of State Chief Administrators (NASCA)
   url: http://nasca.org/
@@ -93,6 +106,7 @@
   smallImage: /images/logo-nasca.png
   largeImage:
   builtWidth:
+  workedFor: Kentucky.gov
 
 - name: Urban Ore
   url: http://urbanore.com/
@@ -101,6 +115,7 @@
   smallImage: /images/logo-urban-ore.png
   largeImage:
   builtWidth:
+  workedFor: Indenpendent contractor
 
 - name: Andrew Seybold
   url: http://andrewseybold.com/
@@ -109,6 +124,7 @@
   smallImage: /images/logo-andrew-seybold.png
   largeImage:
   builtWidth:
+  workedFor: Indenpendent contractor  
 
 - name: Kentucky OneStop Business Portal
   url: http://onestop.ky.gov/
@@ -117,3 +133,4 @@
   smallImage: /images/logo-onestop.png
   largeImage:
   builtWidth:
+  workedFor: Kentucky.gov
