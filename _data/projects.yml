@@ -1,4 +1,4 @@
-cloudgov:
+- project: cloudgov
   name: Cloud.gov
   url: https://cloud.gov
   description: <p>cloud.gov allows federal digital service teams to focus on developing and deploying their custom application code, without needing to manage underlying server infrastructure.</p>
@@ -10,7 +10,7 @@ cloudgov:
   builtWith: React, SASS, Cloud Foundry, Git, GitHub, Built on top of the US Web Design Standards
   workedFor: 18F
 
-kentuckygov:
+- project: kentuckygov
   name: Kentucky.gov
   url: http://kentucky.gov
   description:
@@ -20,7 +20,7 @@ kentuckygov:
   builtWith: SharePoint 2013, .Net, LESS, Javascript
   workedFor: Kentucky.gov
 
-kref:
+- project: kref
   name: Kentucky Registry of Election Finance
   url: http://kref.ky.gov
   description:
@@ -30,7 +30,7 @@ kref:
   builtWith: SharePoint 2013, .Net, LESS, Javascript
   workedFor: Kentucky.gov
 
-heartland:
+- project: heartland
   name: Heartland Payment Systems Developer Portal
   url: https://developer.heartlandpaymentsystems.com/
   description:
@@ -40,7 +40,7 @@ heartland:
   builtWidth:
   workedFor: Indenpendent contractor
 
-wisconsin:
+- project: wisconsin
   name: Wisconsin Department of Natural Resources
   url: http://dnr.wi.gov/
   description:
@@ -50,7 +50,7 @@ wisconsin:
   builtWidth:
   workedFor: Kentucky.gov
 
-khc:
+- project: khc
   name: Kentucky Health Cooperative
   url: http://www.mykyhc.org/
   description:
@@ -60,7 +60,7 @@ khc:
   builtWidth: SharePoint 2010, LESS, .NET
   workedFor: Kentucky.gov
 
-hsx:
+- project: hsx
   name: Hollywood Stock Exchange
   url: http://www.hsx.com/
   description:
@@ -70,7 +70,7 @@ hsx:
   builtWidth:
   workedFor: Indenpendent contractor
 
-tourism:
+- project: tourism
   name: Kentucky Department of Tourism
   url: http://www.kentuckytourism.com/
   description:
@@ -80,7 +80,7 @@ tourism:
   builtWidth:
   workedFor: Kentucky.gov
 
-cl:
+- project: cl
   name: Continuity Logic
   url: http://www.continuitylogic.com/
   description:
@@ -90,7 +90,7 @@ cl:
   builtWidth:
   workedFor: Indenpendent contractor
 
-cloudbase:
+- project: cloudbase
   name: Cloudbase
   url: http://www.getcloudbase.com/
   description:
@@ -100,7 +100,7 @@ cloudbase:
   builtWidth:
   workedFor: Indenpendent contractor
 
-chicagohospital:
+- project: chicagohospital
   name: Ann & Robert H. Lurie Children's Hospital of Chicago
   url: https://www.luriechildrens.org/
   description:
@@ -110,7 +110,7 @@ chicagohospital:
   builtWidth:
   workedFor: Indenpendent contractor
 
-nasca:
+- project: nasca
   name: National Association of State Chief Administrators (NASCA)
   url: http://nasca.org/
   description:
@@ -120,7 +120,7 @@ nasca:
   builtWidth:
   workedFor: Kentucky.gov
 
-urbanore:
+- project: urbanore
   name: Urban Ore
   url: http://urbanore.com/
   description:
@@ -130,7 +130,7 @@ urbanore:
   builtWidth:
   workedFor: Indenpendent contractor
 
-andrewseybold:
+- project: andrewseybold
   name: Andrew Seybold
   url: http://andrewseybold.com/
   description:
@@ -140,7 +140,7 @@ andrewseybold:
   builtWidth:
   workedFor: Indenpendent contractor
 
-onestop:
+- project: onestop
   name: Kentucky OneStop Business Portal
   url: http://onestop.ky.gov/
   description:
