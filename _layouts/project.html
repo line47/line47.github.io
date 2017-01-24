@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    {% include head.html %}
+
+    <body class="layout-resume">
+        {% include top-nav.html %}
+        <div class="page-header">
+            <h1 class="page-title">Work</h1>
+        </div>
+
+        <div class="page-subheader">
+            <h2 class="page-subtitle">{{ page.title }}</h2>
+        </div>
+
+        <div class="content-container">
+            <div class="main-content">
+              {{ content }}
+              <p><strong>Responsibilities</strong><br /> {{ page.responsibilities }}</p>
+            </div>
+            <div class="relative-content">
+                <img src="{{ page.smallImage }}" style="max-width:100%;" />
+                <p><strong>Built With</strong><br /> {{ page.builtWith }}</p>
+                <p>
+                  <a href="{{ page.link }}">Visit website</a>
+                </p>
+            </div>
+        </div>
+        {% include footer.html %}
+    </body>
+
+</html>

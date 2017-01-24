@@ -1,7 +1,7 @@
 
 $topnav-bg: #1290a5;
 $footer-bg: #333;
-$subheader-bg: #1e91d6;
+$subheader-bg: #cdecff;
 $darker-blue: #0072bb;
 
 $color-lightgrey: #efefef;
@@ -102,7 +102,7 @@ li {
 
 a,
 a:active, {
-  color: $subheader-bg;
+  color: $darker-blue;
 }
 
 a:visited {
@@ -121,11 +121,10 @@ a:visited {
 
 .page-subheader {
   background: $subheader-bg;
-  margin-top: $grid-1;
+  margin-top: -($grid-1);
   padding: 2rem 8.3%;
 
   .page-subtitle {
-    color: $text-light;
     margin: 0;
 }
 }

@@ -10,6 +10,16 @@
   builtWith: React, SASS, Cloud Foundry, Git, GitHub, Built on top of the US Web Design Standards
   workedFor: 18F
 
+  - project: fugacious
+    name: fugacious
+    url: Fugacious is a way to send short notes that disappear after a few clicks or a set period of time.
+    description:
+    responsibilities: User experience, User interface design, Front end development
+    smallImage: /images/logo-cloudgov.png
+    largeImage:
+    builtWith: React, SASS, Cloud Foundry, Git, GitHub, Built on top of the US Web Design Standards
+    workedFor: 18F
+
 - project: kentuckygov
   name: Kentucky.gov
   url: http://kentucky.gov
