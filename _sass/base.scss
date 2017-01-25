@@ -142,12 +142,17 @@ a:visited {
   flex-flow: row wrap;
   justify-content: space-between;
 
+  p:nth-child(1) {border-top:8px solid #5da512}
+  p:nth-child(2) {border-top:8px solid #a54412}
+  p:nth-child(3) {border-top:8px solid #a51291}
+
   .home-item {
     flex: 0 0 30%;
     font-family: avenir next,avenir,sans-serif;
     font-size: 1.3rem;
     font-weight: 500;
     line-height: 1.7rem;
+    padding-top: 1rem;
   }
 
   @media (max-width: 600px) {

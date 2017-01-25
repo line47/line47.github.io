@@ -20,13 +20,15 @@
             </div>
             <div class="relative-content">
             <img src="{{ page.smallImage }}" style="max-width:100%;" />
-
+{% if page.builtWith %}
 <p>
   <strong>Built With</strong><br /> {{ page.builtWith }}
 </p>
+{% endif %}
 <p>
   <a href="{{ page.link }}">Visit website</a>
 </p>
+
             </div>
         </div>
 

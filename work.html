@@ -5,12 +5,12 @@ permalink: /work/
 ---
 
 <ul class="projects">
-{% for work in site.work %}
+{% assign sorted = (site.work | sort: 'sortOrder') %}
+ {% for work in sorted %}
   <li class="project-item">
     <img src="{{ work.smallImage }}"/>
     <a href="{{ work.url }}" class="project-name">{{ work.title }}</a>
     <p>{{ work.shortDescription }}</p>
-    <span class="project-responsibilities"><strong>Responsibilities:</strong> {{ work.responsibilities }}</span>
   </li>
 {% endfor %}
 </ul>
