@@ -5,11 +5,12 @@ permalink: /work/
 ---
 
 <ul class="projects">
-{% for project in site.projects %}
+{% for work in site.work %}
   <li class="project-item">
-    <img src="{{ project.smallImage }}"/>
-    <a href="{{ project.url }}" class="project-name">{{ project.title }}</a>
-    <span class="project-responsibilities"><strong>Responsibilities:</strong> {{ project.responsibilities }}</span>
+    <img src="{{ work.smallImage }}"/>
+    <a href="{{ work.url }}" class="project-name">{{ work.title }}</a>
+    <p>{{ work.shortDescription }}</p>
+    <span class="project-responsibilities"><strong>Responsibilities:</strong> {{ work.responsibilities }}</span>
   </li>
 {% endfor %}
 </ul>
