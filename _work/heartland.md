@@ -2,7 +2,7 @@
 layout: project
 title: Heartland Payment Systems Developer Portal
 link: https://developer.heartlandpaymentsystems.com
-shortDescription: KREF wanted to overhaul their website making responsive design, content streamlining and searching forms crucial in the redesign.
+shortDescription: Heartland wanted to rework their developer portal with clean and semantic HTML and CSS.
 responsibilities: HTML/CSS, Visual Design
 smallImage: /images/logo-heartland.png
 largeImage: /images/heartland-large-001.png
