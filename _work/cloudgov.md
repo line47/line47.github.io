@@ -10,7 +10,7 @@ builtWith: React, SASS, Cloud Foundry, Git, GitHub, Built on top of the US Web D
 sortOrder: 1
 ---  
 
-cloud.gov allows federal digital service teams to focus on developing and deploying their custom application code, without needing to manage underlying server infrastructure.
+Cloud.gov allows federal digital service teams to focus on developing and deploying their custom application code, without needing to manage underlying server infrastructure.
 
 The core of cloud.gov is a Platform as a Service (PaaS) built specifically for government work, based on the open source Cloud Foundry project. This means the customer team is responsible for their own product's code, and the cloud.gov platform takes care of the security and maintenance of everything underneath.
 
