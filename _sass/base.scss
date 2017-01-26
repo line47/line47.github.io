@@ -251,7 +251,7 @@ a:visited {
     }
 }
 
-.layout-resume {
+.layout-resume, .layout-project {
 
   .main-content {
     float: left;
@@ -262,6 +262,17 @@ a:visited {
     float: right;
     margin: $grid-6 0;
     width: 30%;
+    }
+
+    @media (max-width: 900px) {
+      .main-content {
+        float: none;
+        width: auto;
+      }
+      .relative-content {
+        float: none;
+        width: auto;
+        }
     }
 
 }
