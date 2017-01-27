@@ -3,10 +3,20 @@ layout: project
 title: Kentucky.gov
 link: http://kentucky.gov
 shortDescription: The official government website of the C​ommonwealth of Kentucky​, providing 1,000,000 pages of information and hundreds of online services​.​
-responsibilities: SharePoint implementation, Creative direction, Visual design, HTML/CSS templates, Research, Responsive design
+responsibilities:
+  - SharePoint implementation
+  - Creative direction
+  - Visual design
+  - HTML/CSS templates
+  - Research
+  - Responsive design
 smallImage: /images/logo-kygov.png
 largeImage: /images/kygov-large-001.png
-builtWith: SharePoint 2013, .Net, LESS, Javascript
+builtWith:
+  - SharePoint 2013
+  - .Net
+  - LESS
+  - Javascript
 sortOrder: 2
 ---
 

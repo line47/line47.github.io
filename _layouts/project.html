@@ -8,29 +8,42 @@
             <h1 class="page-title">Work</h1>
         </div>
 
-      <div class="page-subheader">
-          <h2 class="page-subtitle">{{ page.title }}</h2>
-      </div>
+        <div class="page-subheader">
+            <h2 class="page-subtitle">{{ page.title }}</h2>
+        </div>
 
         <div class="content-container">
             <div class="main-content">
-              {% if page.largeImage %}
-              <img src="{{ page.largeImage }}" style="max-width:100%; box-shadow:0px 3px 5px 0px rgba(0,0,0, .25); margin-bottom:1rem; border: 1px solid rgba(239, 239, 239, 0.68);" />
-              {% endif %}
-                {{ content }}
-                <p><strong>Responsibilities</strong><br /> {{ page.responsibilities }}</p>
+                {% if page.largeImage %}
+                <img src="{{ page.largeImage }}" style="max-width:100%; box-shadow:0px 3px 5px 0px rgba(0,0,0, .25); margin-bottom:1rem; border: 1px solid rgba(239, 239, 239, 0.68);" /> {% endif %} {{ content }}
+
+                <h3>Responsibilities</h3>
+                <ul class="list-unstyled list-inline list-responsibilities">
+
+                    {% for item in page.responsibilities %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
 
             </div>
             <div class="relative-content">
-            <img src="{{ page.smallImage }}" style="max-width:100%;" />
-{% if page.builtWith %}
-<p>
-  <strong>Built With</strong><br /> {{ page.builtWith }}
-</p>
-{% endif %}
-<p>
-  <a href="{{ page.link }}">Visit website</a>
-</p>
+                <img src="{{ page.smallImage }}" style="max-width:100%;" />
+                <p>
+                  {{ page.title }}
+                </p>
+
+                {% if page.builtWith %}
+                    <h4>Built With</h4>
+                    <ul class="list-unstyled list-inline list-responsibilities">
+                        {% for item in page.builtWith %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+
+                {% endif %}
+                <p>
+                    <a href="{{ page.link }}">Visit website</a>
+                </p>
 
             </div>
         </div>

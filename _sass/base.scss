@@ -12,6 +12,7 @@ $text-muted: #999;
 $text-medium: #666;
 $text-dark: #333;
 
+$grid-0: .25rem;
 $grid-1: .5rem;
 $grid-2: 1rem;
 $grid-3: 1.5rem;
@@ -109,6 +110,25 @@ a:visited {
   color: $darker-blue;
 }
 
+.list-unstyled {
+  list-style: none;
+}
+.list-inline {
+  margin:0;
+  li {
+    display: inline-block;
+  }
+}
+
+.list-responsibilities {
+  li {
+    background: #efefef;
+    margin: 0 $grid-0 $grid-0 0;
+    padding: $grid-0 $grid-1;
+
+  }
+}
+
 .page-header {
   background: $topnav-bg;
   padding: 0 8.3%;
@@ -142,9 +162,9 @@ a:visited {
   flex-flow: row wrap;
   justify-content: space-between;
 
-  p:nth-child(1) {border-top:8px solid #5da512}
-  p:nth-child(2) {border-top:8px solid #a54412}
-  p:nth-child(3) {border-top:8px solid #a51291}
+  //p:nth-child(1) {border-top:8px solid #5da512}
+  //p:nth-child(2) {border-top:8px solid #a54412}
+  //p:nth-child(3) {border-top:8px solid #a51291}
 
   .home-item {
     flex: 0 0 30%;
@@ -153,6 +173,8 @@ a:visited {
     font-weight: 500;
     line-height: 1.7rem;
     padding-top: 1rem;
+
+    img {max-width:100%;}
   }
 
   @media (max-width: 600px) {
@@ -242,14 +264,6 @@ a:visited {
   margin: $grid-6 0;
   }
 
-.list-inline {
-  list-style: none;
-  margin: 0;
-
-  li {
-    margin: 0;
-    }
-}
 
 .layout-resume, .layout-project {
 
