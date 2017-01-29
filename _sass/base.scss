@@ -20,6 +20,8 @@ $grid-4: 2rem;
 $grid-5: 3rem;
 $grid-6: 4rem;
 
+$character-width: 75ch;
+
 $line-height-normal: 1.3rem;
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
@@ -30,6 +32,8 @@ html {
   font-size: 1.3rem;
   font-weight: 400;
 }
+
+.readability {max-width: $character-width;}
 
 body {
   color: $text-dark;
@@ -113,8 +117,10 @@ a:visited {
 .list-unstyled {
   list-style: none;
 }
+
 .list-inline {
-  margin:0;
+  margin: 0;
+
   li {
     display: inline-block;
   }
@@ -134,8 +140,14 @@ a:visited {
   padding: 0 8.3%;
 
   .page-title {
+
+    @media (max-width: 600px) {
+      font-size: 2rem;
+    }
+
     color: $text-light;
     line-height: 2rem;
+
   }
 }
 
@@ -174,7 +186,9 @@ a:visited {
     line-height: 1.7rem;
     padding-top: 1rem;
 
-    img {max-width:100%;}
+    img {
+      max-width: 100%;
+    }
   }
 
   @media (max-width: 600px) {
@@ -227,6 +241,9 @@ a:visited {
 }
 
 .top-nav {
+  @media (max-width: 600px) {
+    text-align: center;
+  }
   background: $topnav-bg;
   text-align: right;
 
@@ -244,7 +261,7 @@ a:visited {
     color: $text-light;
     display: inline-block;
     margin-left: 0;
-    padding: 1rem .5rem;
+    padding: $grid-1 $grid-0;
     text-decoration: none;
 
     &:hover {
@@ -265,7 +282,8 @@ a:visited {
   }
 
 
-.layout-resume, .layout-project {
+.layout-resume,
+.layout-project {
 
   .main-content {
     float: left;
@@ -278,19 +296,19 @@ a:visited {
     width: 30%;
     }
 
-    @media (max-width: 900px) {
-      .main-content {
-        float: none;
-        width: auto;
+  @media (max-width: 900px) {
+    .main-content {
+      float: none;
+      width: auto;
+    }
+
+    .relative-content {
+      float: none;
+      width: auto;
       }
-      .relative-content {
-        float: none;
-        width: auto;
-        }
     }
 
 }
-
 
 .social-links {
   list-style-type: none;
