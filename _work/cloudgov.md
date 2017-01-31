@@ -23,4 +23,4 @@ Cloud.gov allows federal digital service teams to focus on developing and deploy
 
 The core of cloud.gov is a Platform as a Service (PaaS) built specifically for government work, based on the open source Cloud Foundry project. This means the customer team is responsible for their own product's code, and the cloud.gov platform takes care of the security and maintenance of everything underneath.
 
-cloud.gov runs on top of industry-provided infrastructure (currently Amazon Web Services is the "Infrastructure as a Service" provider). cloud.gov removes the complexity of managing this infrastructure from the customer's experience.
+cloud.gov runs on top of industry-provided infrastructure (Amazon Web Services is the "Infrastructure as a Service" provider). cloud.gov removes the complexity of managing this infrastructure from the customer's experience.
