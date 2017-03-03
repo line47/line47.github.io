@@ -2,9 +2,6 @@
 # Setup
 title: Line 47 Website
 tagline: Do we really need a tagline
-url: http://line47.github.io/
-baseurl: line47.github.io
-destination: line47.github.io
 collections:
   work:
     output: true

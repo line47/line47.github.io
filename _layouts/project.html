@@ -3,13 +3,15 @@
     {% include head.html %}
 
     <body class="layout-project">
-        {% include top-nav.html %}
+  <div class="content-container">
         <div class="page-header">
-            <h1 class="page-title">Work</h1>
+            <h1><a href="/">Scott Weber</a></h1>
+            <h2 class="page-title">Work</h2>
+              {% include top-nav.html %}
         </div>
-
+</div>
         <div class="page-subheader">
-            <h2 class="page-subtitle">{{ page.title }}</h2>
+            <h3 class="page-subtitle">{{ page.title }}</h3>
         </div>
 
         <div class="content-container">
@@ -29,7 +31,7 @@
             <div class="relative-content">
                 <img src="{{ page.smallImage }}" style="max-width:100%;" />
                 <p>
-                  {{ page.title }}
+                  {{ page.officialTitle }}
                 </p>
 
                 {% if page.builtWith %}

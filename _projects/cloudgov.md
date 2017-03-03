@@ -1,5 +1,5 @@
 ---
-title: Cloud.gov
+title: A platform as a service for government teams
 link: https://cloud.gov
 ShortDescription:
 responsibilities: User experience, User interface design, Front end development

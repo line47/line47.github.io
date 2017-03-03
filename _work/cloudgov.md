@@ -1,6 +1,7 @@
 ---
 layout: project
-title: Cloud.gov
+title: A platform as a service for government teams
+officialTitle: Cloud.gov
 link: https://cloud.gov
 shortDescription: A secure cloud environment where your team can get up and running in minutes, then build, manage, and release applications with a radically shortened compliance review process.
 responsibilities:
