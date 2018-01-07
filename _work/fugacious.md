@@ -7,7 +7,7 @@ responsibilities:
   - HTML templates
   - Responsive design
 smallImage: fugacious-logo.png
-largeImage: fugacious-large-001.png
+largeImage:
 builtWith:
   - Ruby
   - SASS
