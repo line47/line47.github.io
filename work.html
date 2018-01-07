@@ -9,7 +9,7 @@ permalink: /work/
  {% for work in sorted %}
   <li class="project-item">
     <a href="{{ work.url }}" class="project-name">
-      <img src="{{ work.smallImage }}"/>
+      <img src="/assets/images/{{ work.smallImage }}"/>
       {{ work.title }}
     </a>
     <p>{{ work.shortDescription }}</p>

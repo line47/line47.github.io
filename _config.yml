@@ -2,6 +2,7 @@
 # Setup
 title: Line 47 Website
 tagline: Do we really need a tagline
+baseurl: /
 collections:
   work:
     output: true

@@ -1,21 +1,21 @@
 ---
 layout: project
-title: A platform as a service for government teams
-officialTitle: Cloud.gov
+title: Cloud.gov
 link: https://cloud.gov
-shortDescription: A secure cloud environment where your team can get up and running in minutes, then build, manage, and release applications with a radically shortened compliance review process.
+shortDescription: Cloud.gov provides an application environment that enables rapid deployment and ATO assessment for modern web applications.
 responsibilities:
   - User experience
   - User interface design
   - Front end development
-smallImage: /images/logo-cloudgov.png
-largeImage: /images/cloudgov-large-001.png
+smallImage: cloudgov-logo.png
+largeImage: cloudgov-large-001.png
 builtWith:
   - React
   - SASS
   - Cloud Foundry
   - Git
   - GitHub
+  - JavaScript
   - US Web Design Standards
 sortOrder: 1
 ---  
