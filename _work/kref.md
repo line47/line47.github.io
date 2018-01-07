@@ -16,6 +16,6 @@ builtWith:
   - SharePoint 2013
   - .Net
   - LESS
-  - Javascript
+  - JavaScript
 sortOrder: 3
 ---
