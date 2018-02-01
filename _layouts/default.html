@@ -6,13 +6,11 @@
         <div class="content-container">
           <header class="page-header" role="banner">
             <h1><a href="/">Scott Weber</a></h1>
-              <h2 class="page-title">{{ page.title }}</h2>
               {% include top-nav.html %}
           </header>
-
-
             <div class="main-content">
-                {{ content }}
+              <h2 class="page-title">{{ page.title }}</h2>
+              {{ content }}
             </div>
         </div>
         {% include footer.html %}

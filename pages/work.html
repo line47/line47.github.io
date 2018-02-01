@@ -1,0 +1,22 @@
+---
+layout: default
+title: Work
+permalink: /work/
+---
+
+<ul class="projects">
+{% assign sorted = (site.work | sort: 'sortOrder') %}
+ {% for work in sorted %}
+  <li class="project-item">
+    <a href="{{ work.url }}">
+      <div class="card-header">
+        <img src="/assets/images/{{ work.smallImage }}"/>
+      </div>
+      <div class="card-content">
+        <h3 class="project-name">{{ work.title }}</h3>
+        <p class="project-description">{{ work.shortDescription }}</p>
+      </div>
+    </a>
+  </li>
+{% endfor %}
+</ul>
