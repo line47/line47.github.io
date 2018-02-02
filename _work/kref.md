@@ -10,7 +10,7 @@ responsibilities:
   - HTML/CSS templates
   - Research
   - Responsive design
-smallImage: kref-logo.png
+smallImage: kref-thumb.png
 largeImage: kref-large-001.png
 builtWith:
   - SharePoint 2013

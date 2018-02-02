@@ -6,7 +6,7 @@ shortDescription: Heartland wanted to rework their developer portal with clean a
 responsibilities:
   - HTML/CSS
   - Visual Design
-smallImage: heartland-logo.png
+smallImage: heartland-thumb.png
 largeImage: heartland-large-001.png
 builtWith:
 sortOrder: 4

@@ -2,13 +2,13 @@
 layout: project
 title: 18F Method Cards
 link: https://methods.18f.gov/
-shortDescription: A collection of tools to bring human-centered design into your project.
+shortDescription: A collection of tools to bring human-centered design approaches for solving problems in government.
 responsibilities:
   - HTML templates
   - Responsive design
   - Front end development
   - Project management
-smallImage: methods-logo.png
+smallImage: methods-thumb.png
 largeImage:
 builtWith:
   - Jekyll

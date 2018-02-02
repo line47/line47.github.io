@@ -6,7 +6,7 @@ shortDescription: SharePoint Implementation, HTML/CSS Templates, Information Arc
 responsibilities:
   - HTML/CSS
   - Visual Design
-smallImage: mykyhc-logo.png
+smallImage: mykyhc-thumb.png
 largeImage: mykyhc-large-001.png
 builtWith:
   - SharePoint 2010

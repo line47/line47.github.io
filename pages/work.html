@@ -8,15 +8,15 @@ permalink: /work/
 {% assign sorted = (site.work | sort: 'sortOrder') %}
  {% for work in sorted %}
   <li class="project-item">
-    <a href="{{ work.url }}">
+    <!-- <a href="{{ work.url }}"> -->
       <div class="card-header">
-        <img src="/assets/images/{{ work.smallImage }}"/>
+        <img src="/assets/images/projects/{{ work.smallImage }}"/>
       </div>
       <div class="card-content">
         <h3 class="project-name">{{ work.title }}</h3>
         <p class="project-description">{{ work.shortDescription }}</p>
       </div>
-    </a>
+    <!-- </a> -->
   </li>
 {% endfor %}
 </ul>
