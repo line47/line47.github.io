@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Kentucky.gov
+title: Commonwealth of Kentucky 
 link: http://kentucky.gov
 shortDescription: The official government website of the Commonwealth of Kentucky​.
 responsibilities:

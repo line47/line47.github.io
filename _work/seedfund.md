@@ -1,6 +1,7 @@
 ---
 layout: project
-title: Rebranding to better reach their audience&colon; America's seedfund NSF-SBIR
+title: America's seedfund NSF-SBIR
+subtitle: Website and visual identity redesign
 link: https://seedfund.nsf.gov/
 repo: https://github.com/18F/nsf-sbir
 shortDescription: For 40 years, NSF has helped startups and small businesses transform their ideas into marketable products and services.
