@@ -1,7 +1,8 @@
 ---
 layout: project
-title: America's seedfund NSF-SBIR
+title: Rebranding to better reach their audience&colon; America's seedfund NSF-SBIR
 link: https://seedfund.nsf.gov/
+repo: https://github.com/18F/nsf-sbir
 shortDescription: For 40 years, NSF has helped startups and small businesses transform their ideas into marketable products and services.
 responsibilities:
   - User experience
@@ -18,6 +19,9 @@ builtWith:
   - JavaScript
   - US Web Design Standards
 sortOrder: 2
+supporting_links:
+  - text: NSF SBIR Embraced testing and iteration to build what’s right
+    href: https://18f.gsa.gov/what-we-deliver/seed-fund/
 ---  
 
 Cloud.gov allows federal digital service teams to focus on developing and deploying their custom application code, without needing to manage underlying server infrastructure.

@@ -5,7 +5,7 @@ permalink: /work/
 ---
 
 <ul class="projects">
-{% assign sorted = (site.work | sort: 'sortOrder') %}
+{% assign sorted = site.work | sort: 'sortOrder' %}
  {% for work in sorted %}
   <li class="project-item">
     <!-- <a href="{{ work.url }}"> -->
@@ -13,7 +13,7 @@ permalink: /work/
         <img src="/assets/images/projects/{{ work.smallImage }}"/>
       </div>
       <div class="card-content">
-        <h3 class="project-name">{{ work.title }}</h3>
+        <h3 class="project-name"><a href="{{ work.link }}">{{ work.title }}</a></h3>
         <p class="project-description">{{ work.shortDescription }}</p>
       </div>
     <!-- </a> -->
