@@ -2,7 +2,7 @@
 layout: project
 title: Fugacious
 link: https://fugacious.18f.gov/
-shortDescription: An open source short-term secure messaging solution.
+shortDescription: Application redesign, UI/UX improvements, development
 responsibilities:
   - HTML templates
   - Responsive design
@@ -16,5 +16,5 @@ builtWith:
   - U.S. Web Design Standards
   - Git
   - GitHub
-sortOrder: 9
+startYear: 2016
 ---

@@ -2,11 +2,11 @@
 layout: project
 title: Federalist
 link: https://federalist.18f.gov/
-shortDescription: A web publishing services for open source static sites created by the U.S. federal government.
+shortDescription: Website redesign, application improvements, template development 
 responsibilities:
   - HTML templates
   - Responsive design
-smallImage: federalist-thumb.jpg
+smallImage: federalist-logo.png
 largeImage:
 builtWith:
   - Ruby
@@ -16,5 +16,6 @@ builtWith:
   - U.S. Web Design Standards
   - Git
   - GitHub
-sortOrder: 3
+startYear: 2016
+endYear: 2017
 ---

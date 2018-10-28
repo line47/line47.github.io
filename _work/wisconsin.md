@@ -2,11 +2,13 @@
 layout: project
 title: Wisconsin Department of Natural Resources
 link: http://dnr.wi.gov/
-shortDescription: The Wisconsin DNR was looking for a new design for their website that was modern and clean while still keeping a rugged look and feel.
+shortDescription: Design
 responsibilities:
  - Visual Design
-smallImage: wisconsin-wildlife-thumb.png
+smallImage: wisconsin-wildlife-logo.png
 largeImage: wisconsin-wildlife-large-001.png
 builtWith:
-sortOrder: 5
+startYear: 2007
 ---
+
+The Wisconsin DNR was looking for a new design for their website that was modern and clean while still keeping a rugged look and feel.

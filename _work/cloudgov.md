@@ -1,13 +1,14 @@
 ---
 layout: project
 title: Cloud.gov
+subtitle:
 link: https://cloud.gov
-shortDescription: A secure & compliant cloud that enables rapid deployment and ATO assessment for the U.S. federal government.
+shortDescription: UX/UI, dashboard improvements, design system development
 responsibilities:
   - User experience
   - User interface design
   - Front end development
-smallImage: cloudgov-thumb.png
+smallImage: cloudgov-logo.png
 largeImage: cloudgov-large-001.png
 builtWith:
   - React
@@ -17,7 +18,7 @@ builtWith:
   - GitHub
   - JavaScript
   - US Web Design Standards
-sortOrder: 1
+startYear: 2016
 ---  
 
 Cloud.gov allows federal digital service teams to focus on developing and deploying their custom application code, without needing to manage underlying server infrastructure.

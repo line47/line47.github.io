@@ -1,15 +1,15 @@
 ---
 layout: project
-title: America's seedfund NSF-SBIR
+title: National Science Foundation
 subtitle: Website and visual identity redesign
-link: https://seedfund.nsf.gov/
+link: https://nsf.gov/
 repo: https://github.com/18F/nsf-sbir
-shortDescription: Brand &amp; website redesign, content strategy, information architecture, development
+shortDescription: Research, Recommendations for CMS
 responsibilities:
   - User experience
   - User interface design
   - Front end development
-smallImage: seedfund-logo.png
+smallImage: nsf-logo.png
 largeImage: cloudgov-large-001.png
 builtWith:
   - React
