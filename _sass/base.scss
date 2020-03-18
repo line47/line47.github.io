@@ -144,25 +144,6 @@ a:visited {
 }
 .page-header {
     padding-top: 5rem;
-    h1 a {
-      background-image: url('/assets/images/me-close-mouth.png');
-      background-size: 100px;
-      background-repeat: no-repeat;
-      padding-right: 100px;
-      background-position: right;
-      position: relative;
-      &:hover {
-      background-image: url('/assets/images/me-open-mouth.png');
-      &:after {
-        content: "Radical!";
-        position: absolute;
-        right: -70px;
-        font-size: 1rem;
-        font-family: $font-sub-header;
-        text-transform: uppercase;
-      }
-      }
-    }
 }
 .page-title {
   font-family:$font-sub-header;

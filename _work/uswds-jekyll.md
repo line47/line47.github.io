@@ -22,5 +22,5 @@ builtWith:
   - Git
   - GitHub
 startYear: 2017
-endYear: present
+endYear: 2019
 ---
