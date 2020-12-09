@@ -2,7 +2,7 @@
 layout: project
 title: Kentucky.gov
 subtitle:
-link: http://kentucky.gov
+link: https://kentucky.gov
 shortDescription: Website redesign, CMS integration, content strategy, information architecture, development
 responsibilities:
   - SharePoint implementation

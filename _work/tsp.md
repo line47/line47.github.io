@@ -2,7 +2,7 @@
 layout: project
 title: Thrift Savings Plan
 subtitle: Website redesign and coaching
-link: http://tsp.gov
+link: https://tsp.gov
 shortDescription: Website redesign, content strategy, information architecture, development
 responsibilities:
   - SharePoint implementation

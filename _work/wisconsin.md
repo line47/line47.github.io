@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Wisconsin Department of Natural Resources
-link: http://dnr.wi.gov/
+link: https://dnr.wi.gov/
 shortDescription: Design
 responsibilities:
  - Visual Design

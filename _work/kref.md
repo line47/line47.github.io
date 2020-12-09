@@ -2,7 +2,7 @@
 layout: project
 title: Kentucky Registry of Election Finance
 subtitle: KREF wanted to make responsive design, content streamlining and searching for forms crucial in their website redesign.
-link: http://kref.ky.gov
+link: https://kref.ky.gov
 shortDescription: Website redesign, information architecture, forms library, development
 responsibilities:
   - SharePoint implementation

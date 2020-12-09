@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Kentucky Health Cooperative
-link: http://www.mykyhc.org
+link: https://www.mykyhc.org
 shortDescription: Multilingual website design, information architecture, template creation, development
 responsibilities:
   - HTML/CSS
