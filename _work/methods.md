@@ -3,12 +3,13 @@ layout: project
 title: 18F Methods
 subtitle: Website redesign and ongoing support
 link: https://methods.18f.gov/
-shortDescription: Website redesign, research, development
+role: Front-end designer, team lead
 responsibilities:
   - HTML templates
   - Responsive design
   - Front end development
   - Project management
+  - User research 
 smallImage: 18f-logo.png
 largeImage:
 builtWith:
@@ -17,10 +18,10 @@ builtWith:
   - HTML
   - JavaScript
   - U.S. Web Design System
-  - Git
+  
   - GitHub
 supporting_links:
-  - text: Walking the talk - what went into the Method Cards' tune up
+  - text: Walking the talk - what went into the Method Cards' tune-up
     href: https://18f.gsa.gov/2017/09/21/method-cards-tune-up/
 sortOrder: 0
 startYear: 2017

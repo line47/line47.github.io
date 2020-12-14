@@ -5,19 +5,40 @@ permalink: /work/
 pageClass: work
 ---
 
+<!-- <h3>Featured projects</h3> -->
+<ul class="projects projects-featured">
+  {% assign featureSorted = site.featuredwork | sort: 'startYear' | reverse %}
+   {% for work in featureSorted %}
+    <li class="project-item">
+      <a href="{{ work.link | permalink }}">
+        <div class="card-header">
+          <img src="/assets/images/projects/{{ work.smallImage }}" alt="{{ work.title }} logo"/>
+        </div>
+        <div class="card-content">
+          <h3 class="project-name">{{ work.title }}</h3>
+          <p class="project-description">Role: {{work.role}}<br>
+          {% if work.startYear %}{{work.startYear}}{% endif %}{% if work.endYear %} - {{work.endYear}}{% endif %}</p>
+        </div>
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+  
+<!-- <h3>Additional projects</h3> -->
 <ul class="projects">
 {% assign sorted = site.work | sort: 'startYear' | reverse %}
  {% for work in sorted %}
   <li class="project-item">
-    <a href="{{ work.link }}">
+    <a href="{{ work.link | permalink }}">
       <div class="card-header">
         <img src="/assets/images/projects/{{ work.smallImage }}" alt="{{ work.title }} logo"/>
       </div>
       <div class="card-content">
         <h3 class="project-name">{{ work.title }}</h3>
-        <p class="project-description">{{ work.shortDescription }}{% if work.startYear %}, {{work.startYear}}{% endif %}{% if work.endYear %} - {{work.endYear}}{% endif %}</p>
+        <p class="project-description">Role: {{work.role}}<br>
+        {% if work.startYear %}{{work.startYear}}{% endif %}{% if work.endYear %} - {{work.endYear}}{% endif %}</p>
       </div>
-    </a>
+      </a>
   </li>
 {% endfor %}
 </ul>

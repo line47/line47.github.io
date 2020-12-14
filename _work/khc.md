@@ -2,7 +2,7 @@
 layout: project
 title: Kentucky Health Cooperative
 link: https://www.mykyhc.org
-shortDescription: Multilingual website design, information architecture, template creation, development
+role: Front-end designer, SharePoint engineer
 responsibilities:
   - HTML/CSS
   - Visual Design

@@ -3,7 +3,7 @@ layout: project
 title: Cloud.gov
 subtitle:
 link: https://cloud.gov
-shortDescription: UX/UI, dashboard improvements, design system development
+role: Front-end engineer
 responsibilities:
   - User experience
   - User interface design
@@ -14,7 +14,7 @@ builtWith:
   - React
   - SASS
   - Cloud Foundry
-  - Git
+  
   - GitHub
   - JavaScript
   - US Web Design Standards
@@ -23,6 +23,6 @@ startYear: 2016
 
 Cloud.gov allows federal digital service teams to focus on developing and deploying their custom application code, without needing to manage underlying server infrastructure.
 
-The core of cloud.gov is a Platform as a Service (PaaS) built specifically for government work, based on the open source Cloud Foundry project. This means the customer team is responsible for their own product's code, and the cloud.gov platform takes care of the security and maintenance of everything underneath.
+The core of cloud.gov is a Platform as a Service (PaaS) built specifically for government work, based on the open-source Cloud Foundry project. This means the customer team is responsible for their own product's code, and the cloud.gov platform takes care of the security and maintenance of everything underneath.
 
 cloud.gov runs on top of industry-provided infrastructure (Amazon Web Services is the "Infrastructure as a Service" provider). cloud.gov removes the complexity of managing this infrastructure from the customer's experience.

@@ -2,10 +2,10 @@
 layout: project
 title: Federalist
 link: https://federalist.18f.gov/
-shortDescription: Website redesign, application improvements, template development 
+role: Front-end designer
 responsibilities:
-  - HTML templates
-  - Responsive design
+  - Template development
+  - Application UI improvements
 smallImage: federalist-logo.png
 largeImage:
 builtWith:
@@ -13,8 +13,8 @@ builtWith:
   - SASS
   - HTML
   - JavaScript
-  - U.S. Web Design Standards
-  - Git
+  - U.S. Web Design System
+  
   - GitHub
 startYear: 2016
 endYear: 2017

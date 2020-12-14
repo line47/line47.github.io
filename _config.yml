@@ -6,3 +6,7 @@ baseurl: /
 collections:
   work:
     output: true
+    permalink: /work/:slug
+  featuredwork:
+    output: true
+    permalink: /work/:slug
