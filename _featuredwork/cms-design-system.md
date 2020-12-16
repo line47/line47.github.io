@@ -29,14 +29,14 @@ endYear: present
 
 ### Getting started
 
-When I started on the project, The Center for Medicare and Medicaid Services (CMS) Design System had not had anyone staffed on the project for months and it had grown stagnant. During my initial discovery, I noticed that the CMS design system was more than a single design system. There were multiple design systems extending from the CMS Design System for Healthcare.gov and Medicare.gov websites and applications. This proposed a very interesting challenge due to similarities as well as differences between these 3 design systems.
+When I started on the project, The Center for Medicare and Medicaid Services (CMS) Design System had not had anyone staffed on the project for months and it had grown stagnant. During my initial discovery, I noticed that the CMS design system was more than a single design system. Multiple design systems were extending from the CMS Design System for Healthcare.gov and Medicare.gov websites and applications. This proposed a very interesting challenge due to similarities as well as differences between these 3 design systems.
 
- I started by digging into the backlog of work items as well the design system documentation to see what was on the previous roadmap. I compared these items against current pain points in the CMS Design System and quickly came up with a list of features to work on. 
+I started by digging into the backlog of work items as well as the design system documentation to see what was on the previous roadmap. I compared these items against current pain points in the CMS Design System and quickly came up with a list of features to work on.
 
 #### Features identified after initial analysis
 
 - Simplify usage of the design system for product teams.
-- Update the documentation sites for CMS, Healthcare and Medicare Design Systems.
+- Update the documentation sites for CMS, Healthcare, and Medicare Design Systems.
 - Update onboarding documentation for teams using design systems.
 
 ### Research and exploration
@@ -45,7 +45,7 @@ We did many rounds of creating outcomes and SMART objectives to drive our resear
 
 <figure>
 <img src="/assets/images/projects/cms-design-system-venn-diagram.jpeg"/>
-<figcaption>Venn diagram where internal and external users nedds intersect.</figcaption>
+<figcaption>Venn diagram where internal and external user needs intersect.</figcaption>
 </figure>
 
 We also conducted audits of how components were being used in applications to understand the gaps in the current offerings of the design system. This helped inform future work to improving existing components as well as inform new components that might be needed. 

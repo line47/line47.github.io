@@ -50,4 +50,4 @@ Another focal point of the new site was the portfolio page where applicants coul
 
 ### Takeaways
 
-During this project, the NSF team embraced the practice of testing prototypes with real users and continually incorporating their feedback into the final product. And we adapted their workflow to move away from lengthy change requests to a simple way for the  team to edit their own website. We helped the NSF learn techniques to better reach the public and fund the innovative technologies of tomorrow.
+During this project, the NSF team embraced the practice of testing prototypes with real users and continually incorporating their feedback into the final product. And we adapted their workflow to move away from lengthy change requests to a simple way for the  team to edit their website. We helped the NSF learn techniques to better reach the public and fund the innovative technologies of tomorrow.

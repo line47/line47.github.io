@@ -5,7 +5,7 @@ subtitle: Website redesign and coaching
 link: https://tsp.gov
 role: Front-end design lead
 summary: Help Federal Retirement Thrift Investment Board's (FRTIB) in-house team develop additional capabilities around user-centered design, research, content, and development, inclusive of agile project management
-challenge: Based on previous user research conducted for FRTIB, there is a gap between how information is currently organized on TSP.gov and what users need from the site in order to make informed retirement decisions. FRTIB wants users to be able to easily find and understand the retirement services they offer, ensuring that users are taking full advantage of the retirement benefits being provided to them. Additionally, FRTIB believes that the site would reach more users if it was mobile-friendly.
+challenge: Based on previous user research conducted for FRTIB, there is a gap between how information is currently organized on TSP.gov and what users need from the site to make informed retirement decisions. FRTIB wants users to be able to easily find and understand the retirement services they offer, ensuring that users are taking full advantage of the retirement benefits being provided to them. Additionally, FRTIB believes that the site would reach more users if it was mobile-friendly.
 responsibilities:
 - Website redesign
 - Content strategy
@@ -36,7 +36,7 @@ The TSP site was in desperate need of a complete overhaul in design, content, an
 
 <figure>
 <img src="/assets/images/projects/tsp-old.png"/>
-<figcaption>This was the TSP site prior to updating the content, design and information architecture.</figcaption>
+<figcaption>This was the TSP site before updating the content, design and information architecture.</figcaption>
 </figure>
 
 We utilized the U.S. Web Design System as a starting point for the updated design. We focused on plain language as well as simplifying the information architecture to help users understand the options the TSP provides and what is available to them. 
@@ -46,7 +46,7 @@ We utilized the U.S. Web Design System as a starting point for the updated desig
 <figcaption>Example of updated content UI which focuses on simplicity and readability and understanding.</figcaption>
 </figure>
 
-Another part of our work was to revamp the way data was exposed to users on the site in order to help them evaluate options the TSP provides. Custom in page tools were created to help with understanding this data. 
+Another part of our work was to revamp the way data was exposed to users on the site to help users evaluate options the TSP provides. Custom in page tools were created to help with understanding this data. 
  
 
 <figure>
