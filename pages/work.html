@@ -4,41 +4,47 @@ title: My work
 permalink: /work/
 pageClass: work
 ---
-
-<!-- <h3>Featured projects</h3> -->
-<ul class="projects projects-featured">
-  {% assign featureSorted = site.featuredwork | sort: 'startYear' | reverse %}
-   {% for work in featureSorted %}
+<div class="featured-projects">
+  <div class="content-container">
+    <h3>Featured projects</h3>
+    <ul class="projects">
+      {% assign featureSorted = site.featuredwork | sort: 'startYear' | reverse %}
+      {% for work in featureSorted %}
+      <li class="project-item">
+        <a href="{{ work.url | permalink }}">
+          <div class="card-header">
+            <img src="/assets/images/projects/{{ work.smallImage }}" alt="{{ work.title }} logo" />
+          </div>
+          <div class="card-content">
+            <h4 class="project-name">{{ work.title }}</h4>
+            <p class="project-description">Role: {{work.role}}</p>
+            <p class="project-description">{% if work.startYear %}{{work.startYear}}{% endif %}{% if work.endYear %} -
+              {{work.endYear}}{% endif %}</p>
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<div class="content-container">
+  <h3>Additional projects</h3>
+  <ul class="projects">
+    {% assign sorted = site.work | sort: 'startYear' | reverse %}
+    {% for work in sorted %}
     <li class="project-item">
       <a href="{{ work.link | permalink }}">
         <div class="card-header">
-          <img src="/assets/images/projects/{{ work.smallImage }}" alt="{{ work.title }} logo"/>
+          <img src="/assets/images/projects/{{ work.smallImage }}" alt="{{ work.title }} logo" />
         </div>
         <div class="card-content">
-          <h3 class="project-name">{{ work.title }}</h3>
-          <p class="project-description">Role: {{work.role}}<br>
-          {% if work.startYear %}{{work.startYear}}{% endif %}{% if work.endYear %} - {{work.endYear}}{% endif %}</p>
+          <h4 class="project-name">{{ work.title }}</h4>
+          <p class="project-description">Role: {{work.role}}
+          <p class="project-description"></p>{% if work.startYear %}{{work.startYear}}{% endif %}{% if work.endYear %} -
+          {{work.endYear}}{% endif %}</p>
         </div>
       </a>
     </li>
-  {% endfor %}
+    {% endfor %}
   </ul>
-  
-<!-- <h3>Additional projects</h3> -->
-<ul class="projects">
-{% assign sorted = site.work | sort: 'startYear' | reverse %}
- {% for work in sorted %}
-  <li class="project-item">
-    <a href="{{ work.link | permalink }}">
-      <div class="card-header">
-        <img src="/assets/images/projects/{{ work.smallImage }}" alt="{{ work.title }} logo"/>
-      </div>
-      <div class="card-content">
-        <h3 class="project-name">{{ work.title }}</h3>
-        <p class="project-description">Role: {{work.role}}<br>
-        {% if work.startYear %}{{work.startYear}}{% endif %}{% if work.endYear %} - {{work.endYear}}{% endif %}</p>
-      </div>
-      </a>
-  </li>
-{% endfor %}
-</ul>
+</div>

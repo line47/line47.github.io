@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 {% include head.html %}
 
 <body class="layout-project">
@@ -9,29 +9,33 @@
   <div class="content-container">
     <div class="main-content">
       <h2>{{ page.title }}</h3>
-        <p>{{ page.summary }}</p>
-        <p>
-          <a href="{{ page.link }}">Visit website</a>
+        <p>{{ page.summary }}<br>
+          {% if page.startYear %}{{page.startYear}}{% endif %}{% if page.endYear %} - {{page.endYear}}{% endif %}
         </p>
       {% if page.largeImage %}
       <img src="/assets/images/projects/{{ page.largeImage }}"
         style="max-width:100%; box-shadow:0px 3px 5px 0px rgba(0,0,0, .25); margin-bottom:1rem; border: 1px solid rgba(239, 239, 239, 0.68);" />
       {% endif %} 
-     
-      <p><strong>Challenge:</strong> {{ page.challenge }}</p>
-      <h3>Responsibilities</h3>
+      <p>
+        <a href="{{ page.link }}" title="Visit the {{page.title}} website">Visit website</a>
+      </p>
+      <h3>Challenge</h3> 
+      <p>{{ page.challenge }}</p>
+
+      {{ content }}
+    </div>
+    <div class="relative-content">
+      <h3>My role</h3> 
+      <p>{{ page.role }}</p>
+      {% if page.builtWith %}
+      <h3>My responsibilities</h3>
       <ul>
         {% assign sorted = page.responsibilities | sort %}
         {% for item in sorted %}
         <li>{{ item }}</li>
         {% endfor %}
       </ul>
-      {{ content }}
-    </div>
-    <div class="relative-content">
-      <h4>My role</h4> <p>{{ page.role }}</p>
-      {% if page.builtWith %}
-      <h4>Built with</h4>
+      <h3>Built with</h3>
       <ul class="list-unstyled list-inline list-built-width">
         {% assign sorted = page.builtWith | sort %}
         {% for item in sorted %}

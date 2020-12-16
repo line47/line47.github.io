@@ -5,7 +5,8 @@ subtitle: Website and visual identity redesign
 link: https://seedfund.nsf.gov/
 repo: https://github.com/18F/nsf-sbir
 role: Front-end designer
-summary: Brand &amp; website redesign, content strategy, information architecture, development
+summary: Connecting the National Science Foundation with more diverse audiences and communicate the program’s purpose to tech entrepreneurs.
+challenge: Among NSF activities, the Small Business Innovation Research/Small Business Technology Transfer (SBIR/STTR) program has a unique goal to attract high-tech startups and small businesses from diverse audiences nationwide. To better engage this distinct audience, we were tasked with redesigning a new SBIR/STTR website (seedfund.nsf.gov), which maintains the NSF brand while providing a more tailored look, tone, and presentation aimed at entrepreneurs.
 responsibilities:
   - User experience
   - User interface design
@@ -25,9 +26,28 @@ supporting_links:
     href: https://18f.gsa.gov/what-we-deliver/seed-fund/
 startYear: 2017
 ---  
+### Getting started 
 
-Cloud.gov allows federal digital service teams to focus on developing and deploying their custom application code, without needing to manage underlying server infrastructure.
+We worked with the NSF technology team and began prototyping a new website and brand. We started with the U.S. Web Design System and extended it by creating custom design patterns that emerged during research with tech entrepreneurs. We iterated on these designs, based on feedback from actual users. 
 
-The core of cloud.gov is a Platform as a Service (PaaS) built specifically for government work, based on the open-source Cloud Foundry project. This means the customer team is responsible for their own product's code, and the cloud.gov platform takes care of the security and maintenance of everything underneath.
+### Designing the new site
 
-cloud.gov runs on top of industry-provided infrastructure (Amazon Web Services is the "Infrastructure as a Service" provider). cloud.gov removes the complexity of managing this infrastructure from the customer's experience.
+We used concise language and bold design to speak directly to the target audience of tech entrepreneurs. We also surfaced features unique to the NSF seed fund program, while providing more transparency about the application process.
+
+A centerpiece of the new site was the apply page, where potential applicants learn about the details of the application process. This step list UI shows what is to be done at what step in the process with some general timeline expectations. Previously, this process was not transparent, and getting information required contacting the agency which in turn requires more of the agency and the applicant.
+
+<figure>
+<img src="/assets/images/projects/seedfund-apply.png"/>
+<figcaption>Application process UI to help applicants understand the journey of applying.</figcaption>
+</figure>
+
+Another focal point of the new site was the portfolio page where applicants could look into which companies have been funded by the NSF previously. This portfolio page is broken down by technology topic areas and also offers a search. This page was also important for entrepreneurs to help them feel confident in applying for seed funding based on previously funded companies or projects. 
+
+<figure>
+<img src="/assets/images/projects/seedfund-portfolio.png"/>
+<figcaption>Advanced manufacturing section of the portfolio page.</figcaption>
+</figure>
+
+### Takeaways
+
+During this project, the NSF team embraced the practice of testing prototypes with real users and continually incorporating their feedback into the final product. And we adapted their workflow to move away from lengthy change requests to a simple way for the  team to edit their own website. We helped the NSF learn techniques to better reach the public and fund the innovative technologies of tomorrow.

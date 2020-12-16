@@ -1,20 +1,19 @@
 <!DOCTYPE HTML>
 <html lang="en">
-    {% include head.html %}
+{% include head.html %}
 
-    <body class="layout-default {{ page.pageClass }}">
-        <div class="content-container">
-              {% include top-nav.html %}
-            <div class="main-content">
-              <h2 class="page-title">{{ page.title }}</h2>
-              {{ content }}
-            </div>
-        </div>
-        {% include footer.html %}
-        <script src="//cdnjs.cloudflare.com/ajax/libs/minicart/3.0.6/minicart.min.js"></script>
-        <script>
-            paypal.minicart.render();
-        </script>
-    </body>
+<body class="layout-default {{ page.pageClass }}">
+    <div class="content-container">
+        {% include top-nav.html %}
+
+        <h2 class="page-title">{{ page.title }}</h2>
+    </div>
+    {{ content }}
+    {% include footer.html %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/minicart/3.0.6/minicart.min.js"></script>
+    <script>
+        paypal.minicart.render();
+    </script>
+</body>
 
 </html>
