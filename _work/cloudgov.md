@@ -17,7 +17,7 @@ builtWith:
   
   - GitHub
   - JavaScript
-  - US Web Design Standards
+  - U.S. Web Design System
 startYear: 2016
 ---  
 

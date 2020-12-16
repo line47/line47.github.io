@@ -20,7 +20,7 @@ builtWith:
   
   - GitHub
   - JavaScript
-  - US Web Design Standards
+  - U.S. Web Design System
 supporting_links:
   - text: NSF SBIR Embraced testing and iteration to build what’s right
     href: https://18f.gsa.gov/what-we-deliver/seed-fund/
