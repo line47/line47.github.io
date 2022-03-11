@@ -25,6 +25,22 @@ pageClass: work
       </li>
       {% endfor %}
     </ul>
+    <h3>Featured articles</h3>
+    <ul class="projects">
+      {% for article in site.articles %}
+      <li class="project-item">
+        <a href="{{ article.link}}">
+          <div class="card-header">
+            <img src="/assets/images/articles/{{ article.image }}" alt="{{ article.title }} logo" />
+          </div>
+          <div class="card-content">
+            <h4 class="project-name">{{ article.title }}</h4>
+            <p class="project-description">{{ article.summary }}</p>
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
   </div>
 </div>
 <div class="content-container">

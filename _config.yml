@@ -10,3 +10,6 @@ collections:
   featuredwork:
     output: true
     permalink: /work/:slug
+  articles:
+    output: false
+    
