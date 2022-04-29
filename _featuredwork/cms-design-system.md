@@ -2,7 +2,7 @@
 layout: project
 title: CMS Design System
 link: https://design.cms.gov/
-role: UX design lead
+role: Design system lead 
 summary: Working to maintain and expand the CMS Design System for multiple Healthcare and Medicare applications.
 challenge: Grow, support, and govern a multi-tiered healthcare design system utilized by multiple applications teams across various federal contracts. Help product teams build section 508 compliant, responsive, and consistent experiences while allowing for innovation and creativity.
 objective: 
