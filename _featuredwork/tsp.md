@@ -4,7 +4,7 @@ title: Thrift Savings Plan
 subtitle: Website redesign and coaching
 link: https://tsp.gov
 role: Front-end design lead
-summary: Help Federal Retirement Thrift Investment Board's (FRTIB) in-house team develop additional capabilities around user-centered design, research, content, and development, inclusive of agile project management
+summary: Develop user-centered design, research, content, and development capabilities for the Federal Retirement Thrift Investment Board (FRTIB).
 challenge: Based on previous user research conducted for FRTIB, there is a gap between how information is currently organized on TSP.gov and what users need from the site to make informed retirement decisions. FRTIB wants users to be able to easily find and understand the retirement services they offer, ensuring that users are taking full advantage of the retirement benefits being provided to them. Additionally, FRTIB believes that the site would reach more users if it was mobile-friendly.
 responsibilities:
 - Website redesign
@@ -56,4 +56,4 @@ Another part of our work was to revamp the way data was exposed to users on the 
 
 ### Takeaways
 
-We turned the keys over to the TSP technology team and new TSP.gov site launched in July of 2020! The team astTSP has done a great job keeping the site updated and continuing to promote web standards and best practices. 
+We turned the site over to the TSP technology team and new TSP.gov site launched in July of 2020! The team at TSP has done a great job keeping the site updated and continuing to promote web standards and best practices. 
