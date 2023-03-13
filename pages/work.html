@@ -55,8 +55,8 @@ pageClass: work
         </div>
         <div class="card-content">
           <h4 class="project-name">{{ work.title }}</h4>
-          <p class="project-description">Role: {{work.role}}
-          <p class="project-description"></p>{% if work.startYear %}{{work.startYear}}{% endif %}{% if work.endYear %} -
+          <p class="project-role">Role: {{work.role}}
+          <p class="project-description">{% if work.startYear %}{{work.startYear}}{% endif %}{% if work.endYear %} -
           {{work.endYear}}{% endif %}</p>
         </div>
       </a>

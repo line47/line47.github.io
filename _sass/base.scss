@@ -5,6 +5,7 @@ $footer-bg: #37323E;
 $subheader-bg: #cdecff;
 $darker-blue: #0072bb;
 
+$color-accent: #EF6461;
 
 $color-lightgrey: #efefef;
 $color-trueblack: #000;
@@ -20,13 +21,13 @@ $font-content: 'avenir next', sans-serif;
 
 $site-max-width: 1280px;
 
-$grid-0: .25rem;
-$grid-1: .5rem;
-$grid-2: 1rem;
-$grid-3: 1.5rem;
-$grid-4: 2rem;
-$grid-5: 3rem;
-$grid-6: 4rem;
+$spacer-0: .25rem;
+$spacer-1: .5rem;
+$spacer-2: 1rem;
+$spacer-3: 1.5rem;
+$spacer-4: 2rem;
+$spacer-5: 3rem;
+$spacer-6: 4rem;
 
 $character-width: 75ch;
 $line-height-normal: 1.3rem;
@@ -50,6 +51,8 @@ html {
     background-color: rgba(200,100,0,.5); 
     background-blend-mode: multiply;
     color: $color-white;
+    text-shadow: rgba($text-dark, .65) 2px 2px 3px ;
+    
     
 }
 .timeframe {
@@ -61,14 +64,26 @@ html {
 .hero {
     & * {
     font-family: $font-main-header;
-    font-size: 5.5rem;
-    line-height: 7.3rem;
-    min-height:25rem;
-    padding: 10rem 0 20rem 0;
-    margin-bottom:$grid-5;
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    line-height: clamp(3.5rem, 8vw, 7.3rem);
+    padding-top: clamp(3.5rem, 12vw, 10rem);
+    padding-bottom: clamp(5rem, 12vw, 20rem);
+    margin-bottom:$spacer-5;
     margin-top:0;
-
     }
+//     span {
+//         position: relative;
+//         padding:0;
+//     }
+//     span::before {
+//         content: "";
+//   position: absolute;
+//   bottom: 0;
+//   width: 100%;
+//   height: 12px;
+//   transform: skew(-38deg);
+//   background: $color-accent;
+//     }
 }
 h1 a, h1 a:visited {
   text-decoration: none;
@@ -92,19 +107,20 @@ footer {
     background: $footer-bg;
     clear: both;
     color: $text-light;
-    margin-top: $grid-4;
-    padding: $grid-4 0 $grid-2;
+    margin-top: $spacer-4;
+    padding: $spacer-4 0 $spacer-2;
 
     a, 
     a:visited {
        
-              color: #c8c8c8;
+              color: $text-light;
+
         }
     }
     .copyright {
         font-size: 1rem;
         padding: 2rem 0 0;
-        color: #c8c8c8;
+        color: $text-light;
     }
 
 
@@ -117,14 +133,14 @@ h6 {
     font-family: $font-main-header;
     font-size: 1rem;
     font-weight: normal;
-    margin-top: $grid-2;
+    margin-top: $spacer-2;
 }
 
 ol,
 p,
 ul {
     line-height: 2rem;
-    margin-top: $grid-3;
+    margin-top: $spacer-3;
     font-size: 1.25rem;
 
 }
@@ -150,13 +166,15 @@ h5 {
 }
 ul {
     list-style-type: disc;
-    margin-left: $grid-4;
+    margin-left: $spacer-4;
 }
 
 a,
 a:active {
     color: $darker-blue;
-    text-decoration-skip: ink;
+    
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
 }
 a:visited {
     color: $darker-blue;
@@ -179,24 +197,24 @@ a:visited {
 }
 
 .featured-projects {
-    border-bottom: 3px solid #00a6d2;
+    border-bottom: 3px solid $darker-blue;
     padding: 1rem 0 0;
     margin-bottom: 1rem;
 }
 
 .page-header {
-    padding: $grid-2 0;
+    padding: $spacer-2 0;
     background: #37323E;
-    border-bottom: 3px solid #333;
+    border-bottom: 3px solid $text-dark;
     & a {
-        color: #333;
+        color: $text-dark;
     }
 }
 .page-title {
   font-family:$font-sub-header;
   font-size: 3.5rem;
   font-weight: bold;
-  margin-top:$grid-5;
+  margin-top:$spacer-5;
   line-height: 3.75rem;
     @media (max-width: 600px) {
         font-size: 2rem;
@@ -221,9 +239,6 @@ a:visited {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    //p:nth-child(1) {border-top:8px solid #5da512}
-    //p:nth-child(2) {border-top:8px solid #a54412}
-    //p:nth-child(3) {border-top:8px solid #a51291}
     .home-item {
         flex: 0 0 30%;
         font-size: 1.3rem;
@@ -241,24 +256,37 @@ a:visited {
     }
 }
 .projects {
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    column-gap: $spacer-2;
+    row-gap: $spacer-4;
+    @media (max-width: 900px) {
+        grid-template-columns: 2fr 2fr;
+      
+    }
+    @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+      
+    }
     flex-wrap: wrap;
     list-style: none;
 
-    margin: 0;
+    margin: $spacer-4 0;
     padding: 0;
     .project-item {
         background-color: #fff;
-      max-width: 30%;
-      border: 3px solid $color-lightgrey;
-        margin: $grid-4 2% $grid-5 0;
+      
+   
+      
         a {
-          text-decoration: none;
+        border: 3px solid $color-lightgrey;
+        text-decoration: none;
           display: block;
           height: 100%;
         }
         a:hover {
-          background-color: #f9f9f9;
+          background-color: rgba($color-accent, .1);
+          border: 3px solid $color-accent;
             .project-name {
                 color: #0072bb;
             }
@@ -268,21 +296,20 @@ a:visited {
             font-family: $font-sub-header;
             font-size: 1.1rem;
             font-weight: bold;
-            margin-bottom: $grid-2;
-            text-decoration: none;
-            line-height: inherit;
+            margin-bottom: $spacer-2;
+            text-decoration: underline;
             margin-left: -.5rem;
             margin-right: -.5rem;
             padding: 0 .5rem .5rem;
-            box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.15);
-            background: $color-white;
-            color: #333;
+            text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
         }
-        .project-description {
+        .project-description, .project-role {
           text-decoration: none;
           color: initial;
           font-size: .9rem;
           line-height: 1.4rem;
+          margin:0;
         }
     }
     @media (max-width: 600px) {
@@ -302,6 +329,7 @@ a:visited {
 }
 .card-header {
   background-color: $color-white;
+  box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.15);
 }
 .card-content {
   padding: 0 .5rem .5rem;
@@ -315,17 +343,17 @@ a:visited {
     }
     li {
         display: inline-block;
-        margin: 0 $grid-1;
+        margin: 0;
         padding: 0;
 
         &:first-of-type {
-          margin-left:-$grid-0;
+          margin-left: $spacer-0;
         }
     }
     a {
         display: inline-block;
         margin-left: 0;
-        padding: $grid-1 $grid-2;
+        padding: $spacer-0 $spacer-1;
         text-decoration: none;
         color: #A9C6E5;
         border-radius:4px;
@@ -337,9 +365,8 @@ a:visited {
         &.homelink {
             color: #FFF;
             font-weight: bold;
-            padding: $grid-0 $grid-1;
+         
             text-decoration: none;
-            margin-right: $grid-1;
             position: relative;
             &:hover {
                 background: #FCF6B1;
@@ -351,21 +378,21 @@ a:visited {
 }
 
 .content-container {
-    padding: 0 $grid-2;
+    padding: 0 $spacer-2;
     margin: 0 auto;
     max-width: $site-max-width;
 }
 .main-content {
-    margin: 0 0 $grid-4 0;
+    margin: 0 0 $spacer-4 0;
      img {
          max-width: 100%;
-         margin-top: $grid-5;
+         margin-top:$spacer-5;
      }
      figure {
         box-shadow: 0px 3px 5px 0px rgba(0,0,0, .25);
         margin-bottom: 1rem;
         border: 1px solid rgba(239, 239, 239, 0.68);
-        margin-top: $grid-5;
+        margin-top:$spacer-5;
      }
      figcaption {
          color: #999;
@@ -374,7 +401,7 @@ a:visited {
          padding: .5rem;
      }
      h3 {
-        margin-top: $grid-5;
+        margin-top:$spacer-5;
      }
 }
 .summary {
@@ -384,25 +411,29 @@ a:visited {
 }
 .layout-project,
 .layout-resume {
-    .main-content {
-        float: left;
-        width: 60%;
+    
+    .content-container {
+        display: grid;
+        @media (min-width: 900px) {
+    grid-template-columns: 4fr 2fr;
+    gap: $spacer-4;
+        }
     }
     .relative-content {
-        float: right;
-        margin: $grid-5 0 0 0;
-        width: 30%;
+       
+        margin:$spacer-5 0 0 0;
+       
         position: relative;
         padding: 1rem;
-        border-top:8px solid #EF6461;
+        border-top:8px solid $color-accent;
         h3, h4{
             font-family: $font-sub-header;
-            margin: $grid-2 0 0 0;
+            margin: $spacer-2 0 0 0;
             font-weight: 700;
             display:inline-block;
         }
         h4 {
-            margin-top: $grid-5;
+            margin-top:$spacer-5;
             font-weight: 400;
         }
     }
