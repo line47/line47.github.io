@@ -449,3 +449,12 @@ a:visited {
         }
     }
 }
+
+.linkforest {
+    .page-header, footer {display:none;}
+}
+.linkforest {
+    background-color: $footer-bg;
+    color:$text-light;
+    text-align: center;
+}
