@@ -116,6 +116,11 @@ footer {
               color: $text-light;
 
         }
+        .footer-social {
+            padding: .5rem;
+            margin:.5rem .5rem 0 0 ;
+            font-size:2rem;
+        }
     }
     .copyright {
         font-size: 1rem;
@@ -449,12 +454,48 @@ a:visited {
         }
     }
 }
-
-.linkforest {
-    .page-header, footer {display:none;}
-}
 .linkforest {
     background-color: $footer-bg;
     color:$text-light;
     text-align: center;
 }
+.linkforest {
+    .page-header {display:none;}
+    .links-content-container .lead {
+        font-weight: 200;
+        font-size:1.5rem;
+        margin-top:.25rem;
+        margin-bottom: 1rem;
+    }
+    .links-content-container h2 {
+       margin-bottom:1rem;
+       font-size: 1.5rem;
+    }
+  .page-title {
+        margin-top:0rem;
+        font-size: 2rem;
+    }
+    .links-content-container .profile {
+        width: 100px;
+        height:100px;
+        border-radius: 50%;
+    }
+    .links-content-container a {
+        background:$darker-blue;
+        padding: .25rem .5rem;
+        color: white;
+        display: block;
+        text-decoration: none;
+        border-radius: 10px 3px;
+    }
+    .links-content-container ul {
+        list-style: none;
+        margin:0 1rem;
+        
+        li {
+            margin-bottom: .5rem;
+        }
+    }
+
+}
+
