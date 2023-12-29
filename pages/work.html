@@ -6,7 +6,7 @@ pageClass: work
 ---
 <div class="featured-projects"> 
   <div class="content-container">
-    <h3>Featured projects</h3>
+    <h3>Selected work</h3>
     <ul class="projects">
       {% assign featureSorted = site.featuredwork | sort: 'startYear' | reverse %}
       {% for work in featureSorted %}
@@ -17,7 +17,7 @@ pageClass: work
           </div>
           <div class="card-content">
             <h4 class="project-name">{{ work.title }}</h4>
-            <p class="project-description">Role: {{work.role}}</p>
+            <p class="project-description">{{work.role}}</p>
             <p class="project-description">{% if work.startYear %}{{work.startYear}}{% endif %}{% if work.endYear %} -
               {{work.endYear}}{% endif %}</p>
           </div>
@@ -25,7 +25,7 @@ pageClass: work
       </li>
       {% endfor %}
     </ul>
-    <h3>Featured articles</h3>
+    <h3>Selected articles</h3>
     <ul class="projects">
       {% for article in site.articles %}
       <li class="project-item">
@@ -43,23 +43,25 @@ pageClass: work
     </ul>
   </div>
 </div>
-<div class="content-container">
-  <h3>Additional projects</h3>
+<div class="content-container additional-work">
+  <h3>Additional work</h3>
   <ul class="projects">
     {% assign sorted = site.work | sort: 'startYear' | reverse %}
     {% for work in sorted %}
     <li class="project-item">
-      <a href="{{ work.link | permalink }}">
+      {% if work.link %}<a href="{{ work.link | permalink }}">{% endif %}
+        <div class="project-item-container">
         <div class="card-header">
           <img src="/assets/images/projects/{{ work.smallImage }}" alt="{{ work.title }} logo" />
         </div>
         <div class="card-content">
           <h4 class="project-name">{{ work.title }}</h4>
-          <p class="project-role">Role: {{work.role}}
+          
           <p class="project-description">{% if work.startYear %}{{work.startYear}}{% endif %}{% if work.endYear %} -
           {{work.endYear}}{% endif %}</p>
         </div>
-      </a>
+      </div>
+        {% if work.link %}</a>{% endif %}
     </li>
     {% endfor %}
   </ul>

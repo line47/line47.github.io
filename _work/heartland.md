@@ -1,7 +1,6 @@
 ---
 layout: project
 title: Heartland Payment Systems
-link: https://developer.heartlandpaymentsystems.com
 role: Front-end design
 responsibilities:
   - HTML/CSS

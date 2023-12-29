@@ -1,7 +1,6 @@
 ---
 layout: project
 title: Wisconsin Department of Natural Resources
-link: https://dnr.wi.gov/
 role: Designer
 summary: make it pretty
 responsibilities:

@@ -2,7 +2,6 @@
 layout: project
 title: Cloud.gov
 subtitle:
-link: https://cloud.gov
 role: Front-end engineer
 responsibilities:
   - User experience

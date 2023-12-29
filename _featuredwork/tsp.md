@@ -1,6 +1,8 @@
 ---
 layout: project
+project: Thrift Savings Plan
 title: Thrift Savings Plan
+who: Federal Retirement Thrift Investment Board
 subtitle: Website redesign and coaching
 link: https://tsp.gov
 role: Front-end design lead

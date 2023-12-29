@@ -2,7 +2,6 @@
 layout: project
 title: Kentucky.gov
 subtitle:
-link: https://kentucky.gov
 role: Creative director
 summary: Website redesign, CMS integration, content strategy, information architecture, development
 responsibilities:
