@@ -1,7 +1,6 @@
 ---
 layout: project
 title: Federalist
-link: https://federalist.18f.gov/
 role: Front-end designer
 responsibilities:
   - Template development

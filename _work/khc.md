@@ -1,7 +1,6 @@
 ---
 layout: project
 title: Kentucky Health Cooperative
-link: https://www.mykyhc.org
 role: Front-end designer, SharePoint engineer
 responsibilities:
   - HTML/CSS

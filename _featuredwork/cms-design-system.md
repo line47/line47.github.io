@@ -1,9 +1,11 @@
 ---
 layout: project
-title: Centers for Medicare & Medicaid Services Design System
+project: Design System
+title: Centers for Medicare & Medicaid Services Design System 
+who: Centers for Medicare & Medicaid Services 
 link: https://design.cms.gov/
 role: Design system lead 
-summary: Mature the CMS Design System to support Healthcare and Medicare product teams building experiences at scale.
+summary: Transform the CMS Design System into a sustainable, scalable, and mature resource, fostering enhanced communication, collaboration, and future-proofing capabilities across CMS, Healthcare, and Medicare applications.
 challenge: Grow, support, and govern a multi-tiered healthcare design system utilized by multiple applications teams across various federal contracts. Help product teams build section 508 compliant, responsive, and consistent experiences while allowing for innovation and creativity.
 objective: 
 responsibilities:
