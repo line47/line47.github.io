@@ -118,8 +118,13 @@ footer {
         }
         .footer-social {
             padding: .5rem;
-            margin:.5rem .5rem 0 0 ;
+            margin: 0 ;
             font-size:2rem;
+            list-style: none;
+            li {
+                display: inline-block;
+                margin:0 .25rem;
+            }
         }
     }
     .copyright {
@@ -455,17 +460,25 @@ a:visited {
     }
 }
 .linkforest {
-    background-color: $footer-bg;
-    color:$text-light;
+    background-color: $topnav-bg;
+    color:$text-dark;
     text-align: center;
+background-image: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 .linkforest {
-    .page-header {display:none;}
+    .links-content-container * {
+        font-size:1rem;
+        padding: 0 .5rem;
+    }
+    .page-header, .page-title {display:none;}
     .links-content-container .lead {
         font-weight: 200;
-        font-size:1.5rem;
+        font-size:1rem;
         margin-top:.25rem;
         margin-bottom: 1rem;
+        line-height: normal;
+        padding:.5rem;
     }
     .links-content-container h2 {
        margin-bottom:1rem;
@@ -479,6 +492,7 @@ a:visited {
         width: 100px;
         height:100px;
         border-radius: 50%;
+        margin-top:1rem;
     }
     .links-content-container a {
         background:$darker-blue;
@@ -487,6 +501,13 @@ a:visited {
         display: block;
         text-decoration: none;
         border-radius: 10px 3px;
+        line-height: normal;
+        &.featured {
+            background-color: #FCF6B1;
+            color:$text-dark;
+            font-size:1.25rem;
+            font-weight: bold;
+        }
     }
     .links-content-container ul {
         list-style: none;
@@ -495,6 +516,12 @@ a:visited {
         li {
             margin-bottom: .5rem;
         }
+    }
+    footer {
+        margin:2rem 0 0 0;
+    }
+    .copyright {
+        padding:0;
     }
 
 }
