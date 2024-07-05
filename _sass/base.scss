@@ -36,7 +36,7 @@ html {
     font-family: $font-content;
     font-size: 1.1rem;
     font-weight: 400;
-    background-image: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
+    background-image: url("/assets/images/green-dust-and-scratches.png");
 }
 .timeframe {
     margin-top: 0.5rem;
@@ -93,7 +93,7 @@ footer {
         .footer-social {
             padding: .5rem 0;
             margin: 0 ;
-            font-size:2rem;
+            font-size:initial;
             list-style: none;
             li {
                 display: inline-block;
@@ -101,12 +101,16 @@ footer {
             }
         }
     }
+    .layout-project footer .content-container {
+        display:block;
+    }
     .copyright {
         font-size: 1rem;
         margin:0;
         color: $text-light;
         max-width: 100% !important;
-        color: $text-muted;
+        color: #FCF6B1;
+        display: block;
     }
 
 
@@ -286,6 +290,9 @@ a:visited {
                 color: #0072bb;
             }
         }
+        * p {
+            color: $text-dark;
+        }
         .project-name {
             display: block;
             font-family: $font-sub-header;
@@ -298,6 +305,7 @@ a:visited {
             padding: 0 .5rem .5rem;
             text-underline-offset: 3px;
     text-decoration-thickness: 2px;
+    line-height: inherit;
         }
         .project-description, .project-role {
           text-decoration: none;
@@ -484,33 +492,68 @@ a:visited {
     }
 }
 .linkforest {
-    background-color: $topnav-bg;
+    background-color: #beb6d3;
     color:$text-dark;
-    text-align: center;
-background-image: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
+background-image: url("/assets/images/green-dust-and-scratches.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-max-width: 400px;
 margin: 0 auto;
 }
 .linkforest {
+  .links-header {
+    display: grid;
+    grid-template-columns: max-content;
+  gap: 10px;
+  align-items: center;
+
+  .left {
+   
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+  .right {
+    text-align: left;
+    grid-column: 2 / 2;
+    grid-row: 1;
+  }
+  }
+  .links-content-container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .links-content-container h1 {
+    font-size:1.25rem;
+    margin-bottom:0;
+    line-height: 2rem;
+  }
+  .links-content-container h2 {
+    font-size:1rem;
+    margin-bottom:0;
+    line-height: 2rem;
+  }
+  .links-content-container h3 {
+    font-size:1rem;
+    margin-bottom:0;
+    line-height: 2rem;
+    font-weight: normal;
+    margin-top:0;
+  }
     .links-content-container * {
         font-size:1rem;
         padding: 0 .5rem;
+        font-family: $font-content;
+
     }
     .page-header, .page-title {display:none;}
     .links-content-container .lead {
-        font-weight: 200;
-        font-size:1rem;
-        margin-top:.25rem;
-        margin-bottom: 1rem;
+        font-weight: 400;
+        font-size:.85rem;
+        margin:0 auto;
         line-height: normal;
-        padding:.5rem;
+        
+        
     }
-    .links-content-container h2 {
-       margin-bottom:1rem;
-       font-size: 1.5rem;
-       line-height: 1.6rem;
-    }
+  
   .page-title {
         margin-top:0rem;
         font-size: 2rem;
