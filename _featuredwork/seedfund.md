@@ -1,7 +1,7 @@
 ---
 layout: project
-project: America's Seed Fund
-title: America's Seed Fund
+project: America's Seed Fund 
+title: America's Seed Fund website
 who: National Science Foundation
 subtitle: Website and visual identity redesign
 link: https://seedfund.nsf.gov/
@@ -29,11 +29,11 @@ supporting_links:
 startYear: 2017
 endYear:
 ---  
-### Getting started 
+## Getting started 
 
 We worked with the NSF technology team and began prototyping a new website and brand. We started with the U.S. Web Design System and extended it by creating custom design patterns that emerged during research with tech entrepreneurs. We iterated on these designs, based on feedback from actual users. 
 
-### Designing the new site
+## Designing the new site
 
 We used concise language and bold design to speak directly to the target audience of tech entrepreneurs. We also surfaced features unique to the NSF seed fund program, while providing more transparency about the application process.
 
@@ -51,6 +51,6 @@ Another focal point of the new site was the portfolio page where applicants coul
 <figcaption>Advanced manufacturing section of the portfolio page.</figcaption>
 </figure>
 
-### Takeaways
+## Takeaways
 
 During this project, the NSF team embraced the practice of testing prototypes with real users and continually incorporating their feedback into the final product. And we adapted their workflow to move away from lengthy change requests to a simple way for the  team to edit their website. We helped the NSF learn techniques to better reach the public and fund the innovative technologies of tomorrow.

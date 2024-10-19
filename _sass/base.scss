@@ -492,11 +492,14 @@ a:visited {
     }
 }
 .linkforest {
-    background-color: #beb6d3;
+   //background-color: #beb6d3;
+   background-color: white;
     color:$text-dark;
-background-image: url("/assets/images/green-dust-and-scratches.png");
-margin: 0 auto;
-height: 100vh;
+//background-image: url("/assets/images/green-dust-and-scratches.png");
+background-image:none;
+//margin: 0 auto;
+//height: 100vh;
+padding: 10px;
 }
 .linkforest {
   .links-header {
