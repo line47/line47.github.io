@@ -17,31 +17,34 @@
       <img src="/assets/images/projects/{{ page.largeImage }}"
         style="max-width:100%; box-shadow:0px 3px 5px 0px rgba(0,0,0, .25); margin-bottom:1rem; border: 1px solid rgba(239, 239, 239, 0.68);" />
       {% endif %} 
-      <h3>Challenge</h3> 
-      <p>{{ page.challenge }}</p>
-
+      {% if page.challenge %}
+        <h2>Challenge</h2> 
+        <p>{{ page.challenge }}</p>
+      {% endif %} 
       {{ content }}
     </div>
   
     <div class="relative-content">    
-      <h3>{{ page.role }} </h3>
-     
+      <h3>My role</h3>
+     <p>{{ page.role }}</p>
       {% if page.builtWith %}
-      <h4>Responsibilities</h4>
+      <h3>Responsibilities</h3>
       <ul>
         {% assign sorted = page.responsibilities | sort %}
         {% for item in sorted %}
         <li>{{ item }}</li>
         {% endfor %}
       </ul>
-      <h4>This project was built with</h4>
-      <ul class="list-unstyled list-inline list-built-width">
+      <h3>Tools and software used </h3>
+      <ul class="list-built-width">
         {% assign sorted = page.builtWith | sort %}
         {% for item in sorted %}
         <li>{{ item }}</li>
         {% endfor %}
       </ul>
-      <p><a href="{{ page.link }}" title="Visit the {{page.title}} website">Visit {{ page.title | downcase }} website</a></p>
+        {% if page.link %}
+          <p><a href="{{ page.link }}" title="Visit the {{page.title}} website">Visit {{ page.title | downcase }} website</a></p>
+        {% endif %}
       {% endif %}
       
 

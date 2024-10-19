@@ -6,7 +6,7 @@ pageClass: work
 ---
 <div class="featured-projects"> 
   <div class="content-container">
-    <h3>Selected work</h3>
+    <h2>Selected work</h2>
     <ul class="projects">
       {% assign featureSorted = site.featuredwork | sort: 'startYear' | reverse %}
       {% for work in featureSorted %}
@@ -16,7 +16,8 @@ pageClass: work
             <img src="/assets/images/projects/{{ work.smallImage }}" alt="{{ work.title }} logo" />
           </div>
           <div class="card-content">
-            <h4 class="project-name">{{ work.title }}</h4>
+            <h3 class="project-name">{{ work.title }}</h3>
+            <p><strong>{{work.who}}</strong></p>
             <p class="project-description">{{work.role}}</p>
             <p class="project-description">{% if work.startYear %}{{work.startYear}}{% endif %}{% if work.endYear %} -
               {{work.endYear}}{% endif %}</p>
@@ -25,7 +26,7 @@ pageClass: work
       </li>
       {% endfor %}
     </ul>
-    <h3>Selected articles</h3>
+    <h2>Selected articles</h2>
     <ul class="projects">
       {% for article in site.articles %}
       <li class="project-item">
@@ -34,7 +35,7 @@ pageClass: work
             <img src="/assets/images/articles/{{ article.image }}" alt="{{ article.title }} logo" />
           </div>
           <div class="card-content">
-            <h4 class="project-name">{{ article.title }}</h4>
+            <h3 class="project-name">{{ article.title }}</h3>
             <p class="project-description">{{ article.summary }}</p>
           </div>
         </a>
@@ -44,7 +45,7 @@ pageClass: work
   </div>
 </div>
 <div class="content-container additional-work">
-  <h3>Additional work</h3>
+  <h2>Additional work</h2>
   <ul class="projects">
     {% assign sorted = site.work | sort: 'startYear' | reverse %}
     {% for work in sorted %}
@@ -55,7 +56,7 @@ pageClass: work
           <img src="/assets/images/projects/{{ work.smallImage }}" alt="{{ work.title }} logo" />
         </div>
         <div class="card-content">
-          <h4 class="project-name">{{ work.title }}</h4>
+          <h3 class="project-name">{{ work.title }}</h3>
           
           <p class="project-description">{% if work.startYear %}{{work.startYear}}{% endif %}{% if work.endYear %} -
           {{work.endYear}}{% endif %}</p>
