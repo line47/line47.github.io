@@ -1,6 +1,7 @@
 ---
 layout: project
-title: Federalist
+title: Cloud.gov Pages (formerly Federalist) 
+link: https://cloud.gov/pages/
 role: Front-end designer
 responsibilities:
   - Template development

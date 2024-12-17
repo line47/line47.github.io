@@ -1,10 +1,9 @@
 ---
 layout: project
-project: Thrift Savings Plan
+link: https://www.tsp.gov/
 title: Thrift Savings Plan
 who: Federal Retirement Thrift Investment Board
 subtitle: Website redesign and coaching
-link:
 role: Front-end design lead
 summary: Develop user-centered design, research, content, and development capabilities for the Federal Retirement Thrift Investment Board (FRTIB).
 challenge: Based on previous user research conducted for FRTIB, there is a gap between how information is currently organized on TSP.gov and what users need from the site to make informed retirement decisions. FRTIB wants users to be able to easily find and understand the retirement services they offer, ensuring that users are taking full advantage of the retirement benefits being provided to them. Additionally, FRTIB believes that the site would reach more users if it was mobile-friendly.
@@ -43,18 +42,11 @@ The TSP site was in desperate need of a complete overhaul in design, content, an
 
 We utilized the U.S. Web Design System as a starting point for the updated design. We focused on plain language as well as simplifying the information architecture to help users understand the options the TSP provides and what is available to them. 
 
-<figure>
-<img src="/assets/images/projects/tsp-move-money.png"/>
-<figcaption>Example of updated content UI which focuses on simplicity and readability and understanding.</figcaption>
-</figure>
+<img src="/assets/images/projects/tsp-move-money.png" alt="Example of updated content UI which focuses on simplicity and readability and understanding."/>
 
 Another part of our work was to revamp the way data was exposed to users on the site to help users evaluate options the TSP provides. Custom in page tools were created to help with understanding this data. 
  
-
-<figure>
-<img src="/assets/images/projects/tsp-compare-funds.png"/>
-<figcaption>UI comparison tool to help TSP members compare plan types.</figcaption>
-</figure>
+<img src="/assets/images/projects/tsp-compare-funds.png" alt="UI comparison tool to help TSP members compare plan types."/>
 
 ### Takeaways
 

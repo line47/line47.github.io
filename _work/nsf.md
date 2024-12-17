@@ -1,6 +1,8 @@
 ---
 layout: project
 title: National Science Foundation
+link: https://www.nsf.gov/
+abbr: NSF
 subtitle: Website and visual identity redesign
 repo: https://github.com/18F/nsf-sbir
 role: Front-end designer

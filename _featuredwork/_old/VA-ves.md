@@ -1,9 +1,9 @@
 ---
 layout: project
-project: Veterans Health Administration Enrollment System
 title: Veterans Health Administration Enrollment System
 who: U.S. Department of Veterans Affairs
 subtitle: Website redesign and coaching
+hide: true
 link:
 role: Manager of Design
 summary: Details to come...

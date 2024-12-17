@@ -1,6 +1,8 @@
 ---
 layout: project
 title: Kentucky.gov
+abbr:
+link: https://kentucky.gov
 subtitle:
 role: Creative director
 summary: Website redesign, CMS integration, content strategy, information architecture, development

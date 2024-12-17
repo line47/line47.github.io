@@ -1,7 +1,6 @@
 ---
-layout: project
-project: America's Seed Fund 
-title: America's Seed Fund website
+layout: project 
+title: America's Seed Fund
 who: National Science Foundation
 subtitle: Website and visual identity redesign
 link: https://seedfund.nsf.gov/
@@ -12,7 +11,9 @@ challenge: Among NSF activities, the Small Business Innovation Research/Small Bu
 responsibilities:
   - User experience
   - User interface design
-  - Front end development
+  - Front-end development
+  - Front-end design
+  - Information architecture
 smallImage: seedfund-logo.png
 largeImage: seedfund-large.png
 builtWith:
@@ -39,17 +40,11 @@ We used concise language and bold design to speak directly to the target audienc
 
 A centerpiece of the new site was the apply page, where potential applicants learn about the details of the application process. This step list UI shows what is to be done at what step in the process with some general timeline expectations. Previously, this process was not transparent, and getting information required contacting the agency which in turn requires more of the agency and the applicant.
 
-<figure>
-<img src="/assets/images/projects/seedfund-apply.png"/>
-<figcaption>Application process UI to help applicants understand the journey of applying.</figcaption>
-</figure>
+<img src="/assets/images/projects/seedfund-apply.png" alt="Application process UI to help applicants understand the journey of applying."/>
 
 Another focal point of the new site was the portfolio page where applicants could look into which companies have been funded by the NSF previously. This portfolio page is broken down by technology topic areas and also offers a search. This page was also important for entrepreneurs to help them feel confident in applying for seed funding based on previously funded companies or projects. 
 
-<figure>
-<img src="/assets/images/projects/seedfund-portfolio.png"/>
-<figcaption>Advanced manufacturing section of the portfolio page.</figcaption>
-</figure>
+<img src="/assets/images/projects/seedfund-portfolio.png" alt="Advanced manufacturing section of the portfolio page."/>
 
 ## Takeaways
 
