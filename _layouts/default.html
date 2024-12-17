@@ -3,17 +3,9 @@
 {% include head.html %}
 
 <body class="layout-default {{ page.pageClass }}">
-    
-        {% include top-nav.html %}
-        <div class="content-container">
-        <h1 class="page-title">{{ page.title }}</h1>
-    </div>
+    {% include top-nav.html %}
     {{ content }}
     {% include footer.html %}
-    <script src="//cdnjs.cloudflare.com/ajax/libs/minicart/3.0.6/minicart.min.js"></script>
-    <script>
-        paypal.minicart.render();
-    </script>
 </body>
 
 </html>
