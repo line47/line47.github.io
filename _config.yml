@@ -15,5 +15,3 @@ collections:
     permalink: /work/:slug
   articles:
     output: false
-whitelist:
-  - jekyll-redirect-from
