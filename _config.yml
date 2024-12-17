@@ -1,13 +1,16 @@
 
 # Setup
 title: Line 47 Website
-tagline: Do we really need a tagline
+tagline:
 baseurl: /
 collections:
   work:
     output: true
     permalink: /work/:slug
   featuredwork:
+    output: true
+    permalink: /work/:slug
+  projects:
     output: true
     permalink: /work/:slug
   articles:

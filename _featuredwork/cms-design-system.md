@@ -1,11 +1,10 @@
 ---
 layout: project
-project: Design System
-title: Centers for Medicare & Medicaid Services Design System 
+title: CMS Design System 
 who: Centers for Medicare & Medicaid Services 
 link: https://design.cms.gov/
 role: Design system lead 
-summary: Transform the CMS Design System into a sustainable, scalable, and mature resource, fostering enhanced communication, collaboration, and future-proofing capabilities across CMS, Healthcare, and Medicare applications.
+summary: Transform the Centers for Medicare & Medicaid Services Design System into a sustainable, scalable, and mature resource, fostering enhanced communication, collaboration, and future-proofing capabilities across CMS, Healthcare, and Medicare applications.
 challenge: Grow, support, and govern a multi-tiered healthcare design system utilized by multiple applications teams across various federal contracts. Help product teams build section 508 compliant, responsive, and consistent experiences while allowing for innovation and creativity.
 objective: 
 responsibilities:
@@ -13,9 +12,12 @@ responsibilities:
   - Design system guidance
   - Front-end design
   - User research
-  - Engineering
+  - Front-end design
+  - Systems thinking
+  - Front-end development
 smallImage: cms-logo.png
 largeImage: cms-design-system-large.png
+largeImageAlt: 
 builtWith:
   - React
   - Typescript
@@ -47,17 +49,16 @@ I started by digging into the backlog of work items as well as the design system
 
 We did many rounds of creating outcomes and SMART objectives to drive our research and explorations. 
 
-<figure>
-<img src="/assets/images/projects/cms-design-system-venn-diagram.jpeg"/>
-<figcaption>Venn diagram where internal and external user needs intersect.</figcaption>
-</figure>
+
+<img src="/assets/images/projects/cms-design-system-venn-diagram.jpeg" alt="Venn diagram where internal and external user needs intersect."/>
+
+
 
 We also conducted audits of how components were being used in applications to understand the gaps in the current offerings of the design system. This helped inform future work to improving existing components as well as inform new components that might be needed. 
 
-<figure>
-<img src="/assets/images/projects/cms-design-system-design-audit.jpeg"/>
-<figcaption>Audit of the tooltip component across Healthcare and Medicare products.</figcaption>
-</figure>
+
+<img src="/assets/images/projects/cms-design-system-design-audit.jpeg" alt="Audit of the tooltip component across Healthcare and Medicare products."/>
+
 
 ## Implementation
 
