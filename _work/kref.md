@@ -3,7 +3,7 @@ layout: project
 title: Kentucky Registry of Election Finance
 abbr: KREF
 link: https://kref.ky.gov
-image: /assets/images/agency_logos/KREF-logo.png
+image: /assets/images/agency_logos/kref-logo.png
 subtitle: KREF wanted to make responsive design, content streamlining and searching for forms crucial in their website redesign.
 role: Front-end designer
 responsibilities:
