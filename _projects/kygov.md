@@ -2,6 +2,7 @@
 layout: project
 title: Kentucky.gov
 abbr:
+image: assets/images/projects/kygov-logo.png
 link: https://kentucky.gov
 subtitle:
 role: Creative director

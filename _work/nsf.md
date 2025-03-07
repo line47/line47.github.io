@@ -2,6 +2,7 @@
 layout: project
 title: National Science Foundation
 link: https://www.nsf.gov/
+image: /assets/images/agency_logos/NSF-logo.png
 abbr: NSF
 subtitle: Website and visual identity redesign
 repo: https://github.com/18F/nsf-sbir
