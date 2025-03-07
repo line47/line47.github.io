@@ -15,9 +15,8 @@ pageClass: home
             design, and research.
         </p>
         <p>
-            I'm an alum of <a href="https://18f.gsa.gov">18F</a> and <a href="https://www.egov.com/">NIC Inc.</a>
-            <em>(now Tyler Technologies)</em> and currently work for <a href="https://adhocteam.us/">Ad Hoc</a> as a
-            Manager of Design.
+            I'm an alum of <a href="https://18f.gsa.gov">18F</a> and <a href="https://www.egov.com/">NIC Inc.</a> and currently work for <a href="https://adhocteam.us/">Ad Hoc</a> as a
+            Manager of Design supporting work for VA.
         </p>
     </div>
 </div>
@@ -47,26 +46,29 @@ pageClass: home
 <div class="additional-work">
     <div class="content-container">
         <h2 class="lead">Who I've worked with</h2>
+        <p>My work has improved how millions of people interact with government services, shaping digital experiences at agencies like CMS, VA, DoD, and USDS by making them more accessible, efficient, and user-friendly.</p>
         <ul class="projects">
             {% assign sorted = site.work | sort: 'title' %}
             {% for work in sorted %}
+         
             <li>
                 {% if work.link %}
-                <a href="{{ work.link | permalink }}">
+                    <img src="{{ work.image }}" style="max-width: 200px;" alt="{{ work.title }}">
                     {% endif %}
-                    {{ work.title }}
                     {% if work.link %}
-                </a>
                 {% endif %}
             </li>
             {% endfor %}
         </ul>
         <h2 class="lead">Projects I've worked on</h2>
-        <ul class="projects">
+        <ul class="projects projects2">
             {% assign projects = site.projects | sort: 'title' %}
             {% for work in projects %}
             <li>
                 {% if work.link %}
+                <a href="{{ work.link | permalink }}">
+                <img src="{{work.image}}"/>
+            </a><br>
                 <a href="{{ work.link | permalink }}">
                     {% endif %}
                     {{ work.title }}
@@ -88,7 +90,7 @@ pageClass: home
             <li><a href="https://www.youtube.com/@L47music"> YouTube</a></li>
             <li><a href="https://soundcloud.com/line47">Soundcloud </a></li>
         </ul>
-        <h2>Here's the latest Line 47 release</h2>
+        <h2>Latest Line 47 release</h2>
         {% include line47-bandcamp-import.html %}
     </div>
 </div>

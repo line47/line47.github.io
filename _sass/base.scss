@@ -79,6 +79,13 @@ html {
 
 }
 
+.selected-work {
+    .list-unstyled {
+        margin: 0 auto;
+        max-width: 900px;
+    }
+}
+
 .selected-work,
 .selected-articles {
     background-color: $color-accent2;
@@ -90,13 +97,19 @@ html {
    a, a:visited { 
     color: $color-dark;
    }
+   .content-container {
+    text-align: center;
+   }
 }
 
 .content-container {
     padding: $spacer-8 $spacer-2;
     margin: 0 auto;
     max-width: $site-max-width;
-
+    P {
+        margin-left: auto;
+        margin-right: auto;
+    }
     p, li {
         max-width: $character-width;
     }
@@ -196,6 +209,7 @@ footer {
     background: $footer-bg;
     clear: both;
     color: $text-light;
+    text-align: center;
 
     a,
     a:visited {
@@ -205,9 +219,16 @@ footer {
     }
 }
 
+.home {
+    .content-container {
+        text-align: center;
+    }
+}
+
 .layout-project footer .content-container {
     display: block;
 }
+
 
 .copyright {
     font-size: 1rem;
@@ -236,6 +257,9 @@ h6 {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 ol,
@@ -350,6 +374,7 @@ a:visited {
     border-bottom: 3px solid $text-dark;
     position: sticky;
     top: 0;
+    font-family: "Fira sans", sans-serif;
 
     & a {
         color: $text-dark;
@@ -456,10 +481,26 @@ a:visited {
 .additional-work {
     .projects {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-        column-gap: $spacer-6;
-        row-gap: $spacer-1;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-column-gap: $spacer-6;
+        row-gap:0;
+        max-width: 1280px;
+        margin: 0 auto;
+        justify-content: center;
+        img {
+            max-width: 100%;
+            
+        }
+        &.projects2 {
+            grid-template-columns: 1fr 1fr 1fr; 
+            row-gap:$spacer-6; 
+
+            li {
+                max-width: 400px;
+                margin: 0 auto;  
+                
+            }
+        }
 
         .project-item-container {
             display: grid;
