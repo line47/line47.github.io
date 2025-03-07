@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
 $color-accent2: #cdecff;
 $color-accent3: #0072bb;
 $color-accent4: #A9C6E5;
@@ -23,9 +22,9 @@ $text-light: $color-white;
 $text-muted: $color-lightgrey;
 $text-medium: $color-mediumgrey;
 $text-dark: $color-darkgrey;
-$font-main-header: Helvetica, Sans-Serif;
-$font-sub-header: Helvetica, Sans-Serif;
-$font-content: Helvetica, Sans-Serif;
+$font-main-header: "Fira Sans", sans-serif;
+$font-sub-header: "Fira Sans", sans-serif;
+$font-content: "Roboto Serif", sans-serif;
 
 $site-max-width: 1280px;
 
@@ -38,7 +37,7 @@ $spacer-5: 2.25rem;
 $spacer-6: 3rem;
 $spacer-7: 3.5rem;
 $spacer-8: 4rem;
-$spacer-9: 4rem;
+$spacer-9: 5rem;
 $spacer-10: 8rem;
 
 $character-width: 60ch;
@@ -48,15 +47,24 @@ $line-height-normal: 1.3rem;
 html {
     font-family: $font-content;
     font-size: 1.1rem;
-    font-weight: 400;
+    font-weight: 200;
 }
 
 .timeframe {
     display: inline-block;
-    font-weight: 100;
+    font-weight: 200;
     font-size: $spacer-2;
 }
 
+.bkg-green-quarternary {
+    background-color: #cef6d2;
+}
+.bkg-light-yellow {
+    background-color: #f6f3ce;
+}
+.bkg-light-coral {
+    background-color: #f6cfce;
+}
 .hero {
     background-color: $color-dark;
     max-width: none;
@@ -121,9 +129,10 @@ html {
     }
 
     .lead {
-        font-size: $spacer-8;
-        font-weight: 700;
-        line-height: 1;
+        font-size: $spacer-9;
+        font-weight: 800;
+        line-height: 1.05;
+        letter-spacing: 0px;
         margin-bottom: $spacer-6;
 
         @media (max-width: 900px) {
@@ -141,10 +150,12 @@ html {
     }
 
     .section-title {
-        font-size: $spacer-5;
-        font-weight: 400;
+        font-size: $spacer-6;
+        font-family:$font-main-header;
+        font-weight: 500;
         line-height: 1.15;
         margin-bottom: $spacer-1;
+        letter-spacing: -2px;
         display: block;
 
         @media (max-width: 900px) {
@@ -174,7 +185,7 @@ h1 a:visited {
 body {
     color: $text-dark;
     font-family: $font-content;
-    font-weight: 400;
+    font-weight: 100;
 }
 
 strong {
@@ -233,7 +244,7 @@ ul {
     line-height: $spacer-5;
     margin-bottom: $spacer-3;
     font-size: $spacer-3;
-    font-weight: 400;
+    font-weight: 300;
 
     @media (max-width: 900px) {
         font-size: $spacer-3 ;
@@ -383,7 +394,6 @@ a:visited {
 
     flex-wrap: wrap;
     list-style: none;
-
     margin: $spacer-4 0;
     padding: 0;
 
@@ -539,6 +549,48 @@ a:visited {
     }
 }
 
+.highlighter-rouge, code{
+    background-color: rgb(232, 232, 232);
+}
+
+
+code {
+    font-family: monospace;
+    font-size: inherit;
+    font-size: 1.4rem;
+    font-weight: 100;
+    line-height: 1.5;
+}
+pre>code{
+    padding:$spacer-2;
+    display: inline-block;
+}
+pre {
+    margin-bottom:$spacer-4;
+}
+
+.table {
+    border: 1px solid;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: .9rem;
+    caption {
+        padding: $spacer-1;
+        font-size: $spacer-2;
+        font-weight: 600;
+    }
+    th, td {
+        border: 1px solid $color-lightgrey;
+        padding: $spacer-1;
+        font-weight: 400;
+    }
+    th {
+        background-color: $color-lightergrey;
+        font-weight: 600;
+    }
+    margin-bottom: $spacer-6;
+}
+
 .readability>* {
 
     max-width: $character-width;
@@ -573,7 +625,9 @@ a:visited {
     margin-top: 0;
 }
 
-.layout-project {
+
+
+.layout-project, .layout-article {
 
     .content-container {
         display: grid;
@@ -627,6 +681,41 @@ a:visited {
         border-bottom: 2px solid $color-accent;
     }
 }
+
+.layout-article {
+    .content-container {
+        margin: 0 auto;
+        max-width: 900px;
+        grid-template-columns: auto;
+        gap: 0;
+    }
+    .page-header .content-container {
+        margin: 0 auto;
+        max-width: 1280px;
+    }
+
+    .hero {
+        background-color: $color-white;
+        color: inherit;
+        text-align: center;
+
+        .content-container {
+            padding-bottom: 0;
+            max-width: none;
+            text-align: center;
+            p  {
+                max-width: none;
+             }
+        }
+
+        .lead {
+            margin-top: $spacer-10 !important;
+            margin-bottom: 0;
+        }
+    }
+
+}
+
 
 
 .linkforest {

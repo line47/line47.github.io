@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en" class="layout-article">
+{% include head.html %}
+
+<body>
+ 
+    {% include top-nav.html %}
+    <div class="hero">
+      <div class="content-container">
+      <h1 class="lead">{{ page.title }}</h1>
+      <p class="timeframe">Published {{ page.date | date: "%b %-d, %Y" }}</p>
+  </div>
+  </div>
+<div class="layout-article">
+  <div class="content-container">
+    <div class="main-content">
+      <p>{{ page.summary-long }}</p>
+      {% if page.largeImage %}
+      <img src="/assets/images/projects/{{ page.largeImage }}" alt=""/>
+      {% endif %} 
+      {{ content }}
+    </div>
+  </div>
+</div>
+  {% include footer.html %}
+</body>
+
+</html>

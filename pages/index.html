@@ -1,12 +1,12 @@
 ---
 layout: home
-title: Hello visitor, my name is Scott
+title: Hey, I'm Scott
 permalink: /
 pageClass: home
 ---
 <div class="hero-1">
     <div class="content-container">
-        <h2 class="lead">I'm a UX manager, design system leader, front-end specialist, standards and accessibility
+        <h2 class="lead">UX manager, design system leader, front-end specialist, standards and accessibility
             advocate.
         </h2>
         <p>
@@ -23,8 +23,7 @@ pageClass: home
 </div>
 <div class="selected-work">
     <div class="content-container" id="work">
-        <h2 class="super-heading">My work</h2>
-        <h3 class="lead">Selected work</h3>
+        <h2 class="lead">Selected work</h2>
         <ul class="list-unstyled">
             {% assign featureSorted = site.featuredwork | sort: 'startYear' | reverse %}
             {% for work in featureSorted %}
@@ -35,12 +34,11 @@ pageClass: home
             </li>
             {% endfor %}
         </ul>
-        <h3 class="lead">Selected articles</h3>
+        <h2 class="lead">Selected articles</h2>
         <ul class="list-unstyled">
             {% for article in site.articles %}
             <li>
-                <a href="{{ article.link}}"><span class="section-title">{{ article.title }}</span></a>{{ article.summary
-                }}
+                <a href="{{ article.url}}"><span class="section-title">{{ article.title }}</span></a> {{article.summary}}
             </li>
             {% endfor %}
         </ul>
@@ -82,8 +80,7 @@ pageClass: home
 </div>
 <div class="music-section">
     <div class="content-container" id="music">
-        <h2 class="super-heading">My music</h2>
-        <h3 class="lead">Where to listen</h3>
+        <h2 class="lead">Where to listen</h2>
         <ul class="footer-social">
             <li><a href="https://line47.bandcamp.com/">Line 47 Bandcamp </a></li>
             <li><a href="https://terminaldusk.bandcamp.com/">Terminal Dusk Records Bandcamp</a></li>
@@ -91,7 +88,7 @@ pageClass: home
             <li><a href="https://www.youtube.com/@L47music"> YouTube</a></li>
             <li><a href="https://soundcloud.com/line47">Soundcloud </a></li>
         </ul>
-        <h3>Here's the latest Line 47 release</h3>
+        <h2>Here's the latest Line 47 release</h2>
         {% include line47-bandcamp-import.html %}
     </div>
 </div>
