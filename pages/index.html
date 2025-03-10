@@ -4,22 +4,20 @@ title: Hey, I'm Scott
 permalink: /
 pageClass: home
 ---
-<div class="hero-1">
-    <div class="content-container">
-        <h2 class="lead">UX manager, design system leader, front-end specialist, standards and accessibility
-            advocate.
-        </h2>
-        <p>
-            I've dedicated my career since 2004 to enhancing online experiences for US citizens. I enjoy working
-            transparently and making complex processes easier. I bring a passion for web standards, human centered
-            design, and research.
-        </p>
-        <p>
-            I'm an alum of <a href="https://18f.gsa.gov">18F</a> and <a href="https://www.egov.com/">NIC Inc.</a> and currently work for <a href="https://adhocteam.us/">Ad Hoc</a> as a
-            Manager of Design supporting work for VA.
-        </p>
-    </div>
+
+<div class="content-container">
+    <p>
+        Currently <strong>Manger of Design</strong> at <a href="https://adhocteam.us/">Ad Hoc</a> driving <strong>UX
+            strategy, design systems, and accessibility</strong> for VA digital services. Alum of <a
+            href="https://18f.gsa.gov">18F</a> and <a href="https://www.egov.com/">NIC Inc.</a>
+    </p>
+    <p>I've spent my career since 2004 enhancing digital experiences for U.S. citizens by simplifying complexity,
+        integrating scalable design systems, and championing accessibility. With a passion for human-centered design, I
+        bridge UX leadership and technical execution to drive impactful solutions. I thrive in collaborative spaces,
+        mentoring teams, aligning workflows, and turning design principles into real-world impact.</p>
+
 </div>
+
 <div class="selected-work">
     <div class="content-container" id="work">
         <h2 class="lead">Selected work</h2>
@@ -33,64 +31,74 @@ pageClass: home
             </li>
             {% endfor %}
         </ul>
-        <h2 class="lead">Selected articles</h2>
-        <ul class="list-unstyled">
-            {% for article in site.articles %}
-            <li>
-                <a href="{{ article.url}}"><span class="section-title">{{ article.title }}</span></a> {{article.summary}}
-            </li>
-            {% endfor %}
-        </ul>
     </div>
+</div>
+<div class="selected-work selected-articles">
+    <div class="content-container">
+<h2 class="lead">Selected articles</h2>
+<ul class="list-unstyled">
+    {% for article in site.articles %}
+    <li>
+        <a href="{{ article.url}}"><span class="section-title">{{ article.title }}</span></a>
+        {{article.summary}}
+    </li>
+    {% endfor %}
+</ul>
+</div>
 </div>
 <div class="additional-work">
     <div class="content-container">
         <h2 class="lead">Who I've worked with</h2>
-        <p>My work has improved how millions of people interact with government services, shaping digital experiences at agencies like CMS, VA, DoD, and USDS by making them more accessible, efficient, and user-friendly.</p>
+        <p>Partnering with agencies like CMS, VA, and DoD to make government services work for people.</p>
         <ul class="projects">
             {% assign sorted = site.work | sort: 'title' %}
             {% for work in sorted %}
-         
+
             <li>
                 {% if work.link %}
-                    <img src="{{ work.image }}" style="max-width: 200px;" alt="{{ work.title }}">
-                    {% endif %}
-                    {% if work.link %}
+                <img src="{{ work.image }}" style="max-width: 200px;" alt="{{ work.title }}">
                 {% endif %}
-            </li>
-            {% endfor %}
-        </ul>
-        <h2 class="lead">Projects I've worked on</h2>
-        <ul class="projects projects2">
-            {% assign projects = site.projects | sort: 'title' %}
-            {% for work in projects %}
-            <li>
                 {% if work.link %}
-                <a href="{{ work.link | permalink }}">
-                <img src="{{work.image}}"/>
-            </a><br>
-                <a href="{{ work.link | permalink }}">
-                    {% endif %}
-                    {{ work.title }}
-                    {% if work.link %}
-                </a>
                 {% endif %}
             </li>
             {% endfor %}
         </ul>
     </div>
-</div>
-<div class="music-section">
-    <div class="content-container" id="music">
-        <h2 class="lead">Where to listen</h2>
-        <ul class="footer-social">
-            <li><a href="https://line47.bandcamp.com/">Line 47 Bandcamp </a></li>
-            <li><a href="https://terminaldusk.bandcamp.com/">Terminal Dusk Records Bandcamp</a></li>
-            <li><a href="https://open.spotify.com/artist/7qefxZPpoAn9L0RzJja29z">Spotify </a></li>
-            <li><a href="https://www.youtube.com/@L47music"> YouTube</a></li>
-            <li><a href="https://soundcloud.com/line47">Soundcloud </a></li>
-        </ul>
-        <h2>Latest Line 47 release</h2>
-        {% include line47-bandcamp-import.html %}
     </div>
-</div>
+    <div class="additional-work">
+        <div class="content-container">
+            <h2 class="lead">Projects I've worked on</h2>
+            <p>Building better government tech—simpler, smarter, and more human-centered.</p>
+            <ul class="projects projects2">
+                {% assign projects = site.projects | sort: 'title' %}
+                {% for work in projects %}
+                <li>
+                    {% if work.link %}
+                    <a href="{{ work.link | permalink }}">
+                        <img src="{{work.image}}" />
+                    </a><br>
+                    <a href="{{ work.link | permalink }}">
+                        {% endif %}
+                        {{ work.title }}
+                        {% if work.link %}
+                    </a>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="music-section">
+        <div class="content-container" id="music">
+            <h2 class="lead">Where to listen</h2>
+            <ul class="footer-social">
+                <li><a href="https://line47.bandcamp.com/">Line 47 Bandcamp </a></li>
+                <li><a href="https://terminaldusk.bandcamp.com/">Terminal Dusk Records Bandcamp</a></li>
+                <li><a href="https://open.spotify.com/artist/7qefxZPpoAn9L0RzJja29z">Spotify </a></li>
+                <li><a href="https://www.youtube.com/@L47music"> YouTube</a></li>
+                <li><a href="https://soundcloud.com/line47">Soundcloud </a></li>
+            </ul>
+            <h2>Latest Line 47 release</h2>
+            {% include line47-bandcamp-import.html %}
+        </div>
+    </div>

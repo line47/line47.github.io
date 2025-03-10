@@ -84,6 +84,9 @@ html {
         margin: 0 auto;
         max-width: 900px;
     }
+    .lead {
+        text-align: center;
+    }
 }
 
 .selected-work,
@@ -98,6 +101,9 @@ html {
     color: $color-dark;
    }
    .content-container {
+    text-align: center !important;
+   }
+   .lead {
     text-align: center;
    }
 }
@@ -217,12 +223,13 @@ footer {
         color: $text-light;
 
     }
+    .lead {
+        text-align: center;
+    }
 }
 
 .home {
-    .content-container {
-        text-align: center;
-    }
+  .hero { text-align: center;}
 }
 
 .layout-project footer .content-container {
@@ -254,12 +261,12 @@ h6 {
     margin-left: 0;
     margin-bottom: $spacer-3;
     list-style: none;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-    max-width: 900px;
-    margin: 0 auto;
     text-align: center;
+    li {
+        display: inline-block;
+        margin: 0 $spacer-2;
+        text-align: center;
+    }
 }
 
 ol,
@@ -481,23 +488,22 @@ a:visited {
 .additional-work {
     .projects {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
         grid-column-gap: $spacer-6;
-        row-gap:0;
-        max-width: 1280px;
-        margin: 0 auto;
-        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
         img {
             max-width: 100%;
             
         }
+        li {
+            text-align: center;
+        }
         &.projects2 {
-            grid-template-columns: 1fr 1fr 1fr; 
-            row-gap:$spacer-6; 
-
+            grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
             li {
-                max-width: 400px;
-                margin: 0 auto;  
+                text-align: left;
                 
             }
         }
@@ -525,10 +531,9 @@ a:visited {
     
         }
     
-        @media (max-width: 600px) {
-            grid-template-columns: 1fr;
-    
-        }
+    }
+    .lead {
+        text-align: center;
     }
 }
 
