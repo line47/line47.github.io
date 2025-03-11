@@ -155,17 +155,12 @@ html {
         margin-bottom: $spacer-6;
 
         @media (max-width: 900px) {
-            font-size: $spacer-5 ;
+            font-size: $spacer-6 ;
             line-height: 1.15;
             margin-bottom: $spacer-3;
       
           }
       
-          @media (max-width: 600px) {
-              font-size: $spacer-3 ;
-              margin-bottom: $spacer-1;
-      
-          }
     }
 
     .section-title {
