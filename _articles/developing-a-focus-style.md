@@ -5,8 +5,8 @@ summary: Making them accessible, themable, and impossible to miss without clashi
 summary-long:  On a recent project, we had a set of focus styles built into a design system that were inconsistent and ineffective, leading to a not-so-great end user experience.
 image: focus-style.png
 date: 2022-02-08
-home: yes
 layout: article
+home: yes
 ---
 
 Focus styles are visual indicators used to style elements, usually links and form elements, that have been focused by the user, either by “tabbing” using the keyboard or by clicking.
