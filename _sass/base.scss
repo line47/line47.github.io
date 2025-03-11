@@ -112,10 +112,7 @@ html {
     padding: $spacer-8 $spacer-2;
     margin: 0 auto;
     max-width: $site-max-width;
-    // P {
-    //     margin-left: auto;
-    //     margin-right: auto;
-    // }
+   
     p, li {
         max-width: $character-width;
     }
@@ -225,6 +222,10 @@ footer {
 
 .home {
   .hero { text-align: center;}
+   p {
+         margin-left: auto;
+         margin-right: auto;
+     }
 }
 
 .layout-project footer .content-container {
