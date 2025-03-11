@@ -2,7 +2,7 @@
 layout: project
 title: 18F Methods
 link: https://guides.18f.gov/methods/
-image: /assets/images/projects/18F-Methods-logo.png
+image: /assets/images/projects/project-18f-methods.png
 subtitle: Website redesign and ongoing support
 role: Front-end designer, team lead
 responsibilities:

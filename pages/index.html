@@ -74,16 +74,16 @@ pageClass: home
                 {% assign projects = site.projects | sort: 'title' %}
                 {% for work in projects %}
                 <li>
-                    {% if work.link %}
-                    <a href="{{ work.link | permalink }}">
+                   
+                    {% if work.link %} <a href="{{ work.link | permalink }}">{% endif %}
                         <img src="{{work.image}}" />
-                    </a><br>
-                    <a href="{{ work.link | permalink }}">
-                        {% endif %}
-                        {{ work.title }}
-                        {% if work.link %}
-                    </a>
-                    {% endif %}
+                        {% if work.link %} </a> {% endif %}
+                    <br>
+                    
+                    {% if work.link %}<a href="{{ work.link | permalink }}">{% endif %}
+                    {{ work.title }}
+                    {% if work.link %}</a>{% endif %}
+                    
                 </li>
                 {% endfor %}
             </ul>
