@@ -112,10 +112,10 @@ html {
     padding: $spacer-8 $spacer-2;
     margin: 0 auto;
     max-width: $site-max-width;
-    P {
-        margin-left: auto;
-        margin-right: auto;
-    }
+    // P {
+    //     margin-left: auto;
+    //     margin-right: auto;
+    // }
     p, li {
         max-width: $character-width;
     }
