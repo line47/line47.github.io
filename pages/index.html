@@ -27,6 +27,7 @@ pageClass: home
             <li>
                 <span class="section-title"><a href="{{ work.url | permalink }}">{{ work.title }}</a></span>
                 {{work.summary}}
+               
 
             </li>
             {% endfor %}
@@ -56,7 +57,7 @@ pageClass: home
 
             <li>
                 {% if work.link %}
-                <img src="{{ work.image }}" style="max-width: 200px;" alt="{{ work.title }}">
+                <img src="{{ work.image }}" alt="{{ work.title }}">
                 {% endif %}
                 {% if work.link %}
                 {% endif %}

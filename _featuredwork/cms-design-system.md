@@ -15,7 +15,7 @@ responsibilities:
   - Front-end design
   - Systems thinking
   - Front-end development
-smallImage: cms-logo.png
+image: /assets/images/agency_logos/cms-logo.png
 largeImage: cms-design-system-large.png
 largeImageAlt: 
 builtWith:

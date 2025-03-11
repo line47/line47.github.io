@@ -14,7 +14,7 @@ responsibilities:
   - Front-end development
   - Front-end design
   - Information architecture
-smallImage: seedfund-logo.png
+image: /assets/images/agency_logos/NSF-logo.png
 largeImage: seedfund-large.png
 builtWith:
   - React
