@@ -38,7 +38,8 @@ pageClass: home
     <div class="content-container">
 <h2 class="lead">Selected articles</h2>
 <ul class="list-unstyled">
-    {% for article in site.articles %}
+    {% assign articleSorted = site.articles | sort: 'date' | reverse %}
+    {% for article in articleSorted %}
     <li>
         <a href="{{ article.url}}"><span class="section-title">{{ article.title }}</span></a>
         {{article.summary}}
