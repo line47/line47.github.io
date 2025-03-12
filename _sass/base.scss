@@ -53,7 +53,7 @@ html {
 .timeframe {
     display: inline-block;
     font-weight: 200;
-    font-size: $spacer-2;
+    font-size: 1rem;
 }
 
 .bkg-green-quarternary {
@@ -781,6 +781,10 @@ pre {
             margin-top: $spacer-10 !important;
             margin-bottom: 0;
         }
+    }
+    img {
+       display:block;
+        margin: 0 auto;
     }
 
 }
