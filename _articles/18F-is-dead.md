@@ -8,13 +8,13 @@ layout: article
 home: yes
 ---
 
-When I joined 18F, I knew I was stepping into something special. It wasn’t just another government agency—it was a group of mission-driven technologists, designers, and strategists who believed in making public services work for the people. 18F was a forward-thinking team that brought modern digital practices into an outdated, bureaucratic system. Whether we were designing more accessible websites, modernizing authentication systems, or improving cloud infrastructure, the goal was always the same: to make government services easier, faster, and better for the people who needed them most. And now, it’s gone.
+When I joined 18F, I knew I was stepping into something special. It wasn’t just another government agency—it was a team of mission-driven technologists, designers, and strategists dedicated to improving public services. 18F introduced modern digital practices into an outdated system, making government services easier, faster and more accessible. Whether designing inclusive websites, modernizing authentication or enhancing cloud infrastructure, the goal remained the same: serving people better. And now, it’s gone.
 
-The decision to dismantle 18F wasn’t about inefficiency or cost—it was about politics. The Trump administration has a well-documented history of rolling back programs initiated under previous administrations, regardless of their success. 18F, which was born during the Obama administration and gained recognition for its innovative approach to government technology, became an easy target. Instead of assessing its impact and refining its structure, leadership chose to dismantle it entirely, undermining years of progress in digital government services.
+The decision to dismantle 18F wasn’t about inefficiency or cost—it was politics. The Trump administration often rolled back Obama-era programs regardless of their success. 18F, recognized for its innovation in government technology, became an easy target. Instead of refining its structure, leadership chose to eliminate it, erasing years of progress.
 
-This is poor leadership. 18F could have been adjusted, improved, or scaled in smarter ways. Instead, it was scrapped entirely, leaving agencies with fewer options and crippling the progress of government technology.
+This is poor leadership. 18F could have been adapted, improved or scaled more effectively. Instead, it was scrapped entirely, leaving agencies with fewer options, stalling advancements in government technology and leaving agencies with in progress work high and dry.
 
-But the need for better digital services hasn’t gone away. Government services are still outdated, agencies still struggle with inefficient tools, and citizens still deserve modern digital services. The fight isn’t over.
+The need for better digital services remains. Government systems are still outdated, agencies still struggle with inefficiencies and citizens still deserve modern, accessible services. 
 
 ## 18F was built to improve and modernize government
 
@@ -26,7 +26,7 @@ In 2014, a group of presidential innovation fellows founded 18F to bring change 
 
 * **Created reusable solutions** that could scale across agencies instead of reinventing the wheel with every new project.
 
-* **Operated as a cost-recoverable team**. Unlike many government programs that rely on appropriated funds from Congress, 18F charged partner agencies for its services, ensuring financial sustainability without additional taxpayer burden.
+* **Operated as a cost-recoverable team** that did not rely on appropriated funds from Congress, and instead charged agencies for services.
 
 ## My projects at 18F
 
@@ -64,8 +64,10 @@ The dismantling of 18F not only stalls these significant projects but also under
 
 The end of 18F leaves a significant gap in the effort to modernize government technology. Agencies that once had a trusted, agile partner for improving digital services are now left with fewer options—forced to rely on outdated contracting models or internal teams that may lack the same level of expertise. Some of the most impactful work in government digital transformation has been disrupted, and without a team like 18F, the pace of innovation will slow.
 
-However, all is not lost. The alumni of 18F are already spreading their expertise across the civic tech ecosystem, bringing their skills to government contractors, non-profits, and private firms committed to improving public services. Others might bring their experience back into federal agencies, working from the inside to push for better digital government.
+However, all is not lost. The alumni of 18F are already spreading their expertise across the civic tech ecosystem, bringing their skills to state and local governments, non-profits, and private firms committed to improving public services. Others might bring their experience back into federal agencies, working from the inside to push for better digital government.
 
 The same reasons 18F existed in the first place—outdated technology, expensive IT contracts, and poor user experiences—are still problems today. Killing 18F doesn’t solve those issues; it just makes them harder to fix.
 
-[How you can help](https://18f.org/how-to-help/) and [Alt 18F on Bluesky](https://bsky.app/profile/alt18f.bsky.social).
+~~
+
+Want to know [how you can help](https://18f.org/how-to-help/)?<br> Follow [Alt 18F on Bluesky](https://bsky.app/profile/alt18f.bsky.social) for more.
