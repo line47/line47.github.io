@@ -69,10 +69,6 @@ html {
     background-color: $color-dark;
     max-width: none;
     color: $color-lightergrey;
-
-    .content-container>.super-heading {
-        border: none;
-    }
     .section-title {
         margin-top:$spacer-1;
     }
@@ -121,29 +117,6 @@ html {
         margin-top:0 !important;
     }
 
-    .super-heading {
-        max-width: $site-max-width;
-        font-family: $font-main-header;
-        font-weight: 700;
-        font-size: $spacer-10;
-        line-height: 1;
-        margin-bottom: $spacer-6;
-        border-bottom: $spacer-4 solid $color-bright;
-        display: inline-block;
-
-        @media (max-width: 900px) {
-          font-size: $spacer-7 ;
-          margin-bottom: $spacer-3;
-    
-        }
-    
-        @media (max-width: 600px) {
-            font-size: $spacer-5 ;
-            margin-bottom: $spacer-1;
-    
-        }
-    }
-
     .lead {
         font-size: $spacer-9;
         font-weight: 800;
@@ -157,8 +130,41 @@ html {
             margin-bottom: $spacer-3;
       
           }
+          @media (max-width: 600px) {
+                font-size: $spacer-5;
+                line-height: 1.2;
+                margin-bottom: $spacer-1;
+            }
       
     }
+
+    h1:not(.lead),
+    h2:not(.lead) {
+        font-size: $spacer-6;
+        font-weight: 600;
+        line-height: 1.05;
+        letter-spacing: 0px;
+        margin-bottom: $spacer-6;
+    }
+    
+    @media (max-width: 900px) {
+        h1:not(.lead),
+        h2:not(.lead){
+            font-size: $spacer-5 ;
+            line-height: 1;
+            margin-bottom: $spacer-3;
+        }
+    }
+    
+    @media (max-width: 600px) {
+       h1:not(.lead),
+       h2:not(.lead) {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+    }
+    
+
 
     .section-title {
         font-size: $spacer-6;
