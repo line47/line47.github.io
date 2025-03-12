@@ -309,7 +309,7 @@ ul {
       @media (max-width: 600px) {
           font-size: $spacer-2 ;
           line-height: $spacer-4;
-          margin-bottom: $spacer-1;
+          margin-bottom: $spacer-2;
   
       }
 
@@ -780,11 +780,13 @@ pre {
         .lead {
             margin-top: $spacer-10 !important;
             margin-bottom: 0;
+            
         }
     }
     img {
        display:block;
         margin: 0 auto;
+        max-width: 100%;
     }
 
 }
