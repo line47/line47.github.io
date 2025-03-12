@@ -32,17 +32,17 @@ In 2014, a group of presidential innovation fellows founded 18F to bring change 
 
 I had the privilege of working on projects that fundamentally changed how government digital services function. These weren’t just theoretical improvements—they directly benefited federal employees and everyday people who rely on government services. These projects reduced inefficiencies and made government services actually work for the people they were meant to serve.
 
-* **Login.gov** – A secure, user-friendly authentication system that replaced inefficient, agency-specific logins, making access to federal services easier and safer.
+* **[Login.gov](https://login.gov)** – A secure, user-friendly authentication system that replaced inefficient, agency-specific logins, making access to federal services easier and safer.
 
-* **Cloud.gov** – A modern cloud hosting platform that improved security and streamlined infrastructure for federal agencies.
+* **[Cloud.gov](https://cloud.gov)** – A modern cloud hosting platform that improved security and streamlined infrastructure for federal agencies.
 
-* **America's Seed Fund** – A complete redesign of the National Science Foundation’s Seed Fund website, making it easier for startups and researchers to apply for federal funding.
+* **[America's Seed Fund](https://seedfund.nsf.gov/)** – A complete redesign of the National Science Foundation’s Seed Fund website, making it easier for startups and researchers to apply for federal funding.
 
-* **18F Methods** – An open-source collection of UX and human-centered design methods tailored for government agencies, helping teams build better digital services.
+* **[18F Methods](https://18f.org/guides/methods/)** – An open-source collection of UX and human-centered design methods tailored for government agencies, helping teams build better digital services.
 
-* **U.S. Web Design System (USWDS)** – A design system that standardized accessibility-compliant, user-friendly components across federal websites, making government services easier to navigate for millions of Americans.
+* **[U.S. Web Design System (USWDS)](https://designsystem.digital.gov/)** – A design system that standardized accessibility-compliant, user-friendly components across federal websites, making government services easier to navigate for millions of Americans.
 
-* **Thrift Savings Plan (TSP) Modernization** – A complete UX overhaul of the federal retirement savings platform, improving usability for government employees and retirees.
+* **[Thrift Savings Plan (TSP) Modernization](https://www.tsp.gov/)** – A complete UX overhaul of the federal retirement savings platform, improving usability for government employees and retirees.
 
 ## Projects stalled
 
@@ -50,11 +50,11 @@ The abrupt termination of 18F has disrupted numerous critical projects aimed at 
 
 ### Notable project affected
 
-* **Weather.gov Modernization** - 18F was collaborating with the National Weather Service to overhaul its outdated technology infrastructure. The project aimed to provide a more stable public API, implement a modern content management system, and redesign the website for easier public access to weather information. With 18F’s dissolution, this initiative has been left incomplete, leaving the National Weather Service with less reliable and more time-consuming tools.
+* **[Weather.gov Modernization](https://www.weather.gov/)** - 18F was collaborating with the National Weather Service to overhaul its outdated technology infrastructure. The project aimed to provide a more stable public API, implement a modern content management system, and redesign the website for easier public access to weather information. With 18F’s dissolution, this initiative has been left incomplete, leaving the National Weather Service with less reliable and more time-consuming tools.
 
-* **Federal Voting Assistance Program (FVAP)** - To ensure that military service members and Americans overseas could vote efficiently, 18F was assisting FVAP in enhancing their email-to-fax service, which was overwhelmed during presidential elections. The project’s sudden halt means that FVAP may continue to face challenges in processing high volumes of ballot submissions securely and efficiently.
+* **[Federal Voting Assistance Program (FVAP)](https://www.fvap.gov/)** - To ensure that military service members and Americans overseas could vote efficiently, 18F was assisting FVAP in enhancing their email-to-fax service, which was overwhelmed during presidential elections. The project’s sudden halt means that FVAP may continue to face challenges in processing high volumes of ballot submissions securely and efficiently.
 
-* **IRS Direct File Service** - In collaboration with the IRS, 18F played a pivotal role in developing the Direct File program, a free service allowing eligible taxpayers to file taxes directly with the IRS. Although the service remains active, the loss of 18F’s support jeopardizes future expansions and improvements, potentially hindering efforts to provide a comprehensive, free tax filing option for all Americans. This is especially impactful for low-income individuals who rely on free tax-filing solutions.
+* **[IRS Direct File Service](https://directfile.irs.gov/)** - In collaboration with the IRS, 18F played a pivotal role in developing the Direct File program, a free service allowing eligible taxpayers to file taxes directly with the IRS. Although the service remains active, the loss of 18F’s support jeopardizes future expansions and improvements, potentially hindering efforts to provide a comprehensive, free tax filing option for all Americans. This is especially impactful for low-income individuals who rely on free tax-filing solutions.
 
 * **In Care Case Management System for Unaccompanied Children** - 18F was working with the Office of Refugee Resettlement to replace an outdated case management system used for unaccompanied children entering the U.S. The legacy system’s deficiencies posed safety risks, and 18F’s project aimed to build a modern, user-centered solution. The project’s abrupt cessation leaves vulnerable children at continued risk due to technological shortcomings.
 
@@ -68,4 +68,4 @@ However, all is not lost. The alumni of 18F are already spreading their expertis
 
 The same reasons 18F existed in the first place—outdated technology, expensive IT contracts, and poor user experiences—are still problems today. Killing 18F doesn’t solve those issues; it just makes them harder to fix.
 
-Join us at [Alt 18F org](https://18f.org/) and [1Alt 8F on Bluesky](https://bsky.app/profile/alt18f.bsky.social).
+[How you can help](https://18f.org/how-to-help/) and [Alt 18F on Bluesky](https://bsky.app/profile/alt18f.bsky.social).
