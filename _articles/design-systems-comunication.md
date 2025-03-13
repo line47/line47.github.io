@@ -1,12 +1,10 @@
 ---
 title: "Design systems in government: Communication is critical"
-link: https://adhocteam.us/2019/09/18/design-systems-communication-is-critical/
 summary: Design systems in government don’t run on magic, they run on communication.
-summary-long: Design system communication is a two-way street. Establishing a strong communication strategy to get information from teams using the design system as well as provide the core team with information is critical for its success.
 image: design-systems-comunication.jpg
 date: 2019-09-18
 layout: article
-home: yes
+featured: false
 ---
 
 With a design system, you often have lots of people working on lots of different things, and over time you get design sprawl. Now imagine this sprawl across multiple government agencies, multiple programs, and multiple contracting teams. Throughout the lifecycle of a product, teams need clear ways to communicate successes, troubles, and improvements. They also need to be able to ask for support. The core design system team needs to ensure a mutual understanding for teams using the design system.

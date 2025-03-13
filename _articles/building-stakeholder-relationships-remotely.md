@@ -1,10 +1,10 @@
 ---
 title: Building stakeholder relationships remotely
-link: 
 summary: 
 image: 
 date: 2021-05-04
-home: no
+layout: article
+featured: false
 ---
 
 Throughout my government technology career, I’ve worked with all kinds of stakeholders on state, local, and federal projects. As both a civil servant inside the government and as a contractor, I’ve had the pleasure of working with stakeholders who range from being committed to the project's success to checked-out and indifferent to the work of the team. Stakeholder challenges can stem from work culture differences, interpersonal dynamics, and previous experiences, to name a few.
@@ -27,7 +27,7 @@ I’ve found that involving stakeholders in conversations and meetings can help 
 
 Sometimes when trying to invite stakeholders to more meetings we hear things like “That’s too many meetings” or “I don’t have time.” This can be a valid point as many stakeholders are juggling things other than the application you’re redesigning. If that’s the case, let stakeholders know the goal of the meeting and why it’s important for them to be there. For example, “During Wednesday’s meeting, we will be finalizing the color scheme and need your input to ensure we are on the correct path and can continue to move forward.”
 
-##Turn on your video
+## Turn on your video
 
 Seeing a person in their environment makes a much stronger human connection than seeing an image of a phone or a random icon. You can see facial expressions and reactions to what is being said and it gives the feeling of connection. We’ve all been in a video call where everyone has their camera off. It’s not very engaging and feels much less personal than a call with everyone on video.
 
