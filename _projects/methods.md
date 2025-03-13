@@ -27,5 +27,6 @@ supporting_links:
 sortOrder: 0
 startYear: 2017
 endYear: 2019
+home: true
 ---
 The 18F Method Cards are a collection of tools that describe how 18F teams put human-centered design into practice. Simplified instructions help other organizations and federal offices adopt human-centered design into their own projects. The cards are focused on design in the context of digital services, but can be adapted to non-technical design projects as well.

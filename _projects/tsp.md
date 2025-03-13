@@ -23,6 +23,7 @@ builtWith:
   - GitHub
 startYear: 2018
 endYear: 2019
+featured: true
 ---
 
 ### Getting started

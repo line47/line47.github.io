@@ -22,7 +22,7 @@ pageClass: home
     <div class="content-container" id="work">
         <h2 class="lead">Selected work</h2>
         <ul class="list-unstyled">
-            {% assign featureSorted = site.featuredwork | sort: 'startYear' | reverse %}
+            {% assign featureSorted = site.projects | where: "featured", true | sort: "endYear" | reverse %}
             {% for work in featureSorted %}
             <li>
                 <span class="section-title"><a href="{{ work.url | permalink }}">{{ work.title }}</a></span>
@@ -72,7 +72,7 @@ pageClass: home
             <h2 class="lead">Projects I've worked on</h2>
             <p>Building better government tech—simpler, smarter, and more human-centered.</p>
             <ul class="projects projects2">
-                {% assign projects = site.projects | sort: 'title' %}
+                {% assign projects = site.projects | where: "home", true | sort: "endYear" | reverse %}
                 {% for work in projects %}
                 <li>
                    

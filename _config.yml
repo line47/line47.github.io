@@ -12,7 +12,7 @@ collections:
     permalink: /work/:slug
   projects:
     output: true
-    permalink: /work/:slug
+    permalink: /projects/:slug
   articles:
     output: true
     permalink: /articles/:categories/:year/:month/:day/:title:output_ext

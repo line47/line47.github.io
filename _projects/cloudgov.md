@@ -20,6 +20,7 @@ builtWith:
   - JavaScript
   - U.S. Web Design System
 startYear: 2016
+home: true
 ---  
 
 Cloud.gov allows federal digital service teams to focus on developing and deploying their custom application code, without needing to manage underlying server infrastructure.
