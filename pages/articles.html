@@ -8,9 +8,9 @@ pageClass: article-home
 <ul class="list-unstyled">
     {% assign articleSorted = site.articles | sort: "date" | reverse %}
     {% for article in articleSorted %}
-    <li>
+    <li class="article-post">
         <span class="timeframe">Published {{ article.date | date: "%b %-d, %Y" }}</span>
-        <a href="{{ article.url }}"><span class="section-title">{{ article.title }}</span></a>
+        <h2 class="article-title"><a href="{{ article.url }}">{{ article.title }}</a></h2>
         {{ article.summary }}
     </li>
     {% endfor %}

@@ -47,7 +47,7 @@ I had the privilege of working on projects that fundamentally changed how govern
 
 The abrupt termination of 18F has disrupted numerous critical projects aimed at modernizing and improving government digital services. Agencies that depended on 18F’s expertise are now facing major setbacks—some projects have stalled completely, while others are scrambling for alternative solutions with limited resources. Without 18F, agencies are losing a trusted partner that understood how to build efficient, user-centered government technology in a way that traditional vendors simply do not.
 
-### Notable project affected
+### Notable projects affected
 
 * **[Weather.gov Modernization](https://www.weather.gov/)** - 18F was collaborating with the National Weather Service to overhaul its outdated technology infrastructure. The project aimed to provide a more stable public API, implement a modern content management system, and redesign the website for easier public access to weather information. With 18F’s dissolution, this initiative has been left incomplete, leaving the National Weather Service with less reliable and more time-consuming tools.
 
