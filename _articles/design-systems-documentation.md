@@ -1,12 +1,10 @@
 ---
 title: "Design systems in government: Improving documentation for better collaboration"
-link: https://adhocteam.us/2019/09/26/design-systems-documentation-collaboration/
 summary: Government design systems thrive on collaboration, but only if the documentation isn’t a cryptic scavenger hunt.
-summary-long: In this post, we’re going to provide some guidance on building or maintaining the documentation for design systems, but many of these concepts could easily apply to other types of projects. 
 image: design-systems-documentation.jpg
 date: 2019-09-26
 layout: article
-home: yes
+featured: true
 ---
 
 In order for teams and projects to be successful, there needs to be as few barriers between the team members as possible. In a previous post, we examined how communication is an essential aspect of efficient teams, specifically through the lens of design systems. One thing we learned is that design systems don’t negate the need for effective communication — in fact, healthy pathways of communication are important whether a team is using a design system on a project or not. So, one aspect of communication and collaboration that we’d like to expand on a bit is documentation.

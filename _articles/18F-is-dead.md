@@ -1,11 +1,10 @@
 ---
 title: 18F is dead
-link: https://adhocteam.us/2019/09/18/design-systems-communication-is-critical/
 summary: They shut 18F down, but the need for better digital services isn’t over.
 image: /assets/images/articles/18F-is-dead.gif
 date: 2025-03-12
 layout: article
-home: yes
+featured: true
 ---
 
 When I joined 18F, I knew I was stepping into something special. It wasn’t just another government agency—it was a team of mission-driven technologists, designers, and strategists dedicated to improving public services. 18F introduced modern digital practices into an outdated system, making government services easier, faster and more accessible. Whether designing inclusive websites, modernizing authentication or enhancing cloud infrastructure, the goal remained the same: serving people better. And now, it’s gone.
