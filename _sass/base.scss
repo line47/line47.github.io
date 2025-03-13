@@ -44,6 +44,14 @@ $character-width: 60ch;
 $line-height-normal: 1.3rem;
 
 
+.alert {
+    background-color: $color-bright;
+  text-align: center;
+  font-weight: 300;
+  font-family: monospace;
+  padding: .5rem 0;
+}
+
 html {
     font-family: $font-content;
     font-size: 1.1rem;
