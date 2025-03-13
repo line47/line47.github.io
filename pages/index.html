@@ -20,12 +20,12 @@ pageClass: home
 
 <div class="selected-work">
     <div class="content-container" id="work">
-        <h2 class="lead">Selected work</h2>
+        <h1 class="lead">Selected work</h1>
         <ul class="list-unstyled">
             {% assign featureSorted = site.projects | where: "featured", true | sort: "endYear" | reverse %}
             {% for work in featureSorted %}
             <li>
-                <span class="section-title"><a href="{{ work.url | permalink }}">{{ work.title }}</a></span>
+                <h2 class="section-title"><a href="{{ work.url | permalink }}">{{ work.title }}</a></h2>
                 {{work.summary}}
                
 
@@ -36,12 +36,12 @@ pageClass: home
 </div>
 <div class="selected-work selected-articles">
     <div class="content-container">
-<h2 class="lead">Selected articles</h2>
+<h1 class="lead">Selected articles</h1>
 <ul class="list-unstyled">
     {% assign articleSorted = site.articles | where: "featured", true | sort: "date" | reverse %}
     {% for article in articleSorted %}
-    <li>
-        <a href="{{ article.url }}"><span class="section-title">{{ article.title }}</span></a>
+    <li class="article-post">
+        <h2 class="article-title"><a href="{{ article.url }}">{{ article.title }}</a></h2>
         {{ article.summary }}
     </li>
     {% endfor %}
@@ -50,7 +50,7 @@ pageClass: home
 </div>
 <div class="additional-work">
     <div class="content-container">
-        <h2 class="lead">Who I've worked with</h2>
+        <h1 class="lead">Who I've worked with</h1>
         <p>Partnering with agencies like CMS, VA, and DoD to make government services work for people.</p>
         <ul class="projects">
             {% assign sorted = site.work | sort: 'title' %}
@@ -69,7 +69,7 @@ pageClass: home
     </div>
     <div class="additional-work">
         <div class="content-container">
-            <h2 class="lead">Projects I've worked on</h2>
+            <h1 class="lead">Projects I've worked on</h1>
             <p>Building better government tech—simpler, smarter, and more human-centered.</p>
             <ul class="projects projects2">
                 {% assign projects = site.projects | where: "home", true | sort: "endYear" | reverse %}
@@ -92,7 +92,7 @@ pageClass: home
     </div>
     <div class="music-section">
         <div class="content-container" id="music">
-            <h2 class="lead">Where to listen</h2>
+            <h1 class="lead">Where to listen</h1>
             <ul class="inline-list">
                 <li><a href="https://line47.bandcamp.com/">Line 47 Bandcamp </a></li>
                 <li><a href="https://terminaldusk.bandcamp.com/">Terminal Dusk Records Bandcamp</a></li>
