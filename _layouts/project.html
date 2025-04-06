@@ -1,61 +1,56 @@
 <!DOCTYPE HTML>
 <html lang="en">
-  <head>
-{% include head.html %}
+
+<head>
+  {% include head.html %}
 </head>
+
 <body>
- 
-    {% include top-nav.html %}
-    
-    <div class="hero">
-      <div class="content-container">
+
+  {% include top-nav.html %}
+
+  <div class="hero">
+    <div class="content-container">
       <h1 class="lead">{{ page.title }}</h1>
       <p class="section-title">{{page.who}}</p>
-      <span class="timeframe">{% if page.startYear %}{{page.startYear}}{% endif %}{% if page.endYear %} - {{page.endYear}}{% endif %}</span>
-  </div>
+      <span class="timeframe">{% if page.startYear %}{{page.startYear}}{% endif %}{% if page.endYear %} -
+        {{page.endYear}}{% endif %}</span>
+    </div>
   </div>
   <div class="alert">This page is in progress. I'm currently working on updates. It might be messy.</div>
-<div class="layout-project">
-  <div class="content-container">
-    <div class="main-content">
-     
-      <h2>Outcome</h2>  
-      <p>{{ page.summary }}</p>
-      {% if page.largeImage %}
-      <img src="/assets/images/projects/{{ page.largeImage }}" alt=""/>
-      {% endif %} 
-      {% if page.challenge %}
-        <h2>Challenge</h2> 
-        <p>{{ page.challenge }}</p>
-      {% endif %} 
-      {{ content }}
-    </div>
-  
-    <div class="relative-content">    
-      <h2>My role and responsibilities</h2>
-     <p>My role on this project was <span class="project-role">{{ page.role }}</span> and my responsibilities included: 
-      {% if page.builtWith %}
-        {% assign sorted = page.responsibilities | sort %}  
-        {% for item in sorted %}
-          {% if forloop.last %}<span class="project-responsibilities">{{ item }}</span>{% else %}<span class="project-responsibilities">{{item }}</span>,{% endif %}
-        {% endfor %}
-      </p>
-      <h2>Tools and software used</h2>
-     <p>
-        {% assign sorted = page.builtWith | sort %}
-        {% for item in sorted %}
-        {% if forloop.last %}{{ item }}{% else %}{{item }},{% endif %}
-        {% endfor %}
-     </p>
-        {% if page.link %}
-          <p><a href="{{ page.link }}" title="Visit the {{page.title}} website">Visit {{ page.title }} website</a></p>
-        {% endif %}
-      {% endif %}
-      
+  <div class="layout-project">
+    <div class="content-container">
+      <div class="main-content">
+        {{ content }}
+      </div>
 
+      <div class="relative-content">
+        <h2>My role and responsibilities</h2>
+        <p>My role on this project was <span class="project-role">{{ page.role }}</span> and my responsibilities
+          included:
+          {% if page.builtWith %}
+          {% assign sorted = page.responsibilities | sort %}
+          {% for item in sorted %}
+          {% if forloop.last %}<span class="project-responsibilities">{{ item }}</span>{% else %}<span
+            class="project-responsibilities">{{item }}</span>,{% endif %}
+          {% endfor %}
+        </p>
+        <h2>Tools and software used</h2>
+        <p>
+          {% assign sorted = page.builtWith | sort %}
+          {% for item in sorted %}
+          {% if forloop.last %}{{ item }}{% else %}{{item }},{% endif %}
+          {% endfor %}
+        </p>
+        {% if page.link %}
+        <p><a href="{{ page.link }}" title="Visit the {{page.title}} website">Visit {{ page.title }} website</a></p>
+        {% endif %}
+        {% endif %}
+
+
+      </div>
     </div>
   </div>
-</div>
   {% include footer.html %}
 </body>
 

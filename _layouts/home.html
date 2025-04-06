@@ -1,23 +1,21 @@
 <!DOCTYPE HTML>
 <html lang="en" class="layout-default {{ page.pageClass }}">
+
 <head>
-{% include head.html %}
+    {% include head.html %}
 </head>
+
 <body>
     {% include top-nav.html %}
     <div class="hero">
         <div class="content-container">
-        <h1 class="lead">Scott Weber</h1>
-        <h2>Design leader, architecting scalable design systems with accessibility and front-end expertise</h2>
-        <img class="img-ani" src="/assets/images/sw-home-2025.png"/>
+            <h1 class="lead">{{page.title}}</h1>
+            <h2 class="section-title">Design leader, architecting scalable design systems with accessibility and front-end expertise</h2>
+            <img class="img-ani" src="/assets/images/sw-home-2025.png" />
+        </div>
     </div>
-    </div>
-        {{ content }}
+    {{ content }}
     {% include footer.html %}
-    <script src="//cdnjs.cloudflare.com/ajax/libs/minicart/3.0.6/minicart.min.js"></script>
-    <script>
-        paypal.minicart.render();
-    </script>
 </body>
 
 </html>
