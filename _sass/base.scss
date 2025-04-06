@@ -169,7 +169,7 @@ html {
     }
 
     ul>li {
-        margin-bottom: $spacer-4;
+        margin-bottom: $spacer-1;
     }
 }
 
@@ -742,6 +742,19 @@ pre {
     .page-header .content-container {
         margin: 0 auto;
         max-width: 1280px;
+    }
+    h2 {
+    @media (max-width: 900px) {
+        font-size: $spacer-5 ;
+        line-height: 1.15;
+        margin-bottom: $spacer-3;
+  
+      }
+      @media (max-width: 600px) {
+            font-size: $spacer-4;
+            line-height: 1.2;
+            margin-bottom: $spacer-1;
+        }
     }
 
     .hero {
