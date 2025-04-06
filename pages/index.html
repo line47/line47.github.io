@@ -41,7 +41,7 @@ pageClass: home
     {% assign articleSorted = site.articles | where: "featured", true | sort: "date" | reverse %}
     {% for article in articleSorted %}
     <li class="article-post">
-        <h2 class="article-title"><a href="{{ article.url }}">{{ article.title }}</a></h2>
+        <h2 class="section-title"><a href="{{ article.url }}">{{ article.title }}</a></h2>
         {{ article.summary }}
     </li>
     {% endfor %}
