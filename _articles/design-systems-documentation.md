@@ -1,7 +1,7 @@
 ---
 title: "Design systems in government: Improving documentation for better collaboration"
 summary: Government design systems thrive on collaboration, but only if the documentation isn’t a cryptic scavenger hunt.
-image: design-systems-documentation.jpg
+image: /assets/images/articles/design-systems-documentation.jpg
 date: 2019-09-26
 layout: article
 featured: true
