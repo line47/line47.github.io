@@ -12,11 +12,21 @@
     }
     canvas {
       display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
     video {
       display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
     }
-  </style>
+  </style>  
 </head>
 <body>
   <canvas id="visualizer"></canvas>
@@ -36,7 +46,8 @@
    // Detect phone (mobile) and set CC34 to 50
     const isPhone = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 480;
     if (isPhone) {
-    midiValues[1] = 50; // CC34 - Grid Resolution
+    midiValues[1] = 0; // CC34 - Grid Resolution
+    video.style.display = "block"; // Show fullscreen video on phones
     }
     let backgroundShapes = [];
     const phrase = "LINE 47";
@@ -49,23 +60,25 @@
     }, 4000);
 
     function resizeCanvas() {
-  const windowAspect = window.innerWidth / window.innerHeight;
-
-  if (windowAspect > videoAspectRatio) {
-    // Window is wider than video: match height, center horizontally
-    canvas.height = window.innerHeight;
-    canvas.width = canvas.height * videoAspectRatio;
-  } else {
-    // Window is taller than video: match width, center vertically
+        if (isPhone) {
+    // On phones, let canvas fill entire screen
     canvas.width = window.innerWidth;
-    canvas.height = canvas.width / videoAspectRatio;
-  }
-
-  canvas.style.position = "absolute";
-  canvas.style.left = ((window.innerWidth - canvas.width) / 2) + "px";
-  canvas.style.top = ((window.innerHeight - canvas.height) / 2) + "px";
-
-  generateShapes();
+    canvas.height = window.innerHeight;
+  } else {
+        const windowAspect = window.innerWidth / window.innerHeight;
+        if (windowAspect > videoAspectRatio) {
+            // Window is wider than video: match height, center horizontally
+            canvas.height = window.innerHeight;
+            canvas.width = canvas.height * videoAspectRatio;
+        } else {
+            // Window is taller than video: match width, center vertically
+            canvas.width = window.innerWidth;
+            canvas.height = canvas.width / videoAspectRatio;
+        }
+        canvas.style.left = ((window.innerWidth - canvas.width) / 2) + "px";
+        canvas.style.top = ((window.innerHeight - canvas.height) / 2) + "px";
+    }
+        generateShapes();
     }
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
