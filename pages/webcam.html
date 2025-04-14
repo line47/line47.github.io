@@ -26,11 +26,18 @@
     const canvas = document.getElementById("visualizer");
     const ctx = canvas.getContext("2d");
     const video = document.getElementById("webcam");
-
     const offscreen = document.createElement("canvas");
     const offCtx = offscreen.getContext("2d");
 
-    let midiValues = [127, 127, ...new Array(14).fill(0)];
+    let videoAspectRatio = 16 / 9; // Default fallback
+
+
+    let midiValues = [127, 127, ...new Array(14).fill(0)]; 
+   // Detect phone (mobile) and set CC34 to 50
+    const isPhone = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 480;
+    if (isPhone) {
+    midiValues[1] = 50; // CC34 - Grid Resolution
+    }
     let backgroundShapes = [];
     const phrase = "LINE 47";
     let revealTimers = new Array(phrase.length).fill(0);
@@ -42,9 +49,23 @@
     }, 4000);
 
     function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      generateShapes();
+  const windowAspect = window.innerWidth / window.innerHeight;
+
+  if (windowAspect > videoAspectRatio) {
+    // Window is wider than video: match height, center horizontally
+    canvas.height = window.innerHeight;
+    canvas.width = canvas.height * videoAspectRatio;
+  } else {
+    // Window is taller than video: match width, center vertically
+    canvas.width = window.innerWidth;
+    canvas.height = canvas.width / videoAspectRatio;
+  }
+
+  canvas.style.position = "absolute";
+  canvas.style.left = ((window.innerWidth - canvas.width) / 2) + "px";
+  canvas.style.top = ((window.innerHeight - canvas.height) / 2) + "px";
+
+  generateShapes();
     }
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
@@ -53,8 +74,7 @@
       video.srcObject = stream;
       video.addEventListener("loadedmetadata", () => {
         video.play();
-
-        // Audio analysis
+        videoAspectRatio = video.videoWidth / video.videoHeight;
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         const audioSource = audioCtx.createMediaStreamSource(stream);
         const analyser = audioCtx.createAnalyser();
@@ -167,7 +187,7 @@
       const amplitudeThreshold = 30;
       const audioActive = audioLevel > amplitudeThreshold;
 
-      // Trigger 1–2 random letter reveals
+      // Randomly reveal 1–2 characters when audio is active
       if (audioActive) {
         for (let j = 0; j < 2; j++) {
           const index = shuffledIndices[Math.floor(Math.random() * shuffledIndices.length)];
@@ -186,14 +206,17 @@
           ctx.fillStyle = "black";
           ctx.fillText(phrase[i], x, y);
         } else {
-          ctx.fillStyle = "black";
-          const mode = i % 3;
-          if (mode === 0) {
-            ctx.fillText("▓", x, y); // dash
-          } else if (mode === 1) {
-            ctx.fillText("▓", x, y); // dash
-          } else {
-            ctx.fillText("▓", x, y); // glitchy block
+          // Dot matrix style grid of small black squares
+          const dotSize = 3;
+          const cols = 4;
+          const rows = 8;
+          ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
+          for (let row = 0; row < rows; row++) {
+            for (let col = 0; col < cols; col++) {
+              const dx = x - (cols * dotSize) / 2 + col * dotSize;
+              const dy = y - (rows * dotSize) / 2 + row * dotSize;
+              ctx.fillRect(dx, dy, dotSize - 1, dotSize - 1);
+            }
           }
         }
       }
@@ -212,7 +235,7 @@
 
       ctx.save();
       ctx.fillStyle = "white";
-      ctx.fillRect(0, 0, 200, 60);
+      ctx.fillRect(0, 0, 220, 60);
       ctx.font = "14px monospace";
       ctx.fillStyle = "#444";
       ctx.fillText("CC33_Dot_Size: " + midiValues[0], 20, 20);
