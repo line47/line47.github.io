@@ -49,9 +49,21 @@
     }
     let backgroundShapes = [];
     const phrase = "AS YOU WERE MEANT TO GO ON";
-    let revealTimers = new Array(phrase.length).fill(0);
     let shuffledIndices = [...Array(phrase.length).keys()].sort(() => Math.random() - 0.5);
     let audioLevel = 0;
+    let nextRevealIndex = 0;
+    let wasAboveThreshold = false;
+
+    const letterIndices = [];
+    for (let i = 0; i < phrase.length; i++) {
+      if (phrase[i] !== " ") letterIndices.push(i);
+    }
+
+    let revealTimers = new Array(letterIndices.length).fill(0);
+    let revealedFlags = new Array(letterIndices.length).fill(false);
+    let glitchFrames = new Array(letterIndices.length).fill(0);
+    let glitchChars = new Array(letterIndices.length).fill('');
+
 
     const wordsPerLine = 2 + Math.floor(Math.random() * 4); // 2 to 5 words per line
     const avgWordLength = 5.5; // Adjust based on your phrase style
@@ -59,7 +71,10 @@
 
 
 
-    const lines = wrapPhraseIntoLines(phrase, maxCharsPerLine);
+    // const lines = wrapPhraseIntoLines(phrase);
+    let lines = wrapPhraseIntoLines(phrase);
+
+
 
     setInterval(() => {
       shuffledIndices = [...Array(phrase.length).keys()].sort(() => Math.random() - 0.5);
@@ -89,6 +104,10 @@
       canvas.style.top = ((window.innerHeight - canvas.height) / 2) + "px";
 
       generateShapes();
+      lines = wrapPhraseIntoLines(phrase);
+      revealedFlags = new Array(phrase.length).fill(false);
+      glitchFrames = new Array(phrase.length).fill(0);
+      glitchChars = new Array(phrase.length).fill('');
     }
 
 
@@ -225,52 +244,81 @@
 
 
     function getResponsiveFontSize() {
-      return Math.floor(canvas.width * 0.06); // 6% of canvas width
-    }
-    function getResponsiveLetterSpacing() {
-      return canvas.width * 0.04; // 3% of canvas width per letter
+      const isPhone = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 600;
+      return isPhone ? 150 : Math.floor(canvas.width * 0.06); // 72px on phones
     }
 
-    function wrapPhraseIntoLines(phrase, maxCharsPerLine = 8) {
+    function getResponsiveLetterSpacing() {
+      const isPhone = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 600;
+      return isPhone ? 98 : canvas.width * 0.04; // Fixed spacing on phones, responsive elsewhere
+    }
+
+
+    function wrapPhraseIntoLines(phrase) {
+      const isPhone = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 600;
+
+      if (isPhone) {
+        // Fixed layout for phone
+        return [
+          "AS YOU",
+          "WERE",
+          "MEANT",
+          "TO GO ON"
+        ];
+      }
+
+      // Default behavior for desktop: 2–3 words per line
       const words = phrase.split(" ");
       const lines = [];
-      let currentLine = "";
+      let i = 0;
 
-      for (let word of words) {
-        if ((currentLine + word).length <= maxCharsPerLine) {
-          currentLine += (currentLine ? " " : "") + word;
-        } else {
-          lines.push(currentLine);
-          currentLine = word;
-        }
+      while (i < words.length) {
+        const wordsThisLine = 2 + Math.floor(Math.random() * 2); // 2–3 words
+        const line = words.slice(i, i + wordsThisLine).join(" ");
+        lines.push(line);
+        i += wordsThisLine;
       }
-      if (currentLine) lines.push(currentLine);
+
       return lines;
     }
+
+
+
+
 
     function drawLine47Text(time) {
       const centerX = canvas.width / 2;
       const centerY = canvas.height / 2;
       ctx.save();
-      ctx.textAlign = "left";
+      ctx.textAlign = "start";
       ctx.textBaseline = "middle";
 
       const fontSize = getResponsiveFontSize();
       const spacing = getResponsiveLetterSpacing();
-      ctx.font = `${fontSize}px monospace`;
+      ctx.font = `${getResponsiveFontSize()}px "Lucida Console", "Courier New", Courier, monospace`;
+
 
       const amplitudeThreshold = 50;
       const audioActive = audioLevel > amplitudeThreshold;
 
       // Randomly reveal 1–2 characters when audio is active
-      if (audioActive) {
-        for (let j = 0; j < 8; j++) {
-          const index = shuffledIndices[Math.floor(Math.random() * shuffledIndices.length)];
-          if (Math.random() < 0.25) {
-            revealTimers[index] = 80;
+      if (audioActive && !wasAboveThreshold) {
+        const candidates = [];
+        for (let i = 0; i < letterIndices.length; i++) {
+          if (!revealedFlags[i] && revealTimers[i] === 0) {
+            candidates.push(i);
           }
         }
+
+        if (candidates.length > 0) {
+          const chosen = candidates[Math.floor(Math.random() * candidates.length)];
+          revealTimers[chosen] = 90;
+        }
       }
+
+      wasAboveThreshold = audioActive;
+
+
 
       let charIndex = 0;
       const lineHeight = fontSize * 1.2;
@@ -283,26 +331,43 @@
 
         for (let i = 0; i < line.length; i++) {
           const char = line[i];
-          const x = centerX + (i - line.length / 2) * spacing;
+          const leftMargin = canvas.width * 0.1;
+          const x = leftMargin + i * spacing;
 
           if (char === " ") {
-            continue; // Don't draw blocks for spaces
+            continue; // Skip drawing blocks for spaces
           }
 
           if (revealTimers[charIndex] > 0) {
             revealTimers[charIndex]--;
+            if (revealTimers[charIndex] > 60) {
+              if (glitchFrames[charIndex] % 5 === 0) {
+                glitchChars[charIndex] = String.fromCharCode(33 + Math.floor(Math.random() * 94));
+              }
+              glitchFrames[charIndex]++;
+              ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+              ctx.fillText(glitchChars[charIndex], x, y);
+            } else if (revealTimers[charIndex] > 30) {
+              revealedFlags[charIndex] = true;
+              ctx.fillStyle = "black";
+              ctx.fillText(char, x, y);
+            } else {
+              ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
+              ctx.fillText("▓", x, y);
+            }
+          } else if (revealedFlags[charIndex]) {
             ctx.fillStyle = "black";
             ctx.fillText(char, x, y);
           } else {
             ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
-            ctx.fillText("█", x, y);
+            ctx.fillText("▓", x, y);
           }
 
+          // 🔥 Only increment for non-space characters
           charIndex++;
         }
 
-        // Account for space between words in the global character index
-        charIndex++; // For line breaks or spaces
+
       });
 
       ctx.restore();
