@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Step 4: Halftone + Animated LINE 47</title>
   <style>
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
       background: white;
       overflow: hidden;
     }
+
     canvas {
       display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
+      top: 0 !important;
     }
+
     video {
       display: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
     }
-  </style>  
+  </style>
 </head>
+
 <body>
   <canvas id="visualizer"></canvas>
   <video id="webcam" autoplay muted playsinline></video>
 
   <script>
+
+
+
     const canvas = document.getElementById("visualizer");
     const ctx = canvas.getContext("2d");
     const video = document.getElementById("webcam");
@@ -42,44 +41,58 @@
     let videoAspectRatio = 16 / 9; // Default fallback
 
 
-    let midiValues = [127, 127, ...new Array(14).fill(0)]; 
-   // Detect phone (mobile) and set CC34 to 50
+    let midiValues = [127, 127, ...new Array(14).fill(0)];
+    // Detect phone (mobile) and set CC34 to 50
     const isPhone = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 480;
     if (isPhone) {
-    midiValues[1] = 0; // CC34 - Grid Resolution
-    video.style.display = "block"; // Show fullscreen video on phones
+      midiValues[1] = 0; // CC34 - Grid Resolution
     }
     let backgroundShapes = [];
-    const phrase = "LINE 47";
+    const phrase = "AS YOU WERE MEANT TO GO ON";
     let revealTimers = new Array(phrase.length).fill(0);
     let shuffledIndices = [...Array(phrase.length).keys()].sort(() => Math.random() - 0.5);
     let audioLevel = 0;
+
+    const wordsPerLine = 2 + Math.floor(Math.random() * 4); // 2 to 5 words per line
+    const avgWordLength = 5.5; // Adjust based on your phrase style
+    const maxCharsPerLine = Math.floor(wordsPerLine * avgWordLength);
+
+
+
+    const lines = wrapPhraseIntoLines(phrase, maxCharsPerLine);
 
     setInterval(() => {
       shuffledIndices = [...Array(phrase.length).keys()].sort(() => Math.random() - 0.5);
     }, 4000);
 
     function resizeCanvas() {
-        if (isPhone) {
-    // On phones, let canvas fill entire screen
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  } else {
-        const windowAspect = window.innerWidth / window.innerHeight;
-        if (windowAspect > videoAspectRatio) {
-            // Window is wider than video: match height, center horizontally
-            canvas.height = window.innerHeight;
-            canvas.width = canvas.height * videoAspectRatio;
-        } else {
-            // Window is taller than video: match width, center vertically
-            canvas.width = window.innerWidth;
-            canvas.height = canvas.width / videoAspectRatio;
-        }
-        canvas.style.left = ((window.innerWidth - canvas.width) / 2) + "px";
-        canvas.style.top = ((window.innerHeight - canvas.height) / 2) + "px";
+      // Detect if it's a phone
+      const isPhone = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 600;
+
+      // Use portrait 9:16 ratio on phones, otherwise use video aspect
+      const aspectRatio = isPhone ? 9 / 16 : videoAspectRatio;
+
+      const windowAspect = window.innerWidth / window.innerHeight;
+
+      if (windowAspect > aspectRatio) {
+        // Window is wider than target aspect: match height
+        canvas.height = window.innerHeight;
+        canvas.width = canvas.height * aspectRatio;
+      } else {
+        // Window is taller than target aspect: match width
+        canvas.width = window.innerWidth;
+        canvas.height = canvas.width / aspectRatio;
+      }
+
+      canvas.style.position = "absolute";
+      canvas.style.left = ((window.innerWidth - canvas.width) / 2) + "px";
+      canvas.style.top = ((window.innerHeight - canvas.height) / 2) + "px";
+
+      generateShapes();
     }
-        generateShapes();
-    }
+
+
+
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
 
@@ -87,7 +100,9 @@
       video.srcObject = stream;
       video.addEventListener("loadedmetadata", () => {
         video.play();
-        videoAspectRatio = video.videoWidth / video.videoHeight;
+        if (!/Mobi|Android/i.test(navigator.userAgent) && window.innerWidth >= 600) {
+          videoAspectRatio = video.videoWidth / video.videoHeight;
+        }
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         const audioSource = audioCtx.createMediaStreamSource(stream);
         const analyser = audioCtx.createAnalyser();
@@ -161,9 +176,29 @@
       offscreen.width = cols;
       offscreen.height = rows;
 
-      offCtx.drawImage(video, 0, 0, cols, rows);
-      const imageData = offCtx.getImageData(0, 0, cols, rows).data;
+      // Clear offscreen before drawing
+      offCtx.clearRect(0, 0, cols, rows);
 
+      // Calculate video draw size to preserve aspect ratio
+      const videoAR = video.videoWidth / video.videoHeight;
+      const targetAR = cols / rows;
+
+      let sx = 0, sy = 0, sw = video.videoWidth, sh = video.videoHeight;
+
+      if (videoAR > targetAR) {
+        // Video is wider: crop sides
+        sw = video.videoHeight * targetAR;
+        sx = (video.videoWidth - sw) / 2;
+      } else {
+        // Video is taller: crop top/bottom
+        sh = video.videoWidth / targetAR;
+        sy = (video.videoHeight - sh) / 2;
+      }
+
+      // Draw the cropped video into offscreen canvas
+      offCtx.drawImage(video, sx, sy, sw, sh, 0, 0, cols, rows);
+
+      const imageData = offCtx.getImageData(0, 0, cols, rows).data;
       const dotSpacingX = canvas.width / cols;
       const dotSpacingY = canvas.height / rows;
 
@@ -188,54 +223,93 @@
       }
     }
 
+
+    function getResponsiveFontSize() {
+      return Math.floor(canvas.width * 0.06); // 6% of canvas width
+    }
+    function getResponsiveLetterSpacing() {
+      return canvas.width * 0.04; // 3% of canvas width per letter
+    }
+
+    function wrapPhraseIntoLines(phrase, maxCharsPerLine = 8) {
+      const words = phrase.split(" ");
+      const lines = [];
+      let currentLine = "";
+
+      for (let word of words) {
+        if ((currentLine + word).length <= maxCharsPerLine) {
+          currentLine += (currentLine ? " " : "") + word;
+        } else {
+          lines.push(currentLine);
+          currentLine = word;
+        }
+      }
+      if (currentLine) lines.push(currentLine);
+      return lines;
+    }
+
     function drawLine47Text(time) {
       const centerX = canvas.width / 2;
       const centerY = canvas.height / 2;
       ctx.save();
-      ctx.translate(centerX, centerY);
-      ctx.textAlign = "center";
+      ctx.textAlign = "left";
       ctx.textBaseline = "middle";
-      ctx.font = "80px monospace";
 
-      const amplitudeThreshold = 30;
+      const fontSize = getResponsiveFontSize();
+      const spacing = getResponsiveLetterSpacing();
+      ctx.font = `${fontSize}px monospace`;
+
+      const amplitudeThreshold = 50;
       const audioActive = audioLevel > amplitudeThreshold;
 
       // Randomly reveal 1–2 characters when audio is active
       if (audioActive) {
-        for (let j = 0; j < 2; j++) {
+        for (let j = 0; j < 8; j++) {
           const index = shuffledIndices[Math.floor(Math.random() * shuffledIndices.length)];
           if (Math.random() < 0.25) {
-            revealTimers[index] = 20;
+            revealTimers[index] = 80;
           }
         }
       }
 
-      for (let i = 0; i < phrase.length; i++) {
-        const x = (i - phrase.length / 2) * 50;
-        const y = 0;
+      let charIndex = 0;
+      const lineHeight = fontSize * 1.2;
+      const totalHeight = lines.length * lineHeight;
+      const startY = centerY - totalHeight / 2 + lineHeight / 2;
 
-        if (revealTimers[i] > 0) {
-          revealTimers[i]--;
-          ctx.fillStyle = "black";
-          ctx.fillText(phrase[i], x, y);
-        } else {
-          // Dot matrix style grid of small black squares
-          const dotSize = 3;
-          const cols = 4;
-          const rows = 8;
-          ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
-          for (let row = 0; row < rows; row++) {
-            for (let col = 0; col < cols; col++) {
-              const dx = x - (cols * dotSize) / 2 + col * dotSize;
-              const dy = y - (rows * dotSize) / 2 + row * dotSize;
-              ctx.fillRect(dx, dy, dotSize - 1, dotSize - 1);
-            }
+      lines.forEach((line, lineNum) => {
+        const y = startY + lineNum * lineHeight;
+        const offsetX = (line.length / 2) * spacing;
+
+        for (let i = 0; i < line.length; i++) {
+          const char = line[i];
+          const x = centerX + (i - line.length / 2) * spacing;
+
+          if (char === " ") {
+            continue; // Don't draw blocks for spaces
           }
+
+          if (revealTimers[charIndex] > 0) {
+            revealTimers[charIndex]--;
+            ctx.fillStyle = "black";
+            ctx.fillText(char, x, y);
+          } else {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
+            ctx.fillText("█", x, y);
+          }
+
+          charIndex++;
         }
-      }
+
+        // Account for space between words in the global character index
+        charIndex++; // For line breaks or spaces
+      });
 
       ctx.restore();
     }
+
+
+
 
     function draw(time = 0) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -279,4 +353,5 @@
     navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
   </script>
 </body>
+
 </html>
