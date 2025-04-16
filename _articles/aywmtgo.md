@@ -92,6 +92,36 @@ published: true
       right: 10px;
       z-index: 101;
     }
+
+@media (max-width: 600px) {
+  #cc-controls-dialog {
+    font-size: 26px;
+    padding: 16px;
+    background: rgba(255,255,255, 0.5);
+  }
+
+  .cc-control {
+    gap: 6px 12px;
+  }
+
+  .cc-control label {
+    font-size: 26px;
+  }
+
+  .cc-control span {
+    font-size: 26px;
+  }
+
+  .cc-control input[type="range"] {
+    height: 32px;
+  }
+
+  button {
+    font-size: 26px;
+    padding: 10px 16px;
+  }
+}
+
   </style>
 </head>
 
