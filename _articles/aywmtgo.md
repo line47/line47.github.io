@@ -1,52 +1,73 @@
 ---
 title: AYWMTGO
 summary: An interactive teaser for the upcoming Line 47 release.
-image: 
+image:
 date: 2025-03-12
-layout: none 
+layout: none
 featured: false
 published: true
 ---
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8" />
   <title>L47 / AYWMTGO</title>
   <style>
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
       background: white;
       overflow: hidden;
     }
+
     canvas {
       display: block;
       background: white;
     }
+
     video {
       display: none;
     }
-    #cc-controls {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      z-index: 10;
-      background: white;
+
+    #cc-controls-dialog {
+      display: none;
+      gap: 16px;
       padding: 10px;
+      background: white;
       border: 1px solid #ccc;
       font-family: monospace;
       font-size: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 12px;
+      width: max-content;
+      margin: 0 0 0 auto;
+      z-index: 100;
+      position: relative;
+      flex-direction: column;
     }
-    #cc-controls label {
+
+    #cc-controls-dialog.open {
       display: flex;
-      align-items: center;
-      gap: 6px;
+      flex-direction: column;
     }
-    #cc-controls button {
+
+    .cc-control {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto;
+      align-items: center;
+      gap: 4px 10px;
+    }
+
+    .cc-control input[type="range"] {
+      grid-column: 1 / -1;
+      width: 100%;
+    }
+
+    .cc-control span {
+      font-weight: bold;
+      color: #333;
+    }
+
+    #cc-controls-dialog button {
       padding: 6px 12px;
       font-family: monospace;
       font-size: 14px;
@@ -54,15 +75,22 @@ published: true
       border: 1px solid #ccc;
       cursor: pointer;
     }
-     @media (max-width: 600px) {
-      #cc-controls {
-        flex-direction: column;
-        align-items: stretch;
-        font-size: 26px;
-      }
-      #cc-controls label {
-        width: 100%;
-      }
+
+    button {
+
+      font-family: monospace;
+      font-size: 14px;
+      padding: 6px 12px;
+      background: #fff;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+
+    .button-container {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 101;
     }
   </style>
 </head>
@@ -74,28 +102,74 @@ published: true
   <!-- Hidden webcam input -->
   <video id="webcam" autoplay muted playsinline></video>
 
-  <!-- MIDI control panel -->
-  <div id="cc-controls">
-    <label>CC33 Dot Size:
+  <!-- Toggle button for control panel -->
+  <div class="button-container">
+    <button id="controls-toggle">Controls</button>
+    <button id="screenshotBtn">Save Screenshot</button>
+  </div>
+  <!-- MIDI control panel dialog -->
+  <div id="cc-controls-dialog">
+    <div class="cc-control">
+      <div class="cc-label-row">
+        <label for="cc33">CC33 Point Size:</label>
+        <span id="cc33-val">100</span>
+      </div>
       <input type="range" id="cc33" min="0" max="127" value="100">
-      <span id="cc33-val">100</span>
-    </label>
-    <label>CC34 Grid Res:
+    </div>
+
+    <div class="cc-control">
+      <div class="cc-label-row">
+        <label for="cc34">CC34 Grid Res:</label>
+        <span id="cc34-val">60</span>
+      </div>
       <input type="range" id="cc34" min="0" max="127" value="60">
-      <span id="cc34-val">60</span>
-    </label>
-    <label>CC35 Shape Morph:
+    </div>
+
+    <div class="cc-control">
+      <div class="cc-label-row">
+        <label for="cc35">CC35 Point Shape:</label>
+        <span id="cc35-val">0</span>
+      </div>
       <input type="range" id="cc35" min="0" max="127" value="0">
-      <span id="cc35-val">0</span>
-    </label>
+    </div>
+
+    <div class="cc-control">
+      <div class="cc-label-row">
+        <label for="cc36">CC36 Polygon Regenerate:</label>
+        <span id="cc36-val">64</span>
+      </div>
+      <input type="range" id="cc36" min="0" max="127" value="64">
+    </div>
+
+    <div class="cc-control">
+      <div class="cc-label-row">
+        <label for="cc37">CC37 Polygon Sides:</label>
+        <span id="cc37-val">64</span>
+      </div>
+      <input type="range" id="cc37" min="0" max="127" value="64">
+    </div>
+
+    <div class="cc-control">
+      <div class="cc-label-row">
+        <label for="cc38">CC38 Polygon Size:</label>
+        <span id="cc38-val">64</span>
+      </div>
+      <input type="range" id="cc38" min="0" max="127" value="64">
+    </div>
 
     <!-- Control buttons -->
     <button id="setDefaultsBtn">Reset</button>
-    <button id="screenshotBtn">Save Screenshot</button>
   </div>
 
   <!-- JavaScript functionality -->
   <script>
+
+    const toggleBtn = document.getElementById("controls-toggle");
+    const ccDialog = document.getElementById("cc-controls-dialog");
+    toggleBtn.addEventListener("click", () => {
+      ccDialog.classList.toggle("open");
+    });
+
     // Variables and canvas setup
     const canvas = document.getElementById("visualizer");
     const ctx = canvas.getContext("2d");
@@ -105,7 +179,16 @@ published: true
     let videoAspectRatio = 16 / 9;
 
     // MIDI CC Values
-    let midiValues = [85, 111, 0, ...new Array(13).fill(0)];
+    // let midiValues = [85, 111, 0, ...new Array(13).fill(0)];
+    let midiValues = [85, 111, 0, 64, 64, 64, ...new Array(11).fill(0)];
+    // CC33 - Dot Size
+    // CC34 - Grid Res
+    // CC35 - Shape Morph
+    // CC36 - Polygon Complexity (re-generate)
+    // CC37 - Polygon Sides (dynamic)
+    // CC38 - Polygon Size (dynamic)
+
+
     const isPhone = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 480;
     if (isPhone) midiValues[1] = 50;
 
@@ -121,28 +204,42 @@ published: true
     let lines = wrapPhraseIntoLines(phrase);
     let backgroundShapes = [];
 
+
     // MIDI Controls
     function setupCCSliders() {
-      const sliders = ["cc33", "cc34", "cc35"];
+      const sliders = ["cc33", "cc34", "cc35", "cc36", "cc37", "cc38"];
       sliders.forEach((id, index) => {
         const slider = document.getElementById(id);
         const display = document.getElementById(`${id}-val`);
         slider.addEventListener("input", () => {
-          midiValues[index] = parseInt(slider.value);
-          display.textContent = slider.value;
+          const ccNum = 33 + index;
+          const value = parseInt(slider.value);
+          midiValues[index] = value;
+          display.textContent = value;
+
+          // Mirror MIDI behavior for these CCs
+          if (ccNum === 36) {
+            generateBackgroundShapes();
+          } else if (ccNum === 37 || ccNum === 38) {
+            updatePolygonSides();
+          }
         });
+
       });
     }
 
     // Reset Button
     document.getElementById("setDefaultsBtn").addEventListener("click", () => {
-      [85, 111, 0].forEach((val, i) => {
+      [85, 111, 0, 64, 64, 64].forEach((val, i) => {
         midiValues[i] = val;
         const id = `cc${33 + i}`;
         document.getElementById(id).value = val;
         document.getElementById(`${id}-val`).textContent = val;
       });
     });
+
+
+
 
     // Screenshot
     document.getElementById("screenshotBtn").addEventListener("click", () => {
@@ -153,10 +250,22 @@ published: true
       scCtx.fillStyle = "#fff";
       scCtx.fillRect(0, 0, canvas.width, canvas.height);
       scCtx.drawImage(canvas, 0, 0);
-      const link = document.createElement("a");
-      link.download = `L47_AYWMTGO_${Date.now()}.png`;
-      link.href = screenshotCanvas.toDataURL("image/png");
-      link.click();
+
+      const dataUrl = screenshotCanvas.toDataURL("image/png");
+
+      if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)) {
+        const link = document.createElement("a");
+        link.href = dataUrl;
+        link.download = `L47_AYWMTGO_${Date.now()}.png`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else {
+        const link = document.createElement("a");
+        link.download = `L47_AYWMTGO_${Date.now()}.png`;
+        link.href = dataUrl;
+        link.click();
+      }
     });
 
     // Wraps phrase into multiple lines based on device
@@ -234,12 +343,15 @@ published: true
 
     // Dynamic letter animation
     function drawLine47Text() {
-      const fontSize = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 600 ? 150 : Math.floor(canvas.width * 0.06);
-      const spacing = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 600 ? 98 : canvas.width * 0.04;
+      // const fontSize = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 600 ? 150 : Math.floor(canvas.width * 0.06);
+      const fontSize = Math.floor(canvas.height * 0.08); // or tweak to 0.035 for smaller text
+      const spacing = fontSize * 0.7; // consistent proportional spacing
+
+      // const spacing = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 600 ? 98 : canvas.width * 0.04;
       ctx.save();
       ctx.textAlign = "start";
       ctx.textBaseline = "middle";
-      ctx.font = `${fontSize}px 'Lucida Console', monospace`;
+      ctx.font = `${fontSize}px  monospace`;
       const audioActive = audioLevel > 50;
       if (audioActive && !wasAboveThreshold) {
         const candidates = letterIndices.filter((_, i) => !revealedFlags[i] && revealTimers[i] === 0);
@@ -289,13 +401,154 @@ published: true
       ctx.restore();
     }
 
+    function generateBackgroundShapes() {
+      backgroundShapes = [];
+      const numShapes = 3 + Math.floor(Math.random() * 3); // 3 to 5 shapes
+
+      const cc36 = midiValues[3]; // CC36 value (0–127)
+      const cc37 = midiValues[4]; // CC37 value (0–127)
+      const minSides = 6;
+      const maxSides = 20;
+
+      for (let s = 0; s < numShapes; s++) {
+        const shape = {};
+        const centerX = Math.random() * canvas.width;
+        const centerY = Math.random() * canvas.height;
+        const radius = 150 + Math.random() * 150;
+
+        const xStretch = 1.5;
+        const yStretch = 0.5;
+
+        // Save center and radius, to allow dynamic side updates
+        shape.centerX = centerX;
+        shape.centerY = centerY;
+        shape.radius = radius;
+        shape.xStretch = xStretch;
+        shape.yStretch = yStretch;
+
+        backgroundShapes.push(shape);
+      }
+
+      updatePolygonSides();
+    }
+
+    function updatePolygonSides() {
+      const cc37 = midiValues[4]; // CC37 - Sides
+      const cc38 = midiValues[5]; // CC38 - Size
+
+      const minSides = 6;
+      const maxSides = 26;
+      const numPoints = Math.floor(minSides + (cc37 / 127) * (maxSides - minSides));
+      const sizeScale = 0.5 + (cc38 / 127) * 1.5; // scale from 0.5x to 2x
+
+      backgroundShapes.forEach(shape => {
+        const points = [];
+        for (let i = 0; i < numPoints; i++) {
+          const angle = (i / numPoints) * 2 * Math.PI;
+          const r = shape.radius * sizeScale * (0.7 + Math.random() * 0.3);
+          const x = shape.centerX + r * Math.cos(angle) * shape.xStretch;
+          const y = shape.centerY + r * Math.sin(angle) * shape.yStretch;
+          points.push({ x, y });
+        }
+
+        // Dot fill logic...
+        const minX = Math.min(...points.map(p => p.x));
+        const maxX = Math.max(...points.map(p => p.x));
+        const minY = Math.min(...points.map(p => p.y));
+        const maxY = Math.max(...points.map(p => p.y));
+        const path = new Path2D();
+        path.moveTo(points[0].x, points[0].y);
+        for (let i = 1; i < points.length; i++) path.lineTo(points[i].x, points[i].y);
+        path.closePath();
+
+        const dots = [];
+        const baseSpacing = 10;
+        for (let y = minY; y <= maxY; y += baseSpacing) {
+          for (let x = minX; x <= maxX; x += baseSpacing) {
+            if (ctx.isPointInPath(path, x, y)) {
+              dots.push({ x, y });
+            }
+          }
+        }
+
+        shape.points = points;
+        shape.dots = dots;
+      });
+    }
+
+
+    function drawBackgroundShapes() {
+      ctx.save();
+      ctx.fillStyle = "rgba(40, 40, 40, 1)"; // Light grey
+
+      backgroundShapes.forEach(shape => {
+        shape.dots.forEach(dot => {
+          ctx.beginPath();
+          ctx.arc(dot.x, dot.y, 1.5, 0, 2 * Math.PI);
+          ctx.fill();
+        });
+      });
+
+      ctx.restore();
+    }
+
+    // Add user info overlay
+    let userInfoText = "";
+
+    async function fetchUserInfo() {
+      try {
+        const res = await fetch("https://ipapi.co/json/");
+        const data = await res.json();
+        const ip = data.ip || "Unknown IP";
+        const city = data.city || "";
+        const region = data.region || "";
+        const country = data.country_name || "";
+        const time = new Date().toLocaleTimeString();
+
+        userInfoText = `IP: ${ip}\nLocation: ${city}, ${region}, ${country}\nTime: ${time}`;
+      } catch (e) {
+        userInfoText = "Unable to load user info.";
+      }
+    }
+
+    fetchUserInfo();
+
+    function drawUserInfoOverlay() {
+      ctx.save();
+      ctx.font = "12px monospace";
+      const lines = userInfoText.split("\n");
+
+      // Background box
+      const lineHeight = 14;
+      const padding = 20;
+      const boxWidth = Math.max(...lines.map(l => ctx.measureText(l).width)) + padding * 2;
+      const boxHeight = lineHeight * lines.length + padding * 1;
+      const boxX = 0;
+      const boxY = canvas.height - boxHeight - 0;
+
+      ctx.fillStyle = "white";
+      ctx.fillRect(boxX, boxY, boxWidth, boxHeight);
+
+      // Text
+      ctx.fillStyle = "rgba(0, 0, 0, 1)";
+      lines.forEach((line, i) => {
+        ctx.fillText(line, boxX + padding, boxY + padding + i * lineHeight);
+      });
+
+      ctx.restore();
+    }
+
+
     // Draw loop
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawBackgroundShapes();
       if (video.readyState === video.HAVE_ENOUGH_DATA) {
+
         drawHalftone();
         drawLine47Text();
       }
+      drawUserInfoOverlay();
       requestAnimationFrame(draw);
     }
 
@@ -341,6 +594,13 @@ published: true
           slider.value = value;
           label.textContent = value;
         }
+
+        // CC36 = regenerate shapes; CC37 = update side count
+        if (cc === 36) {
+          generateBackgroundShapes();
+        } else if (cc === 37 | cc === 38) {
+          updatePolygonSides();
+        }
       }
     }
 
@@ -350,24 +610,39 @@ published: true
 
     // Resize and initialize
     window.addEventListener("resize", resizeCanvas);
+    // function resizeCanvas() {
+    //   const isPhone = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 600;
+    //   const aspectRatio = isPhone ? 9 / 16 : videoAspectRatio;
+    //   const windowAspect = window.innerWidth / window.innerHeight;
+    //   if (windowAspect > aspectRatio) {
+    //     canvas.height = window.innerHeight;
+    //     canvas.width = canvas.height * aspectRatio;
+    //   } else {
+    //     canvas.width = window.innerWidth;
+    //     canvas.height = canvas.width / aspectRatio;
+    //   }
+    //   // canvas.style.position = "absolute";
+    //   canvas.style.left = `${(window.innerWidth - canvas.width) / 2}px`;
+    //   canvas.style.top = `${(window.innerHeight - canvas.height) / 2}px`;
+    //   lines = wrapPhraseIntoLines(phrase);
+    //   generateBackgroundShapes();
+
+    // }
+
     function resizeCanvas() {
-      const isPhone = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 600;
-      const aspectRatio = isPhone ? 9 / 16 : videoAspectRatio;
-      const windowAspect = window.innerWidth / window.innerHeight;
-      if (windowAspect > aspectRatio) {
-        canvas.height = window.innerHeight;
-        canvas.width = canvas.height * aspectRatio;
-      } else {
-        canvas.width = window.innerWidth;
-        canvas.height = canvas.width / aspectRatio;
-      }
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
       canvas.style.position = "absolute";
-      canvas.style.left = `${(window.innerWidth - canvas.width) / 2}px`;
-      canvas.style.top = `${(window.innerHeight - canvas.height) / 2}px`;
+      canvas.style.left = "0px";
+      canvas.style.top = "0px";
+
       lines = wrapPhraseIntoLines(phrase);
+      generateBackgroundShapes();
     }
 
+
     // Start everything
+
     resizeCanvas();
     setupCCSliders();
     startWebcamAndAudio();
