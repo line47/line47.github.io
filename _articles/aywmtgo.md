@@ -53,6 +53,16 @@ published: true
       border: 1px solid #ccc;
       cursor: pointer;
     }
+     @media (max-width: 600px) {
+      #cc-controls {
+        flex-direction: column;
+        align-items: stretch;
+        font-size: 26px;
+      }
+      #cc-controls label {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
