@@ -94,35 +94,34 @@ published: true
       z-index: 101;
     }
 
-@media (max-width: 600px) {
-  #cc-controls-dialog {
-    font-size: 20px;
-    padding: 16px;
-    background: rgba(255,255,255, 0.5);
-  }
+    @media (max-width: 600px) {
+      #cc-controls-dialog {
+        font-size: 20px;
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.5);
+      }
 
-  .cc-control {
-    gap: 6px 12px;
-  }
+      .cc-control {
+        gap: 6px 12px;
+      }
 
-  .cc-control label {
-    font-size: 20px;
-  }
+      .cc-control label {
+        font-size: 20px;
+      }
 
-  .cc-control span {
-    font-size: 20px;
-  }
+      .cc-control span {
+        font-size: 20px;
+      }
 
-  .cc-control input[type="range"] {
-    height: 32px;
-  }
+      .cc-control input[type="range"] {
+        height: 32px;
+      }
 
-  button {
-    font-size: 20px;
-    padding: 10px 16px;
-  }
-}
-
+      button {
+        font-size: 20px;
+        padding: 10px 16px;
+      }
+    }
   </style>
 </head>
 
@@ -188,9 +187,9 @@ published: true
     </div>
 
     <!-- Control buttons -->
-     <button id="screenshotBtn">Save Screenshot</button>
+    <button id="screenshotBtn">Save Screenshot</button>
     <button id="setDefaultsBtn">Reset</button>
-      <button id="close-controls">.</button>
+    <button id="close-controls">.</button>
 
   </div>
 
@@ -204,9 +203,9 @@ published: true
     });
 
     const closeBtn = document.getElementById("close-controls");
-closeBtn.addEventListener("click", () => {
-  ccDialog.classList.remove("open");
-});
+    closeBtn.addEventListener("click", () => {
+      ccDialog.classList.remove("open");
+    });
 
     // Variables and canvas setup
     const canvas = document.getElementById("visualizer");
