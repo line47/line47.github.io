@@ -10,6 +10,8 @@ published: true
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>L47 / AYWMTGO</title>
   <style>
     html,
@@ -34,7 +36,6 @@ published: true
       gap: 16px;
       padding: 10px;
       background: white;
-      border: 1px solid #ccc;
       font-family: monospace;
       font-size: 14px;
       width: max-content;
@@ -88,14 +89,14 @@ published: true
 
     .button-container {
       position: fixed;
-      bottom: 10px;
+      top: 10px;
       right: 10px;
       z-index: 101;
     }
 
 @media (max-width: 600px) {
   #cc-controls-dialog {
-    font-size: 26px;
+    font-size: 20px;
     padding: 16px;
     background: rgba(255,255,255, 0.5);
   }
@@ -105,11 +106,11 @@ published: true
   }
 
   .cc-control label {
-    font-size: 26px;
+    font-size: 20px;
   }
 
   .cc-control span {
-    font-size: 26px;
+    font-size: 20px;
   }
 
   .cc-control input[type="range"] {
@@ -117,7 +118,7 @@ published: true
   }
 
   button {
-    font-size: 26px;
+    font-size: 20px;
     padding: 10px 16px;
   }
 }
@@ -134,8 +135,7 @@ published: true
 
   <!-- Toggle button for control panel -->
   <div class="button-container">
-    <button id="controls-toggle">Controls</button>
-    <button id="screenshotBtn">Save Screenshot</button>
+    <button id="controls-toggle">.</button>
   </div>
   <!-- MIDI control panel dialog -->
   <div id="cc-controls-dialog">
@@ -188,7 +188,10 @@ published: true
     </div>
 
     <!-- Control buttons -->
+     <button id="screenshotBtn">Save Screenshot</button>
     <button id="setDefaultsBtn">Reset</button>
+      <button id="close-controls">.</button>
+
   </div>
 
   <!-- JavaScript functionality -->
@@ -199,6 +202,11 @@ published: true
     toggleBtn.addEventListener("click", () => {
       ccDialog.classList.toggle("open");
     });
+
+    const closeBtn = document.getElementById("close-controls");
+closeBtn.addEventListener("click", () => {
+  ccDialog.classList.remove("open");
+});
 
     // Variables and canvas setup
     const canvas = document.getElementById("visualizer");
