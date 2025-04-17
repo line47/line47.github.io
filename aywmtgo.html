@@ -1,13 +1,3 @@
----
-title: AYWMTGO
-summary: An interactive teaser for the upcoming Line 47 release.
-image:
-date: 2025-03-12
-layout: none
-featured: false
-published: true
----
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,7 +88,8 @@ published: true
       #cc-controls-dialog {
         font-size: 20px;
         padding: 16px;
-        background: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.75);
+        width: auto;
       }
 
       .cc-control {
@@ -113,9 +104,7 @@ published: true
         font-size: 20px;
       }
 
-      .cc-control input[type="range"] {
-        height: 32px;
-      }
+      .cc-control input[type="range"] {}
 
       button {
         font-size: 20px;
@@ -141,25 +130,25 @@ published: true
     <div class="cc-control">
       <div class="cc-label-row">
         <label for="cc33">CC33 Point Size:</label>
-        <span id="cc33-val">100</span>
+        <span id="cc33-val">50</span>
       </div>
-      <input type="range" id="cc33" min="0" max="127" value="100">
+      <input type="range" id="cc33" min="0" max="127" value="50">
     </div>
 
     <div class="cc-control">
       <div class="cc-label-row">
         <label for="cc34">CC34 Grid Res:</label>
-        <span id="cc34-val">60</span>
+        <span id="cc34-val">103</span>
       </div>
-      <input type="range" id="cc34" min="0" max="127" value="60">
+      <input type="range" id="cc34" min="0" max="127" value="103">
     </div>
 
     <div class="cc-control">
       <div class="cc-label-row">
         <label for="cc35">CC35 Point Shape:</label>
-        <span id="cc35-val">0</span>
+        <span id="cc35-val">50</span>
       </div>
-      <input type="range" id="cc35" min="0" max="127" value="0">
+      <input type="range" id="cc35" min="0" max="127" value="50">
     </div>
 
     <div class="cc-control">
@@ -186,6 +175,21 @@ published: true
       <input type="range" id="cc38" min="0" max="127" value="64">
     </div>
 
+    <div class="cc-control">
+      <div class="cc-label-row">
+        <label for="cc39">CC39 Dot to Line:</label>
+        <span id="cc39-val">0</span>
+      </div>
+      <input type="range" id="cc39" min="0" max="127" value="0">
+    </div>
+
+    <div class="cc-control">
+      <div class="cc-label-row">
+        <label for="cc40">CC40 Line Length:</label>
+        <span id="cc40-val">0</span>
+      </div>
+      <input type="range" id="cc40" min="0" max="127" value="0">
+    </div>
     <!-- Control buttons -->
     <button id="screenshotBtn">Save Screenshot</button>
     <button id="setDefaultsBtn">Reset</button>
@@ -198,13 +202,16 @@ published: true
 
     const toggleBtn = document.getElementById("controls-toggle");
     const ccDialog = document.getElementById("cc-controls-dialog");
+    const closeBtn = document.getElementById("close-controls");
+
     toggleBtn.addEventListener("click", () => {
       ccDialog.classList.toggle("open");
+      toggleBtn.style.display = ccDialog.classList.contains("open") ? "none" : "block";
     });
 
-    const closeBtn = document.getElementById("close-controls");
     closeBtn.addEventListener("click", () => {
       ccDialog.classList.remove("open");
+      toggleBtn.style.display = "block";
     });
 
     // Variables and canvas setup
@@ -215,15 +222,54 @@ published: true
     const offCtx = offscreen.getContext("2d");
     let videoAspectRatio = 16 / 9;
 
-    // MIDI CC Values
-    // let midiValues = [85, 111, 0, ...new Array(13).fill(0)];
-    let midiValues = [85, 111, 0, 64, 64, 64, ...new Array(11).fill(0)];
-    // CC33 - Dot Size
-    // CC34 - Grid Res
-    // CC35 - Shape Morph
-    // CC36 - Polygon Complexity (re-generate)
-    // CC37 - Polygon Sides (dynamic)
-    // CC38 - Polygon Size (dynamic)
+
+    // Adjust CC33 (Point Size) rendering scale
+    function getPointSize(ccValue) {
+      const minScale = 0.1;
+      const maxScale = 4.0;
+      return minScale + (ccValue / 127) * (maxScale - minScale);
+    }
+
+    // Adjust CC34 (Grid Res) rendering scale
+    function getGridResolution(ccValue) {
+      const minCols = 10;
+      const maxCols = 160;
+      return minCols + Math.floor((ccValue / 127) * (maxCols - minCols));
+    }
+
+
+    // Adjust CC35 (Point Shape) rendering scale
+    function getMorphValue(ccValue) {
+      const minMorph = 0.0;
+      const maxMorph = 2;
+      return minMorph + (ccValue / 127) * (maxMorph - minMorph);
+    }
+
+    // Adjust CC40 (Line Length) rendering scale
+    function getLineLength(ccValue) {
+      const minLength = 5;
+      const maxLength = 30;
+      return minLength + (ccValue / 127) * (maxLength - minLength);
+    }
+
+    // const lineLength = 5 + (cc40 / 127) * 20; // range from 5 to 25
+
+
+    // Define your default MIDI CC values
+    const defaultCCValues = [50, 103, 50, 64, 64, 64, 0, 0];
+
+    // Initialize midiValues using the default values + padding
+    let midiValues = [...defaultCCValues, ...new Array(11).fill(0)];
+
+    // Reset Button handler
+    document.getElementById("setDefaultsBtn").addEventListener("click", () => {
+      defaultCCValues.forEach((val, i) => {
+        midiValues[i] = val;
+        const id = `cc${33 + i}`;
+        document.getElementById(id).value = val;
+        document.getElementById(`${id}-val`).textContent = val;
+      });
+    });
 
 
     const isPhone = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 480;
@@ -244,7 +290,7 @@ published: true
 
     // MIDI Controls
     function setupCCSliders() {
-      const sliders = ["cc33", "cc34", "cc35", "cc36", "cc37", "cc38"];
+      const sliders = ["cc33", "cc34", "cc35", "cc36", "cc37", "cc38", "cc39", "cc40"];
       sliders.forEach((id, index) => {
         const slider = document.getElementById(id);
         const display = document.getElementById(`${id}-val`);
@@ -257,26 +303,13 @@ published: true
           // Mirror MIDI behavior for these CCs
           if (ccNum === 36) {
             generateBackgroundShapes();
-          } else if (ccNum === 37 || ccNum === 38) {
+          } else if ([37, 38, 39, 40].includes(ccNum)) {
             updatePolygonSides();
           }
         });
 
       });
     }
-
-    // Reset Button
-    document.getElementById("setDefaultsBtn").addEventListener("click", () => {
-      [85, 111, 0, 64, 64, 64].forEach((val, i) => {
-        midiValues[i] = val;
-        const id = `cc${33 + i}`;
-        document.getElementById(id).value = val;
-        document.getElementById(`${id}-val`).textContent = val;
-      });
-    });
-
-
-
 
     // Screenshot
     document.getElementById("screenshotBtn").addEventListener("click", () => {
@@ -307,45 +340,58 @@ published: true
 
     // Wraps phrase into multiple lines based on device
     function wrapPhraseIntoLines(phrase) {
-      const isPhone = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 600;
-      if (isPhone) return ["AS YOU", "WERE", "MEANT", "TO GO ON"];
       const words = phrase.split(" ");
       const lines = [];
-      for (let i = 0; i < words.length;) {
-        const n = 2 + Math.floor(Math.random() * 2);
-        lines.push(words.slice(i, i + n).join(" "));
-        i += n;
+      let currentLine = words[0];
+      const ctx = canvas.getContext("2d");
+      ctx.font = `${Math.floor(canvas.height * 0.08)}px monospace`;
+      for (let i = 1; i < words.length; i++) {
+        const testLine = currentLine + " " + words[i];
+        const { width } = ctx.measureText(testLine);
+        if (width < canvas.width * 0.8 && Math.random() > 0.3) {
+          currentLine = testLine;
+        } else {
+          lines.push(currentLine);
+          currentLine = words[i];
+        }
       }
+      lines.push(currentLine);
       return lines;
     }
 
-    // Shape drawing based on CC35
+    // Fix jitter by caching randomized radius per shape key
+    const polygonCache = {};
     function drawMorphedShape(ctx, cx, cy, size, morph) {
-      ctx.beginPath();
-      if (morph <= 0) ctx.rect(cx - size / 2, cy - size / 2, size, size);
-      else if (morph >= 1) {
-        ctx.moveTo(cx, cy - size / 2);
-        ctx.lineTo(cx - size / 2, cy + size / 2);
-        ctx.lineTo(cx + size / 2, cy + size / 2);
-        ctx.closePath();
-      } else {
-        const inv = 1 - morph;
-        const interp = (a, b) => inv * a + morph * b;
-        const p1 = [cx, cy - size / 2];
-        const p2 = [cx - size / 2, cy + size / 2];
-        const p3 = [cx + size / 2, cy + size / 2];
-        ctx.moveTo(interp(cx - size / 2, p1[0]), interp(cy - size / 2, p1[1]));
-        ctx.lineTo(interp(cx + size / 2, p2[0]), interp(cy - size / 2, p2[1]));
-        ctx.lineTo(interp(cx + size / 2, p3[0]), interp(cy + size / 2, p3[1]));
-        ctx.lineTo(interp(cx - size / 2, p1[0]), interp(cy + size / 2, p1[1]));
-        ctx.closePath();
+      morph = getMorphValue(midiValues[2]);
+      const sides = 3 + Math.floor(morph * 2); // 4 to 10 sides
+      const cacheKey = `${sides}-${size.toFixed(1)}-${morph.toFixed(2)}`;
+
+      if (!polygonCache[cacheKey]) {
+        const points = [];
+        const radiusMod = Array.from({ length: sides }, () => 1 + (Math.random() - 0) * 0);
+        for (let i = 0; i < sides; i++) {
+          const angle = (i / sides) * 2 * Math.PI - Math.PI / 4;
+          const r = size * radiusMod[i];
+          const x = r * Math.cos(angle);
+          const y = r * Math.sin(angle);
+          points.push({ x, y });
+        }
+        polygonCache[cacheKey] = points;
       }
+
+      ctx.beginPath();
+      polygonCache[cacheKey].forEach((pt, i) => {
+        if (i === 0) ctx.moveTo(cx + pt.x, cy + pt.y);
+        else ctx.lineTo(cx + pt.x, cy + pt.y);
+      });
+      ctx.closePath();
       ctx.fill();
     }
 
     // Halftone drawing using webcam input
     function drawHalftone() {
-      const cols = 20 + Math.floor((midiValues[1] / 127) * 140);
+      //CC34 10 and 160 to control the min and max
+      const cols = getGridResolution(midiValues[1]);
       const aspect = canvas.width / canvas.height;
       const rows = Math.floor(cols / aspect);
       offscreen.width = cols;
@@ -364,7 +410,10 @@ published: true
       const imageData = offCtx.getImageData(0, 0, cols, rows).data;
       const dotSpacingX = canvas.width / cols;
       const dotSpacingY = canvas.height / rows;
-      const dotScale = 0.2 + (midiValues[0] / 127) * 2.8;
+      //CC33 0.1 and 5.0 control the min and max
+      const dotScale = getPointSize(midiValues[0]);
+
+      // const dotScale = 0.1 + (midiValues[0] / 127) * 5.0;
       for (let y = 0; y < rows; y++) {
         for (let x = 0; x < cols; x++) {
           const i = (y * cols + x) * 4;
@@ -378,13 +427,47 @@ published: true
       }
     }
 
+
+    let albumButtonVisible = false;
+
+    function showAlbumButton() {
+      if (albumButtonVisible) return;
+
+
+      const parts = ["https:", "", "your-album-link", "com"];
+      const path = "https://" + parts.slice(2).join('.') + "";
+
+      const btn = document.createElement("a");
+      btn.id = "album-button";
+      btn.href = path;
+      btn.target = "_blank";
+      btn.textContent = "GET THE ALBUM";
+
+      // Styling
+      btn.style.position = "fixed";
+      btn.style.bottom = "20px";
+      btn.style.left = "50%";
+      btn.style.transform = "translateX(-50%)";
+      btn.style.background = "black";
+      btn.style.color = "white";
+      btn.style.padding = "12px 24px";
+      btn.style.fontFamily = "monospace";
+      btn.style.fontSize = "18px";
+      btn.style.border = "none";
+      btn.style.cursor = "pointer";
+      btn.style.zIndex = "9999";
+      btn.style.textDecoration = "none";
+
+      document.body.appendChild(btn);
+      albumButtonVisible = true;
+    }
+
+
     // Dynamic letter animation
     function drawLine47Text() {
-      // const fontSize = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 600 ? 150 : Math.floor(canvas.width * 0.06);
-      const fontSize = Math.floor(canvas.height * 0.08); // or tweak to 0.035 for smaller text
-      const spacing = fontSize * 0.7; // consistent proportional spacing
+      const fontSize = Math.floor(canvas.height * 0.08);
+      const spacing = fontSize * 0.7;
 
-      // const spacing = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 600 ? 98 : canvas.width * 0.04;
       ctx.save();
       ctx.textAlign = "start";
       ctx.textBaseline = "middle";
@@ -401,8 +484,40 @@ published: true
       let charIndex = 0;
       const lineHeight = fontSize * 1.2;
       const startY = canvas.height / 2 - (lines.length * lineHeight) / 2 + lineHeight / 2;
+      let allLettersRevealed = true;
+
       lines.forEach((line, lineNum) => {
         const y = startY + lineNum * lineHeight;
+        let allRevealed = true;
+
+        const lineCharStart = charIndex;
+
+        for (let i = 0; i < line.length; i++) {
+          const char = line[i];
+          if (char === " ") continue;
+          const idx = charIndex;
+          if (!revealedFlags[idx]) {
+            allRevealed = true;
+            allLettersRevealed = false;
+          }
+          charIndex++;
+        }
+
+        if (allRevealed) {
+          const lineWidth = spacing * line.length; // include spaces in width
+          const paddingX = 20;
+          const paddingY = 20;
+          ctx.fillStyle = "rgba(255,255,191,1)";
+          ctx.fillRect(
+            canvas.width * 0.1 - paddingX / 2,
+            y - fontSize / 2 - paddingY / 2,
+            lineWidth + paddingX,
+            fontSize + paddingY
+          );
+        }
+
+        charIndex = lineCharStart;
+
         for (let i = 0; i < line.length; i++) {
           const char = line[i];
           if (char === " ") continue;
@@ -435,6 +550,7 @@ published: true
           charIndex++;
         }
       });
+
       ctx.restore();
     }
 
@@ -472,6 +588,12 @@ published: true
     function updatePolygonSides() {
       const cc37 = midiValues[4]; // CC37 - Sides
       const cc38 = midiValues[5]; // CC38 - Size
+      const cc39 = midiValues[6]; // CC39 - Line angle
+      const angle = (cc39 / 127) * 2 * Math.PI;
+
+      const cc40 = midiValues[7]; // CC40 - Line length
+      const lineLength = getLineLength(midiValues[7]);
+
 
       const minSides = 6;
       const maxSides = 26;
@@ -503,7 +625,7 @@ published: true
         for (let y = minY; y <= maxY; y += baseSpacing) {
           for (let x = minX; x <= maxX; x += baseSpacing) {
             if (ctx.isPointInPath(path, x, y)) {
-              dots.push({ x, y });
+              dots.push({ x, y, angle, lineLength });
             }
           }
         }
@@ -516,18 +638,30 @@ published: true
 
     function drawBackgroundShapes() {
       ctx.save();
-      ctx.fillStyle = "rgba(40, 40, 40, 1)"; // Light grey
+      ctx.strokeStyle = "rgba(40, 40, 40, 1)";
+      ctx.fillStyle = "rgba(40, 40, 40, 1)";
 
       backgroundShapes.forEach(shape => {
         shape.dots.forEach(dot => {
-          ctx.beginPath();
-          ctx.arc(dot.x, dot.y, 1.5, 0, 2 * Math.PI);
-          ctx.fill();
+          if (dot.angle !== undefined && midiValues[6] > 0) {
+            const dx = Math.cos(dot.angle) * dot.lineLength;
+            const dy = Math.sin(dot.angle) * dot.lineLength;
+            ctx.beginPath();
+            ctx.moveTo(dot.x - dx / 2, dot.y - dy / 2);
+            ctx.lineTo(dot.x + dx / 2, dot.y + dy / 2);
+            ctx.stroke();
+          } else {
+            ctx.beginPath();
+            ctx.arc(dot.x, dot.y, 1.5, 0, 2 * Math.PI);
+            ctx.fill();
+          }
         });
       });
 
       ctx.restore();
     }
+
+
 
     // Add user info overlay
     let userInfoText = "";
@@ -586,7 +720,18 @@ published: true
         drawLine47Text();
       }
       drawUserInfoOverlay();
+
+      // ✅ Show the album button once all letters are revealed
+      // if (!albumButtonVisible && revealedFlags.every(flag => flag)) {
+      //   showAlbumButton();
+      // }
+
       requestAnimationFrame(draw);
+
+      if (!albumButtonVisible && revealedFlags.every(flag => flag)) {
+        showAlbumButton();
+      }
+
     }
 
     // Initialize webcam and audio
@@ -635,7 +780,7 @@ published: true
         // CC36 = regenerate shapes; CC37 = update side count
         if (cc === 36) {
           generateBackgroundShapes();
-        } else if (cc === 37 | cc === 38) {
+        } else if (cc === 37 | cc === 38 | cc === 39 | cc === 40) {
           updatePolygonSides();
         }
       }
@@ -647,25 +792,6 @@ published: true
 
     // Resize and initialize
     window.addEventListener("resize", resizeCanvas);
-    // function resizeCanvas() {
-    //   const isPhone = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 600;
-    //   const aspectRatio = isPhone ? 9 / 16 : videoAspectRatio;
-    //   const windowAspect = window.innerWidth / window.innerHeight;
-    //   if (windowAspect > aspectRatio) {
-    //     canvas.height = window.innerHeight;
-    //     canvas.width = canvas.height * aspectRatio;
-    //   } else {
-    //     canvas.width = window.innerWidth;
-    //     canvas.height = canvas.width / aspectRatio;
-    //   }
-    //   // canvas.style.position = "absolute";
-    //   canvas.style.left = `${(window.innerWidth - canvas.width) / 2}px`;
-    //   canvas.style.top = `${(window.innerHeight - canvas.height) / 2}px`;
-    //   lines = wrapPhraseIntoLines(phrase);
-    //   generateBackgroundShapes();
-
-    // }
-
     function resizeCanvas() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
