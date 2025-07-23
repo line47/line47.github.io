@@ -8,6 +8,8 @@
 <body>
 
   {% include top-nav.html %}
+  {% include top-nav-work.html %}
+  {% include in-progress-alert.html %}
 
   <div class="hero">
     <div class="content-container">
@@ -17,7 +19,6 @@
         {{page.endYear}}{% endif %}</span>
     </div>
   </div>
-  <div class="alert">This page is in progress. I'm currently working on updates. It might be messy.</div>
   <div class="layout-project">
     <div class="content-container">
       <div class="main-content">
@@ -26,14 +27,15 @@
 
       <div class="relative-content">
         <h2>My role and responsibilities</h2>
-        <p>My role on this project was <span class="project-role">{{ page.role }}</span> and my responsibilities
-          included:
+        <p><span class="project-role">{{ page.role }}</span></p>
+
+        <p>Responsible for:<br>
           {% if page.builtWith %}
           {% assign sorted = page.responsibilities | sort %}
           {% for item in sorted %}
-          {% if forloop.last %}<span class="project-responsibilities">{{ item }}</span>{% else %}<span
-            class="project-responsibilities">{{item }}</span>,{% endif %}
+          <span class="project-responsibilities">{{ item }}</span>
           {% endfor %}
+
         </p>
         <h2>Tools and software used</h2>
         <p>

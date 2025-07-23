@@ -12,7 +12,7 @@ responsibilities:
 - Content strategy
 - Information architecture
 - Development
-image: /assets/images/agency_logos/FRTIB-logo.png
+image: /assets/images/projects/project-tsp.png
 largeImage: tsp-large.png
 builtWith:
   - Jekyll

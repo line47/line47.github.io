@@ -2,7 +2,7 @@
 layout: project
 title: Cloud.gov
 link: https://cloud.gov 
-image: assets/images/projects/project-cloud-gov.png
+image: /assets/images/projects/project-cloud-gov.png
 subtitle:
 role: Front-end engineer
 responsibilities:

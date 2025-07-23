@@ -13,7 +13,7 @@ responsibilities:
   - Front-end development
   - Front-end design
   - Information architecture
-image: /assets/images/agency_logos/NSF-logo.png
+image: /assets/images/projects/project-sbir.png
 largeImage: seedfund-large.png
 builtWith:
   - React

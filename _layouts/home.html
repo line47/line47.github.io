@@ -8,10 +8,23 @@
 <body>
     {% include top-nav.html %}
     <div class="hero">
-        <div class="content-container">
-            <h1 class="lead">{{page.title}}</h1>
-            <h2 class="section-title">Design leader, architecting scalable design systems with accessibility and front-end expertise</h2>
-            <img class="img-ani" src="/assets/images/sw-home-2025.png" />
+        <div class="grid">
+            <div class="work">
+                <h1>Work</h1>
+                <p class="section-title">
+                    I've been a UX manager, design system leader, and front-end specialist since 2004.
+                    My expertise spans user experience, product design, accessibility, usability, web
+                    standards, design systems, and design methods.
+                </p>
+                <p><a href="/work/">About my work</a></p>
+            </div>
+            <div class="music">
+                <h1>Music</h1>
+                <p class="section-title">Since the late 90s I've been creating
+                    breakcore, IDM and experimental music. I'm also interested in drone, noise and long format
+                    experiences. Owner of independent record label Terminal Dusk.</p>
+                <p><a href="/music/">About my sounds</a></p>
+            </div>
         </div>
     </div>
     {{ content }}
