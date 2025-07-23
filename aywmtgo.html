@@ -200,6 +200,10 @@
   <!-- JavaScript functionality -->
   <script>
 
+    const snareSound = new Audio("data:audio/mp3;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU5LjI3LjEwMAAAAAAAAAAAAAAA//tAwAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAANAAALUgAiIiIiIiIiNDQ0NDQ0NDRHR0dHR0dHR1lZWVlZWVlsbGxsbGxsbH5+fn5+fn5+kZGRkZGRkaOjo6Ojo6Ojtra2tra2trbIyMjIyMjI29vb29vb29vt7e3t7e3t7f////////8AAAAATGF2YzU5LjM3AAAAAAAAAAAAAAAAJA...");
+    snareSound.load()
+
+
     const toggleBtn = document.getElementById("controls-toggle");
     const ccDialog = document.getElementById("cc-controls-dialog");
     const closeBtn = document.getElementById("close-controls");
@@ -276,7 +280,7 @@
     if (isPhone) midiValues[1] = 50;
 
     // Phrase reveal variables
-    const phrase = "AS YOU WERE MEANT TO GO ON";
+    const phrase = "A YEAR WENT MISSING TO GET OUT";
     const letterIndices = [...phrase].map((c, i) => c !== " " ? i : null).filter(i => i !== null);
     let revealTimers = new Array(letterIndices.length).fill(0);
     let revealedFlags = new Array(letterIndices.length).fill(false);
@@ -459,6 +463,7 @@
       btn.style.textDecoration = "none";
 
       document.body.appendChild(btn);
+      snareSound.play().catch(err => console.warn("Audio playback failed:", err));
       albumButtonVisible = true;
     }
 
@@ -506,10 +511,10 @@
         if (allRevealed) {
           const lineWidth = spacing * line.length; // include spaces in width
           const paddingX = 20;
-          const paddingY = 20;
+          const paddingY = 0;
           ctx.fillStyle = "rgba(255,255,191,1)";
           ctx.fillRect(
-            canvas.width * 0.1 - paddingX / 2,
+            canvas.width - paddingX / 2,
             y - fontSize / 2 - paddingY / 2,
             lineWidth + paddingX,
             fontSize + paddingY
@@ -670,13 +675,12 @@
       try {
         const res = await fetch("https://ipapi.co/json/");
         const data = await res.json();
-        const ip = data.ip || "Unknown IP";
         const city = data.city || "";
         const region = data.region || "";
         const country = data.country_name || "";
         const time = new Date().toLocaleTimeString();
 
-        userInfoText = `IP: ${ip}\nLocation: ${city}, ${region}, ${country}\nTime: ${time}`;
+        userInfoText = `Location: ${city}, ${region}, ${country}\nTime started: ${time}`;
       } catch (e) {
         userInfoText = "Unable to load user info.";
       }

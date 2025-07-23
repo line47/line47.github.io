@@ -1,10 +1,87 @@
 ---
-layout: default
+layout: work
 title: My work
 permalink: /work/
----
+pageClass: work
 
-<!DOCTYPE html>
-<meta charset=utf-8>
-<title>Redirecting...</title>
-<meta http-equiv=refresh content="0; url=/#work">
+---
+<div class="hero">
+    <div class="content-container">
+        <h1>Hey, I'm Scott</h1>
+        <img class="img-ani" src="/assets/images/sw-home-2025.png" />
+        <p class="section-title"> I've been a UX manager, design system leader, and front-end specialist since 2004.
+            My expertise spans user experience, product design, accessibility, usability, web
+            standards, design systems, and design methods.</p>
+    </div>
+</div>
+<div class="content-container">
+    <p>
+        Currently <strong>Manager of Design</strong> at <a href="https://adhocteam.us/">Ad Hoc</a> driving <strong>UX
+            strategy, design systems, and accessibility</strong> for VA digital services. Alum of <a
+            href="https://18f.org/">18F</a> and <a href="https://www.egov.com/">NIC Inc.</a>
+    </p>
+    <p>I've spent my career enhancing digital experiences for U.S. citizens by simplifying complexity,
+        integrating scalable design systems, and championing accessibility. With a passion for human-centered design, I
+        bridge UX leadership and technical execution to drive impactful solutions. I thrive in collaborative spaces,
+        mentoring teams, aligning workflows, and turning design principles into real-world impact.</p>
+
+</div>
+
+<div class="selected-work" id="selected">
+    <div class="content-container">
+        <h1 class="lead">Selected work</h1>
+        <ul class="list-unstyled">
+            {% assign featureSorted = site.projects | where: "featured", true | sort: "endYear" | reverse %}
+            {% for work in featureSorted %}
+            <li class="article-post">
+                <h2 class="section-title"><a href="{{ work.url | permalink }}">{{ work.title }}</a></h2>
+                {{work.summary}}
+
+
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="additional-work" id="projects">
+    <div class="content-container">
+        <h1 class="lead">Projects I've worked on</h1>
+        <p>Building better government tech—simpler, smarter, and more human-centered.</p>
+        <ul class="projects projects2">
+            {% assign projects = site.projects | where: "home", true | sort: "endYear" | reverse %}
+            {% for work in projects %}
+            <li>
+
+                {% if work.link %} <a href="{{ work.link | permalink }}">{% endif %}
+                    <img src="{{work.image}}" />
+                    {% if work.link %} </a> {% endif %}
+                <br>
+
+                {% if work.link %}<a href="{{ work.link | permalink }}">{% endif %}
+                    {{ work.title }}
+                    {% if work.link %}</a>{% endif %}
+
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="additional-work" id="who">
+    <div class="content-container">
+        <h1 class="lead">Who I've worked with</h1>
+        <p>Partnering with agencies like CMS, VA, and DoD to make government services work for people.</p>
+        <ul class="projects">
+            {% assign sorted = site.work | sort: 'title' %}
+            {% for work in sorted %}
+
+            <li>
+                {% if work.link %}
+                <img src="{{ work.image }}" alt="{{ work.title }}">
+                {% endif %}
+                {% if work.link %}
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
