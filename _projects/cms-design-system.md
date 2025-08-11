@@ -44,8 +44,11 @@ To ensure our efforts aligned with user needs, we conducted multiple rounds of d
 We also conducted extensive audits of component usage across applications. By analyzing how components were being used in Healthcare.gov and Medicare.gov products, we identified critical gaps in the design system. These audits directly influenced our future work, shaping both improvements to existing components and the introduction of new ones.
 
 For example, an audit of the tooltip component across Healthcare and Medicare products revealed inconsistencies that led to usability issues. This insight helped refine our approach to tooltips, error message placement, and help content patterns like help drawer links and external links.
-
-<img src="/assets/images/projects/cms-design-system-venn-diagram.jpeg" alt="Venn diagram where internal and external user needs intersect."/>
+<figure>
+<a href="/assets/images/projects/cms-design-system-venn-diagram.jpeg" target="_blank">
+<img src="/assets/images/projects/cms-design-system-venn-diagram.jpeg" alt="Venn diagram where internal and external user needs intersect."/></a>
+<figcaption>Section of a Mural used to explore the overlap between internal and external design system users.</figcaption>
+</figure>
 
 ## Strategy & approach
 

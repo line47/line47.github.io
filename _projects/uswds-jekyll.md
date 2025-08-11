@@ -12,7 +12,7 @@ responsibilities:
   - HTML/CSS templates
   - Research
   - Responsive design
-smallImage: uswds-logo.png
+image: /assets/images/projects/project-USWDS-jekyll.png
 largeImage:
 builtWith:
   - Jekyll
@@ -24,4 +24,5 @@ builtWith:
   - GitHub
 startYear: 2017
 endYear: 2019
+home: true
 ---
