@@ -26,6 +26,9 @@
       </div>
 
       <div class="relative-content">
+        {% if page.link %}
+        <p><a href="{{ page.link }}" title="Visit the {{page.title}} website">Visit {{ page.title }} website</a></p>
+        {% endif %}
         <h2>My role and responsibilities</h2>
         <p><span class="project-role">{{ page.role }}</span></p>
 
@@ -44,12 +47,7 @@
           {% if forloop.last %}{{ item }}{% else %}{{item }},{% endif %}
           {% endfor %}
         </p>
-        {% if page.link %}
-        <p><a href="{{ page.link }}" title="Visit the {{page.title}} website">Visit {{ page.title }} website</a></p>
         {% endif %}
-        {% endif %}
-
-
       </div>
     </div>
   </div>

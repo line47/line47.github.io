@@ -46,7 +46,7 @@ pageClass: work
 <div class="additional-work" id="projects">
     <div class="content-container">
         <h1 class="lead">Projects I've worked on</h1>
-        <p>Building better government tech—simpler, smarter, and more human-centered.</p>
+        <p>Simpler, smarter, and more human-centered government technology.</p>
         <ul class="projects projects2">
             {% assign projects = site.projects | where: "home", true | sort: "endYear" | reverse %}
             {% for work in projects %}
@@ -69,7 +69,13 @@ pageClass: work
 <div class="additional-work" id="who">
     <div class="content-container">
         <h1 class="lead">Who I've worked with</h1>
-        <p>Partnering with agencies like CMS, VA, and DoD to make government services work for people.</p>
+        <p>Federal government agencies like <a href="https://www.cms.gov/">CMS</a>, <a href="https://www.va.gov">VA</a>,
+            <a href="https://www.tsp.gov">TSP</a>, and <a href="https://www.defense.gov">DoD</a>. State of Kentucky
+            local
+            government offices like <a href="https://transportation.ky.gov">KYTC</a>, <a
+                href="https://www.chfs.ky.gov">CHFS</a>, <a href="https://governor.ky.gov">KY Governor </a>
+            , and <a href="https://www.sos.ky.gov">KY Secretary of State</a>.
+        </p>
         <ul class="projects">
             {% assign sorted = site.work | sort: 'title' %}
             {% for work in sorted %}

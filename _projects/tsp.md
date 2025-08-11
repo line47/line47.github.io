@@ -37,17 +37,30 @@ We went through sprint planning together and then co-worked and coached alongsid
 The TSP site was in desperate need of a complete overhaul in design, content, and information architecture. Users were not finding the information they needed and the information was not presented in a way that was easily understood by users. The site was built in Jekyll and custom page teamplates and layouts were devloped to showcase the TSP content making it easier for users to digest. 
 
 <figure>
+<a href="/assets/images/projects/tsp-old.png" target="_blank">
 <img src="/assets/images/projects/tsp-old.png"/>
-<figcaption>This was the TSP site before updating the content, design and information architecture.</figcaption>
+</a>
+<figcaption>Screenshot of the TSP website before we started our work of updating the content, design and information architecture.</figcaption>
 </figure>
 
 We utilized the U.S. Web Design System as a starting point for the updated design. We focused on plain language as well as simplifying the information architecture to help users understand the options the TSP provides and what is available to them. 
 
+<figure>
+<a href="/assets/images/projects/tsp-move-money.png" target="_blank">
 <img src="/assets/images/projects/tsp-move-money.png" alt="Example of updated content UI which focuses on simplicity and readability and understanding."/>
+</a>
+<figcaption>Example of styling and content updates made using the U.S. Web Design System.</figcaption>
+</figure>
 
 Another part of our work was to revamp the way data was exposed to users on the site to help users evaluate options the TSP provides. Custom in page tools were created to help with understanding this data. 
  
+<figure> 
+<a href="/assets/images/projects/tsp-compare-funds.png" target="_blank">
 <img src="/assets/images/projects/tsp-compare-funds.png" alt="UI comparison tool to help TSP members compare plan types."/>
+</a>
+<figcaption>Custom tool to help users compare different TSP plans.</figcaption>
+</figure>
+
 
 ### Takeaways
 

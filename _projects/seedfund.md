@@ -39,11 +39,18 @@ We used concise language and bold design to speak directly to the target audienc
 
 A centerpiece of the new site was the apply page, where potential applicants learn about the details of the application process. This step list UI shows what is to be done at what step in the process with some general timeline expectations. Previously, this process was not transparent, and getting information required contacting the agency which in turn requires more of the agency and the applicant.
 
-<img src="/assets/images/projects/seedfund-apply.png" alt="Application process UI to help applicants understand the journey of applying."/>
+
+<figure>
+<a href="/assets/images/projects/seedfund-apply.png" target="_blank"><img src="/assets/images/projects/seedfund-apply.png" alt="Application process UI to help applicants understand the journey of applying."/></a>
+<figcaption>Application process including the timeline users can expect.</figcaption>
+</figure>
 
 Another focal point of the new site was the portfolio page where applicants could look into which companies have been funded by the NSF previously. This portfolio page is broken down by technology topic areas and also offers a search. This page was also important for entrepreneurs to help them feel confident in applying for seed funding based on previously funded companies or projects. 
 
-<img src="/assets/images/projects/seedfund-portfolio.png" alt="Advanced manufacturing section of the portfolio page."/>
+<figure>
+<a href="/assets/images/projects/seedfund-portfolio.png" target="_blank"><img src="/assets/images/projects/seedfund-portfolio.png" alt="Advanced manufacturing section of the portfolio page."/></a>
+<figcaption>Section of the portfolio page where applicants can see which companies have been funded by the NSF previously.</figcaption>
+</figure>
 
 ## Takeaways
 
