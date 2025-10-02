@@ -43,16 +43,3 @@ I’ve sent well over a hundred applications. Here’s the general flavor of wha
 * [Find me on LinkedIn](https://www.linkedin.com/in/sswebr/)
 * [Selected work](/work/)
 * [Put 15 minutes on my calendar](https://calendar.app.google/VGbqnwid7cr1qgdy8)
-
-
----
-
-Gov tech and tech at large are rough right now. 
-I’m a design generalist with 20+ years of impact, and lately I’m hitting a wall of “unfortunately” emails. I wrote about the reality, the work I’ve done, and where I can help.
-
-
-
-If you’re hiring, or know someone who is, I’m open to UX lead, design systems, or senior UX  design positions. DMs are open! 
-
-If you like me are also searching, I see you. 
-Drop a comment with one thing you’ve tried or learned in this current tech job market climate.
