@@ -1,0 +1,93 @@
+# One row per rejection
+
+- date: 2025-10-01
+  role: Staff product designer
+  phrase: We have carefully reviewed your application and we have decided not to move forward with your candidacy.
+
+- date: 2025-09-30
+  role: Product design lead
+  phrase: At this time, we will not be further considering you for this opportunity.
+
+- date: 2025-09-28
+  role: Product design manager
+  phrase: We regret to inform you that we will not be moving forward with you for the position at this time.
+
+- date: 2025-09-25
+  role: UX strategist
+  phrase: Due to the position being no longer available, we will not be proceeding with your application at this time. 
+
+- date: 2025-09-27
+  role: Sr. Manager, Product Design
+  phrase: After careful consideration, we have decided to pursue other candidates who more closely align with the requirements of the position.
+
+- date: 2025-09-22
+  role: User Experience Design Manager
+  phrase: After careful consideration, we will not be progressing with your application for this particular opportunity. 
+
+- date: 2025-09-26
+  role: Staff Product Designer - Design System
+  phrase: We will unfortunately not be proceeding with your candidacy at this time.
+
+- date: 2025-08-18
+  role: UX Designer Senior 
+  phrase: We reviewed your skills and experience, and unfortunately won’t be moving forward with your application at this time.
+
+- date: 2025-09-23
+  role: Principal UX Designer, Design Systems
+  phrase: We regret to inform you that you will not be moving forward in the process because this position has been filled.
+
+- date: 2025-08-11
+  role: Staff product designer
+  phrase: We've had a chance to review your resume and unfortunately we won't be moving forward with your application for this role.
+
+- date: 2025-09-15
+  role:  Design Standards Senior Lead
+  phrase: Unfortunately, we are not able to offer you employment at this time.
+
+- date: 2025-09-30
+  role: Principal User Experience Lead
+  phrase: Unfortunately, we’ve decided to move forward with another candidate who matches the job requirements more closely.
+
+- date: 2025-08-10
+  role: Digital UX Designer
+  phrase: Unfortunately, we won't be advancing you to the next round of our hiring process at this time.
+
+- date: 2025-08-12
+  role: Senior UX Designer
+  phrase: Unfortunately, we will not be progressing your application further.  
+
+- date: 2025-09-05
+  role: Product Manager, Design Systems
+  phrase: Unfortunately, the hiring team has decided to pursue with other candidates at this time and will not be moving forward with your application.
+
+- date: 2025-08-19
+  role: Sr. Manager, Design Strategy
+  phrase: Based on the needs of the hiring team, your skills and experience do not exactly match what we are looking for to fill the position.
+
+- date: 2025-09-15
+  role: Lead UX Designer
+  phrase: Unfortunately we’re already moving forward with other applicants and are unable to consider you for this role.
+
+- date: 2025-08-30
+  role: Senior Design Systems Designer
+  phrase: Unfortunately, you have not been selected for Senior Design Systems Designer.
+
+- date: 2025-08-22
+  role: Staff Product Designer, Design Systems
+  phrase: Unfortunately, we won’t be moving forward with your candidacy for our Staff Product Designer, Design Systems position
+
+- date: 2025-08-07
+  role: Design Manager
+  phrase: Unfortunately, we will not be moving forward with your application, but we appreciate your time and interest
+
+- date: 2025-09-19
+  role: Senior Manager, UX Design
+  phrase: Unfortunately, this position has been filled and we will be removing it from our careers page.
+
+- date: 2025-08-11
+  role: Manager, Product Design
+  phrase: We've reviewed what you shared with us and, unfortunately, we did not find a match with what the team is looking for — at the moment! 
+
+- date: 2025-09-28
+  role: UX Design Manager
+  phrase: We've reviewed your application and unfortunately, we won't be moving forward with your application this time around.

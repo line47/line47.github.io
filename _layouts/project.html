@@ -29,14 +29,12 @@
         {% if page.link %}
         <p><a href="{{ page.link }}" title="Visit the {{page.title}} website">Visit {{ page.title }} website</a></p>
         {% endif %}
-        <h2>My role and responsibilities</h2>
-        <p><span class="project-role">{{ page.role }}</span></p>
-
-        <p>Responsible for:<br>
-          {% if page.builtWith %}
+        <h2>My role</h2>
+        <p>I was the <span class="project-role">{{ page.role }}</span> responsible for
+          {% if page.responsibilities %}
           {% assign sorted = page.responsibilities | sort %}
           {% for item in sorted %}
-          <span class="project-responsibilities">{{ item }}</span>
+          {% if forloop.last %}and {{ item }}{% else %}{{item }},{% endif %}
           {% endfor %}
 
         </p>
@@ -44,7 +42,7 @@
         <p>
           {% assign sorted = page.builtWith | sort %}
           {% for item in sorted %}
-          {% if forloop.last %}{{ item }}{% else %}{{item }},{% endif %}
+          {% if forloop.last %}and {{ item }}{% else %}{{item }},{% endif %}
           {% endfor %}
         </p>
         {% endif %}

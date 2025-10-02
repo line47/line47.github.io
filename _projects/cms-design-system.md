@@ -4,18 +4,18 @@ title: CMS Design System
 who: Centers for Medicare & Medicaid Services 
 link: https://design.cms.gov/
 role: Design System Lead 
-summary: An effort to improve scalability, consistency, accessibility, and adoption. Additionally, CMS had a network of interconnected systems spanning CMS.gov, Healthcare.gov, and Medicare.gov, each with unique constraints and requirements.
+summary: Improve scalability, consistency, accessibility, and adoption of three interconnected systems spanning CMS.gov, Healthcare.gov, and Medicare.gov.
 call-to-action: Interested in improving your design system? Let’s connect!
 call-to-action-link:
 responsibilities:
-  - User experience 
-  - Design system guidance
-  - Front-end design
-  - User research
-  - Front-end design
-  - Systems thinking
-  - Front-end development
-image: /assets/images/agency_logos/cms-logo.png
+  - user experience 
+  - design system guidance
+  - front-end design
+  - user research
+  - front-end design
+  - systems thinking
+  - front-end development
+image: /assets/images/projects/project-cmsds.png
 largeImage: cms-design-system-large.png
 builtWith:
   - React
