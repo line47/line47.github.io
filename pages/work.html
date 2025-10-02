@@ -7,36 +7,40 @@ pageClass: work
 ---
 <div class="hero">
     <div class="content-container">
-        <h1>Hey, I'm Scott</h1>
-        <img class="img-ani" src="/assets/images/sw-home-2025.png" />
-        <p class="section-title"> I've been a UX manager, design system leader, and front-end specialist since 2004.
-            My expertise spans user experience, product design, accessibility, usability, web
-            standards, design systems, and design methods.</p>
+        <p class="lead">I'm looking for <span>UX management</span>, <span>design system</span> and <span>product
+                design</span> opportunities
+        </p>
     </div>
 </div>
 <div class="content-container">
     <p>
-        Currently <strong>Manager of Design</strong> at <a href="https://adhocteam.us/">Ad Hoc</a> driving <strong>UX
-            strategy, design systems, and accessibility</strong> for VA digital services. Alum of <a
-            href="https://18f.org/">18F</a> and <a href="https://www.egov.com/">NIC Inc.</a>
+        I'm currently a <strong>Manager of Design</strong> at <a href="https://adhocteam.us/">Ad Hoc</a> driving
+        <strong>UX
+            strategy, modernization, and accessibility</strong> for the Veterans Health Administration Enrollment
+        System.
     </p>
-    <p>I've spent my career enhancing digital experiences for U.S. citizens by simplifying complexity,
-        integrating scalable design systems, and championing accessibility. With a passion for human-centered design, I
-        bridge UX leadership and technical execution to drive impactful solutions. I thrive in collaborative spaces,
-        mentoring teams, aligning workflows, and turning design principles into real-world impact.</p>
+    <p>I'm a generalist who's spent most of my career improving online experiences for government and the people they
+        serve. I enjoy making sense of complexity and ambiguity, integrating scalable design systems, and championing
+        accessibility.
+        With a passion for human-centered design, I bridge UX leadership and technical execution to drive impactful
+        solutions. I thrive in collaborative spaces,
+        mentoring teams, aligning workflows, and turning design principles into real-world impact. Alum of <a
+            href="https://18f.org/">18F</a> and <a href="https://www.egov.com/">NIC Inc.</a> </p>
 
 </div>
 
 <div class="selected-work" id="selected">
     <div class="content-container">
         <h1 class="lead">Selected work</h1>
-        <ul class="list-unstyled">
+        <ul class="projects">
             {% assign featureSorted = site.projects | where: "featured", true | sort: "endYear" | reverse %}
             {% for work in featureSorted %}
-            <li class="article-post">
-                <h2 class="section-title"><a href="{{ work.url | permalink }}">{{ work.title }}</a></h2>
-                {{work.summary}}
-
+            <li>
+                <img src="{{work.image}}" />
+                <div>
+                    <h2 class="section-title"><a href="{{ work.url | permalink }}">{{ work.title }}</a></h2>
+                    <p> {{work.summary}}</p>
+                </div>
 
             </li>
             {% endfor %}
@@ -45,10 +49,11 @@ pageClass: work
 </div>
 <div class="additional-work" id="projects">
     <div class="content-container">
-        <h1 class="lead">Projects I've worked on</h1>
+        <h1 class="lead">Other projects I worked on</h1>
         <p>Simpler, smarter, and more human-centered government technology.</p>
         <ul class="projects projects2">
-            {% assign projects = site.projects | where: "home", true | sort: "endYear" | reverse %}
+            {% assign projects = site.projects | where: "home", true | where: "featured", false |sort: "endYear" |
+            reverse %}
             {% for work in projects %}
             <li>
 
@@ -86,6 +91,10 @@ pageClass: work
                 {% endif %}
                 {% if work.link %}
                 {% endif %}
+
+                {% if work.link %}<a href="{{ work.link | permalink }}">{% endif %}
+                    {{ work.title }}
+                    {% if work.link %}</a>{% endif %}
             </li>
             {% endfor %}
         </ul>

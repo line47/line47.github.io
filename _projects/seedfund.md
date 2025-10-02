@@ -3,16 +3,13 @@ layout: project
 link: https://seedfund.nsf.gov/
 title: America's Seed Fund
 who: National Science Foundation
-subtitle: Website and visual identity redesign
 role: Front-end designer
-summary: Rebrand and redesign the NSF Small Business Innovation Research (SBIR) and Small Business Technology Transfer (STTR) program to effectively communicate its purpose and increase engagement among a broader and more diverse audience of tech entrepreneurs.
-challenge: Among NSF activities, the Small Business Innovation Research/Small Business Technology Transfer (SBIR/STTR) program has a unique goal to attract high-tech startups and small businesses from diverse audiences nationwide. To better engage this distinct audience, we were tasked with redesigning a new SBIR/STTR website (seedfund.nsf.gov), which maintains the NSF brand while providing a more tailored look, tone, and presentation aimed at entrepreneurs.
+summary: Rebrand and redesign the NSF SBIR and STTR programs to effectively communicate purpose and increase engagement among a broader and more diverse audience of tech entrepreneurs.
 responsibilities:
-  - User experience
-  - User interface design
-  - Front-end development
-  - Front-end design
-  - Information architecture
+  - user experience design
+  - front-end development
+  - front-end design
+  - information architecture
 image: /assets/images/projects/project-sbir.png
 largeImage: seedfund-large.png
 builtWith:
@@ -29,6 +26,12 @@ startYear: 2017
 endYear: 
 featured: true
 ---  
+
+## challenge: 
+
+Among NSF activities, the Small Business Innovation Research/Small Business Technology Transfer (SBIR/STTR) program has a unique goal to attract high-tech startups and small businesses from diverse audiences nationwide. To better engage this distinct audience, we were tasked with redesigning a new SBIR/STTR website (seedfund.nsf.gov), which maintains the NSF brand while providing a more tailored look, tone, and presentation aimed at entrepreneurs.
+
+
 ## Getting started 
 
 We worked with the NSF technology team and began prototyping a new website and brand. We started with the U.S. Web Design System and extended it by creating custom design patterns that emerged during research with tech entrepreneurs. We iterated on these designs, based on feedback from actual users. 

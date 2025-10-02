@@ -25,4 +25,5 @@ builtWith:
 startYear: 2017
 endYear: 2019
 home: true
+featured: false
 ---

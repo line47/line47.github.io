@@ -1,0 +1,18 @@
+<section class="rej-dossier" aria-label="Rejection dossier">
+    {% assign items = site.data.unfortunately | sort: "date" | reverse %}
+    {% for r in items %}
+    <article class="rej-file" aria-label="Rejection item">
+        <div class="rej-paper">
+            <div class="rej-redact" aria-hidden="true"></div>
+            <div class="rej-meta">
+                <div class="rej-date">{{ r.date | date: "%b %d, %Y" }}</div>
+                <div class="rej-role">{{ r.role }}</div>
+            </div>
+            <div class="rej-x" aria-hidden="true"></div>
+            <div class="rej-hover">
+                <span class="rej-quote">“{{ r.phrase }}”</span>
+            </div>
+        </div>
+    </article>
+    {% endfor %}
+</section>
