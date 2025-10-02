@@ -36,16 +36,18 @@
           {% for item in sorted %}
           {% if forloop.last %}and {{ item }}{% else %}{{item }},{% endif %}
           {% endfor %}
-
+          {% endif %}
         </p>
         <h2>Tools and software used</h2>
         <p>
+          {% if page.builtWith %}
           {% assign sorted = page.builtWith | sort %}
           {% for item in sorted %}
           {% if forloop.last %}and {{ item }}{% else %}{{item }},{% endif %}
           {% endfor %}
+          {% endif %}
         </p>
-        {% endif %}
+
       </div>
     </div>
   </div>
