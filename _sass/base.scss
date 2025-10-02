@@ -974,10 +974,14 @@ pre {
     align-items: baseline;
     padding: $spacer-2;
     background: var(--x);
-    opacity: 0;
     transition: 1.5s ease-in;
 
+    @media (min-width: 900px) {
+        opacity: 0;
+    }
 }
+
+
 
 .rej-file:hover .rej-hover {
     opacity: 1;
@@ -987,16 +991,4 @@ pre {
 
 .rej-quote {
     color: $color-white;
-}
-
-.rej-file:nth-child(3n) .rej-x {
-    transform: rotate(1.8deg) scale(.98);
-}
-
-.rej-file:nth-child(4n) .rej-x {
-    transform: rotate(-2.2deg) scale(1.02);
-}
-
-.rej-file:nth-child(5n) .rej-x {
-    transform: rotate(.8deg)
 }
