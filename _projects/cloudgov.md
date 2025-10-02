@@ -15,7 +15,6 @@ builtWith:
   - React
   - SASS
   - Cloud Foundry
-  
   - GitHub
   - JavaScript
   - U.S. Web Design System
