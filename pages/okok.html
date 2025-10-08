@@ -1,7 +1,13 @@
+---
+permalink: /music/aywmtgo/
+---
+<!-- path: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>L47 / AYWMTGO</title>
   <style>
     html,
@@ -58,17 +64,8 @@
       color: #333;
     }
 
-    #cc-controls-dialog button {
-      padding: 6px 12px;
-      font-family: monospace;
-      font-size: 14px;
-      background: #fff;
-      border: 1px solid #ccc;
-      cursor: pointer;
-    }
-
+    #cc-controls-dialog button,
     button {
-
       font-family: monospace;
       font-size: 14px;
       padding: 6px 12px;
@@ -96,18 +93,13 @@
         gap: 6px 12px;
       }
 
-      .cc-control label {
-        font-size: 20px;
-      }
-
-      .cc-control span {
-        font-size: 20px;
-      }
-
-      .cc-control input[type="range"] {}
-
+      .cc-control label,
+      .cc-control span,
       button {
         font-size: 20px;
+      }
+
+      button {
         padding: 10px 16px;
       }
     }
@@ -123,10 +115,13 @@
 
   <!-- Toggle button for control panel -->
   <div class="button-container">
-    <button id="controls-toggle">.</button>
+    <!-- WHY: start hidden because the panel is open by default -->
+    <button id="controls-toggle" style="display:none;">Configure</button>
   </div>
-  <!-- MIDI control panel dialog -->
-  <div id="cc-controls-dialog">
+
+  <!-- MIDI control panel dialog (open by default) -->
+  <div id="cc-controls-dialog" class="open">
+    <button id="setDefaultsBtn">Reset Configurations</button>
     <div class="cc-control">
       <div class="cc-label-row">
         <label for="cc33">CC33 Point Size:</label>
@@ -137,7 +132,7 @@
 
     <div class="cc-control">
       <div class="cc-label-row">
-        <label for="cc34">CC34 Grid Res:</label>
+        <label for="cc34">CC34 Grid Resolution:</label>
         <span id="cc34-val">103</span>
       </div>
       <input type="range" id="cc34" min="0" max="127" value="103">
@@ -190,19 +185,18 @@
       </div>
       <input type="range" id="cc40" min="0" max="127" value="0">
     </div>
+
     <!-- Control buttons -->
     <button id="screenshotBtn">Save Screenshot</button>
-    <button id="setDefaultsBtn">Reset</button>
-    <button id="close-controls">.</button>
-
+    <button id="close-controls">Close</button>
   </div>
 
   <!-- JavaScript functionality -->
   <script>
+    const SHOW_PHRASE = false;
 
     const snareSound = new Audio("data:audio/mp3;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU5LjI3LjEwMAAAAAAAAAAAAAAA//tAwAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAANAAALUgAiIiIiIiIiNDQ0NDQ0NDRHR0dHR0dHR1lZWVlZWVlsbGxsbGxsbH5+fn5+fn5+kZGRkZGRkaOjo6Ojo6Ojtra2tra2trbIyMjIyMjI29vb29vb29vt7e3t7e3t7f////////8AAAAATGF2YzU5LjM3AAAAAAAAAAAAAAAAJA...");
-    snareSound.load()
-
+    snareSound.load();
 
     const toggleBtn = document.getElementById("controls-toggle");
     const ccDialog = document.getElementById("cc-controls-dialog");
@@ -224,45 +218,20 @@
     const video = document.getElementById("webcam");
     const offscreen = document.createElement("canvas");
     const offCtx = offscreen.getContext("2d");
-    let videoAspectRatio = 16 / 9;
 
+    // Mapping helpers
+    function getPointSize(ccValue) { return 0.1 + (ccValue / 127) * (4.0 - 0.1); }
+    function getGridResolution(ccValue) { return 10 + Math.floor((ccValue / 127) * (160 - 10)); }
+    function getLineLength(ccValue) { return 5 + (ccValue / 127) * (30 - 5); }
 
-    // Adjust CC33 (Point Size) rendering scale
-    function getPointSize(ccValue) {
-      const minScale = 0.1;
-      const maxScale = 4.0;
-      return minScale + (ccValue / 127) * (maxScale - minScale);
+    // Map CC35 → integer sides [2..7]
+    function getSidesFromCC35(ccValue) {
+      const sides = 2 + Math.floor((ccValue / 127) * 5);
+      return Math.max(2, Math.min(7, sides));
     }
 
-    // Adjust CC34 (Grid Res) rendering scale
-    function getGridResolution(ccValue) {
-      const minCols = 10;
-      const maxCols = 160;
-      return minCols + Math.floor((ccValue / 127) * (maxCols - minCols));
-    }
-
-
-    // Adjust CC35 (Point Shape) rendering scale
-    function getMorphValue(ccValue) {
-      const minMorph = 0.0;
-      const maxMorph = 2;
-      return minMorph + (ccValue / 127) * (maxMorph - minMorph);
-    }
-
-    // Adjust CC40 (Line Length) rendering scale
-    function getLineLength(ccValue) {
-      const minLength = 5;
-      const maxLength = 30;
-      return minLength + (ccValue / 127) * (maxLength - minLength);
-    }
-
-    // const lineLength = 5 + (cc40 / 127) * 20; // range from 5 to 25
-
-
-    // Define your default MIDI CC values
+    // Define default MIDI CC values
     const defaultCCValues = [50, 103, 50, 64, 64, 64, 0, 0];
-
-    // Initialize midiValues using the default values + padding
     let midiValues = [...defaultCCValues, ...new Array(11).fill(0)];
 
     // Reset Button handler
@@ -275,12 +244,11 @@
       });
     });
 
-
     const isPhone = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 480;
     if (isPhone) midiValues[1] = 50;
 
-    // Phrase reveal variables
-    const phrase = "A YEAR WENT MISSING TO GET OUT";
+    // Phrase reveal variables (kept; gated by SHOW_PHRASE)
+    const phrase = "CHANNEL MEMORY DRIFT";
     const letterIndices = [...phrase].map((c, i) => c !== " " ? i : null).filter(i => i !== null);
     let revealTimers = new Array(letterIndices.length).fill(0);
     let revealedFlags = new Array(letterIndices.length).fill(false);
@@ -291,7 +259,6 @@
     let lines = wrapPhraseIntoLines(phrase);
     let backgroundShapes = [];
 
-
     // MIDI Controls
     function setupCCSliders() {
       const sliders = ["cc33", "cc34", "cc35", "cc36", "cc37", "cc38", "cc39", "cc40"];
@@ -300,18 +267,16 @@
         const display = document.getElementById(`${id}-val`);
         slider.addEventListener("input", () => {
           const ccNum = 33 + index;
-          const value = parseInt(slider.value);
+          const value = parseInt(slider.value, 10);
           midiValues[index] = value;
           display.textContent = value;
 
-          // Mirror MIDI behavior for these CCs
           if (ccNum === 36) {
             generateBackgroundShapes();
           } else if ([37, 38, 39, 40].includes(ccNum)) {
             updatePolygonSides();
           }
         });
-
       });
     }
 
@@ -326,117 +291,118 @@
       scCtx.drawImage(canvas, 0, 0);
 
       const dataUrl = screenshotCanvas.toDataURL("image/png");
-
-      if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)) {
-        const link = document.createElement("a");
-        link.href = dataUrl;
-        link.download = `L47_AYWMTGO_${Date.now()}.png`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      } else {
-        const link = document.createElement("a");
-        link.download = `L47_AYWMTGO_${Date.now()}.png`;
-        link.href = dataUrl;
-        link.click();
-      }
+      const link = document.createElement("a");
+      link.download = `L47_AYWMTGO_${Date.now()}.png`;
+      link.href = dataUrl;
+      link.click();
     });
 
-    // Wraps phrase into multiple lines based on device
+    // Wraps phrase into multiple lines
     function wrapPhraseIntoLines(phrase) {
       const words = phrase.split(" ");
       const lines = [];
-      let currentLine = words[0];
-      const ctx = canvas.getContext("2d");
+      let currentLine = words[0] || "";
       ctx.font = `${Math.floor(canvas.height * 0.08)}px monospace`;
       for (let i = 1; i < words.length; i++) {
         const testLine = currentLine + " " + words[i];
-        const { width } = ctx.measureText(testLine);
-        if (width < canvas.width * 0.8 && Math.random() > 0.3) {
+        if (ctx.measureText(testLine).width < canvas.width * 0.8 && Math.random() > 0.3) {
           currentLine = testLine;
         } else {
           lines.push(currentLine);
           currentLine = words[i];
         }
       }
-      lines.push(currentLine);
+      if (currentLine) lines.push(currentLine);
       return lines;
     }
 
-    // Fix jitter by caching randomized radius per shape key
+    // Fix jitter by caching polygon points
     const polygonCache = {};
-    function drawMorphedShape(ctx, cx, cy, size, morph) {
-      morph = getMorphValue(midiValues[2]);
-      const sides = 3 + Math.floor(morph * 2); // 4 to 10 sides
-      const cacheKey = `${sides}-${size.toFixed(1)}-${morph.toFixed(2)}`;
+    function drawMorphedShape(ctx, cx, cy, size) {
+      const sides = getSidesFromCC35(midiValues[2]);
+      const cacheKey = `${sides}-${size.toFixed(1)}`;
 
       if (!polygonCache[cacheKey]) {
         const points = [];
-        const radiusMod = Array.from({ length: sides }, () => 1 + (Math.random() - 0) * 0);
         for (let i = 0; i < sides; i++) {
           const angle = (i / sides) * 2 * Math.PI - Math.PI / 4;
-          const r = size * radiusMod[i];
-          const x = r * Math.cos(angle);
-          const y = r * Math.sin(angle);
+          const x = size * Math.cos(angle);
+          const y = size * Math.sin(angle);
           points.push({ x, y });
         }
         polygonCache[cacheKey] = points;
       }
 
+      const pts = polygonCache[cacheKey];
+
+      if (sides === 2) {
+        // match opacity with fill; keep visible at small sizes
+        const prevStroke = ctx.strokeStyle, prevWidth = ctx.lineWidth, prevCap = ctx.lineCap;
+        ctx.strokeStyle = ctx.fillStyle;
+        ctx.lineWidth = Math.max(1, size * 0.25);
+        ctx.lineCap = "round";
+
+        ctx.beginPath();
+        ctx.moveTo(cx + pts[0].x, cy + pts[0].y);
+        ctx.lineTo(cx + pts[1].x, cy + pts[1].y);
+        ctx.stroke();
+
+        ctx.strokeStyle = prevStroke; ctx.lineWidth = prevWidth; ctx.lineCap = prevCap;
+        return;
+      }
+
       ctx.beginPath();
-      polygonCache[cacheKey].forEach((pt, i) => {
-        if (i === 0) ctx.moveTo(cx + pt.x, cy + pt.y);
-        else ctx.lineTo(cx + pt.x, cy + pt.y);
-      });
+      pts.forEach((pt, i) => i === 0 ? ctx.moveTo(cx + pt.x, cy + pt.y) : ctx.lineTo(cx + pt.x, cy + pt.y));
       ctx.closePath();
       ctx.fill();
     }
 
-    // Halftone drawing using webcam input
+    // Halftone drawing using webcam input (uniform opacity)
     function drawHalftone() {
-      //CC34 10 and 160 to control the min and max
+      ctx.save();
+      ctx.globalAlpha = 0.5; // uniform alpha for dots and 2-point lines
+      ctx.fillStyle = "black";
+
       const cols = getGridResolution(midiValues[1]);
       const aspect = canvas.width / canvas.height;
-      const rows = Math.floor(cols / aspect);
+      const rows = Math.max(1, Math.floor(cols / aspect));
       offscreen.width = cols;
       offscreen.height = rows;
-      const videoAR = video.videoWidth / video.videoHeight;
+
+      const videoAR = (video.videoWidth || 16) / (video.videoHeight || 9);
       const targetAR = cols / rows;
-      let sx = 0, sy = 0, sw = video.videoWidth, sh = video.videoHeight;
+      let sx = 0, sy = 0, sw = video.videoWidth || 16, sh = video.videoHeight || 9;
       if (videoAR > targetAR) {
-        sw = video.videoHeight * targetAR;
-        sx = (video.videoWidth - sw) / 2;
+        sw = sh * targetAR;
+        sx = ((video.videoWidth || 16) - sw) / 2;
       } else {
-        sh = video.videoWidth / targetAR;
-        sy = (video.videoHeight - sh) / 2;
+        sh = sw / targetAR;
+        sy = ((video.videoHeight || 9) - sh) / 2;
       }
       offCtx.drawImage(video, sx, sy, sw, sh, 0, 0, cols, rows);
+
       const imageData = offCtx.getImageData(0, 0, cols, rows).data;
-      const dotSpacingX = canvas.width / cols;
-      const dotSpacingY = canvas.height / rows;
-      //CC33 0.1 and 5.0 control the min and max
+      const dx = canvas.width / cols;
+      const dy = canvas.height / rows;
       const dotScale = getPointSize(midiValues[0]);
 
-      // const dotScale = 0.1 + (midiValues[0] / 127) * 5.0;
       for (let y = 0; y < rows; y++) {
         for (let x = 0; x < cols; x++) {
           const i = (y * cols + x) * 4;
           const brightness = (imageData[i] + imageData[i + 1] + imageData[i + 2]) / 3;
-          const size = (1 - brightness / 255) * Math.min(dotSpacingX, dotSpacingY) * 0.5 * dotScale;
-          const cx = x * dotSpacingX;
-          const cy = y * dotSpacingY;
-          ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
-          drawMorphedShape(ctx, cx, cy, size, midiValues[2] / 127);
+          const size = (1 - brightness / 255) * Math.min(dx, dy) * 0.5 * dotScale;
+          const cx = x * dx;
+          const cy = y * dy;
+          drawMorphedShape(ctx, cx, cy, size);
         }
       }
+
+      ctx.restore();
     }
 
-
     let albumButtonVisible = false;
-
     function showAlbumButton() {
       if (albumButtonVisible) return;
-
 
       const parts = ["https:", "", "your-album-link", "com"];
       const path = "https://" + parts.slice(2).join('.') + "";
@@ -447,7 +413,6 @@
       btn.target = "_blank";
       btn.textContent = "GET THE ALBUM";
 
-      // Styling
       btn.style.position = "fixed";
       btn.style.bottom = "20px";
       btn.style.left = "50%";
@@ -463,13 +428,14 @@
       btn.style.textDecoration = "none";
 
       document.body.appendChild(btn);
-      snareSound.play().catch(err => console.warn("Audio playback failed:", err));
+      snareSound.play().catch(() => { });
       albumButtonVisible = true;
     }
 
-
-    // Dynamic letter animation
+    // Dynamic letter animation (gated)
     function drawLine47Text() {
+      if (!SHOW_PHRASE) return;
+
       const fontSize = Math.floor(canvas.height * 0.08);
       const spacing = fontSize * 0.7;
 
@@ -489,36 +455,15 @@
       let charIndex = 0;
       const lineHeight = fontSize * 1.2;
       const startY = canvas.height / 2 - (lines.length * lineHeight) / 2 + lineHeight / 2;
-      let allLettersRevealed = true;
 
       lines.forEach((line, lineNum) => {
         const y = startY + lineNum * lineHeight;
-        let allRevealed = true;
-
         const lineCharStart = charIndex;
 
         for (let i = 0; i < line.length; i++) {
           const char = line[i];
           if (char === " ") continue;
-          const idx = charIndex;
-          if (!revealedFlags[idx]) {
-            allRevealed = true;
-            allLettersRevealed = false;
-          }
           charIndex++;
-        }
-
-        if (allRevealed) {
-          const lineWidth = spacing * line.length; // include spaces in width
-          const paddingX = 20;
-          const paddingY = 0;
-          ctx.fillStyle = "rgba(255,255,191,1)";
-          ctx.fillRect(
-            canvas.width - paddingX / 2,
-            y - fontSize / 2 - paddingY / 2,
-            lineWidth + paddingX,
-            fontSize + paddingY
-          );
         }
 
         charIndex = lineCharStart;
@@ -563,11 +508,6 @@
       backgroundShapes = [];
       const numShapes = 3 + Math.floor(Math.random() * 3); // 3 to 5 shapes
 
-      const cc36 = midiValues[3]; // CC36 value (0–127)
-      const cc37 = midiValues[4]; // CC37 value (0–127)
-      const minSides = 6;
-      const maxSides = 20;
-
       for (let s = 0; s < numShapes; s++) {
         const shape = {};
         const centerX = Math.random() * canvas.width;
@@ -577,7 +517,6 @@
         const xStretch = 1.5;
         const yStretch = 0.5;
 
-        // Save center and radius, to allow dynamic side updates
         shape.centerX = centerX;
         shape.centerY = centerY;
         shape.radius = radius;
@@ -591,31 +530,27 @@
     }
 
     function updatePolygonSides() {
-      const cc37 = midiValues[4]; // CC37 - Sides
-      const cc38 = midiValues[5]; // CC38 - Size
-      const cc39 = midiValues[6]; // CC39 - Line angle
+      const cc37 = midiValues[4]; // Sides
+      const cc38 = midiValues[5]; // Size
+      const cc39 = midiValues[6]; // Line angle
       const angle = (cc39 / 127) * 2 * Math.PI;
-
-      const cc40 = midiValues[7]; // CC40 - Line length
       const lineLength = getLineLength(midiValues[7]);
-
 
       const minSides = 6;
       const maxSides = 26;
       const numPoints = Math.floor(minSides + (cc37 / 127) * (maxSides - minSides));
-      const sizeScale = 0.5 + (cc38 / 127) * 1.5; // scale from 0.5x to 2x
+      const sizeScale = 0.5 + (cc38 / 127) * 1.5; // 0.5x..2x
 
       backgroundShapes.forEach(shape => {
         const points = [];
         for (let i = 0; i < numPoints; i++) {
-          const angle = (i / numPoints) * 2 * Math.PI;
+          const a = (i / numPoints) * 2 * Math.PI;
           const r = shape.radius * sizeScale * (0.7 + Math.random() * 0.3);
-          const x = shape.centerX + r * Math.cos(angle) * shape.xStretch;
-          const y = shape.centerY + r * Math.sin(angle) * shape.yStretch;
+          const x = shape.centerX + r * Math.cos(a) * shape.xStretch;
+          const y = shape.centerY + r * Math.sin(a) * shape.yStretch;
           points.push({ x, y });
         }
 
-        // Dot fill logic...
         const minX = Math.min(...points.map(p => p.x));
         const maxX = Math.max(...points.map(p => p.x));
         const minY = Math.min(...points.map(p => p.y));
@@ -639,7 +574,6 @@
         shape.dots = dots;
       });
     }
-
 
     function drawBackgroundShapes() {
       ctx.save();
@@ -666,8 +600,6 @@
       ctx.restore();
     }
 
-
-
     // Add user info overlay
     let userInfoText = "";
 
@@ -679,9 +611,8 @@
         const region = data.region || "";
         const country = data.country_name || "";
         const time = new Date().toLocaleTimeString();
-
         userInfoText = `Location: ${city}, ${region}, ${country}\nTime started: ${time}`;
-      } catch (e) {
+      } catch {
         userInfoText = "Unable to load user info.";
       }
     }
@@ -691,51 +622,38 @@
     function drawUserInfoOverlay() {
       ctx.save();
       ctx.font = "12px monospace";
-      const lines = userInfoText.split("\n");
-
-      // Background box
+      const L = userInfoText.split("\n");
       const lineHeight = 14;
       const padding = 20;
-      const boxWidth = Math.max(...lines.map(l => ctx.measureText(l).width)) + padding * 2;
-      const boxHeight = lineHeight * lines.length + padding * 1;
-      const boxX = 0;
-      const boxY = canvas.height - boxHeight - 0;
+      const w = Math.max(...L.map(l => ctx.measureText(l).width)) + padding * 2;
+      const h = lineHeight * L.length + padding * 1;
+      const x = 0;
+      const y = canvas.height - h;
 
       ctx.fillStyle = "white";
-      ctx.fillRect(boxX, boxY, boxWidth, boxHeight);
+      ctx.fillRect(x, y, w, h);
 
-      // Text
       ctx.fillStyle = "rgba(0, 0, 0, 1)";
-      lines.forEach((line, i) => {
-        ctx.fillText(line, boxX + padding, boxY + padding + i * lineHeight);
-      });
+      L.forEach((line, i) => ctx.fillText(line, x + padding, y + padding + i * lineHeight));
 
       ctx.restore();
     }
-
 
     // Draw loop
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       drawBackgroundShapes();
       if (video.readyState === video.HAVE_ENOUGH_DATA) {
-
         drawHalftone();
-        drawLine47Text();
+        drawLine47Text(); // guarded by SHOW_PHRASE
       }
       drawUserInfoOverlay();
 
-      // ✅ Show the album button once all letters are revealed
-      // if (!albumButtonVisible && revealedFlags.every(flag => flag)) {
-      //   showAlbumButton();
-      // }
-
       requestAnimationFrame(draw);
 
-      if (!albumButtonVisible && revealedFlags.every(flag => flag)) {
+      if (SHOW_PHRASE && !albumButtonVisible && revealedFlags.every(flag => flag)) {
         showAlbumButton();
       }
-
     }
 
     // Initialize webcam and audio
@@ -781,10 +699,9 @@
           label.textContent = value;
         }
 
-        // CC36 = regenerate shapes; CC37 = update side count
         if (cc === 36) {
           generateBackgroundShapes();
-        } else if (cc === 37 | cc === 38 | cc === 39 | cc === 40) {
+        } else if (cc === 37 || cc === 38 || cc === 39 || cc === 40) { // logical OR
           updatePolygonSides();
         }
       }
@@ -807,12 +724,12 @@
       generateBackgroundShapes();
     }
 
-
     // Start everything
-
     resizeCanvas();
     setupCCSliders();
     startWebcamAndAudio();
     navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
   </script>
 </body>
+
+</html>

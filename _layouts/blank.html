@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en" class="layout-default {{ page.pageClass }}">
+
+<head>
+    {% include head.html %}
+    <style>
+        h1,
+        h2,
+        h3,
+        ol,
+        ul,
+        p,
+        li {
+            font-family: monospace;
+            font-size: 1rem;
+            line-height: 1.4rem;
+        }
+
+        h1 {
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            line-height: 2.3rem;
+
+            em {
+                font-weight: 100;
+            }
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            line-height: 1.8rem;
+        }
+
+        .content-container {
+            max-width: 60ch;
+        }
+    </style>
+</head>
+
+<body class="layout-default {{ page.pageClass }}">
+    <div class="content-container">
+        {{ content }}
+    </div>
+</body>
+
+</html>
