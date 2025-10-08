@@ -1,5 +1,5 @@
 ---
-permalink: /music/aywmtgo-details/
+permalink: /music/okok-details/
 title: As you were meant to go on
 layout: blank 
 
