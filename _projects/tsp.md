@@ -26,13 +26,13 @@ endYear: 2019
 featured: true
 ---
 
-### Getting started
+## Getting started
 
 We started this project by dropping in with the technology team at the Thrift Savings Program (TSP) a few times a week to help them with agile design, development, content, and project management practices. 
 
 We went through sprint planning together and then co-worked and coached alongside our TSP counterparts as we began to prototype the new public-facing TSP.gov website. 
 
-### Content and UI updates
+## Strategy & approach 
 
 The TSP site was in desperate need of a complete overhaul in design, content, and information architecture. Users were not finding the information they needed and the information was not presented in a way that was easily understood by users. The site was built in Jekyll and custom page teamplates and layouts were devloped to showcase the TSP content making it easier for users to digest. 
 
@@ -62,6 +62,6 @@ Another part of our work was to revamp the way data was exposed to users on the 
 </figure>
 
 
-### Takeaways
+## Outcomes and impact
 
 We turned the site over to the TSP technology team and new TSP.gov site launched in July of 2020! The team at TSP has done a great job keeping the site updated and continuing to promote web standards and best practices. 

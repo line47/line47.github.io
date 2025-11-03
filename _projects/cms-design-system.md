@@ -33,7 +33,7 @@ endYear: 2023
 featured: true
 ---
 
-## Problem statement
+## Challenge
 
 The CMS Design System required modernization to improve scalability, consistency, accessibility, and adoption. The existing system lacked robust design tokens, had inconsistent documentation, and was challenging for teams to integrate efficiently. Additionally, CMS was not operating a single design system but rather a network of interconnected systems spanning CMS.gov, Healthcare.gov, and Medicare.gov, each with unique constraints and requirements.
 
@@ -99,30 +99,7 @@ In addition to these structural improvements, we also identified areas for furth
 
 * Improving external link guidance.
 
-
-## Challenges and solutions
-
-Challenge: Lack of awareness and low adoption among teams. 
-Solution: Conducted internal outreach, created onboarding guides, and offered live support.
-
-Challenge: Inconsistent design-to-code workflow.
-Solution: Aligned Figma components with React implementations for seamless handoff.
-
-Challenge: Legacy components causing technical debt.
-Solution: Phased out deprecated components and introduced clear migration paths.
-
-Challenge: Maintaining system usability across multiple platforms.Solution: 
-Normalized browser styles, standardized spacing, and improved component documentation.
-
 ## Outcomes & impact
-
-* Increased design system adoption by 40% among CMS teams.
-
-* Reduced front-end development time for projects by 30%.
-
-* Achieved WCAG 2.1 AA compliance for all components.
-
-* Enhanced documentation led to a 50% decrease in support requests.
 
 * Improved onboarding documentation, leading to faster product team ramp-up times.
 
@@ -131,16 +108,3 @@ Normalized browser styles, standardized spacing, and improved component document
 * Implemented new dropdown components, improving user interaction flexibility.
 
 * Upgraded documentation site with a version switcher, making it easier for users to navigate between system updates.
-
-
-## Lessons Learned & Next Steps
-
-* Continuous engagement is key to successful design system adoption.
-
-* Automating accessibility checks improves quality assurance.
-
-* Expanding design tokens for greater flexibility.
-
-* Improving dark mode support.
-
-* Conducting additional usability studies to refine component effectiveness.
