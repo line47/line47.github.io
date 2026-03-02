@@ -1,5 +1,5 @@
 ---
-permalink: /music/okok/
+permalink: /music/aywmtgo/viz/
 ---
 <!-- path: index.html -->
 <!DOCTYPE html>
@@ -33,7 +33,7 @@ permalink: /music/okok/
       padding: 10px;
       background: white;
       font-family: monospace;
-      font-size: 14px;
+      font-size: 12px;
       width: max-content;
       margin: 0 0 0 auto;
       z-index: 100;
@@ -56,7 +56,6 @@ permalink: /music/okok/
 
     .cc-control input[type="range"] {
       grid-column: 1 / -1;
-      width: 100%;
     }
 
     .cc-control span {
@@ -82,13 +81,11 @@ permalink: /music/okok/
     }
 
     @media (max-width: 600px) {
-      #cc-controls-dialog {
-        font-size: 20px;
-        padding: 16px;
+       #cc-controls-dialog {
         background: rgba(255, 255, 255, 0.75);
         width: auto;
       }
-
+/*
       .cc-control {
         gap: 6px 12px;
       }
@@ -101,7 +98,7 @@ permalink: /music/okok/
 
       button {
         padding: 10px 16px;
-      }
+      } */
     }
   </style>
 </head>
@@ -126,64 +123,72 @@ permalink: /music/okok/
       <div class="cc-label-row">
         <label for="cc33">CC33 Point Size:</label>
         <span id="cc33-val">50</span>
+        <input type="range" id="cc33" min="0" max="127" value="50">
       </div>
-      <input type="range" id="cc33" min="0" max="127" value="50">
+      
     </div>
 
     <div class="cc-control">
       <div class="cc-label-row">
         <label for="cc34">CC34 Grid Resolution:</label>
         <span id="cc34-val">103</span>
+         <input type="range" id="cc34" min="0" max="127" value="103">
       </div>
-      <input type="range" id="cc34" min="0" max="127" value="103">
+     
     </div>
 
     <div class="cc-control">
       <div class="cc-label-row">
         <label for="cc35">CC35 Point Shape:</label>
         <span id="cc35-val">50</span>
+         <input type="range" id="cc35" min="0" max="127" value="50">
       </div>
-      <input type="range" id="cc35" min="0" max="127" value="50">
+     
     </div>
 
     <div class="cc-control">
       <div class="cc-label-row">
         <label for="cc36">CC36 Polygon Regenerate:</label>
         <span id="cc36-val">64</span>
+         <input type="range" id="cc36" min="0" max="127" value="64">
       </div>
-      <input type="range" id="cc36" min="0" max="127" value="64">
+     
     </div>
 
     <div class="cc-control">
       <div class="cc-label-row">
         <label for="cc37">CC37 Polygon Sides:</label>
         <span id="cc37-val">64</span>
+        <input type="range" id="cc37" min="0" max="127" value="64">
       </div>
-      <input type="range" id="cc37" min="0" max="127" value="64">
+      
     </div>
 
     <div class="cc-control">
       <div class="cc-label-row">
         <label for="cc38">CC38 Polygon Size:</label>
         <span id="cc38-val">64</span>
+        <input type="range" id="cc38" min="0" max="127" value="64">
       </div>
-      <input type="range" id="cc38" min="0" max="127" value="64">
+      
     </div>
 
     <div class="cc-control">
       <div class="cc-label-row">
         <label for="cc39">CC39 Dot to Line:</label>
         <span id="cc39-val">0</span>
+        <input type="range" id="cc39" min="0" max="127" value="0">
       </div>
-      <input type="range" id="cc39" min="0" max="127" value="0">
+      
     </div>
 
     <div class="cc-control">
       <div class="cc-label-row">
         <label for="cc40">CC40 Line Length:</label>
         <span id="cc40-val">0</span>
+        <input type="range" id="cc40" min="0" max="127" value="0">
       </div>
-      <input type="range" id="cc40" min="0" max="127" value="0">
+      
     </div>
 
     <!-- Control buttons -->
@@ -254,7 +259,6 @@ permalink: /music/okok/
     let revealedFlags = new Array(letterIndices.length).fill(false);
     let glitchFrames = new Array(letterIndices.length).fill(0);
     let glitchChars = new Array(letterIndices.length).fill('');
-    let audioLevel = 0;
     let wasAboveThreshold = false;
     let lines = wrapPhraseIntoLines(phrase);
     let backgroundShapes = [];
@@ -656,30 +660,18 @@ permalink: /music/okok/
       }
     }
 
-    // Initialize webcam and audio
-    function startWebcamAndAudio() {
-      navigator.mediaDevices.getUserMedia({ video: true, audio: true })
-        .then(stream => {
-          video.srcObject = stream;
-          video.addEventListener("loadedmetadata", () => {
-            video.play();
-            const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            const analyser = audioCtx.createAnalyser();
-            analyser.fftSize = 256;
-            const dataArray = new Uint8Array(analyser.frequencyBinCount);
-            audioCtx.createMediaStreamSource(stream).connect(analyser);
-            const updateAudio = () => {
-              analyser.getByteFrequencyData(dataArray);
-              audioLevel = dataArray.reduce((a, b) => a + b, 0) / dataArray.length;
-              requestAnimationFrame(updateAudio);
-            };
-            updateAudio();
-            requestAnimationFrame(draw);
-          });
-        })
-        .catch(err => alert("Webcam error: " + err.message));
-    }
-
+    // Initialize webcam (VIDEO ONLY — no microphone)
+  function startWebcam() {
+    navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+      .then(stream => {
+        video.srcObject = stream;
+        video.addEventListener("loadedmetadata", () => {
+          video.play();
+          requestAnimationFrame(draw);
+        });
+      })
+      .catch(err => alert("Webcam error: " + err.message));
+  }
     // MIDI Input setup
     function onMIDISuccess(midiAccess) {
       for (const input of midiAccess.inputs.values()) {
@@ -727,7 +719,7 @@ permalink: /music/okok/
     // Start everything
     resizeCanvas();
     setupCCSliders();
-    startWebcamAndAudio();
+    startWebcam();
     navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
   </script>
 </body>
