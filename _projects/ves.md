@@ -5,16 +5,23 @@ who: U.S. Department of Veterans Affairs
 link:
 role: Design Manager
 image: /assets/images/projects/project-ves.png
-summary: An effort to improve scalability, consistency, accessibility, and adoption. Additionally, CMS had a network of interconnected systems spanning CMS.gov, Healthcare.gov, and Medicare.gov, each with unique constraints and requirements.
+summary: Modernize the VHA Enrollment system, a staff-facing application used to manage Veteran enrollment in and determining the eligibility for heath care benefits. 
 responsibilities:
-  - User experience 
-  - Design system guidance
-  - Front-end design
-  - User research
-  - Front-end design
-  - Systems thinking
-  - Front-end development
+  - user experience design 
+  - design strategy
+  - user journeys 
+  - personas 
+  - research strategy 
+  - sprint planning 
+  - delivery alignment 
 startYear: 2023
 endYear: 2025
 featured: false
+builtWith: 
+- Figma
+- Mural 
+- Confluence 
+- Jira  
 ---
+
+Stuff

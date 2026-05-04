@@ -295,8 +295,6 @@ footer {
             white-space: nowrap;
             text-decoration-thickness: 4px;
         }
-
-        // background: linear-gradient(176deg, $color-bright 87%, white 0%);
         .music {
             background-color: $color-featured;
 
@@ -328,6 +326,19 @@ footer {
 
 .music>.hero {
     background: $color-featured;
+    text-align: left;
+    .content-container {
+        display: grid;
+        gap: $spacer-5;
+    }
+    .left-grid {
+        grid-row-start: 1;
+        grid-column-start: 1;
+    }
+    .right-grid {
+        grid-row-start: 1;
+        grid-column-start: 2;
+    }
 
     img {
         max-width: 300px !important;
