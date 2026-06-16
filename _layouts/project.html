@@ -18,19 +18,18 @@
       <h1 class="lead">{{ page.title }}</h1>
       <p class="section-title">{{page.who}}</p>
       <span class="timeframe">{% if page.startYear %}{{page.startYear}}{% endif %}{% if page.endYear %} -
-        {{page.endYear}}{% endif %}</span>
+        {{page.endYear}}{% endif %}</span> &nbsp;
+        {% if page.link %}
+        <span><a href="{{ page.link }}" title="Visit the {{page.title}} website">Visit {{ page.title }} website</a></span>
+        {% endif %}
     </div>
   </div>
   <div class="layout-project">
     <div class="content-container">
-      <div class="main-content">
-        {{ content }}
-      </div>
 
-      <div class="relative-content">
-        {% if page.link %}
-        <p><a href="{{ page.link }}" title="Visit the {{page.title}} website">Visit {{ page.title }} website</a></p>
-        {% endif %}
+      <div class="main-content">
+         <div class="relative-content">
+          <div class="left-grid">
         <h2>My role</h2>
         <p>I was the <span class="project-role">{{ page.role }}</span> responsible for
           {% if page.responsibilities %}
@@ -40,6 +39,8 @@
           {% endfor %}
           {% endif %}
         </p>
+        </div>
+        <div class="right-grid">
         <h2>Tools and software used</h2>
         <p>
           {% if page.builtWith %}
@@ -49,8 +50,12 @@
           {% endfor %}
           {% endif %}
         </p>
-
+</div>
       </div>
+        {{ content }}
+      </div>
+
+     
     </div>
   </div>
   {% include footer.html %}
