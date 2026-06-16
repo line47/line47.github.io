@@ -8,9 +8,14 @@
 </head>
 
 <body class="layout-default {{ page.pageClass }}">
-    {% include top-nav.html %}
+       {% include top-nav.html %}
     {% include top-nav-music.html %}
+     {% include L47-hero.html %}
+    <div class="music-section">
+    <div class="content-container">
     {{ content }}
+    </div>
+    </div>
     {% include footer.html %}
 </body>
 

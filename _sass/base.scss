@@ -26,7 +26,7 @@ $font-main-header: "Fira Sans", sans-serif;
 $font-sub-header: "Fira Sans", sans-serif;
 $font-content: "Roboto Serif", sans-serif;
 
-$site-max-width: 1280px;
+$site-max-width: 900px;
 
 $spacer-0: .25rem;
 $spacer-1: .5rem;
@@ -45,7 +45,7 @@ $character-width: 60ch;
 $line-height-normal: 1.3rem;
 
 .page-header.music-nav {
-    border-top: 1px dashed $color-featured;
+  color: $color-accent2;
 }
 
 .small-nav {
@@ -108,6 +108,10 @@ html {
 
     h1 {
         margin-bottom: $spacer-3;
+        width: fit-content;
+    background-color: #fff;
+    padding: 20px 40px;
+    clip-path: polygon(200% -145%, 165% 50%, -33% 110%, -50% 25%);
     }
 
     .grid {
@@ -116,7 +120,19 @@ html {
         grid-template-columns: 1fr 1fr;
 
         div {
-            padding: $spacer-9 $spacer-9;
+            padding: 20rem $spacer-9 0;
+        }
+        .work {
+            background-image:url('/assets/images/scott-2026.jpg');
+            background-blend-mode: luminosity;
+            background-position-x: left;
+            background-size: cover;
+        }
+        .music {
+            background-image:url('/assets/images/L47-2024-small.png');
+            background-blend-mode: luminosity;
+              background-size: cover;
+    background-position-x: left;
         }
     }
 
@@ -129,6 +145,21 @@ html {
     }
 
 
+}
+
+.home .hero .work p, .home .hero .music p {
+        background: #F79997;
+    width: fit-content;
+    padding: 30px;
+    clip-path: polygon(0% 0%, 93% -5%, 100% 89%, 0% 94%);
+    max-width: 20ch;
+    a {
+        color: initial;
+    }
+}
+
+.home .hero .music p {
+background-color: $color-featured;
 }
 
 .selected-articles .article-post,
@@ -152,10 +183,6 @@ ol {
         margin: 0 auto;
         max-width: 900px;
     }
-
-    .lead {
-        text-align: center;
-    }
 }
 
 .music-section {
@@ -167,12 +194,10 @@ ol {
     }
 
     .content-container {
-        text-align: center !important;
+        // text-align: center !important;
+        max-width: $site-max-width;
     }
 
-    .lead {
-        text-align: center;
-    }
 }
 
 .content-container {
@@ -190,7 +215,7 @@ ol {
     }
 
     .lead {
-        font-size: $spacer-9;
+        font-size: $spacer-8;
         font-weight: 800;
         line-height: 1.05;
         letter-spacing: 0px;
@@ -268,17 +293,14 @@ footer {
         color: $text-light;
 
     }
-
-    .lead {
-        text-align: center;
-    }
 }
 
-.music {
-    .lead {
-        margin-bottom: 1rem;
+
+   
+    .hero .section-title {
+        font-size: $spacer-4;
     }
-}
+
 
 
 
@@ -286,7 +308,7 @@ footer {
 .music,
 .work {
     .hero {
-        text-align: center;
+       
 
         .lead span {
             text-decoration: double;
@@ -302,7 +324,7 @@ footer {
         }
 
         .work {
-            background-color: $color-accent4;
+            background-color: $color-accent;
         }
 
         color: $color-dark;
@@ -315,21 +337,26 @@ footer {
             animation-fill-mode: forwards;
             clip-path: polygon(110% 70%, 90% 10%, 10% 0%, 0% 90%);
         }
+
+       
     }
 
+    .work .hero .img-ani { clip-path: polygon(50% 263%, 190% -330%, 30% 6%, 2% 64%);}
+
     p {
-        margin-left: auto;
-        margin-right: auto;
+        // margin-left: auto;
+        // margin-right: auto;
         max-width: $character-width;
     }
 }
 
-.music>.hero {
+.hero {
     background: $color-featured;
     text-align: left;
     .content-container {
         display: grid;
-        gap: $spacer-5;
+        column-gap: $spacer-5;
+        max-width: $site-max-width;
     }
     .left-grid {
         grid-row-start: 1;
@@ -346,7 +373,10 @@ footer {
 }
 
 .work>.hero {
-    background-color: $color-bright;
+    background-color: $color-accent;
+}
+.music>.hero {
+    background-color: $color-featured;
 }
 
 .layout-project footer .content-container {
@@ -390,16 +420,11 @@ h6 {
 ol,
 p,
 ul {
-    line-height: $spacer-5;
+    line-height: $spacer-4;
     margin-bottom: $spacer-3;
-    font-size: $spacer-3;
+    font-size: $spacer-2;
     font-weight: 300;
 
-    @media (max-width: 900px) {
-        font-size: $spacer-3 ;
-        margin-bottom: $spacer-3;
-
-    }
 
     @media (max-width: 600px) {
         font-size: $spacer-2 ;
@@ -411,19 +436,20 @@ ul {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: $spacer-5;
     line-height: 3rem;
+
 }
 
 h2 {
-    font-size: $spacer-6;
-    line-height: $spacer-6;
+    font-size: $spacer-4;
+    line-height: $spacer-5;
     font-weight: 600;
-    margin-bottom: $spacer-3;
+    margin-bottom: $spacer-1p5;
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: $spacer-3;
     line-height: 2rem;
     margin-bottom: $spacer-3;
 }
@@ -663,10 +689,6 @@ a:visited {
             }
         }
     }
-
-    .lead {
-        text-align: center;
-    }
 }
 
 // NAVIGATION
@@ -770,7 +792,7 @@ pre {
     margin: 0 0 $spacer-4 0;
 
     img {
-        max-width: 90%;
+        max-width: 100%;
         margin-bottom: $spacer-5;
     }
 
@@ -778,7 +800,7 @@ pre {
 
         border: 2px solid $color-lightergrey;
         padding: $spacer-1;
-        max-width: 400px;
+        max-width: 45%;
         margin-bottom: $spacer-2;
 
         img {
@@ -824,55 +846,17 @@ pre {
 
 
 
-.layout-project,
-.layout-article {
-
-    .content-container {
-        display: grid;
-
-        @media (min-width: 900px) {
-            grid-template-columns: 4fr 2fr;
-            gap: $spacer-6;
-        }
-    }
+.layout-project {
 
     .relative-content {
-        position: relative;
-
-        p {
-            font-size: $spacer-2;
-            line-height: $spacer-5;
-        }
-
-        h2 {
-            font-size: $spacer-3;
-            margin-bottom: $spacer-1;
-        }
-
-        h3 {
-            font-family: $font-main-header;
-            margin: $spacer-2 0 0 0;
-            font-weight: 700;
-            display: inline-block;
-        }
-
-        h4 {
-            font-family: $font-sub-header;
-            margin-top: $spacer-5;
-            font-weight: 100;
-        }
-    }
-
-    @media (max-width: 900px) {
-        .main-content {
-            float: none;
-            width: auto;
-        }
-
-        .relative-content {
-            float: none;
-            width: auto;
-        }
+      display: grid;
+      grid-gap: $spacer-2;
+      .left-grid {
+        grid-column-start: 1;
+      }
+      .right-grid {
+        grid-column-start: 2;
+      }
     }
 
     .project-role {
@@ -887,7 +871,7 @@ pre {
 .layout-article {
     .content-container {
         margin: 0 auto;
-        max-width: 900px;
+        max-width: $site-max-width;
         grid-template-columns: auto;
         gap: 0;
     }
@@ -900,8 +884,8 @@ pre {
     h2 {
         @media (max-width: 900px) {
             font-size: $spacer-5 ;
-            line-height: 1.15;
-            margin-bottom: $spacer-3;
+            line-height: $spacer-5;
+            margin-bottom: $spacer-1p5;
 
         }
 
@@ -920,20 +904,13 @@ pre {
         padding-bottom: $spacer-4;
 
         .content-container {
-            text-align: center;
+          
             max-width: none;
 
             p {
                 max-width: none;
             }
         }
-
-        .lead {
-            margin-top: $spacer-10 !important;
-            margin-bottom: 0;
-
-        }
-
 
     }
 
@@ -988,7 +965,7 @@ pre {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 14px;
     margin: 0 0 $spacer-4;
-    font-size: $spacer-2;
+    font-size: $spacer-1p5;
     font-weight: 400;
     font-family: "Fira Sans", sans-serif;
 }
@@ -1032,7 +1009,7 @@ pre {
     position: absolute;
     inset: 0;
     background:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 110 340'%3E%3Cg stroke='%23b33b31' stroke-width='25' stroke-linecap='' opacity='.9'%3E%3Cpath d='M40 40L200 200'/%3E%3Cpath d='M200 40L40 200'/%3E%3C/g%3E%3C/svg%3E") 50% 180% no-repeat;
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 110 340'%3E%3Cg stroke='%23b33b31' stroke-width='25' stroke-linecap='' opacity='.9'%3E%3Cpath d='M40 40L200 200'/%3E%3Cpath d='M200 40L40 200'/%3E%3C/g%3E%3C/svg%3E") 200% 200% no-repeat;
 
 }
 
