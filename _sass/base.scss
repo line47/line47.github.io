@@ -332,14 +332,28 @@ footer {
         .img-ani {
             animation-name: photos;
             animation-iteration-count: 1;
-            max-width: 700px;
+            max-width: 100%;
             clip-path: photos;
             animation-fill-mode: forwards;
             clip-path: polygon(110% 70%, 90% 10%, 10% 0%, 0% 90%);
         }
-
        
     }
+
+       @media (max-width: 600px) {
+ .music .img-ani {
+    
+    max-width: 100%;
+ }
+  .hero .right-grid {
+            grid-row-start: 2;
+    grid-column-start: 1;
+    h1 {
+        background-color: transparent;
+        padding:0;
+    }
+          }
+          }
 
     .work .hero .img-ani { clip-path: polygon(50% 263%, 190% -330%, 30% 6%, 2% 64%);}
 
@@ -368,7 +382,7 @@ footer {
     }
 
     img {
-        max-width: 300px !important;
+        max-width: 300px;
     }
 }
 
@@ -426,12 +440,12 @@ ul {
     font-weight: 300;
 
 
-    @media (max-width: 600px) {
-        font-size: $spacer-2 ;
-        line-height: $spacer-4;
-        margin-bottom: $spacer-2;
+    // @media (max-width: 600px) {
+    //     font-size: $spacer-2 ;
+    //     line-height: $spacer-4;
+    //     margin-bottom: $spacer-2;
 
-    }
+    // }
 
 }
 
