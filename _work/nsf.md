@@ -1,6 +1,7 @@
 ---
 layout: project
 title: National Science Foundation
+level: federal
 link: https://www.nsf.gov/
 image: /assets/images/agency_logos/NSF-logo.png
 abbr: NSF

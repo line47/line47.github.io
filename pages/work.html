@@ -65,30 +65,56 @@ pageClass: work
 <div class="additional-work" id="who">
     <div class="content-container">
         <h1 class="lead">Who I've worked with</h1>
-        <p>Federal government agencies like <a href="https://www.cms.gov/">CMS</a>, <a href="https://www.va.gov">VA</a>,
-            <a href="https://www.tsp.gov">TSP</a>, and <a href="https://www.defense.gov">DoD</a>. Commonwealth of
-            Kentucky
+        <p>Organizations and agencies I've worked with across federal, state, and local government.</p>
 
-            government offices like <a href="https://transportation.ky.gov">KYTC</a>, <a
-                href="https://www.chfs.ky.gov">CHFS</a>, <a href="https://governor.ky.gov">Governor</a>
-            , and <a href="https://www.sos.ky.gov">Secretary of State</a>.
-        </p>
-        <ul class="projects">
-            {% assign sorted = site.work | sort: 'title' %}
-            {% for work in sorted %}
+        {% assign federal = site.work | where: "level", "federal" | sort: "title" %}
+        {% assign state = site.work | where: "level", "state" | sort: "title" %}
+        {% assign local = site.work | where: "level", "local" | sort: "title" %}
 
-            <li>
-                {% if work.link %}
-                <img src="{{ work.image }}" alt="{{ work.title }}">
-                {% endif %}
-                {% if work.link %}
-                {% endif %}
+        <div class="organization-groups">
+            <section class="organization-group">
+                <h2>Federal</h2>
+                <ul class="projects">
+                    {% for work in federal %}
+                    <li{% unless work.image %} class="no-logo"{% endunless %}>
+                        {% if work.link %}<a href="{{ work.link }}">{% endif %}
+                        {% if work.image %}<span class="organization-logo" style="background-image: url('{{ work.image }}');" aria-hidden="true"></span>{% endif %}
+                        <span class="organization-name">{{ work.title }}</span>
+                        {% if work.link %}</a>{% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
 
-                {% if work.link %}<a href="{{ work.link | permalink }}">{% endif %}
-                    {{ work.title }}
-                    {% if work.link %}</a>{% endif %}
-            </li>
-            {% endfor %}
-        </ul>
+            <section class="organization-group">
+                <h2>State</h2>
+                <ul class="projects">
+                    {% for work in state %}
+                    <li{% unless work.image %} class="no-logo"{% endunless %}>
+                        {% if work.link %}<a href="{{ work.link }}">{% endif %}
+                        {% if work.image %}<span class="organization-logo" style="background-image: url('{{ work.image }}');" aria-hidden="true"></span>{% endif %}
+                        <span class="organization-name">{{ work.title }}</span>
+                        {% if work.link %}</a>{% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+
+            {% if local.size > 0 %}
+            <section class="organization-group">
+                <h2>Local</h2>
+                <ul class="projects">
+                    {% for work in local %}
+                    <li{% unless work.image %} class="no-logo"{% endunless %}>
+                        {% if work.link %}<a href="{{ work.link }}">{% endif %}
+                        {% if work.image %}<span class="organization-logo" style="background-image: url('{{ work.image }}');" aria-hidden="true"></span>{% endif %}
+                        <span class="organization-name">{{ work.title }}</span>
+                        {% if work.link %}</a>{% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            {% endif %}
+        </div>
     </div>
 </div>

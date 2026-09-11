@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Kentucky Registry of Election Finance
+level: state
 abbr: KREF
 link: https://kref.ky.gov
 image: /assets/images/agency_logos/kref-logo.png
