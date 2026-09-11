@@ -1,5 +1,6 @@
 ---
 title: Federal Retirement Thrift Investment Board
+level: federal
 abbr: FRTIB
 link: https://www.frtib.gov/
 startYear: 

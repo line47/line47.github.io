@@ -1,5 +1,6 @@
 ---
 title: General Services Administration
+level: federal
 abbr: GSA
 link: https://www.gsa.gov/
 startYear: 
