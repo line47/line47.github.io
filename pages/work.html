@@ -40,23 +40,25 @@ pageClass: work
 </div>
 <div class="additional-work" id="projects">
     <div class="content-container">
-        <h1 class="lead">Projects I've worked on</h1>
+        <h1 class="lead">Other projects I've worked on</h1>
         <p>Simpler, smarter, and more human-centered government technology.</p>
-        <ul class="projects projects2">
+        <ul class="projects projects2 project-cards">
             {% assign projects = site.projects | where: "home", true | where: "featured", false |sort: "endYear" |
             reverse %}
             {% for work in projects %}
             <li>
-
-                {% if work.link %} <a href="{{ work.link | permalink }}">{% endif %}
-                    <img src="{{work.image}}" />
-                    {% if work.link %} </a> {% endif %}
-                <br>
-
-                {% if work.link %}<a href="{{ work.link | permalink }}">{% endif %}
-                    {{ work.title }}
-                    {% if work.link %}</a>{% endif %}
-
+                {% if work.link %}
+                <a class="project-card" href="{{ work.link | permalink }}">
+                {% else %}
+                <div class="project-card">
+                {% endif %}
+                    <img src="{{work.image}}" alt="">
+                    <h2 class="project-card-title">{{ work.title }}</h2>
+                {% if work.link %}
+                </a>
+                {% else %}
+                </div>
+                {% endif %}
             </li>
             {% endfor %}
         </ul>
