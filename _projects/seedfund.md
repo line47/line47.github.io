@@ -2,14 +2,15 @@
 layout: project 
 link: https://seedfund.nsf.gov/
 title: America's Seed Fund
-who: National Science Foundation
-role: Front-end designer
+who: National Science Foundation SBIR/STTR Program
+role: Product designer
 summary: Rebrand and redesign the NSF SBIR and STTR programs to effectively communicate purpose and increase engagement among a broader and more diverse audience of tech entrepreneurs.
 responsibilities:
   - user experience design
   - front-end development
   - front-end design
   - information architecture
+  - brand strategy
 image: /assets/images/projects/project-sbir.png
 largeImage: seedfund-large.png
 builtWith:
@@ -25,35 +26,79 @@ supporting_links:
 startYear: 2017
 endYear: 
 featured: true
+scope: Federal Program Rebrand & Website Redesign
+impacts:
+- Rebranded the NSF Small Business Innovation Research program as "America's Seed Fund". Redesigned the public experience (seedfund.nsf.gov) to demystify federal funding, boost applicant awareness, and diversify the startup founder pool beyond traditional research institutions.
+takeaway: Transforming civic tech isn't always about building backend infrastructure—sometimes the highest impact comes from translating complex government policy into clear, human-centered communication.
 ---  
 
-## Challenge
 
-Among NSF activities, the Small Business Innovation Research/Small Business Technology Transfer (SBIR/STTR) program has a unique goal to attract high-tech startups and small businesses from diverse audiences nationwide. To better engage this distinct audience, we were tasked with redesigning a new SBIR/STTR website (seedfund.nsf.gov), which maintains the NSF brand while providing a more tailored look, tone, and presentation aimed at entrepreneurs.
+## Context and the challenge
+Reimagining how government communicates opportunity
+{: .lead}
 
-## Getting started 
+### Background
+The NSF Small Business Innovation Research (SBIR) and Small Business Technology Transfer (STTR) programs provide non-dilutive seed funding (federal "venture capital") to help early-stage startups transform scientific discoveries into commercial products.
 
-We worked with the NSF technology team and began prototyping a new website and brand. We started with the U.S. Web Design System and extended it by creating custom design patterns that emerged during research with tech entrepreneurs. We iterated on these designs, based on feedback from actual users. 
+### Challenge
+Despite offering game-changing capital, program awareness was low. The original website was filled with dense government jargon, hidden eligibility criteria, and confusing application instructions. First-time founders and underrepresented entrepreneurs often found the program intimidating or assumed they didn't qualify.
 
-## Strategy & approach 
-
-We used concise language and bold design to speak directly to the target audience of tech entrepreneurs. We also surfaced features unique to the NSF seed fund program, while providing more transparency about the application process.
-
-A centerpiece of the new site was the apply page, where potential applicants learn about the details of the application process. This step list UI shows what is to be done at what step in the process with some general timeline expectations. Previously, this process was not transparent, and getting information required contacting the agency which in turn requires more of the agency and the applicant.
+### Stakeholder alignment
+Our goal was to shift the program from a bureaucratic grant process into an inviting, founder-friendly gateway. I worked within an agile 18F pod—partnering with designers, engineers, content leads, and NSF leadership—to rebuild the brand identity, site architecture, and agency publishing practices. 
 
 
-<figure>
-<a href="/assets/images/projects/seedfund-apply.png" target="_blank"><img src="/assets/images/projects/seedfund-apply.png" alt="Application process UI to help applicants understand the journey of applying."/></a>
-<figcaption>Application process including the timeline users can expect.</figcaption>
-</figure>
+## Research and discovery
+Uncovering barriers for tech entrepreneurs
+{: .lead}
 
-Another focal point of the new site was the portfolio page where applicants could look into which companies have been funded by the NSF previously. This portfolio page is broken down by technology topic areas and also offers a search. This page was also important for entrepreneurs to help them feel confident in applying for seed funding based on previously funded companies or projects. 
+### Founder and applicant interviews
+Interviewed small business owners and startup founders—both those who successfully applied and those who abandoned the process.
 
-<figure>
-<a href="/assets/images/projects/seedfund-portfolio.png" target="_blank"><img src="/assets/images/projects/seedfund-portfolio.png" alt="Advanced manufacturing section of the portfolio page."/></a>
-<figcaption>Section of the portfolio page where applicants can see which companies have been funded by the NSF previously.</figcaption>
-</figure>
+### NSF stakeholder alignment
+Collaborated directly with program directors to understand application review mechanics and diversity outreach goals.
 
-## Outcomes and impact
+### Key findings
 
-During this project, the NSF team embraced the practice of testing prototypes with real users and continually incorporating their feedback into the final product. And we adapted their workflow to move away from lengthy change requests to a simple way for the  team to edit their website. We helped the NSF learn techniques to better reach the public and fund the innovative technologies of tomorrow.
+- **Jargon and fear of bureaucracy:** Founders felt alienated by academic/government language and assumed funding was reserved for major research universities.
+- **Obscured application steps:** Important eligibility guidelines and funding timeline expectations were buried deep inside static PDF documents.
+- **Lack of social proof:** The site lacked human faces or real-world founder success stories to build trust and inclusion. 
+
+
+## Design and execution
+Strategic rebranding and plain language architecture
+{: .lead}
+
+### Rebranding to "America's Seed Fund"
+Helped transition the program's public identity from the technical acronym "NSF SBIR/STTR" to America's Seed Fund, instantly communicating its core mission to startup founders.
+### Guided "How to apply" experience
+Restructured complex multi-step application requirements into an intuitive, step-by-step digital journey with plain-language eligibility checklists.
+
+### Visual storytelling and human-centered content
+Integrated real founder spotlights, photo stories, and startup portfolio showcases to illustrate the diverse range of industries and entrepreneurs funded by NSF.
+
+### Front-end implementation
+Wrote clean HTML/CSS layouts, integrated front-end components, and optimized responsive mobile performance to ensure the site met modern web standards.  
+
+## Leadership and process
+Coaching HCD and building in the open
+{: .lead}
+
+### HCD coaching for agency staff
+Coached NSF team members and stakeholders on human-centered design principles, helping them adopt user feedback loops to validate content changes.
+
+### Open source publishing workflows
+Guided NSF staff on using GitHub for site updates, enabling transparent, continuous web maintenance without heavy developer bottlenecks.
+
+### Cross-functional alignment
+Partnered closely with content leads and engineers to bridge UI design ideas with production-ready front-end code. 
+
+
+## Outcomes
+
+### Increased applicant engagement
+Delivered a modern, accessible web portal (seedfund.nsf.gov) that made the funding application process approachable and transparent.
+### Broader and more diverse founder pool
+Demystified eligibility rules, successfully expanding outreach to first-time entrepreneurs and non-traditional tech startups.
+
+### Lasting agency capability
+Left NSF with open-source workflows and HCD practices, empowering their team to iterate on content based on ongoing founder feedback.

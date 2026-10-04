@@ -12,9 +12,8 @@ responsibilities:
   - design system guidance
   - front-end design
   - user research
-  - front-end design
   - systems thinking
-  - front-end development
+  - design tokens
 image: /assets/images/projects/project-cmsds.png
 largeImage: cms-design-system-large.png
 builtWith:
@@ -30,81 +29,88 @@ builtWith:
   - Jira
 startYear: 2019
 endYear: 2023
+scope: Enterprise Design System leadership & evolution
 featured: true
+impacts:
+- Scaled the core system powering Healthcare.gov, Medicare.gov, and CMS.gov. Expanded the team from 1 to 8 cross-functional members, consolidated 14+ fragmented resources into a single source of truth (design.cms.gov), and built a multi-brand token system for component scaling.
+takeaway: A design system is fundamentally about trust and communication. By treating the system as a product, simplifying dependencies, and supporting cross-functional teams through open governance, complex government platforms can scale sustainably.
 ---
 
-## Challenge
+## Context and the challenge
+Evolving beyond siloed codebases and maintenance friction
+{: .lead}
 
-The CMS Design System required modernization to improve scalability, consistency, accessibility, and adoption. The existing system lacked robust design tokens, had inconsistent documentation, and was challenging for teams to integrate efficiently. Additionally, CMS was not operating a single design system but rather a network of interconnected systems spanning CMS.gov, Healthcare.gov, and Medicare.gov, each with unique constraints and requirements.
+### Background
+Built on the heels of the U.S. Web Design System (USWDS) in 2017, the CMS Design System (CMSDS) was established so teams building Healthcare.gov, Medicare.gov, and CMS.gov could deliver consistent, responsive, and accessible digital healthcare experiences. While sharing visual principles with USWDS, CMSDS was engineered as a standalone ecosystem of production-ready React and HTML components delivered directly via NPM and CDN.
 
-## Research & discovery
+### Challenge
+Early implementations relied on separate "site packages" (later renamed "child design systems") for Healthcare.gov and Medicare.gov. Over time, this grew into a fragmented "landscape of 14+ bespoke resources"—spanning separate GitHub repos, InVision DSM kits, PDF style guides, and multiple documentation sites.
 
-To ensure our efforts aligned with user needs, we conducted multiple rounds of defining outcomes and SMART objectives to guide our explorations. A key part of this process was mapping where internal and external user needs intersected, helping us focus on high-impact areas.
-
-We also conducted extensive audits of component usage across applications. By analyzing how components were being used in Healthcare.gov and Medicare.gov products, we identified critical gaps in the design system. These audits directly influenced our future work, shaping both improvements to existing components and the introduction of new ones.
-
-For example, an audit of the tooltip component across Healthcare and Medicare products revealed inconsistencies that led to usability issues. This insight helped refine our approach to tooltips, error message placement, and help content patterns like help drawer links and external links.
-<figure>
-<a href="/assets/images/projects/cms-design-system-venn-diagram.jpeg" target="_blank">
-<img src="/assets/images/projects/cms-design-system-venn-diagram.jpeg" alt="Venn diagram where internal and external user needs intersect."/></a>
-<figcaption>Section of a Mural used to explore the overlap between internal and external design system users.</figcaption>
-</figure>
-
-## Strategy & approach
-
-With research-backed insights, we developed a roadmap to address key challenges and improve design system adoption:
-
-* **Expand team support:** Secured dedicated engineering and product resources, increasing the design system team from 4 to 8 full-time members.
-
-* **Simplify system integration:** Reduced the number of required NPM packages from three to one, making adoption easier for development teams.
-
-* **Unify documentation:** Consolidate six fragmented documentation sources into a single, user-friendly reference.
-
-* **Introduce design tokens and theming:** Standardize design implementation across platforms while enabling flexibility.
-
-* **Improve design-to-development collaboration:** Integrate Storybook to enhance consistency between design and development.
-
-* **Enhance accessibility and usability:** Conduct systematic audits to ensure compliance and usability improvements.
-
-## Execution 
-
-To execute our strategy effectively, we focused on key implementation areas:
-
-### Key Features Implemented
-
-* **Secured dedicated engineering and product support:** Expanded the design system team to accelerate development and governance.
-
-* **Simplified NPM package usage:** Consolidated dependencies for streamlined adoption.
-
-* **Unified documentation sites:** Merged fragmented resources into a central, easy-to-navigate hub.
-
-* **Implemented design tokens and theming:** Reduced custom styling efforts and improved design system flexibility.
-
-* **Integrated Storybook:** Improved alignment between design and development, reducing inconsistencies.
-
-* **Standardized browser styles and component spacing:** Ensured consistency across different browsers and interfaces.
-
-* **Developed new components:** Introduced dropdown menus and improved form components to enhance usability.
-
-* **Enhanced accessibility and usability audits:** Made significant design updates, bug fixes, and improvements to component accessibility.
-
-* **Improved documentation with version switcher:** Enabled easier access to different system versions for developers and designers.
+- **Duplicated maintenance:** Teams solved the exact same bugs and built the exact same components three times.
+- **UI inconsistencies:** Foundational components like buttons diverged across sites in both visual appearance and CSS naming standards.
+- **High cognitive overhead:** Product teams ran into friction whenever they needed to report a bug, propose new features, or locate canonical usage guidance.
 
 
-In addition to these structural improvements, we also identified areas for further user testing, such as:
+### Stakeholder alignment
+As {{page.role}} starting in 2019, I pitched CMS leadership on treating the design system as a true product rather than an administrative side project. I advocated for increasing team capacity—scaling our team from a single designer/developer to an 8-person cross-functional pod (designers, engineers, product owners, scrum master, and technical lead). This allowed us to shift from siloed child systems to a unified multi-brand token architecture.
 
-* Optimal placement of error messages.
 
-* Effectiveness of help content patterns (e.g., tooltips and help drawer links).
+## Research and discovery
+Understanding product team needs and mapping workflow friction
+{: .lead}
 
-* Improving external link guidance.
+### Auditing the system landscape
+Mapped out every touchpoint where designers and developers interacted with the design system, identifying gaps across documentation, design assets, and codebases.
 
-## Outcomes & impact
+### Stakeholder and contractor engagement
 
-* Improved onboarding documentation, leading to faster product team ramp-up times.
+Conducted qualitative discovery sessions with CMS leadership and external contractor product teams.
 
-* Introduced design tokens and theming, reducing custom styling effort for product teams.
+### Community building and observational audits
 
-* Implemented new dropdown components, improving user interaction flexibility.
+- **Office hours and syncs:** Hosted regular open office hours and biweekly syncs with designers, developers, and accessibility specialists to build community and gather direct feedback.
+- **Tooling audits:** Observed designers using Sketch and Figma kits to identify where workflow handoffs to engineering were breaking down.
+- **Quantitative surveys:** Distributed user surveys across CMS product teams to benchmark system satisfaction, component gaps, and adoption blockers.
 
-* Upgraded documentation site with a version switcher, making it easier for users to navigate between system updates.
+### Key insights
+Product teams wanted to adopt the system, but the overhead of navigating multiple codebases and learning complex contribution processes prevented them from giving back. The system needed to meet teams where they were with a trusted, single source of truth.
+
+## Design and execution
+Architecting a scalable, multi-brand component engine
+{: .lead}
+
+### Multi-brand design tokens and systematized foundations
+Re-architected core elements—including color ramps, spacing units, and typography scales—into design tokens. This allowed Medicare.gov and Healthcare.gov to inherit core component structure while injecting site-specific branding without duplicating code.
+
+### Simplifying technical dependencies
+Streamlined complex package dependencies from 4 down to 1 core NPM package. This eliminated version-matching headaches for product developers and made system upgrades predictable.
+
+### Component maturity model
+Introduced a clear Component Maturity Model framework directly within the documentation site. This gave product teams instant visibility into each component’s level of code maturity, integration status, and Section 508 / WCAG accessibility compliance.
+
+### Standardized tooling and dual output
+Built shared developer scripts across codebases for linting, testing, and automated site building. Maintained both HTML snippets and production-ready React components, ensuring both legacy web apps and modern React applications across CMS benefited from system updates.
+
+## Leadership and process
+Scaling team capabilities and establishing unified governance
+{: .lead}
+
+### Team building and capacity advocacy
+Successfully grew the design system discipline across four distinct phases—expanding from 1 designer/developer to 2, then 4, then 6, and ultimately an 8-person team.
+
+### Consolidating governance and tooling
+Deprecated fragmented tools (such as legacy style guides) and established design.cms.gov alongside GitHub and Storybook as the central source of truth.
+
+### Mentorship and systems thinking
+Coached product designers and engineers on applying systems thinking. Mentored team members on accessibility best practices, component review workflows, and documentation writing.
+
+## Outcomes
+
+### Unified digital footprint
+Replaced 14+ scattered resources with one consolidated, well-governed ecosystem powering Healthcare.gov, Medicare.gov, and CMS.gov.
+
+### Eliminated triplicated work
+Streamlined engineering efficiency by removing the need to solve bugs or write component code three separate times across child systems.
+
+### Accelerated product delivery
+Reduced developer setup friction and version-matching issues, enabling contractor teams to focus sprint time on complex healthcare applications rather than basic UI building blocks.
