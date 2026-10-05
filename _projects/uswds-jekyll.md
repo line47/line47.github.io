@@ -2,7 +2,7 @@
 layout: project
 title: USWDS Jekyll theme
 link: https://github.com/18F/uswds-jekyll
-subtitle: Website redesign and coaching
+subtitle: Helped start and grow the static-site theme.
 role: Front-end engineer
 summary: Jekyll templates
 responsibilities:

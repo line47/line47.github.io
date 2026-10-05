@@ -6,17 +6,17 @@ pageClass: work
 
 ---
 <div class="content-container">
-     <p>
-        I'm currently a <strong>Principal product designer</strong> at <a href="https://skylight.digital">Skylight</a> driving
-        <strong>product design,
-            strategy, modernization, and accessibility</strong> for the <a href="https://acf.gov">Administration for Children and Familes</a>.
-    </p>
-   
-    <p>
-        With a passion for human-centered design, I bridge UX leadership and technical execution to drive impactful
-        solutions. I thrive in collaborative spaces,
-        mentoring teams, aligning workflows, and turning design principles into real-world impact. Alum of <a href="https://adhocteam.us/">Ad Hoc</a>, <a
-            href="https://18f.org/">18F</a>, and <a href="https://www.egov.com/">NIC Inc.</a> </p>
+
+
+    <p>I'm currently a <strong>Principal Product Designer</strong> at <a href="https://skylight.digital">Skylight</a>,
+        working on product design, strategy, modernization, and accessibility for the Administration for Children and
+        Families. Before that I led design at <a href="https://adhocteam.us/">Ad Hoc</a> (VA, CMS), was an Innovation
+        Specialist at <a href="https://18f.org/">18F</a>, and spent ten years
+        as Creative Director at <a href="https://www.egov.com/">NIC Inc.</a> building Kentucky's state websites.</p>
+
+    <p>My style is low-ego and direct. I share
+        work early, make decisions visible, and try to leave teams with practices
+        that keep working after I've moved on.</p>
 
 </div>
 
@@ -30,7 +30,12 @@ pageClass: work
                 <img src="{{work.image}}" />
                 <div>
                     <h2 class="section-title"><a href="{{ work.url | permalink }}">{{ work.title }}</a></h2>
-                    <p> {{work.summary}}</p>
+                    <p><strong>{{work.role}}</strong> &middot; {{work.startYear}}{% if work.endYear %} -
+                        {{work.endYear}}
+                        {%
+                        endif %}</p>
+                    <p>{{work.impacts}}</p>
+
                 </div>
 
             </li>
@@ -43,22 +48,25 @@ pageClass: work
         <h1 class="lead">Other projects I've worked on</h1>
         <p>Simpler, smarter, and more human-centered government technology.</p>
         <ul class="projects projects2 project-cards">
-            {% assign projects = site.projects | where: "home", true | where: "featured", false |sort: "endYear" |
+            {% assign projects = site.projects | where: "home", true | where: "featured", false | sort: "endYear" |
             reverse %}
             {% for work in projects %}
             <li>
-                {% if work.link %}
-                <a class="project-card" href="{{ work.link | permalink }}">
-                {% else %}
+
+
+
                 <div class="project-card">
-                {% endif %}
-                    <img src="{{work.image}}" alt="">
-                    <h2 class="project-card-title">{{ work.title }}</h2>
-                {% if work.link %}
-                </a>
-                {% else %}
+
+                    <img src="{{ work.image }}" alt="{{ work.title }}">
+                    <div class="project-card-copy">
+                        <h2 class="project-card-title">{{ work.title }}</h2>
+                        {% if work.subtitle %}<p>{{ work.subtitle }}</p>{% endif %}
+                    </div>
+
+
+
                 </div>
-                {% endif %}
+
             </li>
             {% endfor %}
         </ul>
@@ -78,13 +86,14 @@ pageClass: work
                 <h2>Federal</h2>
                 <ul class="projects">
                     {% for work in federal %}
-                    <li{% unless work.image %} class="no-logo"{% endunless %}>
+                    <li{% unless work.image %} class="no-logo" {% endunless %}>
                         {% if work.link %}<a href="{{ work.link }}">{% endif %}
-                        {% if work.image %}<span class="organization-logo" style="background-image: url('{{ work.image }}');" aria-hidden="true"></span>{% endif %}
-                        <span class="organization-name">{{ work.title }}</span>
-                        {% if work.link %}</a>{% endif %}
-                    </li>
-                    {% endfor %}
+                            {% if work.image %}<span class="organization-logo"
+                                style="background-image: url('{{ work.image }}');" aria-hidden="true"></span>{% endif %}
+                            <span class="organization-name">{{ work.title }}</span>
+                            {% if work.link %}</a>{% endif %}
+                        </li>
+                        {% endfor %}
                 </ul>
             </section>
 
@@ -92,13 +101,14 @@ pageClass: work
                 <h2>State</h2>
                 <ul class="projects">
                     {% for work in state %}
-                    <li{% unless work.image %} class="no-logo"{% endunless %}>
+                    <li{% unless work.image %} class="no-logo" {% endunless %}>
                         {% if work.link %}<a href="{{ work.link }}">{% endif %}
-                        {% if work.image %}<span class="organization-logo" style="background-image: url('{{ work.image }}');" aria-hidden="true"></span>{% endif %}
-                        <span class="organization-name">{{ work.title }}</span>
-                        {% if work.link %}</a>{% endif %}
-                    </li>
-                    {% endfor %}
+                            {% if work.image %}<span class="organization-logo"
+                                style="background-image: url('{{ work.image }}');" aria-hidden="true"></span>{% endif %}
+                            <span class="organization-name">{{ work.title }}</span>
+                            {% if work.link %}</a>{% endif %}
+                        </li>
+                        {% endfor %}
                 </ul>
             </section>
 
@@ -107,13 +117,14 @@ pageClass: work
                 <h2>Local</h2>
                 <ul class="projects">
                     {% for work in local %}
-                    <li{% unless work.image %} class="no-logo"{% endunless %}>
+                    <li{% unless work.image %} class="no-logo" {% endunless %}>
                         {% if work.link %}<a href="{{ work.link }}">{% endif %}
-                        {% if work.image %}<span class="organization-logo" style="background-image: url('{{ work.image }}');" aria-hidden="true"></span>{% endif %}
-                        <span class="organization-name">{{ work.title }}</span>
-                        {% if work.link %}</a>{% endif %}
-                    </li>
-                    {% endfor %}
+                            {% if work.image %}<span class="organization-logo"
+                                style="background-image: url('{{ work.image }}');" aria-hidden="true"></span>{% endif %}
+                            <span class="organization-name">{{ work.title }}</span>
+                            {% if work.link %}</a>{% endif %}
+                        </li>
+                        {% endfor %}
                 </ul>
             </section>
             {% endif %}

@@ -3,7 +3,7 @@ layout: project
 title: Cloud.gov
 link: https://cloud.gov 
 image: /assets/images/projects/project-cloud-gov.png
-subtitle:
+subtitle: Built app UI in React and clarified the public site's value proposition.
 role: Front-end engineer
 responsibilities:
   - User experience

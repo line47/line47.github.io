@@ -5,7 +5,7 @@ who: U.S. Department of Veterans Affairs
 link:
 role: Manager of Design
 image: /assets/images/projects/project-ves.png
-summary: Modernize the VHA Enrollment system, a staff-facing application used to manage Veteran enrollment in and determining the eligibility for heath care benefits. 
+summary: Modernize the VHA Enrollment system, a staff-facing application used to manage Veteran enrollment in and determining the eligibility for health care benefits. 
 responsibilities:
   - user experience design 
   - design strategy

@@ -4,7 +4,7 @@ title: Kentucky.gov
 abbr:
 image: /assets/images/projects/project-kygov.png
 link: https://kentucky.gov
-subtitle:
+subtitle: Led redesigns and re-architecture as Creative Director.
 role: Creative director
 summary: Website redesign, CMS integration, content strategy, information architecture, development
 responsibilities:

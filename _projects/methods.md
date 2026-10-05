@@ -3,7 +3,7 @@ layout: project
 title: 18F Methods
 link: https://guides.18f.org/methods/
 image: /assets/images/projects/project-18f-methods.png
-subtitle: Website redesign and ongoing support
+subtitle: Co-managed a restructure of the methods guide and its front end.
 role: Front-end designer, team lead
 responsibilities:
   - HTML templates

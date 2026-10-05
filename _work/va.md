@@ -1,5 +1,5 @@
 ---
-title: U.S Department of Veterans Affairs
+title: U.S. Department of Veterans Affairs
 level: federal
 abbr: VA
 link: https://www.va.gov/
