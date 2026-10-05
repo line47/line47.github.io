@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Kentucky Secretery of State
+title: Kentucky Secretary of State
 level: state
 abbr: 
 link: https://sos.ky.gov
