@@ -20,40 +20,67 @@
         <p>{{ page.scope }}<br>
           <span>{% if page.startYear %}Timeline: {{page.startYear}}{% endif %}{% if page.endYear %} -
             {{page.endYear}}{% endif %}</span>
-          </p>
-            <p>
-            <span class="project-role"><strong>{{ page.role }}</strong></span> responsible for
-            {% if page.responsibilities %}
-            {% assign sorted = page.responsibilities | sort %}
-            {% for item in sorted %}
-              {% if forloop.last %}and {{ item }}.
-              {% else %}
-                {{item }},
-              {% endif %}
-            {% endfor %}
-            {% endif %}
+        </p>
+        <p>
+          <span class="project-role"><strong>{{ page.role }}</strong></span> responsible for
+          {% if page.responsibilities %}
+          {% assign sorted = page.responsibilities | sort %}
+          {% for item in sorted %}
+          {% if forloop.last %}and {{ item }}.
+          {% else %}
+          {{item }},
+          {% endif %}
+          {% endfor %}
+          {% endif %}
         </p>
 
         {% if page.link %}
-        <span><a href="{{ page.link }}" title="Visit the {{page.title}} website">Visit {{ page.title }} website</a></span>
+        <span><a href="{{ page.link }}" title="Visit the {{page.title}} website">Visit {{ page.title }}
+            website</a></span>
         {% endif %}
       </div>
       <img class="hero-image" src="{{ page.image }}" alt="{{ page.title }} hero image">
     </div>
   </div>
   <div class="impact">
-     <div class="content-container">
+    <div class="content-container">
       <h2>Impact</h2>
-          <p>{{ page.impacts }}</p>
-          </div>
+      <p>{{ page.impacts }}</p>
+      <img class="hero-image" src="{{ page.hero }}" alt="{{ page.title }} hero image" width="100%">
+    </div>
   </div>
-  <div class="content-container">
+  <div class="content-container project-content">
+    <nav class="project-toc" aria-label="Table of contents" hidden>
+      <p><strong>On this page</strong></p>
+      <ul></ul>
+    </nav>
     <div class="main-content">
       {{ content }}
     </div>
 
 
   </div>
+
+  <script>
+    (function () {
+      var toc = document.querySelector('.project-toc');
+      var headings = document.querySelectorAll('.main-content h2');
+      var list = toc.querySelector('ul');
+
+      headings.forEach(function (heading) {
+        var item = document.createElement('li');
+        var link = document.createElement('a');
+        link.href = '#' + heading.id;
+        link.textContent = heading.textContent.trim();
+        item.appendChild(link);
+        list.appendChild(item);
+      });
+
+      if (headings.length) {
+        toc.hidden = false;
+      }
+    }());
+  </script>
 
   {% include footer.html %}
 </body>
