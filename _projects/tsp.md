@@ -15,7 +15,7 @@ responsibilities:
 - web standards and accessibility
 - U.S. Web Design System usage
 image: /assets/images/projects/project-tsp.png
-largeImage: tsp-large.png
+hero: /assets/images/projects/tsp-large.png
 builtWith:
   - Jekyll
   - SASS

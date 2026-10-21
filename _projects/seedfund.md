@@ -12,7 +12,7 @@ responsibilities:
   - information architecture
   - brand strategy
 image: /assets/images/projects/project-sbir.png
-largeImage: seedfund-large.png
+hero: /assets/images/projects/sbir-large.png
 builtWith:
   - React
   - SASS

@@ -15,7 +15,7 @@ responsibilities:
   - systems thinking
   - design tokens
 image: /assets/images/projects/project-cmsds.png
-largeImage: cms-design-system-large.png
+hero: /assets/images/projects/cms-design-system-large.png
 builtWith:
   - React
   - Typescript
