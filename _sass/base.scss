@@ -1230,6 +1230,11 @@ pre {
 
 .layout-project {
 
+    .project-hero-image {
+        border: 2px solid $color-lightergrey;
+        box-shadow: 0 12px 30px rgba(55, 50, 62, 0.04);
+    }
+
     .hero .content-container {
         grid-template-columns: 200px minmax(0, 1fr);
 
