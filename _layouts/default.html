@@ -1,19 +1,4 @@
-<!DOCTYPE HTML>
-<html lang="en" class="layout-default {{ page.pageClass }}">
-
-<head>
-    {% include head.html %}
-    <title>{{ page.title }}</title>
-
-</head>
-
-<body class="layout-default {{ page.pageClass }}">
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-    {% include top-nav.html %}
-    <main id="main-content" tabindex="-1">
-    {{ content }}
-    </main>
-    {% include footer.html %}
-</body>
-
-</html>
+---
+layout: base
+---
+{{ content }}

@@ -1,0 +1,17 @@
+{%- comment -%}
+  Renders a menu from _data/navigation.yml.
+  Usage: {% include nav.html menu="main" %}
+{%- endcomment -%}
+{%- assign menu = site.data.navigation[include.menu] -%}
+<nav class="top-nav" aria-label="{{ menu.label }}">
+  <ul>
+    {%- for item in menu.items %}
+    {%- if item.profile %}
+    {%- assign profile = site.data.links.profiles[item.profile] %}
+    <li><a href="{{ profile.url }}">{{ profile.name }}</a></li>
+    {%- else %}
+    <li><a href="{{ item.url }}"{% if item.class %} class="{{ item.class }}"{% endif %}>{{ item.title }}</a></li>
+    {%- endif %}
+    {%- endfor %}
+  </ul>
+</nav>

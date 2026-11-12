@@ -1,58 +1,38 @@
-<!DOCTYPE HTML>
-<html lang="en" class="layout-article">
-
-<head>
-  {% include head.html %}
-  <title>Scott Weber & Line 47 Articles // {{ page.title }}</title>
-  <meta property='og:title' content='{{ page.title | escape }}' />
-  <meta property='og:image' content='{{page.image }}' />
-  <meta property='og:description' content='{{page.summary | escape}}' />
-  <meta property='og:url' content='{{ page.url}}' />
-  <meta name="author" content="Scott Weber">
-</head>
-
-<body>
-
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  {% include top-nav.html %}
-  <main id="main-content" tabindex="-1">
-  <div class="hero">
-    <div class="content-container">
-      <h1 class="lead">{{ page.title }}</h1>
-      <p>{{page.summary}}</p>
-      <p class="timeframe">Published {{ page.date | date: "%b %-d, %Y" }}</p>
-      {% if page.image %}
-      <img src="{{ page.image }}" alt="" />
-      {% endif %}
-    </div>
-  </div>
+---
+layout: base
+html_class: layout-article
+title_prefix: "Scott Weber & Line 47 Articles // "
+---
+<div class="hero">
   <div class="content-container">
-    <div class="main-content">
-      {{ content }}
-    </div>
+    <h1 class="lead">{{ page.title }}</h1>
+    <p>{{ page.summary }}</p>
+    <p class="timeframe">Published {{ page.date | date: "%b %-d, %Y" }}</p>
+    {% if page.image %}<img src="{{ page.image }}" alt="">{% endif %}
   </div>
-  </main>
-  <script>
-    // Make horizontally scrolling code blocks reachable by keyboard (WCAG 2.1.1)
-    (function () {
-      function update() {
-        document.querySelectorAll('.main-content pre').forEach(function (pre) {
-          if (pre.scrollWidth > pre.clientWidth) {
-            pre.setAttribute('tabindex', '0');
-            pre.setAttribute('role', 'region');
-            pre.setAttribute('aria-label', 'Code example (scrollable)');
-          } else {
-            pre.removeAttribute('tabindex');
-            pre.removeAttribute('role');
-            pre.removeAttribute('aria-label');
-          }
-        });
-      }
-      update();
-      window.addEventListener('resize', update);
-    }());
-  </script>
-  {% include footer.html %}
-</body>
-
-</html>
+</div>
+<div class="content-container">
+  <div class="main-content">
+    {{ content }}
+  </div>
+</div>
+<script>
+  // Make horizontally scrolling code blocks reachable by keyboard (WCAG 2.1.1)
+  (function () {
+    function update() {
+      document.querySelectorAll('.main-content pre').forEach(function (pre) {
+        if (pre.scrollWidth > pre.clientWidth) {
+          pre.setAttribute('tabindex', '0');
+          pre.setAttribute('role', 'region');
+          pre.setAttribute('aria-label', 'Code example (scrollable)');
+        } else {
+          pre.removeAttribute('tabindex');
+          pre.removeAttribute('role');
+          pre.removeAttribute('aria-label');
+        }
+      });
+    }
+    update();
+    window.addEventListener('resize', update);
+  }());
+</script>
