@@ -1,0 +1,99 @@
+/* --- Dossier Grid --- */
+.rej-dossier {
+    --paper: #f1efe8;
+    --ink: #0d1318;
+    --bg: #0f1820;
+    --x: #b33b31;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
+    margin: 0 0 $spacer-4;
+    font-size: $spacer-1p5;
+    font-weight: 400;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.rej-dossier-wrap {
+    margin: 0 0 $spacer-4;
+}
+
+.rej-dossier {
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+}
+
+.rej-file {
+    background: var(--bg);
+    margin: 0;
+
+    &:focus-visible {
+        outline: 3px solid $color-accent3;
+        outline-offset: 3px;
+        box-shadow: 0 0 0 6px $color-white;
+    }
+}
+
+.rej-date,
+.rej-role {
+    display: block;
+}
+
+.rej-paper {
+    position: relative;
+    aspect-ratio: 3/4;
+    background: var(--paper);
+    overflow: hidden;
+    padding: $spacer-2;
+}
+
+.rej-redact {
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-linear-gradient(#ffffff 0px 0px, transparent 0px 50px), repeating-linear-gradient(0, #000 3px 4px, transparent 0px 11px);
+    mix-blend-mode: multiply;
+    opacity: .05;
+}
+
+.rej-meta {
+    display: flex;
+    gap: .4rem;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.rej-x {
+    position: absolute;
+    inset: 0;
+    background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 110 340'%3E%3Cg stroke='%23b33b31' stroke-width='25' stroke-linecap='' opacity='.9'%3E%3Cpath d='M40 40L200 200'/%3E%3Cpath d='M200 40L40 200'/%3E%3C/g%3E%3C/svg%3E") 200% 200% no-repeat;
+
+}
+
+.rej-hover {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: baseline;
+    padding: $spacer-2;
+    background: var(--x);
+    transition: 1.5s ease-in;
+
+    @media (min-width: 900px) {
+        opacity: 0;
+    }
+}
+
+.rej-file:hover .rej-hover,
+.rej-file:focus .rej-hover,
+.rej-file:focus-within .rej-hover {
+    opacity: 1;
+    transition: .15s;
+
+}
+
+.rej-quote {
+    color: $color-white;
+}

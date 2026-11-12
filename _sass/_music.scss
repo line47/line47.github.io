@@ -1,0 +1,27 @@
+.music-section {
+
+    a,
+    a:visited {
+        color: $color-dark;
+    }
+
+    .content-container {
+        max-width: $site-max-width;
+    }
+
+    #music .inline-list,
+    #music .inline-list li {
+        text-align: left;
+    }
+
+    #music .inline-list {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    #music .inline-list li {
+        margin-left: 0;
+        margin-right: $spacer-2;
+    }
+
+}

@@ -26,4 +26,4 @@ Then open http://localhost:4000.
 | Rejection list on the "Unfortunately" article | `_data/unfortunately.yml` |
 | Case studies | `_projects/` (`published: false` hides a draft) |
 | Articles | `_articles/` |
-| Styles | `_sass/` (imported by `assets/css/styles.scss`) |
+| Styles | `_sass/` partials, imported in order by `assets/css/styles.scss`; colors and spacing in `_sass/_tokens.scss` |
