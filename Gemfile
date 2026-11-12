@@ -1,6 +1,7 @@
-source 'https://rubygems.org'
-gem 'github-pages', 
+source "https://rubygems.org"
 
-group: :jekyll_plugins
-gem 'faraday_middleware-request-retry'
+# Matches the Jekyll version and plugins GitHub Pages uses to build the site.
+gem "github-pages", group: :jekyll_plugins
+
+# Needed for `jekyll serve` on Ruby 3+ (no longer bundled with Ruby).
 gem "webrick", "~> 1.7"
