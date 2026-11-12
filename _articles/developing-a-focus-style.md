@@ -113,7 +113,8 @@ Customizations:
 
 We compared these different techniques against some common scenarios for the design system.
 
-<table class="table" aria-label="Focus techniques compared">
+<div class="table-scroll" role="region" aria-label="Focus techniques compared (scrollable table)" tabindex="0">
+<table class="table">
 <caption>Focus techniques compared</caption>
     <thead class="table__head">
         <tr>
@@ -192,6 +193,7 @@ We compared these different techniques against some common scenarios for the des
         </tr>
     </tbody>
 </table>
+</div>
 
 _** It is common to use border, background color, and box-shadow when creating custom focus styles. However, Windows High Contrast Mode ignores these properties making your focus style invisible in WCHM. This can be fixed by utilizing the default outline property and making it transparent: outline 3px solid transparent. WHCM will override the transparent outline color, making it visible only when high contrast mode is turned on._
 
@@ -225,7 +227,8 @@ We wanted to make sure the color selected met at least 3.1 color contrast on a w
 
 
 
-<table class="table" aria-label="Focus techniques compared">
+<div class="table-scroll" role="region" aria-label="Existing colors from sub brands (scrollable table)" tabindex="0">
+<table class="table">
 <caption>Existing colors from sub brands</caption>
     <thead class="table__head">
         <tr>
@@ -280,8 +283,10 @@ We wanted to make sure the color selected met at least 3.1 color contrast on a w
         </tr>
     </tbody>
 </table>
+</div>
 
-<table class="table" aria-label="Focus techniques compared">
+<div class="table-scroll" role="region" aria-label="Possible new colors (scrollable table)" tabindex="0">
+<table class="table">
 <caption>Possible new colors</caption>
     <thead class="table__head">
         <tr>
@@ -385,6 +390,7 @@ We wanted to make sure the color selected met at least 3.1 color contrast on a w
         </tr>
     </tbody>
 </table>
+</div>
 
 For the design system and on of the the sub brand themes, we selected a focus eggplant color of #BD13B8, which meets both 3.1 and 4:5.1 color contrast on white backgrounds. In addition, the focus eggplant color compliments the current design system color palette and stands out while not being too distracting.
 

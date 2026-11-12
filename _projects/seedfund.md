@@ -13,6 +13,7 @@ responsibilities:
   - brand strategy
 image: /assets/images/projects/project-sbir.png
 hero: /assets/images/projects/sbir-large.png
+hero_alt: "Screenshot of the America's Seed Fund homepage: a purple hero reading \"We invest up to $1.75 million in seed funding. And take zero equity.\" with a Get started button, followed by sections on seed capital, the innovator network, and the portfolio."
 builtWith:
   - React
   - SASS

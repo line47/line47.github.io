@@ -122,8 +122,9 @@ html {
         margin-top: $spacer-1;
     }
 
-    h1 {
+    h2 {
         margin: auto 0 0;
+        font-weight: 700;
         width: 100%;
         max-width: none;
         background: transparent;
@@ -134,19 +135,19 @@ html {
         box-sizing: border-box;
     }
 
-    .work h1 {
+    .work h2 {
         clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 4% 100%);
     }
 
-    .music h1 {
+    .music h2 {
         clip-path: polygon(4% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
 
-    .work h1 span {
+    .work h2 span {
         background: rgb(247, 153, 151);
     }
 
-    .music h1 span {
+    .music h2 span {
         background: rgb(190, 182, 211);
     }
 
@@ -246,8 +247,8 @@ html {
     background-color: rgba(190, 182, 211, 0.88);
 }
 
-.home .hero .work h1,
-.home .hero .music h1,
+.home .hero .work h2,
+.home .hero .music h2,
 .home .hero .work p,
 .home .hero .music p {
     position: relative;
@@ -543,7 +544,7 @@ footer {
     }
 }
 
-.work>.hero {
+.work>main>.hero {
     min-height: 38rem;
     background-color: $color-accent;
     background-image: url('/assets/images/scott-2026.jpg');
@@ -557,13 +558,13 @@ footer {
     }
 }
 
-.work>.hero .content-container,
-.music>.hero .content-container {
+.work>main>.hero .content-container,
+.music>main>.hero .content-container {
     min-height: 38rem;
     align-items: end;
 }
 
-.music>.hero {
+.music>main>.hero {
     min-height: 38rem;
     background-color: #7375ff;
     background-image: url('/assets/images/L47-2024-small.png');
@@ -840,7 +841,7 @@ a:visited {
         padding: 1.5rem 1.5rem 1.25rem;
         box-shadow: 0 12px 30px rgba(55, 50, 62, 0.04);
 
-        h2,
+        h3,
         p {
             max-width: 100%;
         }
@@ -993,7 +994,10 @@ a:visited {
 }
 
 .organization-group {
-    h2 {
+    h3 {
+        font-size: $spacer-4;
+        line-height: $spacer-5;
+        font-weight: 600;
         margin-bottom: $spacer-1;
     }
 
@@ -1088,6 +1092,8 @@ pre>code {
 
 pre {
     margin-bottom: $spacer-4;
+    max-width: 100%;
+    overflow-x: auto;
 }
 
 .table {
@@ -1269,6 +1275,11 @@ pre {
         }
     }
 
+    .hero .project-link,
+    .hero .project-link:visited {
+        color: #005a96;
+    }
+
     .project-role {
         border-bottom: 4px solid $color-accent;
     }
@@ -1392,9 +1403,25 @@ pre {
     font-family: "Fira Sans", sans-serif;
 }
 
+.rej-dossier-wrap {
+    margin: 0 0 $spacer-4;
+}
+
+.rej-dossier {
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+}
+
 .rej-file {
     background: var(--bg);
-    cursor: pointer;
+    margin: 0;
+
+    &:focus-visible {
+        outline: 3px solid $color-accent3;
+        outline-offset: 3px;
+        box-shadow: 0 0 0 6px $color-white;
+    }
 }
 
 .rej-date,
@@ -1451,7 +1478,9 @@ pre {
 
 
 
-.rej-file:hover .rej-hover {
+.rej-file:hover .rej-hover,
+.rej-file:focus .rej-hover,
+.rej-file:focus-within .rej-hover {
     opacity: 1;
     transition: .15s;
 
@@ -1459,4 +1488,96 @@ pre {
 
 .rej-quote {
     color: $color-white;
+}
+
+/* --- Accessibility utilities --- */
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: $spacer-2;
+    z-index: 2000;
+    padding: $spacer-1 $spacer-2;
+    background: $color-white;
+    color: $color-dark;
+    font-family: $font-main-header;
+    font-weight: 700;
+    text-decoration: underline;
+
+    &:focus {
+        top: $spacer-1;
+    }
+}
+
+main:focus {
+    outline: none;
+}
+
+// Two-tone focus ring: blue outline with a white halo so it stays visible
+// on light, dark, and colored backgrounds (WCAG 2.4.7 / 2.4.11).
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+iframe:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+    outline: 3px solid $color-accent3;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px $color-white;
+}
+
+// Match hover treatments for keyboard users
+.top-nav a:focus-visible {
+    background-color: $color-white;
+    color: $color-dark;
+}
+
+.small-nav .top-nav a:focus-visible {
+    background: transparent;
+    color: $color-accent4;
+    text-decoration: underline;
+}
+
+.home .hero .work:focus-visible {
+    background: #F79997;
+}
+
+.home .hero .music:focus-visible {
+    background: $color-featured;
+}
+
+// Scrollable wrapper for wide data tables (WCAG 1.4.10)
+.table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+    margin-bottom: $spacer-6;
+
+    .table {
+        margin-bottom: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
 }

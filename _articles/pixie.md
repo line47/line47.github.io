@@ -47,7 +47,7 @@ Pixie wasn’t just with us. She was part of how we lived.
 She crossed state lines with us from Kentucky to North Carolina. She helped keep us steady during the COVID pandemic. She hunkered down with us in our basement in Asheville during Hurricane Helene. She was with us through marriage and the normal ups and downs of family life.
 
 <figure class="wide">
-  <img src="/assets/images/articles/Pixie/Pixie-4.jpg" alt="Description of the image">
+  <img src="/assets/images/articles/Pixie/Pixie-4.jpg" alt="Four photobooth frames of Josie and Scott hugging Pixie, who licks and nuzzles them; the strip is branded Monnik Beer Co. Dog Day of Summer.">
   <figcaption>Photobooth pictures of Pixie, Josie and I from Louisville, KY.</figcaption>
 </figure>
 

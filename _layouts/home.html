@@ -7,19 +7,22 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     {% include top-nav.html %}
+    <main id="main-content" tabindex="-1">
+    <h1 class="visually-hidden">Scott Weber &amp; Line 47</h1>
     <div class="hero">
         <div class="grid">
-            <a href="/work/" class="work hero-panel" aria-label="Go to the Work section">
-                <h1><span>Product thinking, UX, & design systems.</span></h1>
+            <a href="/work/" class="work hero-panel">
+                <h2><span>Product thinking, UX, & design systems.</span></h2>
                 <p>
                     I've been a UX manager, design system leader, and front-end specialist since 2004.
                     My expertise spans user experience, product design, accessibility, usability, web
                     standards, design systems, and design methods.
                 </p>
             </a>
-            <a href="/music/" class="music hero-panel" aria-label="Go to the Music section">
-                <h1><span>Electronic, ambient, & experimental sound.</span></h1>
+            <a href="/music/" class="music hero-panel">
+                <h2><span>Electronic, ambient, & experimental sound.</span></h2>
                 <p>Since the late 90s I've been creating
                     breakcore, IDM and experimental music. I'm also interested in drone, noise and long format
                     experiences. Owner of independent record label Terminal Dusk.</p>
@@ -27,6 +30,7 @@
         </div>
     </div>
     {{ content }}
+    </main>
     {% include footer.html %}
 </body>
 

@@ -73,6 +73,22 @@ permalink: /music/aywmtgo/viz/
       cursor: pointer;
     }
 
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    button:focus-visible,
+    input:focus-visible {
+      outline: 3px solid #0072bb;
+      outline-offset: 2px;
+      box-shadow: 0 0 0 5px #fff;
+    }
+
     .button-container {
       position: fixed;
       top: 10px;
@@ -104,8 +120,10 @@ permalink: /music/aywmtgo/viz/
 </head>
 
 <body>
+  <main>
+  <h1 class="visually-hidden">Line 47: As you were meant to go on, webcam visualizer</h1>
   <!-- Canvas for visuals -->
-  <canvas id="visualizer"></canvas>
+  <canvas id="visualizer" role="img" aria-label="Live halftone visualization generated from your webcam image, with animated geometric shapes in the background."></canvas>
 
   <!-- Hidden webcam input -->
   <video id="webcam" autoplay muted playsinline></video>
@@ -113,11 +131,12 @@ permalink: /music/aywmtgo/viz/
   <!-- Toggle button for control panel -->
   <div class="button-container">
     <!-- WHY: start hidden because the panel is open by default -->
-    <button id="controls-toggle" style="display:none;">Configure</button>
+    <button id="controls-toggle" style="display:none;" aria-controls="cc-controls-dialog" aria-expanded="true">Configure</button>
   </div>
 
   <!-- MIDI control panel dialog (open by default) -->
-  <div id="cc-controls-dialog" class="open">
+  <div id="cc-controls-dialog" class="open" role="group" aria-label="Visualizer controls">
+    <button id="pauseBtn" type="button" aria-pressed="false">Pause animation</button>
     <button id="setDefaultsBtn">Reset Configurations</button>
     <div class="cc-control">
       <div class="cc-label-row">
@@ -195,6 +214,7 @@ permalink: /music/aywmtgo/viz/
     <button id="screenshotBtn">Save Screenshot</button>
     <button id="close-controls">Close</button>
   </div>
+  </main>
 
   <!-- JavaScript functionality -->
   <script>
@@ -209,13 +229,33 @@ permalink: /music/aywmtgo/viz/
 
     toggleBtn.addEventListener("click", () => {
       ccDialog.classList.toggle("open");
-      toggleBtn.style.display = ccDialog.classList.contains("open") ? "none" : "block";
+      const isOpen = ccDialog.classList.contains("open");
+      toggleBtn.style.display = isOpen ? "none" : "block";
+      toggleBtn.setAttribute("aria-expanded", String(isOpen));
+      if (isOpen) document.getElementById("pauseBtn").focus();
     });
 
     closeBtn.addEventListener("click", () => {
       ccDialog.classList.remove("open");
       toggleBtn.style.display = "block";
+      toggleBtn.setAttribute("aria-expanded", "false");
+      toggleBtn.focus();
     });
+
+    // Pause / resume (WCAG 2.2.2). Start paused when the user prefers reduced motion.
+    const pauseBtn = document.getElementById("pauseBtn");
+    let rafId = 0;
+    let paused = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function setPaused(value) {
+      paused = value;
+      pauseBtn.setAttribute("aria-pressed", String(paused));
+      pauseBtn.textContent = paused ? "Play animation" : "Pause animation";
+      cancelAnimationFrame(rafId);
+      if (!paused) rafId = requestAnimationFrame(draw);
+    }
+    pauseBtn.addEventListener("click", () => setPaused(!paused));
+    pauseBtn.setAttribute("aria-pressed", String(paused));
+    pauseBtn.textContent = paused ? "Play animation" : "Pause animation";
 
     // Variables and canvas setup
     const canvas = document.getElementById("visualizer");
@@ -653,7 +693,7 @@ permalink: /music/aywmtgo/viz/
       }
       drawUserInfoOverlay();
 
-      requestAnimationFrame(draw);
+      if (!paused) rafId = requestAnimationFrame(draw);
 
       if (SHOW_PHRASE && !albumButtonVisible && revealedFlags.every(flag => flag)) {
         showAlbumButton();
@@ -667,7 +707,8 @@ permalink: /music/aywmtgo/viz/
         video.srcObject = stream;
         video.addEventListener("loadedmetadata", () => {
           video.play();
-          requestAnimationFrame(draw);
+          cancelAnimationFrame(rafId);
+          rafId = requestAnimationFrame(draw);
         });
       })
       .catch(err => alert("Webcam error: " + err.message));
