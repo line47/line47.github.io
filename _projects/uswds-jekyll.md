@@ -12,7 +12,7 @@ responsibilities:
   - HTML/CSS templates
   - Research
   - Responsive design
-image: /assets/images/projects/project-USWDS-Jekyll.png
+image: /assets/images/projects/project-USWDS-Jekyll.jpg
 largeImage:
 builtWith:
   - Jekyll

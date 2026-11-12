@@ -15,7 +15,7 @@ responsibilities:
   - systems thinking
   - design tokens
 image: /assets/images/projects/project-cmsds.png
-hero: /assets/images/projects/cms-design-system-large.png
+hero: /assets/images/projects/cms-design-system-large.jpg
 hero_alt: "Screenshot of the CMS Design System documentation site showing the Button component page, with default, primary, danger, success, and transparent buttons in default, hover, active, focus, and disabled states."
 builtWith:
   - React
