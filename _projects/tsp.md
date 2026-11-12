@@ -16,6 +16,7 @@ responsibilities:
 - U.S. Web Design System usage
 image: /assets/images/projects/project-tsp.png
 hero: /assets/images/projects/tsp-large.png
+hero_alt: "Screenshot of the redesigned tsp.gov homepage: a beach photo with two blue Adirondack chairs behind the headline \"Plan for a lifetime with the TSP,\" above three intro sections for new participants, fund information, and life stages."
 builtWith:
   - Jekyll
   - SASS

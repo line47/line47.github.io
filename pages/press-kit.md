@@ -9,10 +9,10 @@ pageClass: layout-article
  <div class="content-container">
  <div class="main-content">
 
-<h1 class="lead">Line 47 press kit</h1>
+<h2 class="lead">Line 47 press kit</h2>
 
 <h2> Photos </h2>
-<a href="/assets/images/L47-2024-small.png"><img src="/assets/images/L47-2024-small.png" width="200px"/></a>
+<a href="/assets/images/L47-2024-small.png"><img src="/assets/images/L47-2024-small.png" width="200" alt="Line 47 press photo: Scott Weber, a bearded man in glasses, tinted purple. Opens full-size image."/></a>
 
 <h2>Bios</h2>
 

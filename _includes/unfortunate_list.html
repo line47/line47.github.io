@@ -1,18 +1,21 @@
-<section class="rej-dossier" aria-label="Rejection dossier">
+<section class="rej-dossier-wrap" aria-labelledby="rej-dossier-label">
+    <p id="rej-dossier-label" class="visually-hidden">Rejection dossier. Each card lists the date, the role, and the rejection phrase. Focus a card to reveal its phrase.</p>
     {% assign items = site.data.unfortunately | sort: "date" | reverse %}
-    {% for r in items %}
-    <article class="rej-file" aria-label="Rejection item">
-        <div class="rej-paper">
-            <div class="rej-redact" aria-hidden="true"></div>
-            <div class="rej-meta">
-                <div class="rej-date">{{ r.date | date: "%b %d, %Y" }}</div>
-                <div class="rej-role">{{ r.role }}</div>
+    <ul class="rej-dossier">
+        {% for r in items %}
+        <li class="rej-file" tabindex="0">
+            <div class="rej-paper">
+                <div class="rej-redact" aria-hidden="true"></div>
+                <div class="rej-meta">
+                    <div class="rej-date">{{ r.date | date: "%b %d, %Y" }}</div>
+                    <div class="rej-role">{{ r.role }}</div>
+                </div>
+                <div class="rej-x" aria-hidden="true"></div>
+                <div class="rej-hover">
+                    <span class="rej-quote">“{{ r.phrase }}”</span>
+                </div>
             </div>
-            <div class="rej-x" aria-hidden="true"></div>
-            <div class="rej-hover">
-                <span class="rej-quote">“{{ r.phrase }}”</span>
-            </div>
-        </div>
-    </article>
-    {% endfor %}
+        </li>
+        {% endfor %}
+    </ul>
 </section>

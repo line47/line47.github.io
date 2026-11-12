@@ -5,7 +5,7 @@ tagline:
 baseurl: /
 collections:
   work:
-    output: true
+    output: false
     permalink: /work/:slug
   featuredwork:
     output: true

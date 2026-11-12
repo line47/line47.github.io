@@ -8,11 +8,14 @@
 </head>
 
 <body class="layout-default {{ page.pageClass }}">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     {% include top-nav.html %}
     {% include top-nav-work.html %}
+    <main id="main-content" tabindex="-1">
     {% include work-hero.html %}
 
     {{ content }}
+    </main>
     {% include footer-work.html %}
 
 </body>

@@ -12,5 +12,5 @@ The artwork for the upcoming Line 47 album, _As you were meant to go on_ is goin
 
 Thank you to all that participated!
 
-You can still [have fun with the visualizer!](/music/aywmtgo/viz/){:target="_blank"}.
+You can still [have fun with the visualizer!](/music/aywmtgo/viz/).
 

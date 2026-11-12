@@ -13,7 +13,9 @@
 
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   {% include top-nav.html %}
+  <main id="main-content" tabindex="-1">
   <div class="hero">
     <div class="content-container">
       <h1 class="lead">{{ page.title }}</h1>
@@ -29,6 +31,27 @@
       {{ content }}
     </div>
   </div>
+  </main>
+  <script>
+    // Make horizontally scrolling code blocks reachable by keyboard (WCAG 2.1.1)
+    (function () {
+      function update() {
+        document.querySelectorAll('.main-content pre').forEach(function (pre) {
+          if (pre.scrollWidth > pre.clientWidth) {
+            pre.setAttribute('tabindex', '0');
+            pre.setAttribute('role', 'region');
+            pre.setAttribute('aria-label', 'Code example (scrollable)');
+          } else {
+            pre.removeAttribute('tabindex');
+            pre.removeAttribute('role');
+            pre.removeAttribute('aria-label');
+          }
+        });
+      }
+      update();
+      window.addEventListener('resize', update);
+    }());
+  </script>
   {% include footer.html %}
 </body>
 

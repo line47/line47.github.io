@@ -6,6 +6,7 @@ link:
 role: Manager of Design
 image: /assets/images/projects/project-ves.png
 hero: /assets/images/projects/ves-large.png
+hero_alt: "Screenshot of the Veterans Health Administration Enrollment System showing a veteran's Identity traits page, with sections for name, sex and gender, race and ethnicity, and birth information, and a side navigation of record sections."
 summary: Modernize the VHA Enrollment system, a staff-facing application used to manage Veteran enrollment in and determining the eligibility for health care benefits. 
 responsibilities:
   - user experience design 
