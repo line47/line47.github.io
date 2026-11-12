@@ -15,15 +15,8 @@ responsibilities:
 - web standards and accessibility
 - U.S. Web Design System usage
 image: /assets/images/projects/project-tsp.png
-hero: /assets/images/projects/tsp-large.png
+hero: /assets/images/projects/tsp-large.jpg
 hero_alt: "Screenshot of the redesigned tsp.gov homepage: a beach photo with two blue Adirondack chairs behind the headline \"Plan for a lifetime with the TSP,\" above three intro sections for new participants, fund information, and life stages."
-builtWith:
-  - Jekyll
-  - SASS
-  - HTML
-  - JavaScript
-  - U.S. Web Design System
-  - GitHub
 startYear: 2018
 endYear: 2019
 scope: Federal web modernization & agency coaching

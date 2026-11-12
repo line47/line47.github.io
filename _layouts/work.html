@@ -1,23 +1,8 @@
-<!DOCTYPE HTML>
-<html lang="en" class="layout-default {{ page.pageClass }}">
+---
+layout: base
+subnav: work
+footer_links: footer_work
+---
+{% include hero.html title="Scott Weber" text="I'm a self-taught design leader with 20+ years in government services. I take complex, policy-heavy legacy systems and make them clear and accessible." %}
 
-<head>
-    {% include head.html %}
-    <title>{{ page.title }}</title>
-
-</head>
-
-<body class="layout-default {{ page.pageClass }}">
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-    {% include top-nav.html %}
-    {% include top-nav-work.html %}
-    <main id="main-content" tabindex="-1">
-    {% include work-hero.html %}
-
-    {{ content }}
-    </main>
-    {% include footer-work.html %}
-
-</body>
-
-</html>
+{{ content }}

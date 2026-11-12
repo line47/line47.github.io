@@ -12,37 +12,25 @@ pageClass: linkforest
         <p class="lead">Electronic artist blending breakcore, drum & bass, and experimental music.
         </p>
        </div>
-       <div class="left"><img src="/assets/images/L47-2024-small.png" class="profile" alt="Portrait of Line 47 (Scott Weber), a bearded man in glasses, tinted purple"></div>
+       <div class="left"><img src="/assets/images/L47-2024-small.jpg" class="profile" alt="Portrait of Line 47 (Scott Weber), a bearded man in glasses, tinted purple"></div>
 
 </div>
 
 <div class="featured">
 <h2>Latest release</h2>
-{% include line47-bandcamp-import.html %}
+{% include bandcamp-player.html %}
 <ul>
-    <li><a href="https://line47.bandcamp.com/album/line-47">Bandcamp</a></li>
-    <li><a href="https://open.spotify.com/album/1zmM5X7hLT8J8iyv6JS2ov?si=Ag6y0CHzQuqfRfkz87XZVg" >Spotify</a></li> 
-    <li><a href="https://www.youtube.com/watch?v=rcsdXsuUamQ&list=OLAK5uy_kSc6K_dmni9MFHKK1eQlDqYnsfcV5YThI" >YouTube</a></li>
+    {%- for link in site.data.links.latest_release.links %}
+    <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+    {%- endfor %}
 </ul>
 </div>
 
 <h2>Listen to Line 47 on...</h2>
-<ul>
-    <li><a href="https://line47.bandcamp.com/">Bandcamp</a></li>
-    <li><a href="https://open.spotify.com/artist/7qefxZPpoAn9L0RzJja29z?si=Xt3e8dquS-y3uvfGOihVOA">Spotify</a></li>
-    <li><a href="https://www.youtube.com/channel/UCDJDPObjeA_bLMIBvmQeBFQ">YouTube</a></li>
-</ul>
+{% include link-list.html group="links_listen" %}
 
 <h2>Terminal Dusk Records</h2>
-<ul>
-    <li><a href="https://terminaldusk.bandcamp.com/music" class=" bandcamp-link">Bandcamp</a></li>
-    <li><a href="https://open.spotify.com/playlist/2daYj53QmDn1SdcNf8aUm8?si=c3279488578a4eb8" class="spotify-link">Spotify</a></li>
-</ul>
+{% include link-list.html group="links_label" short=true %}
 <h2>Follow</h2>
-<ul>
-    <li><a href="https://www.instagram.com/line47/">Instagram</a></li>
-    <li><a href="https://www.tiktok.com/@l47music" >TikTok</a></li>
-    <li><a href="https://twitter.com/line47">Twitter</a></li>
-    <li><a href="https://www.facebook.com/L47music/">Facebook</a></li>
-</ul>
+{% include link-list.html group="links_follow" %}
 </div>

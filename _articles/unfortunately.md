@@ -1,7 +1,7 @@
 ---
 title: Unfortunately, we won't be moving forward
 summary: The tech job market is grim and making me feel like an impostor. 
-image: /assets/images/articles/article-unfortunately.png
+image: /assets/images/articles/article-unfortunately.jpg
 date: 2025-10-02
 layout: article
 featured: true

@@ -1,0 +1,12 @@
+{%- comment -%}
+  Full-bleed hero used by the Work and Music sections.
+  Usage: {% include hero.html title="..." text="..." %}  (text may contain HTML)
+{%- endcomment -%}
+<div class="hero">
+    <div class="content-container">
+        <div class="right-grid">
+            <h1>{{ include.title }}</h1>
+            <p class="section-title">{{ include.text }}</p>
+        </div>
+    </div>
+</div>

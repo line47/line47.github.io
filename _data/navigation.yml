@@ -1,0 +1,22 @@
+# Menus rendered by _includes/nav.html.
+# An item has either a url, or a `profile` key pointing at _data/links.yml.
+main:
+  label: Main
+  items:
+    - { title: Work, url: /work/ }
+    - { title: Scott Weber, url: /, class: homelink }
+    - { title: Music, url: /music/ }
+
+work:
+  label: Work sections
+  items:
+    - { title: Selected work, url: "/work/#selected" }
+    - { title: Other projects, url: "/work/#projects" }
+    - { title: "Who I've worked with", url: "/work/#who" }
+
+music:
+  label: Music links
+  items:
+    - { profile: subvert }
+    - { profile: bandcamp }
+    - { profile: youtube }

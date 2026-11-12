@@ -1,25 +1,11 @@
-<!DOCTYPE HTML>
-<html lang="en" class="layout-default {{ page.pageClass }}">
-
-<head>
-    {% include head.html %}
-    <title>{{ page.title }}</title>
-
-</head>
-
-<body class="layout-default {{ page.pageClass }}">
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-    {% include top-nav.html %}
-    {% include top-nav-music.html %}
-    <main id="main-content" tabindex="-1">
-    {% include L47-hero.html %}
-    <div class="music-section">
+---
+layout: base
+subnav: music
+---
+{% capture hero_text %}Creating electronic, drill 'n' bass, experimental, ambient, and noise since the 1990's. Owner of independent record label <a href="https://terminal-dusk.com">Terminal Dusk</a>.{% endcapture %}
+{% include hero.html title="Line 47" text=hero_text %}
+<div class="music-section">
     <div class="content-container">
-    {{ content }}
+        {{ content }}
     </div>
-    </div>
-    </main>
-    {% include footer.html %}
-</body>
-
-</html>
+</div>

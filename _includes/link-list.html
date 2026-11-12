@@ -1,0 +1,11 @@
+{%- comment -%}
+  Renders a list of profiles from _data/links.yml.
+  Usage: {% include link-list.html group="footer" class="inline-list" %}
+  Pass short=true to prefer each profile's short_name.
+{%- endcomment -%}
+<ul{% if include.class %} class="{{ include.class }}"{% endif %}>
+  {%- for key in site.data.links.groups[include.group] %}
+  {%- assign profile = site.data.links.profiles[key] %}
+  <li><a href="{{ profile.url }}">{% if include.short and profile.short_name %}{{ profile.short_name }}{% else %}{{ profile.name }}{% endif %}</a></li>
+  {%- endfor %}
+</ul>

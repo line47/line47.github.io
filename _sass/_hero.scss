@@ -1,0 +1,289 @@
+.hero {
+    background-color: $color-white;
+    max-width: none;
+    overflow: hidden;
+}
+
+.home .hero {
+    max-width: $site-max-width;
+    margin: 0 auto;
+    width: calc(100% - 2rem);
+
+    .section-title {
+        margin-top: $spacer-1;
+    }
+
+    h2 {
+        margin: auto 0 0;
+        font-weight: 700;
+        width: 100%;
+        max-width: none;
+        background: transparent;
+        padding: 0.8rem 1rem;
+        box-shadow: none;
+        font-size: clamp(1.75rem, 3vw, 2.7rem);
+        line-height: 1.05;
+        box-sizing: border-box;
+    }
+
+    .work h2 {
+        clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 4% 100%);
+    }
+
+    .music h2 {
+        clip-path: polygon(4% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    .work h2 span {
+        background: rgb(247, 153, 151);
+    }
+
+    .music h2 span {
+        background: rgb(190, 182, 211);
+    }
+
+    .grid {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+
+        .hero-panel {
+            min-height: 38rem;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: stretch;
+            position: relative;
+            isolation: isolate;
+            background-size: cover;
+            background-position: center;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .work {
+            background-color: $color-accent;
+        }
+
+        .music {
+            background-color: $color-featured;
+        }
+
+        .work::before,
+        .music::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-blend-mode: multiply;
+            background-position: center top;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            opacity: 1;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .work::before {
+            background-image: url('/assets/images/scott-2026.jpg');
+        }
+
+        .music::before {
+            background-image: url('/assets/images/L47-2024-small.jpg');
+        }
+
+        .work::after,
+        .music::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.25;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .work::after {
+            background: $color-accent;
+        }
+
+        .music::after {
+            background: $color-featured;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .grid {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.home .hero .work p,
+.home .hero .music p {
+    background: rgba(247, 153, 151, 0.88);
+    width: 100%;
+    padding: 0.8rem 1rem;
+    max-width: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.96rem;
+    line-height: 1.45;
+    backdrop-filter: blur(2px);
+    box-sizing: border-box;
+}
+
+.home .hero .music p {
+    background-color: rgba(190, 182, 211, 0.88);
+}
+
+.home .hero .work h2,
+.home .hero .music h2,
+.home .hero .work p,
+.home .hero .music p {
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.home .hero .work {
+    transition: background-color 0.2s ease;
+}
+
+.home .hero .music {
+    transition: background-color 0.2s ease;
+}
+
+.home .hero .work:hover {
+    background: #F79997;
+}
+
+.home .hero .music:hover {
+    background: $color-featured;
+}
+
+.home .hero .work:hover p,
+.home .hero .music:hover p {
+    opacity: 0;
+}
+
+.home .hero .work:hover::before,
+.home .hero .music:hover::before {
+    opacity: 0;
+}
+
+.hero .section-title {
+    font-size: $spacer-4;
+}
+
+.home,
+.music,
+.work {
+    .hero {
+
+        .lead span {
+            text-decoration: double;
+            text-decoration-line: underline;
+            text-decoration-color: $color-accent;
+            white-space: nowrap;
+            text-decoration-thickness: 4px;
+        }
+
+        .music {
+            background-color: $color-featured;
+
+        }
+
+        .work {
+            background-color: $color-accent;
+        }
+
+        color: $color-dark;
+
+    }
+
+    @media (max-width: 600px) {
+        .hero .right-grid {
+            grid-row-start: 2;
+            grid-column-start: 1;
+
+            h1 {
+                background-color: transparent;
+                padding: 0;
+            }
+        }
+    }
+
+    p {
+        max-width: $character-width;
+    }
+}
+
+.hero {
+    background: $color-tan;
+    text-align: left;
+
+    .content-container {
+        display: grid;
+        column-gap: $spacer-5;
+        max-width: $site-max-width;
+    }
+
+    .right-grid {
+        grid-row-start: 1;
+        grid-column: 1 / -1;
+    }
+
+    .right-grid h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        line-height: 1.05;
+    }
+
+    .right-grid p {
+        font-size: clamp(1.25rem, 2.8vw, 2.25rem);
+    }
+
+    .right-grid a,
+    .right-grid a:visited {
+        color: inherit;
+    }
+
+    img {
+        max-width: 300px;
+    }
+}
+
+.work>main>.hero {
+    min-height: 38rem;
+    background-color: $color-accent;
+    background-image: url('/assets/images/scott-2026.jpg');
+    background-blend-mode: lighten;
+    background-position: center center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+
+    @media (max-width: 600px) {
+        background-position: center top;
+    }
+}
+
+.work>main>.hero .content-container,
+.music>main>.hero .content-container {
+    min-height: 38rem;
+    align-items: end;
+}
+
+.music>main>.hero {
+    min-height: 38rem;
+    background-color: #7375ff;
+    background-image: url('/assets/images/L47-2024-small.jpg');
+    background-blend-mode: color-dodge;
+    background-position: center center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+
+    @media (max-width: 600px) {
+        background-position: center top;
+    }
+}

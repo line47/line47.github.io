@@ -1,0 +1,111 @@
+.main-content {
+    margin: 0 0 $spacer-4 0;
+
+    img {
+        max-width: 100%;
+        margin-bottom: $spacer-5;
+    }
+
+    figure {
+
+        border: 2px solid $color-lightergrey;
+        padding: $spacer-1;
+        max-width: 45%;
+        margin-bottom: $spacer-2;
+
+        img {
+            margin: 0;
+        }
+
+        figcaption {
+            font-family: $font-main-header;
+            font-weight: 200;
+            line-height: initial;
+            margin-top: $spacer-1;
+        }
+
+        &.float-left {
+            float: none;
+
+            @media (min-width: 900px) {
+                float: left;
+                margin-right: 2rem;
+            }
+        }
+
+        &.float-right {
+            float: none;
+
+            @media (min-width: 900px) {
+                float: right;
+                margin-left: 2rem;
+
+            }
+        }
+
+        &.wide {
+            max-width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &.center {
+            margin: auto;
+        }
+    }
+
+}
+
+.layout-article {
+    .content-container {
+        margin: 0 auto;
+        max-width: $site-max-width;
+        grid-template-columns: auto;
+        gap: 0;
+    }
+
+    .page-header .content-container {
+        margin: 0 auto;
+        max-width: 1280px;
+    }
+
+    h2 {
+        font-size: clamp(1.75rem, 3vw, 2.25rem);
+        line-height: 1.15;
+        margin-bottom: $spacer-2;
+    }
+
+    .hero {
+        background-color: $color-white;
+        color: inherit;
+        text-align: center;
+        padding-top: $spacer-4;
+        padding-bottom: $spacer-4;
+
+        .content-container {
+
+            max-width: none;
+
+            p {
+                max-width: none;
+            }
+        }
+
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    blockquote p {
+        margin: $spacer-2 0;
+        padding: $spacer-1 $spacer-3;
+        font-size: clamp(1.5rem, 3.2vw, 2.25rem);
+        line-height: 1.4;
+        font-style: italic;
+        color: $color-lightgrey;
+    }
+
+}

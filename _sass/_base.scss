@@ -1,0 +1,154 @@
+html {
+    font-family: $font-content;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+ol {
+    list-style: decimal;
+    list-style-position: outside;
+    padding-inline-start: $spacer-5;
+
+    li {
+        margin-bottom: $spacer-1;
+
+    }
+}
+
+h1 a,
+h1 a:visited {
+    text-decoration: none;
+    color: $text-dark;
+}
+
+body {
+    color: $text-dark;
+    font-family: $font-content;
+    font-weight: 400;
+}
+
+strong {
+    font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-main-header;
+    font-weight: 700;
+}
+
+ol,
+p,
+ul {
+    line-height: $spacer-3;
+    margin-bottom: $spacer-2;
+    font-size: $spacer-1p5;
+    font-weight: 300;
+
+}
+
+h1 {
+    font-size: $spacer-5;
+    line-height: 3rem;
+
+}
+
+h2 {
+    font-size: $spacer-4;
+    line-height: $spacer-5;
+    font-weight: 600;
+    margin-bottom: $spacer-1p5;
+}
+
+h3 {
+    font-size: $spacer-3;
+    line-height: 2rem;
+    margin-bottom: $spacer-3;
+}
+
+h4 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: $spacer-4;
+}
+
+a,
+a:active {
+    color: $darker-blue;
+
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+}
+
+a:visited {
+    color: $darker-blue;
+}
+
+.list-unstyled {
+    list-style: none;
+    margin-left: 0;
+}
+
+// CODE HIGHLIGHTING
+.highlighter-rouge,
+code {
+    background-color: rgb(232, 232, 232);
+}
+
+code {
+    font-family: monospace;
+    font-size: 1.4rem;
+    font-weight: 100;
+    line-height: 1.5;
+}
+
+pre>code {
+    padding: $spacer-2;
+    display: inline-block;
+}
+
+pre {
+    margin-bottom: $spacer-4;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.table {
+    border: 1px solid;
+    font-family: $font-sub-header;
+    font-weight: 400;
+    font-size: .9rem;
+
+    caption {
+        padding: $spacer-1;
+        font-size: $spacer-2;
+        font-weight: 600;
+    }
+
+    th,
+    td {
+        border: 1px solid $color-lightgrey;
+        padding: $spacer-1;
+        font-weight: 400;
+    }
+
+    th {
+        background-color: $color-lightergrey;
+        font-weight: 600;
+    }
+
+    margin-bottom: $spacer-6;
+}

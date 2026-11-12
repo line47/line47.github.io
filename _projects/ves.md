@@ -22,11 +22,6 @@ scope: Enterprise System Modernization
 impacts: 
   - Modernized the primary healthcare system for over 9 Million Veterans. Replaced a non-linear 1990s legacy system with guided registration workflows, automated external data checks to prevent duplicate records, and established reusable design patterns.
 featured: true
-builtWith: 
-- Figma
-- Mural 
-- Confluence 
-- Jira
 takeaway: In large-scale civic tech, solving UI problems requires equal parts system mapping, technical coordination, and stakeholder trust. By combining deep user research with structured cross-vendor collaboration, complex federal systems can be modernized without disrupting critical public services.
 ---
 

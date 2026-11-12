@@ -9,15 +9,6 @@ responsibilities:
   - User experience
   - User interface design
   - Front end development
-smallImage: cloudgov-logo.png
-largeImage: cloudgov-large-001.png
-builtWith:
-  - React
-  - SASS
-  - Cloud Foundry
-  - GitHub
-  - JavaScript
-  - U.S. Web Design System
 startYear: 2016
 home: true
 featured: false

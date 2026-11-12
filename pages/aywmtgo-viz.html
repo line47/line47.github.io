@@ -218,11 +218,6 @@ permalink: /music/aywmtgo/viz/
 
   <!-- JavaScript functionality -->
   <script>
-    const SHOW_PHRASE = false;
-
-    const snareSound = new Audio("data:audio/mp3;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU5LjI3LjEwMAAAAAAAAAAAAAAA//tAwAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAANAAALUgAiIiIiIiIiNDQ0NDQ0NDRHR0dHR0dHR1lZWVlZWVlsbGxsbGxsbH5+fn5+fn5+kZGRkZGRkaOjo6Ojo6Ojtra2tra2trbIyMjIyMjI29vb29vb29vt7e3t7e3t7f////////8AAAAATGF2YzU5LjM3AAAAAAAAAAAAAAAAJA...");
-    snareSound.load();
-
     const toggleBtn = document.getElementById("controls-toggle");
     const ccDialog = document.getElementById("cc-controls-dialog");
     const closeBtn = document.getElementById("close-controls");
@@ -292,15 +287,6 @@ permalink: /music/aywmtgo/viz/
     const isPhone = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 480;
     if (isPhone) midiValues[1] = 50;
 
-    // Phrase reveal variables (kept; gated by SHOW_PHRASE)
-    const phrase = "CHANNEL MEMORY DRIFT";
-    const letterIndices = [...phrase].map((c, i) => c !== " " ? i : null).filter(i => i !== null);
-    let revealTimers = new Array(letterIndices.length).fill(0);
-    let revealedFlags = new Array(letterIndices.length).fill(false);
-    let glitchFrames = new Array(letterIndices.length).fill(0);
-    let glitchChars = new Array(letterIndices.length).fill('');
-    let wasAboveThreshold = false;
-    let lines = wrapPhraseIntoLines(phrase);
     let backgroundShapes = [];
 
     // MIDI Controls
@@ -340,25 +326,6 @@ permalink: /music/aywmtgo/viz/
       link.href = dataUrl;
       link.click();
     });
-
-    // Wraps phrase into multiple lines
-    function wrapPhraseIntoLines(phrase) {
-      const words = phrase.split(" ");
-      const lines = [];
-      let currentLine = words[0] || "";
-      ctx.font = `${Math.floor(canvas.height * 0.08)}px monospace`;
-      for (let i = 1; i < words.length; i++) {
-        const testLine = currentLine + " " + words[i];
-        if (ctx.measureText(testLine).width < canvas.width * 0.8 && Math.random() > 0.3) {
-          currentLine = testLine;
-        } else {
-          lines.push(currentLine);
-          currentLine = words[i];
-        }
-      }
-      if (currentLine) lines.push(currentLine);
-      return lines;
-    }
 
     // Fix jitter by caching polygon points
     const polygonCache = {};
@@ -440,110 +407,6 @@ permalink: /music/aywmtgo/viz/
           drawMorphedShape(ctx, cx, cy, size);
         }
       }
-
-      ctx.restore();
-    }
-
-    let albumButtonVisible = false;
-    function showAlbumButton() {
-      if (albumButtonVisible) return;
-
-      const parts = ["https:", "", "your-album-link", "com"];
-      const path = "https://" + parts.slice(2).join('.') + "";
-
-      const btn = document.createElement("a");
-      btn.id = "album-button";
-      btn.href = path;
-      btn.target = "_blank";
-      btn.textContent = "GET THE ALBUM";
-
-      btn.style.position = "fixed";
-      btn.style.bottom = "20px";
-      btn.style.left = "50%";
-      btn.style.transform = "translateX(-50%)";
-      btn.style.background = "black";
-      btn.style.color = "white";
-      btn.style.padding = "12px 24px";
-      btn.style.fontFamily = "monospace";
-      btn.style.fontSize = "18px";
-      btn.style.border = "none";
-      btn.style.cursor = "pointer";
-      btn.style.zIndex = "9999";
-      btn.style.textDecoration = "none";
-
-      document.body.appendChild(btn);
-      snareSound.play().catch(() => { });
-      albumButtonVisible = true;
-    }
-
-    // Dynamic letter animation (gated)
-    function drawLine47Text() {
-      if (!SHOW_PHRASE) return;
-
-      const fontSize = Math.floor(canvas.height * 0.08);
-      const spacing = fontSize * 0.7;
-
-      ctx.save();
-      ctx.textAlign = "start";
-      ctx.textBaseline = "middle";
-      ctx.font = `${fontSize}px  monospace`;
-      const audioActive = audioLevel > 50;
-      if (audioActive && !wasAboveThreshold) {
-        const candidates = letterIndices.filter((_, i) => !revealedFlags[i] && revealTimers[i] === 0);
-        if (candidates.length > 0) {
-          const chosen = candidates[Math.floor(Math.random() * candidates.length)];
-          revealTimers[letterIndices.indexOf(chosen)] = 90;
-        }
-      }
-      wasAboveThreshold = audioActive;
-      let charIndex = 0;
-      const lineHeight = fontSize * 1.2;
-      const startY = canvas.height / 2 - (lines.length * lineHeight) / 2 + lineHeight / 2;
-
-      lines.forEach((line, lineNum) => {
-        const y = startY + lineNum * lineHeight;
-        const lineCharStart = charIndex;
-
-        for (let i = 0; i < line.length; i++) {
-          const char = line[i];
-          if (char === " ") continue;
-          charIndex++;
-        }
-
-        charIndex = lineCharStart;
-
-        for (let i = 0; i < line.length; i++) {
-          const char = line[i];
-          if (char === " ") continue;
-          const x = canvas.width * 0.1 + i * spacing;
-          const idx = charIndex;
-          if (revealTimers[idx] > 0) {
-            revealTimers[idx]--;
-            if (revealTimers[idx] > 60) {
-              if (glitchFrames[idx] % 5 === 0) {
-                glitchChars[idx] = String.fromCharCode(33 + Math.floor(Math.random() * 94));
-              }
-              glitchFrames[idx]++;
-              ctx.fillStyle = "rgba(0,0,0,0.5)";
-              ctx.fillText(glitchChars[idx], x, y);
-            } else if (revealTimers[idx] > 30) {
-              revealedFlags[idx] = true;
-              ctx.fillStyle = "black";
-              ctx.fillText(char, x, y);
-            } else {
-              ctx.fillStyle = "rgba(0,0,0,0.7)";
-              ctx.fillText("▓", x, y);
-            }
-          } else if (revealedFlags[idx]) {
-            ctx.fillStyle = "black";
-            ctx.fillText(char, x, y);
-          } else {
-            ctx.fillStyle = "rgba(0,0,0,0.7)";
-            ctx.fillText("▓", x, y);
-          }
-          charIndex++;
-        }
-      });
 
       ctx.restore();
     }
@@ -689,15 +552,10 @@ permalink: /music/aywmtgo/viz/
       drawBackgroundShapes();
       if (video.readyState === video.HAVE_ENOUGH_DATA) {
         drawHalftone();
-        drawLine47Text(); // guarded by SHOW_PHRASE
       }
       drawUserInfoOverlay();
 
       if (!paused) rafId = requestAnimationFrame(draw);
-
-      if (SHOW_PHRASE && !albumButtonVisible && revealedFlags.every(flag => flag)) {
-        showAlbumButton();
-      }
     }
 
     // Initialize webcam (VIDEO ONLY — no microphone)
@@ -753,7 +611,6 @@ permalink: /music/aywmtgo/viz/
       canvas.style.left = "0px";
       canvas.style.top = "0px";
 
-      lines = wrapPhraseIntoLines(phrase);
       generateBackgroundShapes();
     }
 

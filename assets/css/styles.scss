@@ -1,6 +1,17 @@
 ---
 ---
 
+// Order matters: later partials can override earlier ones at equal specificity.
+@import "tokens";      // colors, fonts, spacing
 @import "reset";
-@import "base";
-@import "linkforest";
+@import "base";        // element defaults: typography, links, code, tables
+@import "layout";      // page frame: container, header, nav, footer
+@import "hero";        // section heroes (home, work, music)
+@import "home";        // home page article cards
+@import "work";        // /work/ project lists and organizations
+@import "music";
+@import "project";     // case study pages
+@import "article";     // article pages
+@import "dossier";     // "Unfortunately" rejection cards
+@import "linkforest";  // /links/ page
+@import "a11y";        // skip link, focus styles, reduced motion

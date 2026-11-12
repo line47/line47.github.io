@@ -1,0 +1,47 @@
+{%- comment -%}
+  The page shell every layout shares. Child layouts can set, in their front matter:
+    html_class    class on <html> and <body> (default: layout-default)
+    title_prefix  text placed before the page title in <title>
+    subnav        a second menu from _data/navigation.yml (work, music)
+    footer_links  link group from _data/links.yml for the footer (default: footer)
+{%- endcomment -%}
+{%- assign classes = layout.html_class | default: "layout-default" | append: " " | append: page.pageClass | strip -%}
+<!DOCTYPE html>
+<html lang="en" class="{{ classes }}">
+
+<head>
+  {% include head.html %}
+  <title>{% if layout.title_prefix %}{{ layout.title_prefix }}{% endif %}{{ page.title }}</title>
+  <meta name="author" content="Scott Weber">
+  {%- if page.summary %}
+  <meta property="og:title" content="{{ page.title | escape }}">
+  <meta property="og:description" content="{{ page.summary | strip_html | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  {%- if page.image %}
+  <meta property="og:image" content="{{ page.image | absolute_url }}">
+  {%- endif %}
+  {%- endif %}
+</head>
+
+<body class="{{ classes }}">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="page-header">
+    <div class="content-container">
+      {% include nav.html menu="main" %}
+    </div>
+  </header>
+  {%- if layout.subnav %}
+  <div class="page-header small-nav">
+    <div class="content-container">
+      {% include nav.html menu=layout.subnav %}
+    </div>
+  </div>
+  {%- endif %}
+  <main id="main-content" tabindex="-1">
+    {{ content }}
+  </main>
+  {%- assign footer_links = layout.footer_links | default: "footer" %}
+  {% include footer.html links=footer_links %}
+</body>
+
+</html>

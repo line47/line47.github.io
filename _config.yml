@@ -1,15 +1,7 @@
+title: Scott Weber & Line 47
+baseurl: ""
 
-# Setup
-title: Line 47 Website
-tagline:
-baseurl: /
 collections:
-  work:
-    output: false
-    permalink: /work/:slug
-  featuredwork:
-    output: true
-    permalink: /work/:slug
   projects:
     output: true
     permalink: /projects/:slug

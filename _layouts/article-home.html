@@ -1,31 +1,16 @@
-<!DOCTYPE HTML>
-<html lang="en" class="layout-article {{ page.pageClass }}">
-
-<head>
-  {% include head.html %}
-  <title>{{ page.title }}</title>
-</head>
-
-<body class="layout-default {{ page.pageClass }}">
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  {% include top-nav.html %}
-  <main id="main-content" tabindex="-1">
-  <div class="hero">
-    <div class="content-container">
-      <h1 class="lead">Articles</h1>
-      <p>{{page.summary}}</p>
-      {% if page.image %}
-      <img src="{{ page.image }}" alt="" />
-      {% endif %}
-    </div>
-  </div>
+---
+layout: base
+html_class: layout-article
+---
+<div class="hero">
   <div class="content-container">
-    <div class="main-content">
-      {{ content }}
-    </div>
+    <h1 class="lead">Articles</h1>
+    <p>{{ page.summary }}</p>
+    {% if page.image %}<img src="{{ page.image }}" alt="">{% endif %}
   </div>
-  </main>
-  {% include footer.html %}
-</body>
-
-</html>
+</div>
+<div class="content-container">
+  <div class="main-content">
+    {{ content }}
+  </div>
+</div>

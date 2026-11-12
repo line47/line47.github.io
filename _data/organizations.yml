@@ -1,0 +1,18 @@
+# Organizations listed under "Who I've worked with" on /work/.
+# level: federal, state, or local. Each group is sorted by name on the page.
+- { name: "18F", level: federal, link: "https://18f.org" }
+- { name: "Centers for Medicare & Medicaid Services", level: federal, link: "https://cms.gov" }
+- { name: "Defense Information Systems Agency", level: federal, link: "https://www.disa.mil/" }
+- { name: "Federal Retirement Thrift Investment Board", level: federal, link: "https://www.frtib.gov/" }
+- { name: "General Services Administration", level: federal, link: "https://www.gsa.gov/" }
+- { name: "National Science Foundation", level: federal, link: "https://www.nsf.gov/" }
+# - { name: "Technology Transformation Services", level: federal, link: "https://tts.gsa.gov" }
+- { name: "U.S. Department of Defense", level: federal, link: "https://www.defense.gov/" }
+- { name: "U.S. Department of Veterans Affairs", level: federal, link: "https://www.va.gov/" }
+- { name: "Kentucky Attorney General", level: state, link: "https://ag.ky.gov" }
+- { name: "Kentucky Cabinet for Health and Family Services", level: state, link: "https://chfs.ky.gov" }
+- { name: "Kentucky Department of Education", level: state, link: "https://education.ky.gov" }
+- { name: "Kentucky Governor", level: state, link: "https://governor.ky.gov" }
+- { name: "Kentucky Registry of Election Finance", level: state, link: "https://kref.ky.gov" }
+- { name: "Kentucky Secretary of State", level: state, link: "https://sos.ky.gov" }
+- { name: "Kentucky Transportation Cabinet", level: state, link: "https://transportation.ky.gov" }

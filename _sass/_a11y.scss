@@ -1,0 +1,91 @@
+/* --- Accessibility utilities --- */
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: $spacer-2;
+    z-index: 2000;
+    padding: $spacer-1 $spacer-2;
+    background: $color-white;
+    color: $color-dark;
+    font-family: $font-main-header;
+    font-weight: 700;
+    text-decoration: underline;
+
+    &:focus {
+        top: $spacer-1;
+    }
+}
+
+main:focus {
+    outline: none;
+}
+
+// Two-tone focus ring: blue outline with a white halo so it stays visible
+// on light, dark, and colored backgrounds (WCAG 2.4.7 / 2.4.11).
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+iframe:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+    outline: 3px solid $color-accent3;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px $color-white;
+}
+
+// Match hover treatments for keyboard users
+.top-nav a:focus-visible {
+    background-color: $color-white;
+    color: $color-dark;
+}
+
+.small-nav .top-nav a:focus-visible {
+    background: transparent;
+    color: $color-accent4;
+    text-decoration: underline;
+}
+
+.home .hero .work:focus-visible {
+    background: #F79997;
+}
+
+.home .hero .music:focus-visible {
+    background: $color-featured;
+}
+
+// Scrollable wrapper for wide data tables (WCAG 1.4.10)
+.table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+    margin-bottom: $spacer-6;
+
+    .table {
+        margin-bottom: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
