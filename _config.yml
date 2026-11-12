@@ -2,8 +2,6 @@ title: Scott Weber & Line 47
 baseurl: ""
 
 collections:
-  work:
-    output: false
   projects:
     output: true
     permalink: /projects/:slug

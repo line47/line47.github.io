@@ -83,51 +83,21 @@ pageClass: work
         <h2 class="lead">Who I've worked with</h2>
         <p>Organizations and agencies I've worked with across federal, state, and local government.</p>
 
-        {% assign federal = site.work | where: "level", "federal" | sort: "title" %}
-        {% assign state = site.work | where: "level", "state" | sort: "title" %}
-        {% assign local = site.work | where: "level", "local" | sort: "title" %}
-
         <div class="organization-groups">
+            {% assign levels = "federal,state,local" | split: "," %}
+            {% for level in levels %}
+            {% assign orgs = site.data.organizations | where: "level", level | sort: "name" %}
+            {% if orgs.size > 0 %}
             <section class="organization-group">
-                <h3>Federal</h3>
+                <h3>{{ level | capitalize }}</h3>
                 <ul class="organization-list">
-                    {% for work in federal %}
-                    <li>
-                        {% if work.link %}<a href="{{ work.link }}">{% endif %}
-                            {{ work.title }}
-                            {% if work.link %}</a>{% endif %}
-                    </li>
-                    {% endfor %}
-                </ul>
-            </section>
-
-            <section class="organization-group">
-                <h3>State</h3>
-                <ul class="organization-list">
-                    {% for work in state %}
-                    <li>
-                        {% if work.link %}<a href="{{ work.link }}">{% endif %}
-                            {{ work.title }}
-                            {% if work.link %}</a>{% endif %}
-                    </li>
-                    {% endfor %}
-                </ul>
-            </section>
-
-            {% if local.size > 0 %}
-            <section class="organization-group">
-                <h3>Local</h3>
-                <ul class="organization-list">
-                    {% for work in local %}
-                    <li>
-                        {% if work.link %}<a href="{{ work.link }}">{% endif %}
-                            {{ work.title }}
-                            {% if work.link %}</a>{% endif %}
-                    </li>
+                    {% for org in orgs %}
+                    <li>{% if org.link %}<a href="{{ org.link }}">{{ org.name }}</a>{% else %}{{ org.name }}{% endif %}</li>
                     {% endfor %}
                 </ul>
             </section>
             {% endif %}
+            {% endfor %}
         </div>
     </div>
 </div>
