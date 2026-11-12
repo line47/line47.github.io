@@ -1,13 +1,11 @@
 ---
+published: false
 layout: project
 title: Wisconsin Department of Natural Resources
 role: Designer
 summary: make it pretty
 responsibilities:
  - Visual Design
-smallImage: wisconsin-wildlife-logo.png
-largeImage: wisconsin-wildlife-large-001.png
-builtWith:
 startYear: 2007
 ---
 

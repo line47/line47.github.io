@@ -11,20 +11,9 @@ responsibilities:
   - Front end development
   - Project management
   - User research 
-smallImage: 18f-logo.png
-largeImage:
-builtWith:
-  - Jekyll
-  - SASS
-  - HTML
-  - JavaScript
-  - U.S. Web Design System
-  
-  - GitHub
 supporting_links:
   - text: Walking the talk - what went into the Method Cards' tune-up
     href: https://18f.gsa.gov/2017/09/21/method-cards-tune-up/
-sortOrder: 0
 startYear: 2017
 endYear: 2019
 home: true

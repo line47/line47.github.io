@@ -13,15 +13,6 @@ responsibilities:
   - Research
   - Responsive design
 image: /assets/images/projects/project-USWDS-Jekyll.jpg
-largeImage:
-builtWith:
-  - Jekyll
-  - SASS
-  - HTML
-  - JavaScript
-  - U.S. Web Design System
-  
-  - GitHub
 startYear: 2017
 endYear: 2019
 home: true

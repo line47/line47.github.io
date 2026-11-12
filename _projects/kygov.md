@@ -1,7 +1,6 @@
 ---
 layout: project
 title: Kentucky.gov
-abbr:
 image: /assets/images/projects/project-kygov.png
 link: https://kentucky.gov
 subtitle: Led redesigns and re-architecture as Creative Director.
@@ -14,13 +13,6 @@ responsibilities:
   - HTML/CSS templates
   - Research
   - Responsive design
-smallImage: kygov-logo.png
-largeImage: kygov-large-001.png
-builtWith:
-  - SharePoint 2013
-  - .Net
-  - LESS
-  - JavaScript
 startYear: 2006
 endYear: 2016
 home: true

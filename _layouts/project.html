@@ -15,15 +15,7 @@ subnav: work
       </p>
       <p>
         <span class="project-role"><strong>{{ page.role }}</strong></span> responsible for
-        {% if page.responsibilities %}
-        {% assign sorted = page.responsibilities | sort %}
-        {% for item in sorted %}
-        {% if forloop.last %}and {{ item }}.
-        {% else %}
-        {{item }},
-        {% endif %}
-        {% endfor %}
-        {% endif %}
+        {% if page.responsibilities %}{{ page.responsibilities | sort | array_to_sentence_string }}.{% endif %}
       </p>
 
       {% if page.link %}
