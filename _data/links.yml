@@ -1,5 +1,6 @@
 # Every external profile in one place. Pages and menus refer to these by key,
-# so a URL only ever needs to change here.
+# so a URL only ever needs to change here. short_name (optional) is used where
+# a heading already gives context, via link-list.html short=true.
 profiles:
   instagram:             { name: Instagram, url: "https://www.instagram.com/line47/" }
   facebook:              { name: Facebook, url: "https://www.facebook.com/L47music/" }
@@ -15,8 +16,8 @@ profiles:
   # TODO: confirm this is the same channel as @L47music, then delete it and use `youtube`
   youtube_channel:       { name: YouTube, url: "https://www.youtube.com/channel/UCDJDPObjeA_bLMIBvmQeBFQ" }
   soundcloud:            { name: Soundcloud, url: "https://soundcloud.com/line47" }
-  terminaldusk_bandcamp: { name: Terminal Dusk Bandcamp, url: "https://terminaldusk.bandcamp.com/" }
-  terminaldusk_spotify:  { name: Terminal Dusk Spotify playlist, url: "https://open.spotify.com/playlist/2daYj53QmDn1SdcNf8aUm8" }
+  terminaldusk_bandcamp: { name: Terminal Dusk Bandcamp, short_name: Bandcamp, url: "https://terminaldusk.bandcamp.com/" }
+  terminaldusk_spotify:  { name: Terminal Dusk Spotify playlist, short_name: Spotify, url: "https://open.spotify.com/playlist/2daYj53QmDn1SdcNf8aUm8" }
 
 # Named lists of profiles, used by _includes/link-list.html
 groups:
