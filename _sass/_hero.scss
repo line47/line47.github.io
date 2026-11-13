@@ -348,7 +348,7 @@
 .music>main>.hero.hero--compact {
     min-height: 0;
     background-image: none;
-    background-color: #4a4cc9; // white text: 6.6:1
+    background-color: #7375ff; // same purple as the /music/ hero
 
     &::before {
         display: none;
@@ -365,8 +365,11 @@
         margin-bottom: $spacer-1;
     }
 
+    // White on #7375ff is 3.67:1, so the subtitle is kept at large-text size
+    // (at least 18.66px bold), where WCAG requires 3:1 instead of 4.5:1
     .right-grid p {
         font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+        font-weight: 700;
         line-height: 1.4;
         margin-bottom: 0;
     }
