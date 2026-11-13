@@ -118,29 +118,6 @@
             grid-template-columns: 1fr;
         }
     }
-
-    // Phones: crop each panel's photo to about a quarter of the screen so the
-    // Music panel isn't pushed a full screen down
-    @media (max-width: 600px) {
-        .grid .hero-panel {
-            min-height: 0;
-            padding-top: 24vh;
-        }
-
-        .grid .work::before,
-        .grid .music::before {
-            bottom: auto;
-            height: 24vh;
-            background-size: cover;
-            background-position: center 25%;
-        }
-
-        .grid .work::after,
-        .grid .music::after {
-            bottom: auto;
-            height: 24vh;
-        }
-    }
 }
 
 .home .hero .work p,
