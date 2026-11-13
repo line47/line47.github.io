@@ -45,6 +45,6 @@ booking:
   label: Book a session
   contact_label: Book or contact Line 47
 
-# Used on the mentoring page (/music/renoise-1-to-1/), which is no longer linked from the site
+# Used on the mentoring page (pages/renoise-1-to-1.md), which is unpublished
 mentoring:
   from_price: "$85"

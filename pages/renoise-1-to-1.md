@@ -1,4 +1,5 @@
 ---
+published: false
 permalink: /music/renoise-1-to-1/
 title: Line 47 // Renoise 1-to-1 mentoring
 layout: music
