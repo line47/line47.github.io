@@ -1,0 +1,271 @@
+// Buttons, cards, and disclosure blocks shared by the music pages.
+
+// --- Buttons ---------------------------------------------------------------
+
+.button,
+a.button,
+a.button:visited {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px; // comfortable touch target
+    padding: 0.6rem 1.1rem;
+    box-sizing: border-box;
+    border: 2px solid $color-dark;
+    border-radius: 6px;
+    background: $color-white;
+    color: $color-dark;
+    font-family: $font-main-header;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: $color-featured;
+}
+
+.button--primary,
+a.button--primary,
+a.button--primary:visited {
+    background: $color-dark;
+    color: $color-white;
+}
+
+.button--primary:hover {
+    background: #4a4cc9;
+    border-color: #4a4cc9;
+}
+
+.button--secondary {
+    background: transparent;
+}
+
+.button--light,
+a.button--light,
+a.button--light:visited {
+    background: $color-white;
+    border-color: $color-white;
+    color: $color-dark;
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacer-1;
+    margin: $spacer-2 0;
+}
+
+// A list of equal-width buttons: two columns on phones, more when there's room
+.button-grid,
+.music-section .button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+    gap: $spacer-1;
+    list-style: none;
+    margin: $spacer-2 0;
+    padding: 0;
+
+    li {
+        margin: 0;
+        max-width: none;
+    }
+
+    .button {
+        width: 100%;
+    }
+}
+
+.release-card .button-grid {
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+}
+
+// --- Cards -------------------------------------------------------------------
+
+.music-block {
+    margin-bottom: $spacer-6;
+
+    h2 {
+        margin-bottom: $spacer-1;
+    }
+}
+
+.release-card,
+.promo-card,
+.cta-panel,
+.package-card {
+    background: #f4f2f8;
+    border: 1px solid rgba(55, 50, 62, 0.12);
+    border-radius: 10px;
+    padding: $spacer-3;
+}
+
+.release-title {
+    font-family: $font-main-header;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: $spacer-1;
+}
+
+.promo-meta {
+    font-family: $font-main-header;
+    font-weight: 600;
+}
+
+.cta-panel {
+    margin: $spacer-4 0;
+
+    p {
+        margin-bottom: $spacer-1;
+    }
+
+    .button-row {
+        margin-bottom: 0;
+    }
+}
+
+.package-list {
+    display: grid;
+    gap: $spacer-2;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    margin-bottom: $spacer-4;
+}
+
+.package-card {
+    h3 {
+        margin-top: 0;
+        margin-bottom: $spacer-1;
+        font-size: 1.35rem;
+        line-height: 1.25;
+    }
+
+    p {
+        margin-bottom: $spacer-1;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// --- Disclosures (topics, bios) --------------------------------------------
+
+.topic-list details,
+details.bio {
+    border-top: 1px solid rgba(55, 50, 62, 0.2);
+    padding: 0;
+
+    &:last-child {
+        border-bottom: 1px solid rgba(55, 50, 62, 0.2);
+    }
+
+    summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $spacer-1;
+        min-height: 44px;
+        padding: $spacer-1 0;
+        font-family: $font-main-header;
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+        list-style: none;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        &::after {
+            content: "+";
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1;
+        }
+    }
+
+    &[open] summary::after {
+        content: "\2212"; // minus sign
+    }
+
+    &[open] {
+        padding-bottom: $spacer-2;
+    }
+}
+
+.topic-list {
+    margin-bottom: $spacer-4;
+}
+
+details.bio .button {
+    margin-top: $spacer-1;
+}
+
+// --- Press kit photo ---------------------------------------------------------
+
+.music-section .press-photo {
+    margin: 0 0 $spacer-1;
+
+    img {
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+    }
+
+    figcaption {
+        font-family: $font-main-header;
+        font-size: 0.95rem;
+        margin-top: $spacer-0;
+    }
+}
+
+// --- Sticky booking bar (phones only) ---------------------------------------
+
+.sticky-cta {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .sticky-cta {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 900;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $spacer-1;
+        padding: $spacer-1 $spacer-2;
+        padding-bottom: calc(#{$spacer-1} + env(safe-area-inset-bottom));
+        background: $color-dark;
+        color: $color-white;
+        font-family: $font-main-header;
+        font-size: 0.95rem;
+        box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.2);
+
+        .button--primary {
+            background: $color-white;
+            color: $color-dark;
+            border-color: $color-white;
+            flex-shrink: 0;
+        }
+    }
+
+    .sticky-cta[hidden] {
+        display: none;
+    }
+
+    // Keep content and keyboard focus clear of the fixed bar (WCAG 2.4.11)
+    html:has(.sticky-cta) {
+        scroll-padding-bottom: 5rem;
+    }
+
+    body:has(.sticky-cta) footer {
+        padding-bottom: 5rem;
+    }
+}

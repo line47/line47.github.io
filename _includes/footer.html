@@ -1,8 +1,11 @@
 <footer>
   <div class="content-container">
     <h2>Contact</h2>
+    {%- if include.cta %}
+    {% include book-button.html label=site.data.links.booking.contact_label class="button--light" %}
+    {%- endif %}
     {% include link-list.html group=include.links class="inline-list" %}
-    <p class="copyright">&copy; {{ site.time | date: "%Y" }} Asheville, NC - United States of America - Planet Earth -
-      Milky Way Galaxy</p>
+    <p class="copyright">&copy; {{ site.time | date: "%Y" }} Asheville, NC<span class="copyright-extended"> - United States of America - Planet Earth -
+      Milky Way Galaxy</span></p>
   </div>
 </footer>

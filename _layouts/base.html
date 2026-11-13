@@ -4,6 +4,7 @@
     title_prefix  text placed before the page title in <title>
     subnav        a second menu from _data/navigation.yml (work, music)
     footer_links  link group from _data/links.yml for the footer (default: footer)
+    footer_cta    true to show the booking button in the footer
 {%- endcomment -%}
 {%- assign classes = layout.html_class | default: "layout-default" | append: " " | append: page.pageClass | strip -%}
 <!DOCTYPE html>
@@ -41,7 +42,7 @@
     {{ content }}
   </main>
   {%- assign footer_links = layout.footer_links | default: "footer" %}
-  {% include footer.html links=footer_links %}
+  {% include footer.html links=footer_links cta=layout.footer_cta %}
 </body>
 
 </html>

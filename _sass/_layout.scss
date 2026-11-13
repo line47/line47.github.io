@@ -201,3 +201,21 @@ footer {
 
     }
 }
+
+// Current page in a menu
+.top-nav a[aria-current="page"] {
+    color: $color-white;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+}
+
+footer .button {
+    margin-bottom: $spacer-3;
+}
+
+@media (max-width: 600px) {
+    .copyright-extended {
+        display: none;
+    }
+}

@@ -1,0 +1,9 @@
+{%- comment -%}
+  Booking button. Renders nothing until site.data.links.booking.url is set.
+  Usage: {% include book-button.html %}
+         {% include book-button.html label="Book or contact" class="button--light" %}
+{%- endcomment -%}
+{%- assign booking = site.data.links.booking -%}
+{%- if booking.url and booking.url != "" -%}
+<a class="button {{ include.class | default: 'button--primary' }}" href="{{ booking.url }}">{{ include.label | default: booking.label }}</a>
+{%- endif -%}

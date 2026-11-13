@@ -22,6 +22,8 @@ Then open http://localhost:4000.
 | Page shell (head, skip link, nav, footer) | `_layouts/base.html` |
 | Navigation menus | `_data/navigation.yml` |
 | Social, streaming, and label links | `_data/links.yml` |
+| Booking link (Calendly) for every "Book" button | `_data/links.yml` → `booking.url` (buttons stay hidden while empty) |
+| Mentoring starting price | `_data/links.yml` → `mentoring.from_price` |
 | Organizations on /work/ | `_data/organizations.yml` |
 | Rejection list on the "Unfortunately" article | `_data/unfortunately.yml` |
 | Case studies | `_projects/` (`published: false` hides a draft) |
