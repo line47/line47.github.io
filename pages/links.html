@@ -4,33 +4,48 @@ title: Line 47
 permalink: /links/
 pageClass: linkforest
 ---
-
+{%- assign release = site.data.links.latest_release -%}
 <div class="links-content-container">
-<div class="links-header">
-    <div class="right">
+    <div class="links-header">
+        <img src="/assets/images/L47-2024-small.jpg" class="profile" width="112" height="112" alt="Portrait of Line 47 (Scott Weber), a bearded man in glasses, tinted purple">
         <h1>Line 47</h1>
-        <p class="lead">Electronic artist blending breakcore, drum & bass, and experimental music.
-        </p>
-       </div>
-       <div class="left"><img src="/assets/images/L47-2024-small.jpg" class="profile" alt="Portrait of Line 47 (Scott Weber), a bearded man in glasses, tinted purple"></div>
+        <p class="lead">Electronic artist blending breakcore, drum &amp; bass, and experimental music.</p>
+    </div>
 
-</div>
+    <section class="featured" aria-labelledby="latest-release">
+        <h2 id="latest-release">Latest release: {{ release.title }}</h2>
+        {% include bandcamp-player.html %}
+        <ul>
+            {%- for link in release.links %}
+            <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+            {%- endfor %}
+        </ul>
+    </section>
 
-<div class="featured">
-<h2>Latest release</h2>
-{% include bandcamp-player.html %}
-<ul>
-    {%- for link in site.data.links.latest_release.links %}
-    <li><a href="{{ link.url }}">{{ link.name }}</a></li>
-    {%- endfor %}
-</ul>
-</div>
+    <section aria-labelledby="mentoring">
+        <h2 id="mentoring">Renoise 1-to-1 mentoring</h2>
+        <ul>
+            <li><a href="/music/renoise-1-to-1/">Sessions from {{ site.data.links.mentoring.from_price }}</a></li>
+            {%- if site.data.links.booking.url != "" %}
+            <li><a href="{{ site.data.links.booking.url }}">{{ site.data.links.booking.label }}</a></li>
+            {%- endif %}
+        </ul>
+    </section>
 
-<h2>Listen to Line 47 on...</h2>
-{% include link-list.html group="links_listen" %}
+    <section aria-labelledby="listen">
+        <h2 id="listen">Listen to Line 47 on…</h2>
+        {% include link-list.html group="links_listen" %}
+    </section>
 
-<h2>Terminal Dusk Records</h2>
-{% include link-list.html group="links_label" short=true %}
-<h2>Follow</h2>
-{% include link-list.html group="links_follow" %}
+    <section aria-labelledby="label">
+        <h2 id="label">Terminal Dusk Records</h2>
+        {% include link-list.html group="links_label" short=true %}
+    </section>
+
+    <section aria-labelledby="follow">
+        <h2 id="follow">Follow</h2>
+        {% include link-list.html group="links_follow" %}
+    </section>
+
+    <p class="links-home"><a href="/music/">Visit the full Line 47 site</a></p>
 </div>
