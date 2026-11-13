@@ -118,6 +118,29 @@
             grid-template-columns: 1fr;
         }
     }
+
+    // Phones: crop each panel's photo to about a quarter of the screen so the
+    // Music panel isn't pushed a full screen down
+    @media (max-width: 600px) {
+        .grid .hero-panel {
+            min-height: 0;
+            padding-top: 24vh;
+        }
+
+        .grid .work::before,
+        .grid .music::before {
+            bottom: auto;
+            height: 24vh;
+            background-size: cover;
+            background-position: center 25%;
+        }
+
+        .grid .work::after,
+        .grid .music::after {
+            bottom: auto;
+            height: 24vh;
+        }
+    }
 }
 
 .home .hero .work p,
@@ -275,6 +298,7 @@
 }
 
 .music>main>.hero {
+    position: relative;
     min-height: 38rem;
     background-color: #7375ff;
     background-image: url('/assets/images/L47-2024-small.jpg');
@@ -283,7 +307,67 @@
     background-size: 100% auto;
     background-repeat: no-repeat;
 
+    // Dark gradient behind the title so white text stays readable (WCAG 1.4.3)
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(32, 29, 66, 0.92) 0%, rgba(32, 29, 66, 0.75) 32%, rgba(32, 29, 66, 0) 60%);
+        pointer-events: none;
+    }
+
+    .content-container {
+        position: relative;
+    }
+
+    .right-grid h1,
+    .right-grid p,
+    .right-grid a,
+    .right-grid a:visited {
+        color: $color-white;
+    }
+
     @media (max-width: 600px) {
-        background-position: center top;
+        min-height: 0;
+        background-size: cover;
+        background-position: center 20%;
+
+        .content-container {
+            min-height: 60vh;
+            min-height: 60svh;
+        }
+
+        .right-grid p {
+            font-size: 1.15rem;
+            line-height: 1.4;
+        }
+    }
+}
+
+// Subpages (mentoring, press kit): solid band, no photo, page title as the h1
+.music>main>.hero.hero--compact {
+    min-height: 0;
+    background-image: none;
+    background-color: #4a4cc9; // white text: 6.6:1
+
+    &::before {
+        display: none;
+    }
+
+    .content-container {
+        min-height: 0;
+        padding-top: $spacer-5;
+        padding-bottom: $spacer-4;
+    }
+
+    .right-grid h1 {
+        font-size: clamp(2rem, 6vw, 3.25rem);
+        margin-bottom: $spacer-1;
+    }
+
+    .right-grid p {
+        font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+        line-height: 1.4;
+        margin-bottom: 0;
     }
 }

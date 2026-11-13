@@ -10,7 +10,7 @@
     {%- assign profile = site.data.links.profiles[item.profile] %}
     <li><a href="{{ profile.url }}">{{ profile.name }}</a></li>
     {%- else %}
-    <li><a href="{{ item.url }}"{% if item.class %} class="{{ item.class }}"{% endif %}>{{ item.title }}</a></li>
+    <li><a href="{{ item.url }}"{% if item.class %} class="{{ item.class }}"{% endif %}{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
     {%- endif %}
     {%- endfor %}
   </ul>
