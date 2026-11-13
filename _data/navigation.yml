@@ -17,6 +17,4 @@ work:
 music:
   label: Line 47
   items:
-    - { title: Music, url: /music/ }
-    - { title: Mentoring, url: /music/renoise-1-to-1/ }
     - { title: Press kit, url: /music/presskit/ }

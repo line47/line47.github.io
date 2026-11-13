@@ -22,16 +22,6 @@ pageClass: linkforest
         </ul>
     </section>
 
-    <section aria-labelledby="mentoring">
-        <h2 id="mentoring">Renoise 1-to-1 mentoring</h2>
-        <ul>
-            <li><a href="/music/renoise-1-to-1/">Sessions from {{ site.data.links.mentoring.from_price }}</a></li>
-            {%- if site.data.links.booking.url != "" %}
-            <li><a href="{{ site.data.links.booking.url }}">{{ site.data.links.booking.label }}</a></li>
-            {%- endif %}
-        </ul>
-    </section>
-
     <section aria-labelledby="listen">
         <h2 id="listen">Listen to Line 47 on…</h2>
         {% include link-list.html group="links_listen" %}

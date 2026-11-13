@@ -321,11 +321,11 @@
     }
 }
 
-// Subpages (mentoring, press kit): solid band, no photo, page title as the h1
+// Subpages (press kit): solid band, no photo, page title as the h1
 .music>main>.hero.hero--compact {
     min-height: 0;
     background-image: none;
-    background-color: #7375ff; // same purple as the /music/ hero
+    background-color: rgba(190, 182, 211, 0.88);
 
     &::before {
         display: none;
@@ -337,16 +337,21 @@
         padding-bottom: $spacer-4;
     }
 
+    // Dark text on the lavender band
+    .right-grid h1,
+    .right-grid p,
+    .right-grid a,
+    .right-grid a:visited {
+        color: $color-dark;
+    }
+
     .right-grid h1 {
         font-size: clamp(2rem, 6vw, 3.25rem);
         margin-bottom: $spacer-1;
     }
 
-    // White on #7375ff is 3.67:1, so the subtitle is kept at large-text size
-    // (at least 18.66px bold), where WCAG requires 3:1 instead of 4.5:1
     .right-grid p {
         font-size: clamp(1.1rem, 2.4vw, 1.5rem);
-        font-weight: 700;
         line-height: 1.4;
         margin-bottom: 0;
     }
