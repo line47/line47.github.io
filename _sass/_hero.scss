@@ -254,47 +254,28 @@
     }
 }
 
-.work>main>.hero {
-    min-height: 38rem;
-    background-color: $color-accent;
-    background-image: url('/assets/images/scott-2026.jpg');
-    background-blend-mode: lighten;
-    background-position: center center;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-
-    @media (max-width: 600px) {
-        background-position: center top;
-    }
-}
-
-.work>main>.hero .content-container,
-.music>main>.hero .content-container {
-    min-height: 38rem;
-    align-items: end;
-}
-
-.music>main>.hero {
+// Full-bleed photo hero with a dark gradient behind white text (WCAG 1.4.3).
+// On phones the photo is cover-cropped and the hero is 60% of the screen.
+// $shade is the RGB of the gradient; $mid and $end set how far up it reaches
+// (lighter photos need it to reach higher).
+@mixin photo-hero($shade, $mid: 32%, $end: 60%) {
     position: relative;
-    min-height: 38rem;
-    background-color: #7375ff;
-    background-image: url('/assets/images/L47-2024-small.jpg');
-    background-blend-mode: color-dodge;
     background-position: center center;
     background-size: 100% auto;
     background-repeat: no-repeat;
 
-    // Dark gradient behind the title so white text stays readable (WCAG 1.4.3)
     &::before {
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(to top, rgba(32, 29, 66, 0.92) 0%, rgba(32, 29, 66, 0.75) 32%, rgba(32, 29, 66, 0) 60%);
+        background: linear-gradient(to top, rgba($shade, 0.92) 0%, rgba($shade, 0.75) $mid, rgba($shade, 0) $end);
         pointer-events: none;
     }
 
     .content-container {
         position: relative;
+        min-height: 38rem;
+        align-items: end;
     }
 
     .right-grid h1,
@@ -319,6 +300,23 @@
             line-height: 1.4;
         }
     }
+}
+
+.work>main>.hero {
+    min-height: 38rem;
+    background-color: $color-accent;
+    background-image: url('/assets/images/scott-2026.jpg');
+    background-blend-mode: lighten;
+    @include photo-hero(#37323e, 50%, 85%);
+}
+
+
+.music>main>.hero {
+    min-height: 38rem;
+    background-color: #7375ff;
+    background-image: url('/assets/images/L47-2024-small.jpg');
+    background-blend-mode: color-dodge;
+    @include photo-hero(#201d42);
 }
 
 // Subpages (press kit): solid band, no photo, page title as the h1
