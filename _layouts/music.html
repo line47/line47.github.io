@@ -1,11 +1,45 @@
 ---
 layout: base
 subnav: music
+footer_cta: true
 ---
-{% capture hero_text %}Creating electronic, drill 'n' bass, experimental, ambient, and noise since the 1990's. Owner of independent record label <a href="https://terminal-dusk.com">Terminal Dusk</a>.{% endcapture %}
-{% include hero.html title="Line 47" text=hero_text %}
+{%- comment -%}
+  Pages can set hero_title, hero_text and hero_compact: true in front matter.
+  The full photo hero is used on /music/; subpages use the compact version.
+{%- endcomment -%}
+{%- capture default_text -%}Creating electronic, drill 'n' bass, experimental, ambient, and noise since the 1990's. Owner of independent record label <a href="https://terminal-dusk.com">Terminal Dusk</a>.{%- endcapture -%}
+{%- assign hero_title = page.hero_title | default: "Line 47" -%}
+{%- assign hero_text = page.hero_text | default: default_text -%}
+{%- if page.hero_compact -%}
+{% include hero.html title=hero_title text=hero_text class="hero--compact" %}
+{%- else -%}
+{% include hero.html title=hero_title text=hero_text %}
+{%- endif %}
 <div class="music-section">
     <div class="content-container">
         {{ content }}
     </div>
 </div>
+{%- if page.sticky_booking and site.data.links.booking.url != "" %}
+<div class="sticky-cta">
+    <span>From {{ site.data.links.mentoring.from_price }} · 60 min on Zoom</span>
+    {% include book-button.html %}
+</div>
+<script>
+  // Hide the sticky bar while an in-page booking panel or the footer is on
+  // screen, so two Book buttons never show at once.
+  (function () {
+    var bar = document.querySelector('.sticky-cta');
+    var targets = document.querySelectorAll('.cta-panel, footer');
+    if (!bar || !('IntersectionObserver' in window)) return;
+    var visible = new Set();
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { visible.add(e.target); } else { visible.delete(e.target); }
+      });
+      bar.hidden = visible.size > 0;
+    });
+    targets.forEach(function (t) { observer.observe(t); });
+  }());
+</script>
+{%- endif %}

@@ -6,7 +6,6 @@ profiles:
   facebook:              { name: Facebook, url: "https://www.facebook.com/L47music/" }
   bluesky:               { name: Bluesky, url: "https://bsky.app/profile/linefourty7.bsky.social" }
   tiktok:                { name: TikTok, url: "https://www.tiktok.com/@l47music" }
-  twitter:               { name: Twitter, url: "https://twitter.com/line47" }
   github:                { name: GitHub, url: "https://github.com/line47" }
   linkedin:              { name: LinkedIn, url: "https://www.linkedin.com/in/line47/" }
   subvert:               { name: Subvert.fm, url: "https://www.subvert.fm/line47" }
@@ -26,13 +25,26 @@ groups:
   listen:      [subvert, bandcamp, spotify, youtube, soundcloud, terminaldusk_bandcamp]
   links_listen: [bandcamp, spotify, youtube_channel]
   links_label:  [terminaldusk_bandcamp, terminaldusk_spotify]
-  links_follow: [instagram, tiktok, twitter, facebook]
+  links_follow: [instagram, tiktok, facebook]
 
 # The release featured on /music/ and /links/
 latest_release:
   title: Line 47
   bandcamp_album_id: 2943703494
   links:
-    - { name: Bandcamp, url: "https://line47.bandcamp.com/album/line-47" }
-    - { name: Spotify, url: "https://open.spotify.com/album/1zmM5X7hLT8J8iyv6JS2ov" }
-    - { name: YouTube, url: "https://www.youtube.com/watch?v=rcsdXsuUamQ&list=OLAK5uy_kSc6K_dmni9MFHKK1eQlDqYnsfcV5YThI" }
+    - { name: Album on Bandcamp, url: "https://line47.bandcamp.com/album/line-47" }
+    - { name: Album on Spotify, url: "https://open.spotify.com/album/1zmM5X7hLT8J8iyv6JS2ov" }
+    - { name: Album on YouTube, url: "https://www.youtube.com/watch?v=rcsdXsuUamQ&list=OLAK5uy_kSc6K_dmni9MFHKK1eQlDqYnsfcV5YThI" }
+
+# Booking and contact for mentoring, shows and press.
+# Paste your Calendly (or other booking) link into url. Every "Book" button on
+# the site reads from here and stays hidden while url is empty, so a
+# placeholder link can never go live.
+booking:
+  url: ""
+  label: Book a session
+  contact_label: Book or contact Line 47
+
+# Used on the mentoring page (pages/renoise-1-to-1.md), which is unpublished
+mentoring:
+  from_price: "$85"

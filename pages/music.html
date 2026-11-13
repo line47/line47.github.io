@@ -3,18 +3,30 @@ layout: music
 title: Line 47
 permalink: /music/
 pageClass: music
-
 ---
+{%- assign release = site.data.links.latest_release -%}
 
+<section class="music-block release-card" aria-labelledby="latest-release">
+    <h2 id="latest-release">Latest release</h2>
+    <p class="release-title">{{ release.title }}</p>
+    {% include bandcamp-player.html %}
+    <ul class="button-grid">
+        {%- for link in release.links %}
+        <li><a class="button" href="{{ link.url }}">{{ link.name }}</a></li>
+        {%- endfor %}
+    </ul>
+</section>
 
-        <h2>Renoise 1-to-1 mentoring</h2>
-        <p>Private Renoise production sessions for breaks, beats, sample slicing, and experimental electronic music.</p>
-        <p><a href="/music/renoise-1-to-1/">More details about 1-to-1 sessions</a></p>
+<section class="music-block" aria-labelledby="listen">
+    <h2 id="listen">Listen</h2>
+    {% include link-list.html group="listen" class="button-grid" link_class="button" %}
+</section>
 
-        <h2>Latest release</h2>
-        {% include bandcamp-player.html %}
+<section class="music-block" aria-labelledby="press">
+    <h2 id="press">Press and booking</h2>
+    <p>Bios, photos, and the tech rider for promoters and press.</p>
+    <div class="button-row">
+        <a class="button button--secondary" href="/music/presskit/">Open the press kit</a>
+        {% include book-button.html label=site.data.links.booking.contact_label %}
     </div>
-
-    <div class="content-container" id="music">
-        <h2>Listen</h2>
-        {% include link-list.html group="listen" class="inline-list" %}
+</section>

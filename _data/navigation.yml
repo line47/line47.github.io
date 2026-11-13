@@ -15,8 +15,6 @@ work:
     - { title: "Who I've worked with", url: "/work/#who" }
 
 music:
-  label: Music links
+  label: Line 47
   items:
-    - { profile: subvert }
-    - { profile: bandcamp }
-    - { profile: youtube }
+    - { title: Press kit, url: /music/presskit/ }

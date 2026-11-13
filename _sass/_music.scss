@@ -9,19 +9,8 @@
         max-width: $site-max-width;
     }
 
-    #music .inline-list,
-    #music .inline-list li {
-        text-align: left;
+    h3 {
+        margin-top: $spacer-3;
+        margin-bottom: $spacer-1;
     }
-
-    #music .inline-list {
-        padding-left: 0;
-        margin-left: 0;
-    }
-
-    #music .inline-list li {
-        margin-left: 0;
-        margin-right: $spacer-2;
-    }
-
 }
