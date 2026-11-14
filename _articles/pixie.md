@@ -48,7 +48,7 @@ She crossed state lines with us from Kentucky to North Carolina. She helped keep
 
 <figure>
   <img loading="lazy" src="/assets/images/articles/Pixie/Pixie-4.jpg" alt="Four photobooth frames of Josie and Scott hugging Pixie, who licks and nuzzles them; the strip is branded Monnik Beer Co. Dog Day of Summer.">
-  <figcaption>Photobooth pictures of Pixie, Josie and I from Louisville, KY.</figcaption>
+  <figcaption>Photobooth pictures of Pixie, Josie, and me from Louisville, KY.</figcaption>
 </figure>
 
 She was by Josie’s side as she studied and earned her esthetics license. She watched Waylan grow from a boy into a young man. In all of it, Pixie was constant. A presence you could feel in the room, even when she was asleep.
@@ -64,9 +64,9 @@ In late October 2025, Pixie had a health episode that sent us to the emergency v
 
 With medication and rest, she started eating again and some energy came back. But she never fully returned to her normal self after that.
 
-By mid December, she lost interest in her regular food. She slept more. Our daily mile walks became too much. She was losing weight and strength. We tried soft food and home cooked meals, which helped a little, but we could tell something deeper was going on.
+By mid-December, she lost interest in her regular food. She slept more. Our daily mile walks became too much. She was losing weight and strength. We tried soft food and home-cooked meals, which helped a little, but we could tell something deeper was going on.
 
-Bloodwork showed signs that her body was under stress. We were living in that strange in between place where you are grateful for each normal moment, while watching the overall direction of things.
+Bloodwork showed signs that her body was under stress. We were living in that strange in-between place where you are grateful for each normal moment, while watching the overall direction of things.
 
 ### New Year’s Eve
 
@@ -84,7 +84,7 @@ Down by the creek. Through the woods. Along the river.
 
 <figure class="breakout">
   <img loading="lazy" src="/assets/images/articles/Pixie/Pixie-6.jpg" alt="Scott stands on the river’s edge holding a water bottle while Pixie, a white-and-brown dog, sniffs the ground; a broad, rocky river flows past leafless trees under a bright winter sky.">
-  <figcaption>Pixie and I standing on the river’s edge on her last day.</figcaption>
+  <figcaption>Pixie and me standing on the river’s edge on her last day.</figcaption>
 </figure>
 
 For about an hour each day, she became a different dog. She trotted and explored and inhaled the world. Tail wagging. Smiling into the sunlight. Leading the pack. Turning back to make sure nobody was left behind.
@@ -109,7 +109,7 @@ When she wasn’t out there with us, she rested at home. We gave her all the tre
 
 Pixie rejoined the universe on January 3, 2026, as the sun was setting.
 
-She passed peacefully at home with in home euthanasia, surrounded by love.
+She passed peacefully at home with in-home euthanasia, surrounded by love.
 
 <figure class="inset-left">
   <img loading="lazy" src="/assets/images/articles/Pixie/Pixie-9.jpg" alt="A cozy corner nook with a gray dog bed holding four plush toys arranged in a row; above it, a small round table holds a lit candle surrounded by crystals, casting warm light on the white paneled walls.">
