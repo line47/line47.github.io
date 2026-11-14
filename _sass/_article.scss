@@ -109,3 +109,166 @@
     }
 
 }
+
+// --- Story layout --------------------------------------------------------
+// A long-form layout for personal essays. Opt in with `pageClass: story`.
+//   figure                 photo at the full width of the text column
+//   figure.inset-left/right photo beside the text on wide screens
+//   figure.breakout        landscape photo wider than the text column
+//   .photo-pair            two photos side by side
+//   > quote                pull quote
+//   p.epigraph / p.closing opening and closing lines
+
+$story-measure: 40rem; // about 70 characters per line
+
+.story {
+    .hero {
+        padding-bottom: $spacer-2;
+
+        h1 {
+            font-size: clamp(2.5rem, 7vw, 4rem);
+            margin-bottom: $spacer-1;
+        }
+
+        img {
+            width: 100%;
+            max-width: 26rem;
+            height: auto;
+            margin-top: $spacer-3;
+            border-radius: 6px;
+        }
+    }
+
+    .main-content {
+        max-width: $story-measure;
+        margin: 0 auto $spacer-6;
+
+        h2,
+        h3,
+        blockquote,
+        .photo-pair,
+        .breakout,
+        .closing {
+            clear: both;
+        }
+
+        h2 {
+            margin-top: $spacer-6;
+        }
+
+        h3 {
+            margin-top: $spacer-4;
+            margin-bottom: $spacer-1;
+        }
+
+        // Photos: no frame, full column width unless a class says otherwise
+        figure {
+            border: 0;
+            padding: 0;
+            max-width: none;
+            margin: $spacer-5 0;
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+                margin: 0;
+                border-radius: 4px;
+            }
+
+            figcaption {
+                margin-top: $spacer-1;
+                font-family: $font-main-header;
+                font-size: 0.9rem;
+                font-weight: 400;
+                line-height: 1.45;
+                color: #57525e;
+            }
+        }
+
+        // Insets sit beside the text once there is room for both
+        @media (min-width: 760px) {
+            figure.inset-left,
+            figure.inset-right {
+                width: 45%;
+                margin-top: $spacer-0;
+                margin-bottom: $spacer-3;
+            }
+
+            figure.inset-left {
+                float: left;
+                margin-right: $spacer-4;
+            }
+
+            figure.inset-right {
+                float: right;
+                margin-left: $spacer-4;
+            }
+        }
+
+        // Landscape photos break out of the text column
+        figure.breakout {
+            position: relative;
+            left: 50%;
+            width: min(calc(100vw - 2rem), 60rem);
+            transform: translateX(-50%);
+
+            figcaption {
+                max-width: $story-measure;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .photo-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: $spacer-3;
+            margin: $spacer-5 0;
+
+            figure {
+                margin: 0;
+            }
+
+            @media (max-width: 480px) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        // Pull quotes
+        blockquote {
+            margin: $spacer-6 0;
+            padding: $spacer-3 0;
+            border-top: 2px solid $color-featured;
+            border-bottom: 2px solid $color-featured;
+            text-align: center;
+
+            p {
+                margin: 0;
+                padding: 0;
+                font-size: clamp(1.5rem, 4vw, 2rem);
+                line-height: 1.35;
+                font-style: italic;
+                color: $color-dark;
+            }
+        }
+
+        .epigraph {
+            margin: $spacer-4 0 $spacer-5;
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            line-height: 1.6;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .closing {
+            margin-top: $spacer-6;
+            padding-top: $spacer-4;
+            border-top: 2px solid $color-featured;
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            line-height: 1.5;
+            font-style: italic;
+            text-align: center;
+        }
+    }
+}
