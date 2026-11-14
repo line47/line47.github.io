@@ -116,6 +116,7 @@
 //   figure.inset-left/right photo beside the text on wide screens
 //   figure.breakout        landscape photo wider than the text column
 //   .photo-pair            two photos side by side
+//   .photo-quote           a photo beside a pull quote (stacks on phones)
 //   > quote                pull quote
 //   p.epigraph / p.closing opening and closing lines
 
@@ -147,6 +148,7 @@ $story-measure: 40rem; // about 70 characters per line
         h3,
         blockquote,
         .photo-pair,
+        .photo-quote,
         .breakout,
         .closing {
             clear: both;
@@ -235,6 +237,24 @@ $story-measure: 40rem; // about 70 characters per line
             }
         }
 
+        .photo-quote {
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+            gap: $spacer-4;
+            align-items: center;
+            margin: $spacer-6 0;
+
+            figure,
+            blockquote {
+                margin: 0;
+            }
+
+            @media (max-width: 600px) {
+                grid-template-columns: 1fr;
+                gap: $spacer-3;
+            }
+        }
+
         // Pull quotes
         blockquote {
             margin: $spacer-6 0;
@@ -272,3 +292,4 @@ $story-measure: 40rem; // about 70 characters per line
         }
     }
 }
+

@@ -94,14 +94,17 @@ For about an hour each day, she became a different dog. She trotted and explored
   <figcaption>Pixie enjoyed her last few days over at the farm.</figcaption>
 </figure>
 
-<figure class="inset-right">
+On those walks, we found what we can only describe as spirit signs. On our last day, we found an incredible hawk feather, and we saw a bald eagle over the river. We choose to believe those were her guides, showing her the way back to nature and offering strength, courage, freedom, vision, guardianship, and clarity.
+
+<div class="photo-quote">
+<figure>
   <img loading="lazy" src="/assets/images/articles/Pixie/Pixie-7.jpg" alt="A close-up of a brown-and-white striped feather resting on a rough, sparkling crystal-covered rock on a wooden tabletop.">
   <figcaption>A sign we will never forget.</figcaption>
 </figure>
-
-On those walks, we found what we can only describe as spirit signs. On our last day, we found an incredible hawk feather, and we saw a bald eagle over the river. We choose to believe those were her guides, showing her the way back to nature and offering strength, courage, freedom, vision, guardianship, and clarity.
-
-> She inhaled the world like she was trying to keep it.
+<blockquote>
+  <p>She inhaled the world like she was trying to keep it.</p>
+</blockquote>
+</div>
 
 When she wasn’t out there with us, she rested at home. We gave her all the treats. Waylan brought her a hamburger and a pup cup. Josie made Pixie her own pot roast dinner. Near the end, we were simply trying to get her to eat anything, because her hunger was barely there.
 
